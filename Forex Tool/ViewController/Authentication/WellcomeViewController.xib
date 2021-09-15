@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WellcomeViewController" customModule="Forex_Tool" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dac-diem-forex-1-1" translatesAutoresizingMaskIntoConstraints="NO" id="xTJ-Qw-K9f">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRr-My-nXO">
+                    <rect key="frame" x="124" y="297" width="127.5" height="20"/>
+                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please login or register to use the services of Forex Tool!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU3-ic-QCY">
+                    <rect key="frame" x="35" y="332" width="305" height="40"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-nV-mNs">
+                    <rect key="frame" x="48" y="412" width="279" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uy0-Im-hfF">
+                            <rect key="frame" x="0.0" y="0.0" width="279" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="ouX-q3-ctt"/>
+                            </constraints>
+                            <state key="normal" title="Login" backgroundImage="blueBtn"/>
+                            <connections>
+                                <action selector="loginButtonWasPressed:" destination="-1" eventType="touchUpInside" id="lYj-h1-0oJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7q-rp-0Kg">
+                            <rect key="frame" x="0.0" y="70" width="279" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="LbB-dt-ibb"/>
+                            </constraints>
+                            <state key="normal" title="Register" backgroundImage="whiteBtn"/>
+                            <connections>
+                                <action selector="registerButtonWasPressed:" destination="-1" eventType="touchUpInside" id="az8-so-nX4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Uy0-Im-hfF" firstAttribute="leading" secondItem="3Mh-nV-mNs" secondAttribute="leading" id="7dq-ow-OCi"/>
+                        <constraint firstItem="W7q-rp-0Kg" firstAttribute="leading" secondItem="3Mh-nV-mNs" secondAttribute="leading" id="ch2-cB-VKl"/>
+                        <constraint firstAttribute="trailing" secondItem="W7q-rp-0Kg" secondAttribute="trailing" id="gy0-aA-yxf"/>
+                        <constraint firstAttribute="trailing" secondItem="Uy0-Im-hfF" secondAttribute="trailing" id="l6a-dv-OCb"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.047058823529411764" green="0.13333333333333333" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xTJ-Qw-K9f" secondAttribute="trailing" id="545-nm-GIu"/>
+                <constraint firstItem="hU3-ic-QCY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="6CK-cd-sPC"/>
+                <constraint firstItem="xTJ-Qw-K9f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9RD-1r-kX1"/>
+                <constraint firstAttribute="trailing" secondItem="hU3-ic-QCY" secondAttribute="trailing" constant="35" id="Fgw-Lp-NfA"/>
+                <constraint firstItem="RRr-My-nXO" firstAttribute="top" secondItem="xTJ-Qw-K9f" secondAttribute="bottom" constant="30" id="IPs-Oq-qWu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Mh-nV-mNs" secondAttribute="trailing" constant="48" id="NNo-sX-2Pr"/>
+                <constraint firstItem="3Mh-nV-mNs" firstAttribute="top" secondItem="hU3-ic-QCY" secondAttribute="bottom" constant="40" id="Sb1-a6-Lvs"/>
+                <constraint firstItem="xTJ-Qw-K9f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="asR-oL-HDy"/>
+                <constraint firstItem="RRr-My-nXO" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="h42-Wm-7rp"/>
+                <constraint firstItem="hU3-ic-QCY" firstAttribute="top" secondItem="RRr-My-nXO" secondAttribute="bottom" constant="15" id="jtl-0L-JBj"/>
+                <constraint firstItem="xTJ-Qw-K9f" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="mjj-dm-fS0"/>
+                <constraint firstItem="3Mh-nV-mNs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="48" id="s9l-Qj-mLt"/>
+            </constraints>
+            <point key="canvasLocation" x="13.6" y="98.50074962518741"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blueBtn" width="280" height="50"/>
+        <image name="dac-diem-forex-1-1" width="1100" height="733"/>
+        <image name="whiteBtn" width="280" height="50"/>
+    </resources>
+</document>

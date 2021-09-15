@@ -1,0 +1,6 @@
+framework module Pods_Forex_Tool {
+  umbrella header "Pods-Forex Tool-umbrella.h"
+
+  export *
+  module * { export * }
+}

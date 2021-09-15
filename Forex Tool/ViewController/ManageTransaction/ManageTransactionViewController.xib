@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageTransactionViewController" customModule="Forex_Tool" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="KXm-0n-syf" id="0OT-Ra-mG6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbt-VV-pPE">
+                    <rect key="frame" x="15" y="30" width="98" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-0n-syf">
+                    <rect key="frame" x="15" y="70.5" width="345" height="596.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVv-fb-XTb">
+                    <rect key="frame" x="330" y="25" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4cu-zH-7xF"/>
+                        <constraint firstAttribute="width" constant="30" id="ePm-4D-HU2"/>
+                    </constraints>
+                    <state key="normal" image="filterIcon"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.94901960780000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="KXm-0n-syf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="4cd-Di-Rfj"/>
+                <constraint firstItem="Wbt-VV-pPE" firstAttribute="centerY" secondItem="MVv-fb-XTb" secondAttribute="centerY" id="Fe8-dS-tCL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KXm-0n-syf" secondAttribute="bottom" id="Z7N-SM-Dda"/>
+                <constraint firstItem="KXm-0n-syf" firstAttribute="top" secondItem="Wbt-VV-pPE" secondAttribute="bottom" constant="20" id="cm5-LR-xwj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KXm-0n-syf" secondAttribute="trailing" constant="15" id="kL0-vY-wZ5"/>
+                <constraint firstItem="Wbt-VV-pPE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ogA-PS-lJV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MVv-fb-XTb" secondAttribute="trailing" constant="15" id="ssV-vG-GDO"/>
+                <constraint firstItem="MVv-fb-XTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="vtb-L5-YE4"/>
+            </constraints>
+            <point key="canvasLocation" x="109.59999999999999" y="57.121439280359823"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="filterIcon" width="80" height="80"/>
+    </resources>
+</document>
