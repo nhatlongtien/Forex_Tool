@@ -80,7 +80,9 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func historyTransactionWasPressed(_ sender: Any) {
-        let targetVC = EconomicNewsViewController()
+//        let targetVC = EconomicNewsViewController()
+//        self.navigationController?.pushViewController(targetVC, animated: true)
+        let targetVC = HomeNewsViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func manageTransactionWasPressed(_ sender: Any) {

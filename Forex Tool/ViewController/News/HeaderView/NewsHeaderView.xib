@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsHeaderView" customModule="Forex_Tool" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="dxp-bV-iq1"/>
+                <outlet property="imageView" destination="rrL-fk-ONx" id="nJ6-m3-uCP"/>
+                <outlet property="publicDateLbl" destination="ZJ5-Lq-tUw" id="EEw-ah-kwU"/>
+                <outlet property="titleLbl" destination="8qo-kU-1Pj" id="Lt4-GY-bMb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="265"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LYNXNPEB8T17B_M" translatesAutoresizingMaskIntoConstraints="NO" id="rrL-fk-ONx">
+                    <rect key="frame" x="0.0" y="5" width="375" height="175"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="g7k-w8-ImT"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qo-kU-1Pj">
+                    <rect key="frame" x="15" y="188" width="345" height="40.5"/>
+                    <string key="text">Chứng khoán Châu Âu thấp hơn; Dữ liệu Trung Quốc và doanh số bán hàng đáng thất vọng của H&amp;M Dữ liệu Trung Quốc và doanh số bán hàng đáng thất vọng của H&amp;M</string>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="investingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JCT-2H-0ee">
+                    <rect key="frame" x="15" y="238.5" width="65" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="mJP-tA-1Eq"/>
+                        <constraint firstAttribute="height" constant="15" id="mpI-f3-x9r"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 september" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ5-Lq-tUw">
+                    <rect key="frame" x="90" y="237.5" width="86" height="17"/>
+                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="JCT-2H-0ee" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="0Wx-Wd-Us0"/>
+                <constraint firstItem="ZJ5-Lq-tUw" firstAttribute="leading" secondItem="JCT-2H-0ee" secondAttribute="trailing" constant="10" id="4VF-Ac-Ch7"/>
+                <constraint firstItem="rrL-fk-ONx" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="A6e-D8-ddx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZJ5-Lq-tUw" secondAttribute="bottom" constant="10.5" id="Ttw-4H-LHo"/>
+                <constraint firstItem="rrL-fk-ONx" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="5" id="ad6-Ow-nVU"/>
+                <constraint firstItem="8qo-kU-1Pj" firstAttribute="top" secondItem="rrL-fk-ONx" secondAttribute="bottom" constant="8" symbolic="YES" id="iEc-1O-SgX"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8qo-kU-1Pj" secondAttribute="trailing" constant="15" id="jhK-rY-b9j"/>
+                <constraint firstItem="rrL-fk-ONx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mGr-et-2aJ"/>
+                <constraint firstItem="JCT-2H-0ee" firstAttribute="top" secondItem="8qo-kU-1Pj" secondAttribute="bottom" constant="10" id="pDr-5d-hYO"/>
+                <constraint firstItem="8qo-kU-1Pj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="r09-ac-5bv"/>
+                <constraint firstItem="ZJ5-Lq-tUw" firstAttribute="centerY" secondItem="JCT-2H-0ee" secondAttribute="centerY" id="rJw-B8-QIu"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="50.399999999999999" y="-105.69715142428787"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LYNXNPEB8T17B_M" width="450" height="327"/>
+        <image name="investingLogo" width="256" height="53"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -67,6 +67,7 @@ class Constant{
     static let listRiskRateValue = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
     static let listTypeTransaction = ["Buy", "Sell", "Buy Limit", "Sell Limit"]
     static let economicNewsUrl = "https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&features=datepicker,timezone,timeselector,filters&countries=33,14,4,34,38,32,6,11,51,5,39,72,60,110,43,35,71,22,36,26,12,9,37,25,178,10,17&calType=week&timeZone=27&lang=52"
+    static let listTabNews = ["Tiền Điện Tử", "Forex", "Phổ Biến Nhất", "Hàng Hoá", "Thị Trường Chúng Khoán", "Chỉ Số Kinh Tế", "Kinh Tế", "Thế Giới"]
     
     
 }
