@@ -6,14 +6,20 @@
 //
 
 import UIKit
-
+import Kingfisher
+import PKHUD
 class HomeNewsViewController: UIViewController {
 
     @IBOutlet weak var tabNewsCollection: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    let headerView = NewsHeaderView()
+    let homeNewsVM = HomeNewsViewModel()
+    var listNews:[NewsItem] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //
+        //self.viewModelCallBack()
+        //
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         tabNewsCollection.collectionViewLayout = layout
@@ -35,23 +41,39 @@ class HomeNewsViewController: UIViewController {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
         self.title = "News"
+        //
+        self.homeNewsVM.getRSSFeed(urlString: "https://vn.investing.com/rss/news_301.rss") { (success, listNews) in
+            if success{
+                guard let news = listNews else {return}
+                self.listNews = news
+            }
+        }
+        self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        // Resize header view with dynamic size in UITableView
-//        guard let headerView = tableView.tableHeaderView else {
-//            return
-//        }
-//        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
-//        if headerView.frame.height != size.height {
-//            tableView.tableHeaderView?.frame = CGRect(
-//                origin: headerView.frame.origin,
-//                size: size
-//            )
-//            tableView.layoutIfNeeded()
-//        }
-//    }
+    //MARK: Helper Method
+    func getListNews(url:String){
+        self.homeNewsVM.getRSSFeed(urlString: url) { (success, listNews) in
+            if success{
+                guard let news = listNews else {return}
+                self.listNews = []
+                self.listNews = news
+                DispatchQueue.main.async {
+                    if let item = self.listNews.first{
+                        self.headerView.configView(item: item)
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    func viewModelCallBack(){
+        homeNewsVM.beforeApiCall = {
+            HUD.show(.systemActivity)
+        }
+        homeNewsVM.afterApiCall = {
+            HUD.hide()
+        }
+    }
 
 }
 //MARK: UICollectionViewDelegate, UICollectionViewDataSource
@@ -74,23 +96,46 @@ extension HomeNewsViewController:UICollectionViewDelegate, UICollectionViewDataS
         return CGSize(width: width, height: 50)
         
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
+        case 1:
+            self.getListNews(url: NewsLinkRSSFeed.crypto.rawValue)
+        case 2:
+            self.getListNews(url: NewsLinkRSSFeed.forex.rawValue)
+        case 3:
+            self.getListNews(url: NewsLinkRSSFeed.goods.rawValue)
+        case 4:
+            self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
+        case 5:
+            self.getListNews(url: NewsLinkRSSFeed.indexEconomic.rawValue)
+        case 6:
+            self.getListNews(url: NewsLinkRSSFeed.economic.rawValue)
+        case 7:
+            self.getListNews(url: NewsLinkRSSFeed.world.rawValue)
+        default:
+            break
+        }
+    }
 }
 //MARK: UITableViewDelegate, UITableViewDataSource
 extension HomeNewsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return listNews.count - 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
-        
+        cell.configCell(item: listNews[indexPath.row + 1])
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = NewsHeaderView()
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let headerView = NewsHeaderView()
+        
+        print(listNews.count)
+        //
         let size = CGSize(width: self.view.frame.width - 30, height: 1000)
         let estimateFrame = NSString(string: headerView.titleLbl.text!).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIFont(name: "Roboto-Regular", size: 15)], context: nil)
         let height = 234.5 + estimateFrame.height
@@ -98,6 +143,9 @@ extension HomeNewsViewController: UITableViewDelegate, UITableViewDataSource{
         print(estimateFrame.width)
         return height
         
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }

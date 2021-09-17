@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import Kingfisher
+import Firebase
 class NewsHeaderView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -22,7 +23,7 @@ class NewsHeaderView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
-        fatalError("init(coder:) has not been implemented")
+        //fatalError("init(coder:) has not been implemented")
     }
     func setupView(){
         Bundle.main.loadNibNamed("NewsHeaderView", owner: self, options: nil)
@@ -30,5 +31,28 @@ class NewsHeaderView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //
+    }
+    func configView(item:NewsItem){
+        titleLbl.text = item.title
+        if item.imageUrl == nil{
+            imageView.image = UIImage(named: "defaultImage")
+        }else{
+            imageView.kf.setImage(with: URL(string: item.imageUrl!))
+        }
+        let nowTimestamp = Timestamp(date: Date())
+        let publicTimestamp = Timestamp(date: item.pubdate!)
+        let delta = nowTimestamp.seconds - publicTimestamp.seconds
+        if delta <= 86400 {
+            let hours = Int(delta/3600)
+            let minutes = (Int(delta) - hours*60*60)/60
+            if hours == 0 {
+                self.publicDateLbl.text = "\(minutes) Phút trước"
+            }else{
+                self.publicDateLbl.text = "\(hours) Giờ trước"
+            }
+        }else{
+            let publicDateStr = item.pubdate?.dateToString(format: DateformatterType.DD_MMMM.rawValue)
+            self.publicDateLbl.text = publicDateStr
+        }
     }
 }

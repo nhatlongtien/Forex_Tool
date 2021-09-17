@@ -26,6 +26,7 @@ enum DateformatterType:String{
     case DD_MM_YYYY_Slash = "dd/MM/yyyy"
     case YYYY_MM_DD = "yyyy-MM-dd"
     case MMMM_D_YYYY_HH_mm_ss = "MMMM d, yyyy HH:mm:ss"
+    case DD_MMMM = "dd MMMM"
 }
 enum StatusTransaction:String{
     case Active = "Active"
@@ -36,4 +37,14 @@ enum ResultTransaction:String{
     case Win = "Win"
     case Loss = "Loss"
     case Unknow = "Unknow"
+}
+enum NewsLinkRSSFeed:String{
+    case crypto = "https://vn.investing.com/rss/news_301.rss"
+    case forex = "https://vn.investing.com/rss/news_1.rss"
+    case popular = "https://vn.investing.com/rss/news_285.rss"
+    case goods = "https://vn.investing.com/rss/news_11.rss"
+    case stock = "https://vn.investing.com/rss/news_25.rss"
+    case indexEconomic = "https://vn.investing.com/rss/news_95.rss"
+    case economic = "https://vn.investing.com/rss/news_14.rss"
+    case world = "https://vn.investing.com/rss/news_287.rss"
 }

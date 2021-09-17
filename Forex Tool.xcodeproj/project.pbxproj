@@ -40,6 +40,8 @@
 		388719F926F1FDD200DC3F5C /* NewsHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388719F826F1FDD200DC3F5C /* NewsHeaderView.xib */; };
 		388719FD26F2E1C900DC3F5C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388719FB26F2E1C900DC3F5C /* NewsTableViewCell.swift */; };
 		388719FE26F2E1C900DC3F5C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388719FC26F2E1C900DC3F5C /* NewsTableViewCell.xib */; };
+		38871A2A26F3251200DC3F5C /* HomeNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38871A2926F3251100DC3F5C /* HomeNewsViewModel.swift */; };
+		38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38871A2C26F32C1F00DC3F5C /* NewsModel.swift */; };
 		38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */; };
 		38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */; };
 		38B0C4ED269D7F1D009D968C /* ListPairCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C4EB269D7F1D009D968C /* ListPairCurrencyViewController.swift */; };
@@ -119,6 +121,8 @@
 		388719F826F1FDD200DC3F5C /* NewsHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsHeaderView.xib; sourceTree = "<group>"; };
 		388719FB26F2E1C900DC3F5C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		388719FC26F2E1C900DC3F5C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		38871A2926F3251100DC3F5C /* HomeNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewModel.swift; sourceTree = "<group>"; };
+		38871A2C26F32C1F00DC3F5C /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionViewController.swift; sourceTree = "<group>"; };
 		38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateTransactionViewController.xib; sourceTree = "<group>"; };
 		38B0C4EB269D7F1D009D968C /* ListPairCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPairCurrencyViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 				38B0C51A269D99B8009D968C /* CreateTransactionViewModel.swift */,
 				38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */,
 				380B247326ECAE9D00474396 /* UpdateTransactionViewModel.swift */,
+				38871A2926F3251100DC3F5C /* HomeNewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				38B0C517269D8BFB009D968C /* PairCurrencyModel.swift */,
 				38551FCF26A2CA9600FFC1D2 /* TransactionModel.swift */,
 				3851DB1A26A86D1F008769B0 /* FilterObjectModel.swift */,
+				38871A2C26F32C1F00DC3F5C /* NewsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -664,7 +670,9 @@
 				383CAA08269AAEAE00A29E3A /* HistoryTransactionViewController.swift in Sources */,
 				3851DB1726A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift in Sources */,
 				38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */,
+				38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */,
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
+				38871A2A26F3251200DC3F5C /* HomeNewsViewModel.swift in Sources */,
 				38C723FC26969FB100E810F9 /* WellcomeViewController.swift in Sources */,
 				380B247126ECAD1900474396 /* DropDown.swift in Sources */,
 				38B0C51E269E808B009D968C /* Enum.swift in Sources */,

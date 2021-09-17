@@ -18,5 +18,7 @@ pod 'SwiftyJSON'
 pod 'Alamofire'
 pod 'DropDown'
 pod 'FBSDKLoginKit'
+pod 'FeedKit'
+pod 'Kingfisher'
     
 end
