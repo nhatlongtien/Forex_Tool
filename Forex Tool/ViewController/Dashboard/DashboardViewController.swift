@@ -78,15 +78,18 @@ class DashboardViewController: UIViewController {
         let targetVC = CreateTransactionViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
+    @IBAction func manageTransactionWasPressed(_ sender: Any) {
+        let targetVC = ManageTransactionViewController()
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
     
-    @IBAction func historyTransactionWasPressed(_ sender: Any) {
-//        let targetVC = EconomicNewsViewController()
-//        self.navigationController?.pushViewController(targetVC, animated: true)
+    @IBAction func economicNewsButtonWasPressed(_ sender: Any) {
         let targetVC = HomeNewsViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
-    @IBAction func manageTransactionWasPressed(_ sender: Any) {
-        let targetVC = ManageTransactionViewController()
+    
+    @IBAction func economicCalenderButtonWasPressed(_ sender: Any) {
+        let targetVC = EconomicNewsViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func durationTimeSegmentWasPressed(_ sender: Any) {

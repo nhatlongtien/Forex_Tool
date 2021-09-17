@@ -15,6 +15,7 @@ class HomeNewsViewController: UIViewController {
     let headerView = NewsHeaderView()
     let homeNewsVM = HomeNewsViewModel()
     var listNews:[NewsItem] = []
+    var titleString:String? = Constant.listTabNews.first
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -35,6 +36,8 @@ class HomeNewsViewController: UIViewController {
         tableView.register(nibTableViewCell, forCellReuseIdentifier: "NewsTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        //
+        headerView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +120,7 @@ extension HomeNewsViewController:UICollectionViewDelegate, UICollectionViewDataS
         default:
             break
         }
+        self.titleString = Constant.listTabNews[indexPath.row]
     }
 }
 //MARK: UITableViewDelegate, UITableViewDataSource
@@ -128,6 +132,12 @@ extension HomeNewsViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsTableViewCell", for: indexPath) as! NewsTableViewCell
         cell.configCell(item: listNews[indexPath.row + 1])
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let targetVC = DetailNewsViewController()
+        targetVC.selectedNewsItem = listNews[indexPath.row + 1]
+        targetVC.titleScreen = self.titleString
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return headerView
@@ -148,4 +158,13 @@ extension HomeNewsViewController: UITableViewDelegate, UITableViewDataSource{
         return 100
     }
     
+}
+//MARK: NewsHeaderViewDelegate
+extension HomeNewsViewController:NewsHeaderViewDelegate{
+    func didTapContentView() {
+        let targetVC = DetailNewsViewController()
+        targetVC.selectedNewsItem = listNews.first
+        targetVC.titleScreen = self.titleString
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
 }

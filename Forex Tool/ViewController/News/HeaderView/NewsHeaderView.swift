@@ -8,13 +8,17 @@
 import UIKit
 import Kingfisher
 import Firebase
+protocol NewsHeaderViewDelegate:class {
+    func didTapContentView()
+}
 class NewsHeaderView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var publicDateLbl: UILabel!
-    
+    //
+    weak var delegate:NewsHeaderViewDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -31,6 +35,8 @@ class NewsHeaderView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDidTapContentView))
+        contentView.addGestureRecognizer(tapGesture)
     }
     func configView(item:NewsItem){
         titleLbl.text = item.title
@@ -54,5 +60,8 @@ class NewsHeaderView: UIView {
             let publicDateStr = item.pubdate?.dateToString(format: DateformatterType.DD_MMMM.rawValue)
             self.publicDateLbl.text = publicDateStr
         }
+    }
+    @objc func handleDidTapContentView(){
+        self.delegate?.didTapContentView()
     }
 }
