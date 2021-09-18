@@ -84,6 +84,12 @@
 		38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724542697E9DE00E810F9 /* AuthViewModel.swift */; };
 		38C724DA26980B3600E810F9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724D926980B3600E810F9 /* Constant.swift */; };
 		38C724FB269842CF00E810F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724FA269842CF00E810F9 /* UserModel.swift */; };
+		38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC121F26F5893100256975 /* LongShortRatioViewController.swift */; };
+		38DC122226F5893100256975 /* LongShortRatioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC122026F5893100256975 /* LongShortRatioViewController.xib */; };
+		38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */; };
+		38DC122826F59EE900256975 /* LongShortRatioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC122626F59EE900256975 /* LongShortRatioTableViewCell.xib */; };
+		38DC125A26F5BC4100256975 /* ExchangeLongShortRatioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */; };
+		38DC125D26F5C74600256975 /* LongShortRatioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */; };
 		3D2198D65E355CBB603442DD /* Pods_Forex_Tool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7B8772B6A4F58B747FF7C6 /* Pods_Forex_Tool.framework */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +175,12 @@
 		38C724542697E9DE00E810F9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		38C724D926980B3600E810F9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		38C724FA269842CF00E810F9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		38DC121F26F5893100256975 /* LongShortRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioViewController.swift; sourceTree = "<group>"; };
+		38DC122026F5893100256975 /* LongShortRatioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongShortRatioViewController.xib; sourceTree = "<group>"; };
+		38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioTableViewCell.swift; sourceTree = "<group>"; };
+		38DC122626F59EE900256975 /* LongShortRatioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongShortRatioTableViewCell.xib; sourceTree = "<group>"; };
+		38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeLongShortRatioModel.swift; sourceTree = "<group>"; };
+		38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioViewModel.swift; sourceTree = "<group>"; };
 		598332932A1693D7BE617DAD /* Pods-Forex Tool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forex Tool.debug.xcconfig"; path = "Target Support Files/Pods-Forex Tool/Pods-Forex Tool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -357,6 +369,7 @@
 				38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */,
 				380B247326ECAE9D00474396 /* UpdateTransactionViewModel.swift */,
 				38871A2926F3251100DC3F5C /* HomeNewsViewModel.swift */,
+				38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -373,6 +386,7 @@
 		38C723E826969D0800E810F9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				38DC121E26F5891500256975 /* LongShortRatio */,
 				380B251626F1D0A300474396 /* News */,
 				380B24E326F189E900474396 /* EconomicNews */,
 				38A3F10926A923F30032400F /* UpdateTransaction */,
@@ -397,6 +411,7 @@
 				38551FCF26A2CA9600FFC1D2 /* TransactionModel.swift */,
 				3851DB1A26A86D1F008769B0 /* FilterObjectModel.swift */,
 				38871A2C26F32C1F00DC3F5C /* NewsModel.swift */,
+				38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -469,6 +484,25 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		38DC121E26F5891500256975 /* LongShortRatio */ = {
+			isa = PBXGroup;
+			children = (
+				38DC122426F59EBC00256975 /* Cell */,
+				38DC121F26F5893100256975 /* LongShortRatioViewController.swift */,
+				38DC122026F5893100256975 /* LongShortRatioViewController.xib */,
+			);
+			path = LongShortRatio;
+			sourceTree = "<group>";
+		};
+		38DC122426F59EBC00256975 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */,
+				38DC122626F59EE900256975 /* LongShortRatioTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5DDA7B0A47E19186E35C0E3D /* Pods */ = {
@@ -548,11 +582,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38DC122226F5893100256975 /* LongShortRatioViewController.xib in Resources */,
 				38C723FD26969FB100E810F9 /* WellcomeViewController.xib in Resources */,
 				38C723F326969D9700E810F9 /* RegisterViewController.xib in Resources */,
 				38C7241626972DAA00E810F9 /* Roboto-Thin.ttf in Resources */,
 				383CA9F8269AA2BA00A29E3A /* TabBarViewController.xib in Resources */,
 				38C723EE26969D6C00E810F9 /* LoginViewController.xib in Resources */,
+				38DC122826F59EE900256975 /* LongShortRatioTableViewCell.xib in Resources */,
 				38C7241026972DAA00E810F9 /* Roboto-ThinItalic.ttf in Resources */,
 				38C7241726972DAA00E810F9 /* Roboto-Black.ttf in Resources */,
 				38C7241226972DAA00E810F9 /* Roboto-LightItalic.ttf in Resources */,
@@ -656,6 +692,7 @@
 				38B0C518269D8BFB009D968C /* PairCurrencyModel.swift in Sources */,
 				38C723F226969D9700E810F9 /* RegisterViewController.swift in Sources */,
 				388719F526F1FDBC00DC3F5C /* NewsHeaderView.swift in Sources */,
+				38DC125D26F5C74600256975 /* LongShortRatioViewModel.swift in Sources */,
 				38B0C51B269D99B8009D968C /* CreateTransactionViewModel.swift in Sources */,
 				38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */,
 				38B0C4ED269D7F1D009D968C /* ListPairCurrencyViewController.swift in Sources */,
@@ -666,6 +703,7 @@
 				380B251926F1D0F500474396 /* HomeNewsViewController.swift in Sources */,
 				383CA9EB269AA1DF00A29E3A /* CreateTransactionViewController.swift in Sources */,
 				3851DB1B26A86D1F008769B0 /* FilterObjectModel.swift in Sources */,
+				38DC125A26F5BC4100256975 /* ExchangeLongShortRatioModel.swift in Sources */,
 				38551FD026A2CA9600FFC1D2 /* TransactionModel.swift in Sources */,
 				38C7245026975AE200E810F9 /* UIWindow_Extension.swift in Sources */,
 				38C7241B2697364C00E810F9 /* CustomeView.swift in Sources */,
@@ -688,10 +726,12 @@
 				38B0C4F6269D879D009D968C /* ListPairCurrencyViewModel.swift in Sources */,
 				38C7244A2697596000E810F9 /* String Extension.swift in Sources */,
 				388719EF26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift in Sources */,
+				38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */,
 				38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */,
 				38C724DA26980B3600E810F9 /* Constant.swift in Sources */,
 				38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */,
 				3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */,
+				38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */,
 				380B24E626F18A4D00474396 /* EconomicNewsViewController.swift in Sources */,
 				383CAA13269C946700A29E3A /* CurrencyModel.swift in Sources */,
 			);

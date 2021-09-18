@@ -50,6 +50,8 @@ class DashboardViewController: UIViewController {
         self.userNameLbl.text = user?.displayName
         //
         self.setupDurationTimeDefault()
+        //
+        dashboardVM.getConfig()
         
         
     }
@@ -91,6 +93,11 @@ class DashboardViewController: UIViewController {
     
     @IBAction func economicCalenderButtonWasPressed(_ sender: Any) {
         let targetVC = EconomicNewsViewController()
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
+    
+    @IBAction func longShortRatioButtonWasPressed(_ sender: Any) {
+        let targetVC = LongShortRatioViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func durationTimeSegmentWasPressed(_ sender: Any) {

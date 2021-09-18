@@ -110,4 +110,32 @@ class DashboardViewModel{
             afterApiCall?()
         }
     }
+    //
+    func getConfig(){
+        let db = Firestore.firestore()
+        db.collection("Config").getDocuments { (queryShnapshot, error) in
+            if let err = error{
+                print("Error getting documents: \(err)")
+                HelperMethod.showAlertWithMessage(message: "Error getting documents: \(err)")
+            }else{
+                var listCrypto:[String] = []
+                var listPeriod:[String] = []
+                for document in queryShnapshot!.documents{
+                    guard let json = JSON(rawValue: document.data()) else {return}
+                    guard let listCryptoJson = json["pairRatioCurrency"].array else {return}
+                    for eachCrypto in listCryptoJson {
+                        listCrypto.append(eachCrypto.stringValue)
+                    }
+                    guard let listPeriodJson = json["periodTime"].array else {return}
+                    for eachPeriod in listPeriodJson{
+                        listPeriod.append(eachPeriod.stringValue)
+                    }
+                }
+                Constant.defaults.set(listCrypto, forKey: Constant.CRYPTO_KEY)
+                Constant.defaults.set(listPeriod, forKey: Constant.PERIOD_TIME_KEY)
+                print(listCrypto)
+                print(listPeriod)
+            }
+        }
+    }
 }

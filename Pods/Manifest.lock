@@ -368,6 +368,7 @@ PODS:
   - Localize-Swift/LocalizeSwiftCore (3.2.0)
   - Localize-Swift/UIKit (3.2.0):
     - Localize-Swift/LocalizeSwiftCore
+  - MultiProgressView (1.3.0)
   - nanopb (2.30907.0):
     - nanopb/decode (= 2.30907.0)
     - nanopb/encode (= 2.30907.0)
@@ -391,6 +392,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - Kingfisher
   - Localize-Swift
+  - MultiProgressView
   - PKHUD
   - SwiftyJSON
 
@@ -427,6 +429,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - Localize-Swift
+    - MultiProgressView
     - nanopb
     - PKHUD
     - PromisesObjC
@@ -464,11 +467,12 @@ SPEC CHECKSUMS:
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  MultiProgressView: 65e5bb8181687099ade56d16d85d245a92fafa96
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: a47b68b821f13d1923d2c5bd4cd10aa5a81cea86
+PODFILE CHECKSUM: 3eb2f9b28016f50c23ee16e38d02ceadd0fefa8a
 
 COCOAPODS: 1.10.1

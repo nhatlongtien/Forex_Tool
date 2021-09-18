@@ -59,7 +59,7 @@ class UpdateTransactionViewController: UIViewController {
     //MARK: - Setup
     
     func setupDropDowns(){
-         setupChooseStatusDropDown()
+        setupChooseStatusDropDown()
         setupChooseResultDropDown()
     }
     func setupChooseStatusDropDown(){

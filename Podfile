@@ -21,5 +21,6 @@ pod 'FBSDKLoginKit'
 pod 'FeedKit'
 pod 'Kingfisher'
 pod 'BetterSegmentedControl'
+pod 'MultiProgressView'
     
 end
