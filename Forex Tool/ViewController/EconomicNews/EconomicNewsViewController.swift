@@ -22,7 +22,7 @@ class EconomicNewsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Economic News"
+        self.title = "Economic Calendars"
     }
     //MARK: Helper Method
     func loadWebPage(){

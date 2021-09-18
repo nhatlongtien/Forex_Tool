@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import PKHUD
+import BetterSegmentedControl
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var userNameLbl: UILabel!

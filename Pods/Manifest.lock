@@ -218,6 +218,7 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
+  - BetterSegmentedControl (2.0.1)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -378,6 +379,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BetterSegmentedControl
   - DropDown
   - FBSDKLoginKit
   - FeedKit
@@ -397,6 +399,7 @@ SPEC REPOS:
     - abseil
     - Alamofire
     - AppAuth
+    - BetterSegmentedControl
     - BoringSSL-GRPC
     - DropDown
     - FBAEMKit
@@ -433,6 +436,7 @@ SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FBAEMKit: 7abd022abf6ea7789aa95c527bacc23f966a857c
@@ -465,6 +469,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 5a3c61a15922c86a60b0e6e173e98e50a4f720c2
+PODFILE CHECKSUM: a47b68b821f13d1923d2c5bd4cd10aa5a81cea86
 
 COCOAPODS: 1.10.1
