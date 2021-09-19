@@ -27,11 +27,13 @@ class LongShortRatioViewController: UIViewController {
     //
     var timer:Timer?
     //
+    let footerView = LongShortRatioFooterView()
+    //
     var ratioItem:ExchangeLongShortRatioModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         //
-        self.viewModleCallBack()
+        //self.viewModleCallBack()
         //
         let nibCell = UINib(nibName: "LongShortRatioTableViewCell", bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: "LongShortRatioTableViewCell")
@@ -117,7 +119,7 @@ class LongShortRatioViewController: UIViewController {
     }
     func getListLongShortRatioRealtime(){
         self.getListLongShortRatio()
-        timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true, block: { [self] (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [self] (timer) in
             self.getListLongShortRatio()
         })
     }
@@ -131,12 +133,13 @@ class LongShortRatioViewController: UIViewController {
                 }
                 guard let ratioItem = item else {return}
                 self.ratioItem = ratioItem
+                self.footerView.longShortItem = self.ratioItem
                 tableView.reloadData()
             }
         }
     }
 }
-//MARK:
+//MARK: UITableViewDelegate, UITableViewDataSource
 extension LongShortRatioViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let list = ratioItem?.list {
@@ -152,6 +155,20 @@ extension LongShortRatioViewController:UITableViewDelegate, UITableViewDataSourc
             cell.configCell(item: listItem[indexPath.row])
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return footerView
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 240
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = #colorLiteral(red: 0.9524082541, green: 0.9641407132, blue: 1, alpha: 1)
+        return view
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 55

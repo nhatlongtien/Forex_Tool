@@ -22,5 +22,6 @@ pod 'FeedKit'
 pod 'Kingfisher'
 pod 'BetterSegmentedControl'
 pod 'MultiProgressView'
+pod 'Charts'
     
 end

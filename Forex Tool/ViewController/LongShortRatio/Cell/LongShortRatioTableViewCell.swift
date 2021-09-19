@@ -49,18 +49,20 @@ class LongShortRatioTableViewCell: UITableViewCell {
     func animateSetProgress(_ progressView: MultiProgressView,
                                     firstProgress: Float,
                                     secondProgress: Float) {
-        UIView.animate(withDuration: 0.1,
-                       delay: 0,
-                       options: .curveEaseInOut,
-                       animations: { progressView.setProgress(section: 0, to: firstProgress) },
-                       completion: { _ in
-                        UIView.animate(withDuration: 0.25,
-                                       delay: 0,
-                                       options: .curveEaseInOut,
-                                       animations: { progressView.setProgress(section: 1, to: secondProgress) },
-                                       completion: nil)
-                       })
+//        UIView.animate(withDuration: 0.05,
+//                       delay: 0,
+//                       options: .curveEaseInOut,
+//                       animations: { progressView.setProgress(section: 0, to: firstProgress) },
+//                       completion: { _ in
+//                        UIView.animate(withDuration: 0.25,
+//                                       delay: 0,
+//                                       options: .curveEaseInOut,
+//                                       animations: { progressView.setProgress(section: 1, to: secondProgress) },
+//                                       completion: nil)
+//                       })
         
+        progressView.setProgress(section: 0, to: firstProgress)
+        progressView.setProgress(section: 1, to: secondProgress)
     }
 }
 //MARK:

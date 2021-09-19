@@ -90,6 +90,8 @@
 		38DC122826F59EE900256975 /* LongShortRatioTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC122626F59EE900256975 /* LongShortRatioTableViewCell.xib */; };
 		38DC125A26F5BC4100256975 /* ExchangeLongShortRatioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */; };
 		38DC125D26F5C74600256975 /* LongShortRatioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */; };
+		38DC128B26F6DD7400256975 /* LongShortRatioFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC128A26F6DD7400256975 /* LongShortRatioFooterView.xib */; };
+		38DC129226F6DF3B00256975 /* LongShortRatioFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC129126F6DF3B00256975 /* LongShortRatioFooterView.swift */; };
 		3D2198D65E355CBB603442DD /* Pods_Forex_Tool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7B8772B6A4F58B747FF7C6 /* Pods_Forex_Tool.framework */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +183,8 @@
 		38DC122626F59EE900256975 /* LongShortRatioTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongShortRatioTableViewCell.xib; sourceTree = "<group>"; };
 		38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeLongShortRatioModel.swift; sourceTree = "<group>"; };
 		38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioViewModel.swift; sourceTree = "<group>"; };
+		38DC128A26F6DD7400256975 /* LongShortRatioFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongShortRatioFooterView.xib; sourceTree = "<group>"; };
+		38DC129126F6DF3B00256975 /* LongShortRatioFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioFooterView.swift; sourceTree = "<group>"; };
 		598332932A1693D7BE617DAD /* Pods-Forex Tool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forex Tool.debug.xcconfig"; path = "Target Support Files/Pods-Forex Tool/Pods-Forex Tool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -489,6 +493,7 @@
 		38DC121E26F5891500256975 /* LongShortRatio */ = {
 			isa = PBXGroup;
 			children = (
+				38DC128926F6DD5600256975 /* FooterView */,
 				38DC122426F59EBC00256975 /* Cell */,
 				38DC121F26F5893100256975 /* LongShortRatioViewController.swift */,
 				38DC122026F5893100256975 /* LongShortRatioViewController.xib */,
@@ -503,6 +508,15 @@
 				38DC122626F59EE900256975 /* LongShortRatioTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		38DC128926F6DD5600256975 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				38DC128A26F6DD7400256975 /* LongShortRatioFooterView.xib */,
+				38DC129126F6DF3B00256975 /* LongShortRatioFooterView.swift */,
+			);
+			path = FooterView;
 			sourceTree = "<group>";
 		};
 		5DDA7B0A47E19186E35C0E3D /* Pods */ = {
@@ -615,6 +629,7 @@
 				388719F926F1FDD200DC3F5C /* NewsHeaderView.xib in Resources */,
 				38C7240F26972DAA00E810F9 /* Roboto-MediumItalic.ttf in Resources */,
 				38C7240E26972DAA00E810F9 /* Roboto-Regular.ttf in Resources */,
+				38DC128B26F6DD7400256975 /* LongShortRatioFooterView.xib in Resources */,
 				38C7241326972DAA00E810F9 /* Roboto-Italic.ttf in Resources */,
 				383CA9F2269AA26C00A29E3A /* SettingViewViewController.xib in Resources */,
 				38C7240D26972DAA00E810F9 /* Roboto-Light.ttf in Resources */,
@@ -729,6 +744,7 @@
 				38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */,
 				38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */,
 				38C724DA26980B3600E810F9 /* Constant.swift in Sources */,
+				38DC129226F6DF3B00256975 /* LongShortRatioFooterView.swift in Sources */,
 				38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */,
 				3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */,
 				38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */,
