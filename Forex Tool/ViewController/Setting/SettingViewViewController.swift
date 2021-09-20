@@ -18,14 +18,14 @@ class SettingViewViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         //
-        let firebaseAuth = Auth.auth()
-        do{
-            try firebaseAuth.signOut()
-            print("Dang xuat thanh cong")
-        }catch let error as NSError{
-            print("Error signing out: %@", error)
-            HelperMethod.showAlertWithMessage(message: "Error signing out: \(error.localizedDescription)")
-        }
+//        let firebaseAuth = Auth.auth()
+//        do{
+//            try firebaseAuth.signOut()
+//            print("Dang xuat thanh cong")
+//        }catch let error as NSError{
+//            print("Error signing out: %@", error)
+//            HelperMethod.showAlertWithMessage(message: "Error signing out: \(error.localizedDescription)")
+//        }
     }
 
 

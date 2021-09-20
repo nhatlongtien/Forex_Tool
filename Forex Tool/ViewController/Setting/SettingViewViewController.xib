@@ -1,12 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,8 +26,97 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWp-DF-M8i">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-Xr-weY">
+                            <rect key="frame" x="58" y="10" width="71" height="20"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czD-Tw-PmJ" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
+                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cb7-Yx-ym8">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="Cvt-JN-MBL"/>
+                                        <constraint firstAttribute="height" constant="40" id="wcN-Bf-ghl"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="9eC-8K-lwG"/>
+                                <constraint firstItem="Cb7-Yx-ym8" firstAttribute="top" secondItem="czD-Tw-PmJ" secondAttribute="top" id="CNr-in-RmQ"/>
+                                <constraint firstItem="Cb7-Yx-ym8" firstAttribute="leading" secondItem="czD-Tw-PmJ" secondAttribute="leading" id="JCS-IV-5j7"/>
+                                <constraint firstAttribute="bottom" secondItem="Cb7-Yx-ym8" secondAttribute="bottom" id="OqJ-Oe-NSk"/>
+                                <constraint firstAttribute="trailing" secondItem="Cb7-Yx-ym8" secondAttribute="trailing" id="YIE-FZ-THv"/>
+                                <constraint firstAttribute="width" constant="40" id="fVo-MW-uaw"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="radious">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hw-ij-fs7">
+                            <rect key="frame" x="58" y="32" width="42" height="20"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI2-FF-RH4">
+                            <rect key="frame" x="340" y="17.5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="IGo-4b-MOz"/>
+                                <constraint firstAttribute="height" constant="25" id="cIS-DM-7MV"/>
+                            </constraints>
+                            <state key="normal" image="logOutIcon"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.043137254901960784" green="0.12941176470588234" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="5hw-ij-fs7" firstAttribute="top" secondItem="4Sg-Xr-weY" secondAttribute="bottom" constant="2" id="Eit-dC-KTh"/>
+                        <constraint firstItem="4Sg-Xr-weY" firstAttribute="leading" secondItem="czD-Tw-PmJ" secondAttribute="trailing" constant="8" id="GBa-WL-Opd"/>
+                        <constraint firstAttribute="trailing" secondItem="HI2-FF-RH4" secondAttribute="trailing" constant="10" id="NhG-Y4-zdZ"/>
+                        <constraint firstAttribute="bottom" secondItem="czD-Tw-PmJ" secondAttribute="bottom" constant="10" id="QtL-Aq-jKy"/>
+                        <constraint firstAttribute="height" constant="60" id="c1X-4y-T9Y"/>
+                        <constraint firstItem="czD-Tw-PmJ" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="top" constant="10" id="iDu-QL-M1z"/>
+                        <constraint firstItem="4Sg-Xr-weY" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="top" constant="10" id="j9T-lT-Li7"/>
+                        <constraint firstItem="5hw-ij-fs7" firstAttribute="leading" secondItem="czD-Tw-PmJ" secondAttribute="trailing" constant="8" id="od0-Up-UDV"/>
+                        <constraint firstItem="HI2-FF-RH4" firstAttribute="centerY" secondItem="TWp-DF-M8i" secondAttribute="centerY" id="pu6-D1-RLS"/>
+                        <constraint firstItem="czD-Tw-PmJ" firstAttribute="leading" secondItem="TWp-DF-M8i" secondAttribute="leading" constant="10" id="wZT-WG-naq"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76R-05-5kv">
+                    <rect key="frame" x="15" y="80" width="68" height="20"/>
+                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="17"/>
+                    <color key="textColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TWp-DF-M8i" secondAttribute="trailing" id="1Z0-va-uCD"/>
+                <constraint firstItem="TWp-DF-M8i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MBO-Xl-iPn"/>
+                <constraint firstItem="TWp-DF-M8i" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lqW-Bq-Nlv"/>
+                <constraint firstItem="76R-05-5kv" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="bottom" constant="20" id="vDi-0E-bY7"/>
+                <constraint firstItem="76R-05-5kv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="xSQ-j2-y8x"/>
+            </constraints>
+            <point key="canvasLocation" x="-197.59999999999999" y="63.418290854572717"/>
         </view>
     </objects>
+    <resources>
+        <image name="logOutIcon" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
