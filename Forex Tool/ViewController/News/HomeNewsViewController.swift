@@ -16,6 +16,7 @@ class HomeNewsViewController: UIViewController {
     let homeNewsVM = HomeNewsViewModel()
     var listNews:[NewsItem] = []
     var titleString:String? = Constant.listTabNews.first
+    var newsLinkRSSFeed:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -38,6 +39,8 @@ class HomeNewsViewController: UIViewController {
         tableView.dataSource = self
         //
         headerView.delegate = self
+        //
+        self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,13 +48,13 @@ class HomeNewsViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.title = "News"
         //
-        self.homeNewsVM.getRSSFeed(urlString: "https://vn.investing.com/rss/news_301.rss") { (success, listNews) in
-            if success{
-                guard let news = listNews else {return}
-                self.listNews = news
-            }
-        }
-        self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
+//        self.homeNewsVM.getRSSFeed(urlString: "https://vn.investing.com/rss/news_301.rss") { (success, listNews) in
+//            if success{
+//                guard let news = listNews else {return}
+//                self.listNews = news
+//            }
+//        }
+//        self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
     }
     //MARK: Helper Method
     func getListNews(url:String){

@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         viewModelCallBack() //goi de show progressview
         //
-        
+        GIDSignIn.sharedInstance()?.delegate = self
         
     }
 
@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
     @IBAction func googleButtonWasPressed(_ sender: Any) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
+
         
     }
     @IBAction func facebookButtonWasPressed(_ sender: Any) {
@@ -135,6 +136,58 @@ class LoginViewController: UIViewController {
         authVM.afterApiCall = {
             HUD.hide()
         }
+    }
+}
+//MARK:
+extension LoginViewController:GIDSignInDelegate{
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+      // ...
+      if let error = error {
+        // ...
+        return
+      }
+
+      guard let authentication = user.authentication else { return }
+      let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                     accessToken: authentication.accessToken)
+      // Dang nhap bang credential
+        HUD.show(.systemActivity)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let err = error{
+                HelperMethod.showAlertWithMessage(message: err.localizedDescription ?? "")
+            }else{
+                //Dang nhap thanh cong -> check ton tai hay khoong -> Luu thong tin nguoi dung len firebase
+                Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
+                //Check user is exsit
+                
+                var ref: DocumentReference? = nil
+                let db = Firestore.firestore()
+                let docRef = db.collection("users").whereField("uid", isEqualTo: authResult?.user.uid).getDocuments { [self] (result, error) in
+                    if result?.documents.count == 0{
+                        ref = db.collection("users").addDocument(data: [
+                            "fullName" : user.profile.name,
+                            "email": user.profile.email,
+                            "phoneNumber":nil,
+                            "address":nil,
+                            "uid": authResult?.user.uid
+                        ], completion: { [self] (error) in
+                            if let err = error{
+                                HelperMethod.showAlertWithMessage(message: err.localizedDescription
+                                 ?? "")
+                            }else{
+                                //luu thanh cong -> Di den dashboard
+                                HUD.hide()
+                                HelperMethod.setRootToDashboardVC()
+                            }
+                        })
+                    }else{
+                        HUD.hide()
+                        HelperMethod.setRootToDashboardVC()
+                    }
+                }
+            }
+        }
+        print("User email: \(user.profile.email ?? "No Email")")
     }
 }
 

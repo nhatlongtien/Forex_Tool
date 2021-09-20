@@ -70,6 +70,10 @@ class HelperMethod{
         appDelegate?.window?.rootViewController = navController
         
     }
+    static func setRootToViewControler(targetVC:UIViewController){
+        let navController = UINavigationController(rootViewController: targetVC)
+        appDelegate?.window?.rootViewController = navController
+    }
     
 }
 

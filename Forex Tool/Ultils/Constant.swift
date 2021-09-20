@@ -11,6 +11,7 @@ class Constant{
     static var USER_ID:String = "USER_ID"
     static var CRYPTO_KEY = "CRYPTO_KEY"
     static var PERIOD_TIME_KEY = "PERIOD_TIME_KEY"
+    static var METHOD_LOG_IN_KEY = "METHOD_LOGIN_KEY"
     static let defaults = UserDefaults.standard
     static let listCurrency:[CurrencyModel] = [
         CurrencyModel(name: "AUDCAD", currency: "USD", group: "XXX_XXX", id: "001", fromCurrency: "AUD", toCururrency: "CAD"),

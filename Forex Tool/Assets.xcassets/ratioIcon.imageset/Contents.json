@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "editProfileIcon.png",
+      "filename" : "icons8-ratio-90.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "editProfileIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "editProfileIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
