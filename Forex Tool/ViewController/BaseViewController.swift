@@ -13,6 +13,9 @@ class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9529411765, green: 0.9647058824, blue: 1, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.06274509804, green: 0, blue: 0.2117647059, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font:UIFont(name: "Roboto-Medium", size: 14), NSAttributedString.Key.foregroundColor:UIColor(red: 16/255, green: 0/255, blue: 54/255, alpha: 1)]
     }
     
 

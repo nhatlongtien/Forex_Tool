@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 enum CurrencyGroup:String{
     case XXX_USD = "XXX_USD"
     case USD_XXX = "USD_XXX"
@@ -53,3 +54,48 @@ enum MethodLoginType:String{
     case facebook = "Facebook"
     case email_password = "Email_Password"
 }
+enum TabItem:String, CaseIterable{
+    case home = "Home"
+    case manageTransaction = "Transactions"
+    case ecomomicNew = "Ecomomic News"
+    case caculationTool = "Calculation"
+    case profile = "Profile"
+    
+    var viewController:UIViewController{
+        switch self {
+        case .home:
+            return DashboardViewController()
+        case .ecomomicNew:
+            return HomeNewsViewController()
+        case .manageTransaction:
+            return ManageTransactionViewController()
+        case .profile:
+            return ProfileViewController()
+        case .caculationTool:
+            return CalculationToolViewController()
+        default:
+            break
+        }
+    }
+    
+    var icon:UIImage{
+        switch self {
+        case .home:
+            return UIImage(named: "homeIcon")!
+        case .caculationTool:
+            return UIImage(named: "calculationIcon")!
+        case .ecomomicNew:
+            return UIImage(named: "newsIcon")!
+        case .manageTransaction:
+            return UIImage(named: "listIcon")!
+        case .profile:
+            return UIImage(named: "profileIcon")!
+        default:
+            break
+        }
+    }
+    var displayTitle:String{
+        return self.rawValue.capitalized(with: nil)
+    }
+}
+

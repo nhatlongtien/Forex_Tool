@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 import PKHUD
-class SettingViewViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
@@ -22,6 +22,7 @@ class SettingViewViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        Constant.isInTabBarControll = false
         //
         
         self.getUserInfoAndUpdateUI()

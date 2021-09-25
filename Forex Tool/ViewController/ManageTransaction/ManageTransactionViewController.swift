@@ -7,7 +7,7 @@
 
 import UIKit
 import PKHUD
-class ManageTransactionViewController: UIViewController {
+class ManageTransactionViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     //
@@ -25,17 +25,16 @@ class ManageTransactionViewController: UIViewController {
         tableView.dataSource = self
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-        self.title = "Manager Transaction"
+//        self.navigationController?.navigationBar.isHidden = false
+//        self.title = "Manager Transaction"
+        if Constant.isInTabBarControll == true{
+            self.navigationController?.navigationBar.isHidden = true
+            Constant.isInTabBarControll = false
+        }else{
+            self.navigationController?.navigationBar.isHidden = false
+            self.title = "Manager Transaction"
+        }
         //
-//        dashboardVM.getListTransaction(isFillter: false, fromDate: nil, toDate: nil, statusTransaction: nil, resultTransaction: nil) { (succsess, response) in
-//            if succsess{
-//                print(response?.count)
-//                guard let list = response else {return}
-//                self.listTransaction = list
-//                self.tableView.reloadData()
-//            }
-//        }
         self.callAPIToGetListTransaction(filterObject: self.filterObject)
     }
     //MARK: Helper Method

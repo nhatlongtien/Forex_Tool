@@ -45,8 +45,13 @@ class HomeNewsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.navigationBar.isHidden = false
-        self.title = "News"
+        if Constant.isInTabBarControll == true{
+            self.navigationController?.navigationBar.isHidden = true
+            Constant.isInTabBarControll = false
+        }else{
+            self.navigationController?.navigationBar.isHidden = false
+            self.title = "News"
+        }
         //
 //        self.homeNewsVM.getRSSFeed(urlString: "https://vn.investing.com/rss/news_301.rss") { (success, listNews) in
 //            if success{

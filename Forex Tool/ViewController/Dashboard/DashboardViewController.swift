@@ -61,6 +61,7 @@ class DashboardViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        Constant.isInTabBarControll = false
         //Get listActiveTransaction
         self.listActiveTransaction = []
         dashboardVM.getListTransaction(isFillter: true, fromDate: nil, toDate: nil, statusTransaction: "Active", resultTransaction: nil) { [self] (success, response) in

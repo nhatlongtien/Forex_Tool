@@ -17,12 +17,15 @@
 		383B605B26FD6A1E002AA0C9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B605926FD6A1E002AA0C9 /* EditProfileViewController.swift */; };
 		383B605C26FD6A1E002AA0C9 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383B605A26FD6A1E002AA0C9 /* EditProfileViewController.xib */; };
 		383B605F26FD7CCC002AA0C9 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */; };
+		383B606426FF10F6002AA0C9 /* CalculationToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B606226FF10F5002AA0C9 /* CalculationToolViewController.swift */; };
+		383B606526FF10F6002AA0C9 /* CalculationToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383B606326FF10F5002AA0C9 /* CalculationToolViewController.xib */; };
+		383B606A26FF195A002AA0C9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B606926FF195A002AA0C9 /* CustomTabBar.swift */; };
 		383CA9E6269AA1BE00A29E3A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CA9E4269AA1BE00A29E3A /* DashboardViewController.swift */; };
 		383CA9E7269AA1BE00A29E3A /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CA9E5269AA1BE00A29E3A /* DashboardViewController.xib */; };
 		383CA9EB269AA1DF00A29E3A /* CreateTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CA9E9269AA1DF00A29E3A /* CreateTransactionViewController.swift */; };
 		383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CA9EA269AA1DF00A29E3A /* CreateTransactionViewController.xib */; };
-		383CA9F1269AA26C00A29E3A /* SettingViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CA9EF269AA26C00A29E3A /* SettingViewViewController.swift */; };
-		383CA9F2269AA26C00A29E3A /* SettingViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CA9F0269AA26C00A29E3A /* SettingViewViewController.xib */; };
+		383CA9F1269AA26C00A29E3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CA9EF269AA26C00A29E3A /* ProfileViewController.swift */; };
+		383CA9F2269AA26C00A29E3A /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CA9F0269AA26C00A29E3A /* ProfileViewController.xib */; };
 		383CA9F7269AA2BA00A29E3A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CA9F5269AA2BA00A29E3A /* TabBarViewController.swift */; };
 		383CA9F8269AA2BA00A29E3A /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CA9F6269AA2BA00A29E3A /* TabBarViewController.xib */; };
 		383CAA08269AAEAE00A29E3A /* HistoryTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAA06269AAEAE00A29E3A /* HistoryTransactionViewController.swift */; };
@@ -116,12 +119,15 @@
 		383B605926FD6A1E002AA0C9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		383B605A26FD6A1E002AA0C9 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		383B606226FF10F5002AA0C9 /* CalculationToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationToolViewController.swift; sourceTree = "<group>"; };
+		383B606326FF10F5002AA0C9 /* CalculationToolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculationToolViewController.xib; sourceTree = "<group>"; };
+		383B606926FF195A002AA0C9 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		383CA9E4269AA1BE00A29E3A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		383CA9E5269AA1BE00A29E3A /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
 		383CA9E9269AA1DF00A29E3A /* CreateTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionViewController.swift; sourceTree = "<group>"; };
 		383CA9EA269AA1DF00A29E3A /* CreateTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTransactionViewController.xib; sourceTree = "<group>"; };
-		383CA9EF269AA26C00A29E3A /* SettingViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewViewController.swift; sourceTree = "<group>"; };
-		383CA9F0269AA26C00A29E3A /* SettingViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewViewController.xib; sourceTree = "<group>"; };
+		383CA9EF269AA26C00A29E3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		383CA9F0269AA26C00A29E3A /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		383CA9F5269AA2BA00A29E3A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		383CA9F6269AA2BA00A29E3A /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		383CAA06269AAEAE00A29E3A /* HistoryTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTransactionViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +262,15 @@
 			path = EditProfile;
 			sourceTree = "<group>";
 		};
+		383B606126FF10D8002AA0C9 /* CalculationTool */ = {
+			isa = PBXGroup;
+			children = (
+				383B606226FF10F5002AA0C9 /* CalculationToolViewController.swift */,
+				383B606326FF10F5002AA0C9 /* CalculationToolViewController.xib */,
+			);
+			path = CalculationTool;
+			sourceTree = "<group>";
+		};
 		383CA9E1269AA14400A29E3A /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,8 +296,8 @@
 		383CA9EE269AA25700A29E3A /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				383CA9EF269AA26C00A29E3A /* SettingViewViewController.swift */,
-				383CA9F0269AA26C00A29E3A /* SettingViewViewController.xib */,
+				383CA9EF269AA26C00A29E3A /* ProfileViewController.swift */,
+				383CA9F0269AA26C00A29E3A /* ProfileViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -416,6 +431,7 @@
 		38C723E826969D0800E810F9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				383B606126FF10D8002AA0C9 /* CalculationTool */,
 				383B605826FD69F7002AA0C9 /* EditProfile */,
 				38DC12E626F8CDF200256975 /* PodupView */,
 				38DC121E26F5891500256975 /* LongShortRatio */,
@@ -431,6 +447,7 @@
 				383CA9F5269AA2BA00A29E3A /* TabBarViewController.swift */,
 				383CA9F6269AA2BA00A29E3A /* TabBarViewController.xib */,
 				387DE88726F9D5E90074E6E4 /* BaseViewController.swift */,
+				383B606926FF195A002AA0C9 /* CustomTabBar.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -665,6 +682,7 @@
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
 				383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */,
 				38B0C4F3269D8181009D968C /* ListPairCurrencyTableViewCell.xib in Resources */,
+				383B606526FF10F6002AA0C9 /* CalculationToolViewController.xib in Resources */,
 				388719FE26F2E1C900DC3F5C /* NewsTableViewCell.xib in Resources */,
 				380B251426F1974E00474396 /* index.html in Resources */,
 				3851DB1826A3CEF6008769B0 /* ManagerTransactionTableViewCell.xib in Resources */,
@@ -673,7 +691,7 @@
 				38C7240E26972DAA00E810F9 /* Roboto-Regular.ttf in Resources */,
 				38DC128B26F6DD7400256975 /* LongShortRatioFooterView.xib in Resources */,
 				38C7241326972DAA00E810F9 /* Roboto-Italic.ttf in Resources */,
-				383CA9F2269AA26C00A29E3A /* SettingViewViewController.xib in Resources */,
+				383CA9F2269AA26C00A29E3A /* ProfileViewController.xib in Resources */,
 				383B605C26FD6A1E002AA0C9 /* EditProfileViewController.xib in Resources */,
 				38C7240D26972DAA00E810F9 /* Roboto-Light.ttf in Resources */,
 				38C7241526972DAA00E810F9 /* Roboto-Bold.ttf in Resources */,
@@ -758,7 +776,7 @@
 				383CA9E6269AA1BE00A29E3A /* DashboardViewController.swift in Sources */,
 				383B605F26FD7CCC002AA0C9 /* EditProfileViewModel.swift in Sources */,
 				38871A5826F4585D00DC3F5C /* DetailNewsViewController.swift in Sources */,
-				383CA9F1269AA26C00A29E3A /* SettingViewViewController.swift in Sources */,
+				383CA9F1269AA26C00A29E3A /* ProfileViewController.swift in Sources */,
 				383CAA0F269B387D00A29E3A /* ActiveTransactionCollectionViewCell.swift in Sources */,
 				380B251926F1D0F500474396 /* HomeNewsViewController.swift in Sources */,
 				383CA9EB269AA1DF00A29E3A /* CreateTransactionViewController.swift in Sources */,
@@ -780,6 +798,7 @@
 				38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */,
 				38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */,
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
+				383B606426FF10F6002AA0C9 /* CalculationToolViewController.swift in Sources */,
 				38871A2A26F3251200DC3F5C /* HomeNewsViewModel.swift in Sources */,
 				38C723FC26969FB100E810F9 /* WellcomeViewController.swift in Sources */,
 				380B247126ECAD1900474396 /* DropDown.swift in Sources */,
@@ -788,6 +807,7 @@
 				38B0C4F6269D879D009D968C /* ListPairCurrencyViewModel.swift in Sources */,
 				38C7244A2697596000E810F9 /* String Extension.swift in Sources */,
 				388719EF26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift in Sources */,
+				383B606A26FF195A002AA0C9 /* CustomTabBar.swift in Sources */,
 				38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */,
 				38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */,
 				38C724DA26980B3600E810F9 /* Constant.swift in Sources */,
