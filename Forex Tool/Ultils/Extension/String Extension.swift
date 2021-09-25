@@ -19,6 +19,22 @@ extension String{
         let passwordPred = NSPredicate(format:"SELF MATCHES %@", passwordRegEX)
         return passwordPred.evaluate(with: self)
     }
+    //Validate phone number
+    func isValidatePhoneNumber() -> Bool{
+        let phoneNumberRegEx = "[0-9]{6,20}"
+        let phoneNumberPred = NSPredicate(format: "SELF MATCHES %@", phoneNumberRegEx)
+        return phoneNumberPred.evaluate(with: self)
+    }
+    //Validate full name
+    func isValidateFullName() ->Bool{
+        let nameRegEx = "[a-zA-ZàáãạảăắằẳẵặâấầẩẫậèéẹẻẽêềếểễệđìíĩỉịòóõọỏôốồổỗộơớờởỡợùúũụủưứừửữựỳỵỷỹýÀÁÃẠẢĂẮẰẲẴẶÂẤẦẨẪẬÈÉẸẺẼÊỀẾỂỄỆĐÌÍĨỈỊÒÓÕỌỎÔỐỒỔỖỘƠỚỜỞỠỢÙÚŨỤỦƯỨỪỬỮỰỲỴỶỸÝ\\s]*"
+        let namePred = NSPredicate(format:"SELF MATCHES %@", nameRegEx)
+        if self.count >= 6 && self.count <= 50 && namePred.evaluate(with: self){
+            return true
+        }else{
+            return false
+        }
+    }
     //
     //Divide string into equal parts (reading: from right to left)
     func split(by length:Int) -> [Substring] {

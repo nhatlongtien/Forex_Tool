@@ -76,30 +76,19 @@ class LoginViewController: UIViewController {
                     //Sign in successfully
                     Constant.defaults.setValue(user?.user.uid, forKey: Constant.USER_ID)
                     //check user is existing or not, if existing let save the info to user table
-                    
-                    var ref: DocumentReference? = nil
-                    let db = Firestore.firestore()
-                    let docRef = db.collection("users").whereField("uid", isEqualTo: user?.user.uid).getDocuments { [self] (result, error) in
-                        if result?.documents.count == 0{
-                            ref = db.collection("users").addDocument(data: [
-                                "fullName" : user?.user.displayName,
-                                "email": user?.user.email,
-                                "phoneNumber":user?.user.phoneNumber,
-                                "address":nil,
-                                "uid": user?.user.uid
-                            ], completion: { [self] (error) in
-                                if let err = error{
-                                    HelperMethod.showAlertWithMessage(message: err.localizedDescription
-                                     ?? "")
-                                }else{
-                                    //luu thanh cong -> Di den dashboard
-                                    HUD.hide()
-                                    HelperMethod.setRootToDashboardVC()
-                                }
-                            })
-                        }else{
-                            HUD.hide()
+                    self.checkUserExit(userUid: (user?.user.uid)!) { (isExit) in
+                        if isExit == true{
+                            //User exit -> go to dashboard
                             HelperMethod.setRootToDashboardVC()
+                        }else{
+                            //User is not exit -> go to add info popup
+                            let targetVC = AddPersonalInfoPoupViewController()
+                            targetVC.modalPresentationStyle = .custom
+                            targetVC.email = user?.user.email
+                            targetVC.fullName = user?.user.displayName
+                            targetVC.userUid = user?.user.uid
+                            targetVC.methodLogin = MethodLoginType.facebook.rawValue
+                            self.present(targetVC, animated: true, completion: nil)
                         }
                     }
                 }
@@ -129,6 +118,21 @@ class LoginViewController: UIViewController {
         }
         return true
     }
+    func checkUserExit(userUid:String, completionHandler:@escaping(_ isExit:Bool) -> Void){
+        var ref: DocumentReference? = nil
+        let db = Firestore.firestore()
+        HUD.show(.systemActivity)
+        let docRef = db.collection("users").whereField("uid", isEqualTo: userUid).getDocuments { [self] (result, error) in
+            if result?.documents.count == 0{
+                //Khong ton tai
+                completionHandler(false)
+            }else{
+                HUD.hide()
+                //HelperMethod.setRootToDashboardVC()
+                completionHandler(true)
+            }
+        }
+    }
     private func viewModelCallBack() {
         authVM.beforeApiCall = {
             HUD.show(.systemActivity)
@@ -156,33 +160,23 @@ extension LoginViewController:GIDSignInDelegate{
             if let err = error{
                 HelperMethod.showAlertWithMessage(message: err.localizedDescription ?? "")
             }else{
-                //Dang nhap thanh cong -> check ton tai hay khoong -> Luu thong tin nguoi dung len firebase
+                //Dang nhap thanh cong
                 Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
                 //Check user is exsit
                 
-                var ref: DocumentReference? = nil
-                let db = Firestore.firestore()
-                let docRef = db.collection("users").whereField("uid", isEqualTo: authResult?.user.uid).getDocuments { [self] (result, error) in
-                    if result?.documents.count == 0{
-                        ref = db.collection("users").addDocument(data: [
-                            "fullName" : user.profile.name,
-                            "email": user.profile.email,
-                            "phoneNumber":nil,
-                            "address":nil,
-                            "uid": authResult?.user.uid
-                        ], completion: { [self] (error) in
-                            if let err = error{
-                                HelperMethod.showAlertWithMessage(message: err.localizedDescription
-                                 ?? "")
-                            }else{
-                                //luu thanh cong -> Di den dashboard
-                                HUD.hide()
-                                HelperMethod.setRootToDashboardVC()
-                            }
-                        })
-                    }else{
-                        HUD.hide()
+                self.checkUserExit(userUid: (authResult?.user.uid)!) { (isExit) in
+                    if isExit == true{
+                        //User exit -> go to dashboard
                         HelperMethod.setRootToDashboardVC()
+                    }else{
+                        //User is not exit -> go to add info popup
+                        let targetVC = AddPersonalInfoPoupViewController()
+                        targetVC.modalPresentationStyle = .custom
+                        targetVC.email = user.profile.email
+                        targetVC.fullName = user.profile.name
+                        targetVC.userUid = authResult?.user.uid
+                        targetVC.methodLogin = MethodLoginType.gmail.rawValue
+                        self.present(targetVC, animated: true, completion: nil)
                     }
                 }
             }

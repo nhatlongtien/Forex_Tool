@@ -138,4 +138,23 @@ class DashboardViewModel{
             }
         }
     }
+    //
+    func getUserInfoByUserID(userID:String, completionHandler:@escaping(_ result:Bool,_ userInfo:UserModel?) -> Void){
+        var ref: DocumentReference? = nil
+        let db = Firestore.firestore()
+        beforeApiCall?()
+        let docRef = db.collection("users").whereField("uid", isEqualTo: userID).getDocuments { [self] (result, error) in
+            if let error = error{
+                print("Error getting documents: \(error)")
+                HelperMethod.showAlertWithMessage(message: "Error getting documents: \(error)")
+                completionHandler(false, nil)
+            }else{
+                let user = result?.documents.first?.data()
+                guard let userJson = JSON(rawValue: user) else {return}
+                let userReturn = UserModel(json: userJson, documentID: result?.documents.first?.documentID)
+                completionHandler(true, userReturn)
+            }
+            afterApiCall?()
+        }
+    }
 }

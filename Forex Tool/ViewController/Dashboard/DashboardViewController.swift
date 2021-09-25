@@ -13,6 +13,7 @@ import BetterSegmentedControl
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var activeTransactionCollectionView: UICollectionView!
     @IBOutlet weak var emptyTransactionView: CustomeBoderRadiusView!
     @IBOutlet weak var durationTimeSegment: UISegmentedControl!
@@ -47,7 +48,10 @@ class DashboardViewController: UIViewController {
         activeTransactionCollectionView.delegate = self
         activeTransactionCollectionView.dataSource = self
         //
-        self.userNameLbl.text = user?.displayName
+        //self.userNameLbl.text = user?.displayName
+        avatarImg.layer.cornerRadius = 15
+        avatarImg.clipsToBounds = true
+        self.getUserInfoAndUpdateUI()
         //
         self.setupDurationTimeDefault()
         //
@@ -176,6 +180,17 @@ class DashboardViewController: UIViewController {
                     totalAmountMoneyLbl.text = "0.00$"
                     icImageView.image = UIImage(named: "growingMoneyIcon")
                 }
+            }
+        }
+    }
+    //
+    func getUserInfoAndUpdateUI(){
+        guard let uid = Constant.defaults.string(forKey: Constant.USER_ID) else {return}
+        print(uid)
+        dashboardVM.getUserInfoByUserID(userID: uid) { (success, userInfo) in
+            self.userNameLbl.text = userInfo?.fullName?.capitalized
+            if let urlImage = userInfo?.avatarImg{
+                self.avatarImg.kf.setImage(with: URL(string: urlImage))
             }
         }
     }

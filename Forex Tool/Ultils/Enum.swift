@@ -48,3 +48,8 @@ enum NewsLinkRSSFeed:String{
     case economic = "https://vn.investing.com/rss/news_14.rss"
     case world = "https://vn.investing.com/rss/news_287.rss"
 }
+enum MethodLoginType:String{
+    case gmail = "Gmail"
+    case facebook = "Facebook"
+    case email_password = "Email_Password"
+}

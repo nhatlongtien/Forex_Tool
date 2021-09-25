@@ -46,6 +46,7 @@ class UpdateTransactionViewController: UIViewController {
     }
     @IBAction func updateBtnWasPressed(_ sender: Any) {
         guard let transactionID = transactionID else {return}
+        print(transactionID)
         updateTransactionVM.updateTransactionByID(transactionID: transactionID, statusTransaction: statusStr!, resultTransaction: resultStr!) { (success) in
             if success{
                 self.dismiss(animated: true, completion: nil)

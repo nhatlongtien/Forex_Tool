@@ -37,10 +37,10 @@ class NewsTableViewCell: UITableViewCell {
         if delta <= 86400 {
             let hours = Int(delta/3600)
             let minutes = (Int(delta) - hours*60*60)/60
-            if hours == 0 {
+            if hours - 7 == 0 {
                 self.puplicDateLbl.text = "\(minutes) Phút trước"
             }else{
-                self.puplicDateLbl.text = "\(hours) Giờ trước"
+                self.puplicDateLbl.text = "\(hours - 7) Giờ trước"
             }
         }else{
             let publicDateStr = item.pubdate?.dateToString(format: DateformatterType.DD_MMMM.rawValue)

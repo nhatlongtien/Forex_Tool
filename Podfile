@@ -23,5 +23,5 @@ pod 'Kingfisher'
 pod 'BetterSegmentedControl'
 pod 'MultiProgressView'
 pod 'Charts'
-    
+pod 'Firebase/Storage'
 end

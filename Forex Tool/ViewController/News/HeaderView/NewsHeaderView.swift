@@ -51,10 +51,10 @@ class NewsHeaderView: UIView {
         if delta <= 86400 {
             let hours = Int(delta/3600)
             let minutes = (Int(delta) - hours*60*60)/60
-            if hours == 0 {
+            if hours - 7 == 0 {
                 self.publicDateLbl.text = "\(minutes) Phút trước"
             }else{
-                self.publicDateLbl.text = "\(hours) Giờ trước"
+                self.publicDateLbl.text = "\(hours - 7) Giờ trước"
             }
         }else{
             let publicDateStr = item.pubdate?.dateToString(format: DateformatterType.DD_MMMM.rawValue)
