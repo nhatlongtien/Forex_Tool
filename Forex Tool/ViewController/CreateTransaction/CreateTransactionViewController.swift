@@ -281,6 +281,8 @@ class CreateTransactionViewController: UIViewController {
         case "XXX_JPY":
             if pairCurrency.name?.contains("USD") == true{ // Nếu XXX là USD thì trường hợp này quay về cách tính của trường hợp 2 (cặp tiền có USD đứng trước), lúc này, 1 pip = ( 0.01/tỷ giá) USD
                 valuePip = (0.01/mainPrice!)*100000
+                self.valueOfPip = valuePip
+                self.valuePipsLbl.text = (self.valueOfPip?.formaterValueOfPips())! + "$"
             }else{ //Nếu XXX không phải là USD thì sẽ quy về cách tính của trường hợp 3 (cặp tiền chéo không có USD) 1 pip = [(0.01/tỷ giá chính)*tỷ giá phụ] USD
                 createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { [self] (success, price) in
                     if success{

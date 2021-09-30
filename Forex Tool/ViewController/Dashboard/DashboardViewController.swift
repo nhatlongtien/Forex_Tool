@@ -88,11 +88,13 @@ class DashboardViewController: UIViewController {
     }
     @IBAction func manageTransactionWasPressed(_ sender: Any) {
         let targetVC = ManageTransactionViewController()
+        targetVC.isFromTabbar = false
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
     @IBAction func economicNewsButtonWasPressed(_ sender: Any) {
         let targetVC = HomeNewsViewController()
+        targetVC.isFromTabbar = false
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     

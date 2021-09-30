@@ -19,7 +19,7 @@ class CreateTransactionViewModel{
             "x-rapidapi-key": "3aff843c44mshd2b866f2161df8dp117262jsna49992b54c29",
             "x-rapidapi-host": "currency-exchange.p.rapidapi.com"
         ]
-        beforeApiCall!()
+        beforeApiCall?()
         AF.request("https://currency-exchange.p.rapidapi.com/exchange?to=\(toCurrency)&from=\(fromCurrency)&q=1.0", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             switch response.result{
             case .success(let value):
@@ -29,7 +29,7 @@ class CreateTransactionViewModel{
                 HelperMethod.showAlertWithMessage(message: error.localizedDescription ?? "")
                 completionHandler(false, nil)
             }
-            self.afterApiCall!()
+            self.afterApiCall?()
         }
     }
 }

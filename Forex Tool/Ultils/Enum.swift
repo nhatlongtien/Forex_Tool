@@ -72,7 +72,7 @@ enum TabItem:String, CaseIterable{
         case .profile:
             return ProfileViewController()
         case .caculationTool:
-            return CalculationToolViewController()
+            return HomeCalculationViewController()
         default:
             break
         }

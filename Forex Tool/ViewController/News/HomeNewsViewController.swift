@@ -17,6 +17,7 @@ class HomeNewsViewController: UIViewController {
     var listNews:[NewsItem] = []
     var titleString:String? = Constant.listTabNews.first
     var newsLinkRSSFeed:String?
+    var isFromTabbar:Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -45,10 +46,8 @@ class HomeNewsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if Constant.isInTabBarControll == true{
-            self.navigationController?.navigationBar.isHidden = true
-            Constant.isInTabBarControll = false
-        }else{
+        self.navigationController?.navigationBar.isHidden = true
+        if isFromTabbar == false{
             self.navigationController?.navigationBar.isHidden = false
             self.title = "News"
         }

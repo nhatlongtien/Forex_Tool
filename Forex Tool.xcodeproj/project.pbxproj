@@ -17,8 +17,8 @@
 		383B605B26FD6A1E002AA0C9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B605926FD6A1E002AA0C9 /* EditProfileViewController.swift */; };
 		383B605C26FD6A1E002AA0C9 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383B605A26FD6A1E002AA0C9 /* EditProfileViewController.xib */; };
 		383B605F26FD7CCC002AA0C9 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */; };
-		383B606426FF10F6002AA0C9 /* CalculationToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B606226FF10F5002AA0C9 /* CalculationToolViewController.swift */; };
-		383B606526FF10F6002AA0C9 /* CalculationToolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383B606326FF10F5002AA0C9 /* CalculationToolViewController.xib */; };
+		383B606426FF10F6002AA0C9 /* ProfitCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B606226FF10F5002AA0C9 /* ProfitCalculatorViewController.swift */; };
+		383B606526FF10F6002AA0C9 /* ProfitCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383B606326FF10F5002AA0C9 /* ProfitCalculatorViewController.xib */; };
 		383B606A26FF195A002AA0C9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B606926FF195A002AA0C9 /* CustomTabBar.swift */; };
 		383CA9E6269AA1BE00A29E3A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CA9E4269AA1BE00A29E3A /* DashboardViewController.swift */; };
 		383CA9E7269AA1BE00A29E3A /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CA9E5269AA1BE00A29E3A /* DashboardViewController.xib */; };
@@ -41,6 +41,12 @@
 		38551FD026A2CA9600FFC1D2 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38551FCF26A2CA9600FFC1D2 /* TransactionModel.swift */; };
 		38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */; };
 		387DE88826F9D5E90074E6E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DE88726F9D5E90074E6E4 /* BaseViewController.swift */; };
+		3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */; };
+		3886C9F02702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */; };
+		3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */; };
+		3886C9F92703467900C834B3 /* HomeCalculationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C9F72703467900C834B3 /* HomeCalculationViewController.xib */; };
+		3886C9FE270406B400C834B3 /* PipValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9FC270406B300C834B3 /* PipValueViewController.swift */; };
+		3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C9FD270406B300C834B3 /* PipValueViewController.xib */; };
 		388719EF26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388719ED26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift */; };
 		388719F026F1EECD00DC3F5C /* TypeNewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 388719EE26F1EECD00DC3F5C /* TypeNewCollectionViewCell.xib */; };
 		388719F526F1FDBC00DC3F5C /* NewsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388719F426F1FDBC00DC3F5C /* NewsHeaderView.swift */; };
@@ -119,8 +125,8 @@
 		383B605926FD6A1E002AA0C9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		383B605A26FD6A1E002AA0C9 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
-		383B606226FF10F5002AA0C9 /* CalculationToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationToolViewController.swift; sourceTree = "<group>"; };
-		383B606326FF10F5002AA0C9 /* CalculationToolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculationToolViewController.xib; sourceTree = "<group>"; };
+		383B606226FF10F5002AA0C9 /* ProfitCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitCalculatorViewController.swift; sourceTree = "<group>"; };
+		383B606326FF10F5002AA0C9 /* ProfitCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfitCalculatorViewController.xib; sourceTree = "<group>"; };
 		383B606926FF195A002AA0C9 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		383CA9E4269AA1BE00A29E3A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		383CA9E5269AA1BE00A29E3A /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
@@ -143,6 +149,12 @@
 		38551FCF26A2CA9600FFC1D2 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		387DE88726F9D5E90074E6E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSizeAndRiskCalculatorViewController.swift; sourceTree = "<group>"; };
+		3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositionSizeAndRiskCalculatorViewController.xib; sourceTree = "<group>"; };
+		3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCalculationViewController.swift; sourceTree = "<group>"; };
+		3886C9F72703467900C834B3 /* HomeCalculationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCalculationViewController.xib; sourceTree = "<group>"; };
+		3886C9FC270406B300C834B3 /* PipValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipValueViewController.swift; sourceTree = "<group>"; };
+		3886C9FD270406B300C834B3 /* PipValueViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PipValueViewController.xib; sourceTree = "<group>"; };
 		388719ED26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeNewCollectionViewCell.swift; sourceTree = "<group>"; };
 		388719EE26F1EECD00DC3F5C /* TypeNewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeNewCollectionViewCell.xib; sourceTree = "<group>"; };
 		388719F426F1FDBC00DC3F5C /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
@@ -265,8 +277,14 @@
 		383B606126FF10D8002AA0C9 /* CalculationTool */ = {
 			isa = PBXGroup;
 			children = (
-				383B606226FF10F5002AA0C9 /* CalculationToolViewController.swift */,
-				383B606326FF10F5002AA0C9 /* CalculationToolViewController.xib */,
+				383B606226FF10F5002AA0C9 /* ProfitCalculatorViewController.swift */,
+				383B606326FF10F5002AA0C9 /* ProfitCalculatorViewController.xib */,
+				3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */,
+				3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */,
+				3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */,
+				3886C9F72703467900C834B3 /* HomeCalculationViewController.xib */,
+				3886C9FC270406B300C834B3 /* PipValueViewController.swift */,
+				3886C9FD270406B300C834B3 /* PipValueViewController.xib */,
 			);
 			path = CalculationTool;
 			sourceTree = "<group>";
@@ -293,13 +311,13 @@
 			path = CreateTransaction;
 			sourceTree = "<group>";
 		};
-		383CA9EE269AA25700A29E3A /* Setting */ = {
+		383CA9EE269AA25700A29E3A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				383CA9EF269AA26C00A29E3A /* ProfileViewController.swift */,
 				383CA9F0269AA26C00A29E3A /* ProfileViewController.xib */,
 			);
-			path = Setting;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		383CA9FE269AABC100A29E3A /* Transaction */ = {
@@ -440,7 +458,7 @@
 				38A3F10926A923F30032400F /* UpdateTransaction */,
 				3851DB0E26A3CCDE008769B0 /* ManageTransaction */,
 				383CA9FE269AABC100A29E3A /* Transaction */,
-				383CA9EE269AA25700A29E3A /* Setting */,
+				383CA9EE269AA25700A29E3A /* Profile */,
 				383CA9E3269AA18100A29E3A /* CreateTransaction */,
 				383CA9E1269AA14400A29E3A /* Dashboard */,
 				38C723EA26969D3E00E810F9 /* Authentication */,
@@ -665,6 +683,7 @@
 				38DC12EF26F8CE7D00256975 /* EditProfilePopupViewController.xib in Resources */,
 				38C7241226972DAA00E810F9 /* Roboto-LightItalic.ttf in Resources */,
 				38DC12EA26F8CE5000256975 /* AddPersonalInfoPoupViewController.xib in Resources */,
+				3886C9F92703467900C834B3 /* HomeCalculationViewController.xib in Resources */,
 				383CA9E7269AA1BE00A29E3A /* DashboardViewController.xib in Resources */,
 				383CAA10269B387D00A29E3A /* ActiveTransactionCollectionViewCell.xib in Resources */,
 				3851DB1226A3CD16008769B0 /* ManageTransactionViewController.xib in Resources */,
@@ -680,13 +699,15 @@
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
 				38C724262697478700E810F9 /* GoogleService-Info.plist in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
+				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
 				383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */,
 				38B0C4F3269D8181009D968C /* ListPairCurrencyTableViewCell.xib in Resources */,
-				383B606526FF10F6002AA0C9 /* CalculationToolViewController.xib in Resources */,
+				383B606526FF10F6002AA0C9 /* ProfitCalculatorViewController.xib in Resources */,
 				388719FE26F2E1C900DC3F5C /* NewsTableViewCell.xib in Resources */,
 				380B251426F1974E00474396 /* index.html in Resources */,
 				3851DB1826A3CEF6008769B0 /* ManagerTransactionTableViewCell.xib in Resources */,
 				388719F926F1FDD200DC3F5C /* NewsHeaderView.xib in Resources */,
+				3886C9F02702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib in Resources */,
 				38C7240F26972DAA00E810F9 /* Roboto-MediumItalic.ttf in Resources */,
 				38C7240E26972DAA00E810F9 /* Roboto-Regular.ttf in Resources */,
 				38DC128B26F6DD7400256975 /* LongShortRatioFooterView.xib in Resources */,
@@ -787,6 +808,7 @@
 				38C7241B2697364C00E810F9 /* CustomeView.swift in Sources */,
 				387DE88826F9D5E90074E6E4 /* BaseViewController.swift in Sources */,
 				38C7241E26973A0700E810F9 /* CustomeBoderRadiusView.swift in Sources */,
+				3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */,
 				380B247426ECAE9D00474396 /* UpdateTransactionViewModel.swift in Sources */,
 				38C7244D26975A2B00E810F9 /* HelperMethod.swift in Sources */,
 				388719FD26F2E1C900DC3F5C /* NewsTableViewCell.swift in Sources */,
@@ -796,9 +818,10 @@
 				383CAA08269AAEAE00A29E3A /* HistoryTransactionViewController.swift in Sources */,
 				3851DB1726A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift in Sources */,
 				38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */,
+				3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */,
 				38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */,
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
-				383B606426FF10F6002AA0C9 /* CalculationToolViewController.swift in Sources */,
+				383B606426FF10F6002AA0C9 /* ProfitCalculatorViewController.swift in Sources */,
 				38871A2A26F3251200DC3F5C /* HomeNewsViewModel.swift in Sources */,
 				38C723FC26969FB100E810F9 /* WellcomeViewController.swift in Sources */,
 				380B247126ECAD1900474396 /* DropDown.swift in Sources */,
@@ -815,6 +838,7 @@
 				38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */,
 				3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */,
 				38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */,
+				3886C9FE270406B400C834B3 /* PipValueViewController.swift in Sources */,
 				380B24E626F18A4D00474396 /* EconomicNewsViewController.swift in Sources */,
 				383B605B26FD6A1E002AA0C9 /* EditProfileViewController.swift in Sources */,
 				383CAA13269C946700A29E3A /* CurrencyModel.swift in Sources */,

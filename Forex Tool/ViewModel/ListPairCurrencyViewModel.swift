@@ -16,7 +16,7 @@ class ListPairCurrencyViewModel{
     let db = Firestore.firestore()
     
     func getListPairCurrency(completionHanler:@escaping(_ result:Bool, _ listCurrency:[PairCurrencyModel]?) -> Void){
-        beforeApiCall!()
+        beforeApiCall?()
         db.collection("ListCurrency").getDocuments { [self] (snapShot, error) in
             if let err = error{
                 completionHanler(false, nil)
@@ -30,7 +30,7 @@ class ListPairCurrencyViewModel{
                 }
                 completionHanler(true, listCurrency)
             }
-            afterApiCall!()
+            afterApiCall?()
         }
     }
 }

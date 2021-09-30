@@ -37,10 +37,12 @@ class ProfileViewController: UIViewController {
     }
     @IBAction func manageTransactionWasPressed(_ sender: Any) {
         let targetVC = ManageTransactionViewController()
+        targetVC.isFromTabbar = false
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func economicNewsButtonWasPressed(_ sender: Any) {
         let targetVC = HomeNewsViewController()
+        targetVC.isFromTabbar = false
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func economicCalenderWasPressed(_ sender: Any) {
@@ -48,6 +50,9 @@ class ProfileViewController: UIViewController {
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func calculationToolButtonWasPressed(_ sender: Any) {
+        let targetVC = HomeCalculationViewController()
+        targetVC.isFromTabbar = false
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func signOutButtonWasPressed(_ sender: Any) {
         HUD.show(.systemActivity)

@@ -14,6 +14,7 @@ class ManageTransactionViewController: BaseViewController {
     let dashboardVM = DashboardViewModel()
     var listTransaction:[TransactionModel] = []
     var filterObject:FilterObjectModel = FilterObjectModel(isFilter: false, fromDate: nil, toDate: nil, statusTransaction: nil, resultTransaction: nil)
+    var isFromTabbar:Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -25,12 +26,9 @@ class ManageTransactionViewController: BaseViewController {
         tableView.dataSource = self
     }
     override func viewWillAppear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.isHidden = false
-//        self.title = "Manager Transaction"
-        if Constant.isInTabBarControll == true{
-            self.navigationController?.navigationBar.isHidden = true
-            Constant.isInTabBarControll = false
-        }else{
+        //
+        self.navigationController?.navigationBar.isHidden = true
+        if isFromTabbar == false{
             self.navigationController?.navigationBar.isHidden = false
             self.title = "Manager Transaction"
         }
