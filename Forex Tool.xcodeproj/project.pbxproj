@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		380B247126ECAD1900474396 /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B247026ECAD1900474396 /* DropDown.swift */; };
 		380B247426ECAE9D00474396 /* UpdateTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B247326ECAE9D00474396 /* UpdateTransactionViewModel.swift */; };
-		380B24E626F18A4D00474396 /* EconomicNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B24E426F18A4C00474396 /* EconomicNewsViewController.swift */; };
-		380B24E726F18A4D00474396 /* EconomicNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B24E526F18A4D00474396 /* EconomicNewsViewController.xib */; };
+		380B24E626F18A4D00474396 /* EconomicCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B24E426F18A4C00474396 /* EconomicCalendarViewController.swift */; };
+		380B24E726F18A4D00474396 /* EconomicCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B24E526F18A4D00474396 /* EconomicCalendarViewController.xib */; };
 		380B251426F1974E00474396 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 380B251326F1974D00474396 /* index.html */; };
 		380B251926F1D0F500474396 /* HomeNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B251726F1D0F500474396 /* HomeNewsViewController.swift */; };
 		380B251A26F1D0F500474396 /* HomeNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B251826F1D0F500474396 /* HomeNewsViewController.xib */; };
@@ -97,6 +97,7 @@
 		38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724542697E9DE00E810F9 /* AuthViewModel.swift */; };
 		38C724DA26980B3600E810F9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724D926980B3600E810F9 /* Constant.swift */; };
 		38C724FB269842CF00E810F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724FA269842CF00E810F9 /* UserModel.swift */; };
+		38D7CC272706F96E004297AF /* Localizations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38D7CC292706F96E004297AF /* Localizations.strings */; };
 		38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC121F26F5893100256975 /* LongShortRatioViewController.swift */; };
 		38DC122226F5893100256975 /* LongShortRatioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC122026F5893100256975 /* LongShortRatioViewController.xib */; };
 		38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */; };
@@ -117,8 +118,8 @@
 		20BEF89CB63D5778DA9D3742 /* Pods-Forex Tool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forex Tool.release.xcconfig"; path = "Target Support Files/Pods-Forex Tool/Pods-Forex Tool.release.xcconfig"; sourceTree = "<group>"; };
 		380B247026ECAD1900474396 /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
 		380B247326ECAE9D00474396 /* UpdateTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionViewModel.swift; sourceTree = "<group>"; };
-		380B24E426F18A4C00474396 /* EconomicNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicNewsViewController.swift; sourceTree = "<group>"; };
-		380B24E526F18A4D00474396 /* EconomicNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EconomicNewsViewController.xib; sourceTree = "<group>"; };
+		380B24E426F18A4C00474396 /* EconomicCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicCalendarViewController.swift; sourceTree = "<group>"; };
+		380B24E526F18A4D00474396 /* EconomicCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EconomicCalendarViewController.xib; sourceTree = "<group>"; };
 		380B251326F1974D00474396 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		380B251726F1D0F500474396 /* HomeNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewController.swift; sourceTree = "<group>"; };
 		380B251826F1D0F500474396 /* HomeNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsViewController.xib; sourceTree = "<group>"; };
@@ -207,6 +208,9 @@
 		38C724542697E9DE00E810F9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		38C724D926980B3600E810F9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		38C724FA269842CF00E810F9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		38D7CC252706F942004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		38D7CC282706F96E004297AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizations.strings; sourceTree = "<group>"; };
+		38D7CC2A2706F977004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizations.strings; sourceTree = "<group>"; };
 		38DC121F26F5893100256975 /* LongShortRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioViewController.swift; sourceTree = "<group>"; };
 		38DC122026F5893100256975 /* LongShortRatioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongShortRatioViewController.xib; sourceTree = "<group>"; };
 		38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioTableViewCell.swift; sourceTree = "<group>"; };
@@ -243,16 +247,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		380B24E326F189E900474396 /* EconomicNews */ = {
+		380B24E326F189E900474396 /* EconomicCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				380B24E426F18A4C00474396 /* EconomicNewsViewController.swift */,
-				380B24E526F18A4D00474396 /* EconomicNewsViewController.xib */,
+				380B24E426F18A4C00474396 /* EconomicCalendarViewController.swift */,
+				380B24E526F18A4D00474396 /* EconomicCalendarViewController.xib */,
 			);
-			path = EconomicNews;
+			path = EconomicCalendar;
 			sourceTree = "<group>";
 		};
-		380B251626F1D0A300474396 /* News */ = {
+		380B251626F1D0A300474396 /* EconomicNews */ = {
 			isa = PBXGroup;
 			children = (
 				388719F326F1FD8D00DC3F5C /* HeaderView */,
@@ -262,7 +266,7 @@
 				38871A5626F4585D00DC3F5C /* DetailNewsViewController.swift */,
 				38871A5726F4585D00DC3F5C /* DetailNewsViewController.xib */,
 			);
-			path = News;
+			path = EconomicNews;
 			sourceTree = "<group>";
 		};
 		383B605826FD69F7002AA0C9 /* EditProfile */ = {
@@ -418,6 +422,7 @@
 				38C723BC2696989C00E810F9 /* LaunchScreen.storyboard */,
 				38C724252697478700E810F9 /* GoogleService-Info.plist */,
 				38C723BF2696989C00E810F9 /* Info.plist */,
+				38D7CC292706F96E004297AF /* Localizations.strings */,
 			);
 			path = "Forex Tool";
 			sourceTree = "<group>";
@@ -453,8 +458,8 @@
 				383B605826FD69F7002AA0C9 /* EditProfile */,
 				38DC12E626F8CDF200256975 /* PodupView */,
 				38DC121E26F5891500256975 /* LongShortRatio */,
-				380B251626F1D0A300474396 /* News */,
-				380B24E326F189E900474396 /* EconomicNews */,
+				380B251626F1D0A300474396 /* EconomicNews */,
+				380B24E326F189E900474396 /* EconomicCalendar */,
 				38A3F10926A923F30032400F /* UpdateTransaction */,
 				3851DB0E26A3CCDE008769B0 /* ManageTransaction */,
 				383CA9FE269AABC100A29E3A /* Transaction */,
@@ -655,6 +660,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = 38C723A52696989A00E810F9;
 			productRefGroup = 38C723AF2696989A00E810F9 /* Products */;
@@ -689,7 +695,7 @@
 				3851DB1226A3CD16008769B0 /* ManageTransactionViewController.xib in Resources */,
 				38C7240C26972DAA00E810F9 /* Roboto-Medium.ttf in Resources */,
 				38871A5926F4585D00DC3F5C /* DetailNewsViewController.xib in Resources */,
-				380B24E726F18A4D00474396 /* EconomicNewsViewController.xib in Resources */,
+				380B24E726F18A4D00474396 /* EconomicCalendarViewController.xib in Resources */,
 				38C723BE2696989C00E810F9 /* LaunchScreen.storyboard in Resources */,
 				38C7241426972DAA00E810F9 /* Roboto-BlackItalic.ttf in Resources */,
 				388719F026F1EECD00DC3F5C /* TypeNewCollectionViewCell.xib in Resources */,
@@ -699,6 +705,7 @@
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
 				38C724262697478700E810F9 /* GoogleService-Info.plist in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
+				38D7CC272706F96E004297AF /* Localizations.strings in Resources */,
 				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
 				383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */,
 				38B0C4F3269D8181009D968C /* ListPairCurrencyTableViewCell.xib in Resources */,
@@ -839,7 +846,7 @@
 				3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */,
 				38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */,
 				3886C9FE270406B400C834B3 /* PipValueViewController.swift in Sources */,
-				380B24E626F18A4D00474396 /* EconomicNewsViewController.swift in Sources */,
+				380B24E626F18A4D00474396 /* EconomicCalendarViewController.swift in Sources */,
 				383B605B26FD6A1E002AA0C9 /* EditProfileViewController.swift in Sources */,
 				383CAA13269C946700A29E3A /* CurrencyModel.swift in Sources */,
 			);
@@ -852,8 +859,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				38C723BD2696989C00E810F9 /* Base */,
+				38D7CC252706F942004297AF /* vi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		38D7CC292706F96E004297AF /* Localizations.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38D7CC282706F96E004297AF /* en */,
+				38D7CC2A2706F977004297AF /* vi */,
+			);
+			name = Localizations.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -863,6 +880,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -924,6 +942,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

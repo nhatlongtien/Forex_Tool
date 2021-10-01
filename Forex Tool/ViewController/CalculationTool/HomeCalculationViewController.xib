@@ -27,7 +27,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-HB-Ypi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundHomeCalculator" translatesAutoresizingMaskIntoConstraints="NO" id="sfW-Ik-GCg">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculator_background_img" translatesAutoresizingMaskIntoConstraints="NO" id="sfW-Ik-GCg">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="193.5"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="sfW-Ik-GCg" secondAttribute="height" multiplier="375:227" id="dFm-g9-dl4"/>
@@ -217,7 +217,7 @@
     </objects>
     <resources>
         <image name="arrow.right.circle" catalog="system" width="128" height="121"/>
-        <image name="backgroundHomeCalculator" width="1200" height="640"/>
+        <image name="calculator_background_img" width="2354" height="2000"/>
         <image name="profit" width="1200" height="1200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

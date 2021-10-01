@@ -27,10 +27,10 @@ class ProfitCalculatorViewController: BaseViewController {
     var pairCurrency:PairCurrencyModel?
     var valueOfPip:Double = 0.0
     var mainPrice:Double = 0.0
-    var amountBalance:Double = 0.0
-    var riskRate:Double = 0.0
-    var entryPrice:Double = 0.0
-    var stopLossPrice:Double = 0.0
+//    var amountBalance:Double = 0.0
+//    var riskRate:Double = 0.0
+//    var entryPrice:Double = 0.0
+//    var stopLossPrice:Double = 0.0
     var typeTrading:TypeTransaction = TypeTransaction.Buy
     //
     override func viewDidLoad() {

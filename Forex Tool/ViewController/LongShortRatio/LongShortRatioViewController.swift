@@ -8,7 +8,7 @@
 import UIKit
 import PKHUD
 import DropDown
-class LongShortRatioViewController: UIViewController {
+class LongShortRatioViewController: BaseViewController {
 
     @IBOutlet weak var symbolView: UIView!
     @IBOutlet weak var periodView: UIView!

@@ -19,6 +19,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTf: UITextField!
     @IBOutlet weak var phoneTf: UITextField!
     @IBOutlet weak var addressTf: UITextField!
+    @IBOutlet weak var repeatpasswordTf: UITextField!
+    //
+    var isHidenPassword = true
+    var isHidenRepeatPassword = true
     //
     weak var delegate:RegisterVCDelegate?
     let authVM = AuthViewModel()
@@ -28,10 +32,14 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         viewModelCallBack()
+        //
+        passwordTf.isSecureTextEntry = true
+        repeatpasswordTf.isSecureTextEntry = true
     }
     
     
     @IBAction func registerButtonWasPressed(_ sender: Any) {
+        self.view.endEditing(true)
         if !validate(){
             return
         }
@@ -45,7 +53,10 @@ class RegisterViewController: UIViewController {
                         "email": emailTf.text!,
                         "phoneNumber":phoneTf.text!,
                         "address":addressTf.text!,
-                        "uid": Constant.defaults.string(forKey: Constant.USER_ID)
+                        "uid": Constant.defaults.string(forKey: Constant.USER_ID),
+                        "methodLogin": MethodLoginType.email_password.rawValue,
+                        "avatarImg": nil,
+                        "password":nil
                     ], completion: { (error) in
                         if let err = error {
                             HelperMethod.showAlertWithMessage(message: "Error adding document: \(err)")
@@ -66,7 +77,22 @@ class RegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func hiddenPasswordButtonWasPressed(_ sender: Any) {
-        
+        if isHidenPassword == true{
+            passwordTf.isSecureTextEntry = false
+            isHidenPassword = false
+        }else{
+            passwordTf.isSecureTextEntry = true
+            isHidenPassword = true
+        }
+    }
+    @IBAction func hiddenRepeatPasswordButtonWasPressed(_ sender: Any) {
+        if isHidenRepeatPassword == true{
+            repeatpasswordTf.isSecureTextEntry = false
+            isHidenRepeatPassword = false
+        }else{
+            repeatpasswordTf.isSecureTextEntry = true
+            isHidenRepeatPassword = true
+        }
     }
     //MARK: Helper Method
     func validate() -> Bool{
@@ -84,6 +110,14 @@ class RegisterViewController: UIViewController {
         }
         if passwordTf.text?.isValadatePasswprd() == false{
             HelperMethod.showAlertWithMessage(message: "The password must contain at least one upper case, lower case, digits, special character and length from 8 – 20 characters")
+            return false
+        }
+        if repeatpasswordTf.text == nil || repeatpasswordTf.text == ""{
+            HelperMethod.showAlertWithMessage(message: "Please enter your repeat password")
+            return false
+        }
+        if repeatpasswordTf.text != passwordTf.text{
+            HelperMethod.showAlertWithMessage(message: "Your password and repeat password not match!")
             return false
         }
         return true

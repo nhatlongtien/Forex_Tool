@@ -403,6 +403,7 @@ DEPENDENCIES:
   - JGProgressHUD
   - Kingfisher
   - Localize-Swift
+  - Localize-Swift (~> 3.2)
   - MultiProgressView
   - PKHUD
   - SwiftyJSON
@@ -488,6 +489,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 240144f71b072db835e96bde220f7fc75cb8501f
+PODFILE CHECKSUM: c8ffd5e90ca9284f239db531459e813fe44e9cbb
 
 COCOAPODS: 1.10.1

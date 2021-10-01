@@ -9,8 +9,11 @@ import UIKit
 protocol ManagerTransactionTableViewCellDelegate:class {
     func deleteTransactionButtonDidTap(transaction:TransactionModel)
     func editTransactionButtonDitTap(transaction:TransactionModel)
+    func createTransactionButtonDidTap()
 }
 class ManagerTransactionTableViewCell: UITableViewCell {
+    @IBOutlet weak var emptyTransactionView: CustomeBoderRadiusView!
+    @IBOutlet weak var containView: CustomeBoderRadiusView!
     @IBOutlet weak var imageTransaction: UIImageView!
     @IBOutlet weak var statusTransactionCircleView: CustomeBoderRadiusView!
     @IBOutlet weak var pairCurrencyLbl: UILabel!
@@ -92,5 +95,8 @@ class ManagerTransactionTableViewCell: UITableViewCell {
     
     @IBAction func deleteButtonWasPressed(_ sender: Any) {
         self.delegate?.deleteTransactionButtonDidTap(transaction: selectedTransaction!)
+    }
+    @IBAction func createTransactionWasPressed(_ sender: Any) {
+        self.delegate?.createTransactionButtonDidTap()
     }
 }

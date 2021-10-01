@@ -26,7 +26,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-0n-syf">
-                    <rect key="frame" x="15" y="70.5" width="345" height="596.5"/>
+                    <rect key="frame" x="15" y="70.5" width="345" height="546.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVv-fb-XTb">
@@ -43,7 +43,7 @@
             <constraints>
                 <constraint firstItem="KXm-0n-syf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="4cd-Di-Rfj"/>
                 <constraint firstItem="Wbt-VV-pPE" firstAttribute="centerY" secondItem="MVv-fb-XTb" secondAttribute="centerY" id="Fe8-dS-tCL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KXm-0n-syf" secondAttribute="bottom" id="Z7N-SM-Dda"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KXm-0n-syf" secondAttribute="bottom" constant="50" id="Z7N-SM-Dda"/>
                 <constraint firstItem="KXm-0n-syf" firstAttribute="top" secondItem="Wbt-VV-pPE" secondAttribute="bottom" constant="20" id="cm5-LR-xwj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KXm-0n-syf" secondAttribute="trailing" constant="15" id="kL0-vY-wZ5"/>
                 <constraint firstItem="Wbt-VV-pPE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ogA-PS-lJV"/>

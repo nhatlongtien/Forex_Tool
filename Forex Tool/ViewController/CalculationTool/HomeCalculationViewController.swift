@@ -18,7 +18,6 @@ class HomeCalculationViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = true
         if isFromTabbar == false{
             self.navigationController?.navigationBar.isHidden = false
-            
             self.title = "Calculator"
         }
     }

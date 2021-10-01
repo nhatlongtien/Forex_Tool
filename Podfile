@@ -24,4 +24,5 @@ pod 'BetterSegmentedControl'
 pod 'MultiProgressView'
 pod 'Charts'
 pod 'Firebase/Storage'
+pod 'Localize-Swift', '~> 3.2'
 end

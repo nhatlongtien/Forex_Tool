@@ -82,6 +82,11 @@ class DashboardViewController: UIViewController {
 
     //MARK: Ui Event
     
+    @IBAction func calculaorButtonWasPressed(_ sender: Any) {
+        let targetVC = HomeCalculationViewController()
+        targetVC.isFromTabbar = false
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
     @IBAction func createTransactionWasPressed(_ sender: Any) {
         let targetVC = CreateTransactionViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
@@ -99,7 +104,7 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func economicCalenderButtonWasPressed(_ sender: Any) {
-        let targetVC = EconomicNewsViewController()
+        let targetVC = EconomicCalendarViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
@@ -192,8 +197,11 @@ class DashboardViewController: UIViewController {
         print(uid)
         dashboardVM.getUserInfoByUserID(userID: uid) { (success, userInfo) in
             self.userNameLbl.text = userInfo?.fullName?.capitalized
-            if let urlImage = userInfo?.avatarImg{
-                self.avatarImg.kf.setImage(with: URL(string: urlImage))
+            let url = userInfo?.avatarImg
+            if url != nil && url != ""{
+                self.avatarImg.kf.setImage(with: URL(string: url!))
+            }else{
+                self.avatarImg.image = UIImage(named: "userIcon")
             }
         }
     }

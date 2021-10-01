@@ -74,7 +74,7 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.047058823529411764" green="0.13333333333333333" blue="0.25490196078431371" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.21568627450980393" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xTJ-Qw-K9f" secondAttribute="trailing" id="545-nm-GIu"/>
                 <constraint firstItem="hU3-ic-QCY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="6CK-cd-sPC"/>

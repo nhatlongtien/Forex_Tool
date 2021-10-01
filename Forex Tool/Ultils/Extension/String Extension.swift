@@ -49,6 +49,10 @@ extension String{
         dateFormatter.dateFormat = inputFormat
         return dateFormatter.date(from: self) ?? Date()
     }
+    //filter String to get digit
+    func digits() -> String{
+        return self.filter("0123456789.".contains)
+    }
 }
 extension Double{
     func formaterValueOfPips() -> String{

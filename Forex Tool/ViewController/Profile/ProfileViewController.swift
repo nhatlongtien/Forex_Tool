@@ -46,9 +46,14 @@ class ProfileViewController: UIViewController {
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func economicCalenderWasPressed(_ sender: Any) {
-        let targetVC = EconomicNewsViewController()
+        let targetVC = EconomicCalendarViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
+    @IBAction func ratioCryptoButtonWasPressed(_ sender: Any) {
+        let targetVC = LongShortRatioViewController()
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
+    
     @IBAction func calculationToolButtonWasPressed(_ sender: Any) {
         let targetVC = HomeCalculationViewController()
         targetVC.isFromTabbar = false

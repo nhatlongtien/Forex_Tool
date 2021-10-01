@@ -21,8 +21,13 @@ class LoginViewController: UIViewController {
     //
     let authVM = AuthViewModel()
     weak var delegate: LoginVCDelegate?
+    //
+    var isHiddenPassword = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        passwordTf.isSecureTextEntry = true
+        //
         viewModelCallBack() //goi de show progressview
         //
         GIDSignIn.sharedInstance()?.delegate = self
@@ -97,6 +102,17 @@ class LoginViewController: UIViewController {
         
     }
     @IBAction func hiddenPassButtonWasPressed(_ sender: Any) {
+        if isHiddenPassword == true{
+            passwordTf.isSecureTextEntry = false
+            isHiddenPassword = false
+        }else{
+            passwordTf.isSecureTextEntry = true
+            isHiddenPassword = true
+        }
+    }
+    @IBAction func createAccountButtonWasPressed(_ sender: Any) {
+        let targetVC = RegisterViewController()
+        self.present(targetVC, animated: true, completion: nil)
     }
     //MARK: Helper Method
     func validate() -> Bool{

@@ -68,11 +68,20 @@ class ManageTransactionViewController: BaseViewController {
 }
 extension ManageTransactionViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listTransaction.count
+        if listTransaction.count > 0{
+            return listTransaction.count
+        }else{
+            return 1
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManagerTransactionTableViewCell", for: indexPath) as! ManagerTransactionTableViewCell
-        cell.configureCell(transaction: listTransaction[indexPath.row])
+        if listTransaction.count > 0{
+            cell.configureCell(transaction: listTransaction[indexPath.row])
+            cell.emptyTransactionView.isHidden = true
+        }else{
+            cell.emptyTransactionView.isHidden = false
+        }
         cell.delegate = self
         return cell
     }
@@ -100,10 +109,6 @@ extension ManageTransactionViewController: ManagerTransactionTableViewCellDelega
     
     func editTransactionButtonDitTap(transaction: TransactionModel) {
         print("Edit Cell")
-//        let targetVC = CreateTransactionViewController()
-//        targetVC.selectedTransaction = transaction
-//        targetVC.isEdit = true
-//        self.navigationController?.pushViewController(targetVC, animated: true)
         let targetVC = UpdateTransactionViewController()
         targetVC.statusStr = transaction.status
         targetVC.resultStr = transaction.detail?.result
@@ -111,6 +116,10 @@ extension ManageTransactionViewController: ManagerTransactionTableViewCellDelega
         targetVC.delegate = self
         targetVC.modalPresentationStyle = .custom
         self.present(targetVC, animated: true, completion: nil)
+    }
+    func createTransactionButtonDidTap() {
+        let targetVC = CreateTransactionViewController()
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
     
