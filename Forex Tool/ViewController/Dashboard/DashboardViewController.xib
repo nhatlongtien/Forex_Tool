@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -288,10 +288,10 @@
                                                     <rect key="frame" x="126.5" y="0.0" width="63" height="63"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create_transaction_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3gV-wc-3bW">
-                                                            <rect key="frame" x="14.5" y="14.5" width="34" height="34"/>
+                                                            <rect key="frame" x="11.5" y="11.5" width="40" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="34" id="k9i-Uj-krP"/>
-                                                                <constraint firstAttribute="height" constant="34" id="pzL-lc-aqR"/>
+                                                                <constraint firstAttribute="width" constant="40" id="k9i-Uj-krP"/>
+                                                                <constraint firstAttribute="height" constant="40" id="pzL-lc-aqR"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTA-e9-1UM">
@@ -505,10 +505,10 @@
                                                     <rect key="frame" x="15" y="0.0" width="63" height="63"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculator_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nbK-Bt-3gB">
-                                                            <rect key="frame" x="14.5" y="14.5" width="34" height="34"/>
+                                                            <rect key="frame" x="11.5" y="11.5" width="40" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="34" id="vsH-1M-02W"/>
-                                                                <constraint firstAttribute="width" constant="34" id="z4p-kO-fSB"/>
+                                                                <constraint firstAttribute="height" constant="40" id="vsH-1M-02W"/>
+                                                                <constraint firstAttribute="width" constant="40" id="z4p-kO-fSB"/>
                                                             </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHS-qv-sWm">

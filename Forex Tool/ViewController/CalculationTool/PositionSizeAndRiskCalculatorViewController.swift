@@ -273,11 +273,20 @@ extension PositionSizeAndRiskCalculatorViewController:UITextFieldDelegate{
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == riskRateTf{
+            if string == ","{
+                textField.text = textField.text! + "."
+                return false
+            }
             let nsString = NSString(string: textField.text!)
             let newText = nsString.replacingCharacters(in: range, with: string)
             let valueInput = Double(newText.replacingOccurrences(of: ",", with: "")) ?? 0.0
             
             return valueInput >= 0 && valueInput <= 100
+        }
+        //
+        if string == ","{
+            textField.text = textField.text! + "."
+            return false
         }
         return true
     }

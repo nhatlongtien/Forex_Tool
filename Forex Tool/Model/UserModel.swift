@@ -17,6 +17,7 @@ class UserModel{
     public private(set) var methodLogin:String?
     public private(set) var password:String?
     public private(set) var documentID:String?
+    public private(set) var dateOfBirth:String?
     
     init(json:JSON, documentID:String?) {
         self.fullName = json["fullName"].stringValue
@@ -27,5 +28,6 @@ class UserModel{
         self.avatarImg = json["avatarImg"].stringValue
         self.methodLogin = json["methodLogin"].stringValue
         self.documentID = documentID
+        self.dateOfBirth = json["dateOfBirth"].stringValue
     }
 }

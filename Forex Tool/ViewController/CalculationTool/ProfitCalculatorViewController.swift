@@ -303,4 +303,12 @@ extension ProfitCalculatorViewController:UITextFieldDelegate{
             }
         }
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == ","{
+            textField.text = textField.text! + "."
+            return false
+        }
+        return true
+        
+    }
 }

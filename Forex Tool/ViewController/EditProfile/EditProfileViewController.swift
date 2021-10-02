@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseStorage
+import PKHUD
 class EditProfileViewController: BaseViewController {
 
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -28,6 +29,8 @@ class EditProfileViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Edit Profile"
         //
+        self.viewModelCallBack()
+        //
         self.avatarImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAvatarImage))
         self.avatarImageView.addGestureRecognizer(tap)
@@ -35,6 +38,7 @@ class EditProfileViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.getUserInfoAndUpdateUI()
     }
+    //MARK: UI Event
     @IBAction func updateButtonWasPressed(_ sender: Any) {
         guard let documentID = userInfo?.documentID else {return}
         if !validate(){
@@ -42,7 +46,7 @@ class EditProfileViewController: BaseViewController {
         }
         if dataImage != nil{
             //upload image -> change info
-            uploadImageToFrirebasestore(dataImage: dataImage!) { [self] (success, ulrImage) in
+            editProfileVM.uploadImageToFrirebasestore(dataImage: dataImage!) { [self] (success, ulrImage) in
                 if success{
                     editProfileVM.updateUserByDocumentID(documentID: documentID, fullName: fullNameTf.text, phoneNumber: phoneNumberTf.text, address: addressTf.text, dateOfBirth: DOBTf.text, avatarUrl: ulrImage) { (success) in
                         if success{
@@ -53,7 +57,7 @@ class EditProfileViewController: BaseViewController {
             }
         }else{
             //update without avatar
-            editProfileVM.updateUserByDocumentID(documentID: documentID, fullName: fullNameTf.text, phoneNumber: phoneNumberTf.text, address: addressTf.text, dateOfBirth: DOBTf.text, avatarUrl: nil) { (success) in
+            editProfileVM.updateUserByDocumentIDWithoutImage(documentID: documentID, fullName: fullNameTf.text, phoneNumber: phoneNumberTf.text, address: addressTf.text, dateOfBirth: DOBTf.text) { success in
                 if success{
                     self.navigationController?.popViewController(animated: true)
                 }
@@ -98,6 +102,10 @@ class EditProfileViewController: BaseViewController {
                 }else{
                     self.avatarImageView.image = UIImage(named: "userIcon")
                 }
+                if userInfo?.dateOfBirth != nil && userInfo?.dateOfBirth != ""{
+                    let date = userInfo?.dateOfBirth?.formartDate(inputFormat: DateformatterType.DD_MM_YYYY_Slash.rawValue)
+                    self.DOBTf.text = date?.dateToString(format: DateformatterType.DD_MM_YYYY_Slash.rawValue)
+                }
             }
         }
     }
@@ -128,34 +136,13 @@ class EditProfileViewController: BaseViewController {
         }
         return true
     }
-    func uploadImageToFrirebasestore(dataImage:Data, completionHandeler:@escaping(_ result:Bool, _ imageUrl:String?) -> Void){
-        // Get a reference to the storage service using the default Firebase App
-        let storage = Storage.storage()
-        // Create a storage reference from our storage service
-        let storageRef = storage.reference()
-        let ramdomName = "\(UUID().uuidString).jpg"
-        let ref = storageRef.child("images/\(ramdomName)")
-        // Upload the file to the path
-        let uploadTask = ref.putData(dataImage, metadata: nil) { (metadata, error) in
-            guard let metadata = metadata else {
-                // Uh-oh, an error occurred!
-                HelperMethod.showAlertWithMessage(message: "Fail to upload avatar")
-                completionHandeler(false, nil)
-                return
-            }
-            // Metadata contains file metadata such as size, content-type.
-            let size = metadata.size
-            // You can also access to download URL after upload.
-            ref.downloadURL { (url, error) in
-                guard let downloadURL = url else {
-                    // Uh-oh, an error occurred!
-                    HelperMethod.showAlertWithMessage(message: "Fail to upload avatar")
-                    completionHandeler(false, nil)
-                    return
-                }
-                let strUrlImage = downloadURL.absoluteString
-                completionHandeler(true, strUrlImage)
-            }
+    //
+    func viewModelCallBack(){
+        editProfileVM.beforeApiCall = {
+            HUD.show(.systemActivity)
+        }
+        editProfileVM.afterApiCall = {
+            HUD.hide()
         }
     }
 }

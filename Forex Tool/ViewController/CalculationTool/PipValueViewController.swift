@@ -173,6 +173,13 @@ extension PipValueViewController:UITextFieldDelegate{
             textField.text = stringNumber
         }
     }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == ","{
+            textField.text = textField.text! + "."
+            return false
+        }
+        return true
+    }
 }
 //MARK:
 extension PipValueViewController:ListPairCurrencyDelegate{
