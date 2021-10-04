@@ -33,6 +33,8 @@
 		383CAA0F269B387D00A29E3A /* ActiveTransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAA0D269B387D00A29E3A /* ActiveTransactionCollectionViewCell.swift */; };
 		383CAA10269B387D00A29E3A /* ActiveTransactionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383CAA0E269B387D00A29E3A /* ActiveTransactionCollectionViewCell.xib */; };
 		383CAA13269C946700A29E3A /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAA12269C946700A29E3A /* CurrencyModel.swift */; };
+		38495CCB27096D2D004F0423 /* EditReasonPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38495CC927096D2D004F0423 /* EditReasonPopupViewController.swift */; };
+		38495CCC27096D2D004F0423 /* EditReasonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38495CCA27096D2D004F0423 /* EditReasonPopupViewController.xib */; };
 		3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3851DB0F26A3CD16008769B0 /* ManageTransactionViewController.swift */; };
 		3851DB1226A3CD16008769B0 /* ManageTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3851DB1026A3CD16008769B0 /* ManageTransactionViewController.xib */; };
 		3851DB1726A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3851DB1526A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift */; };
@@ -41,6 +43,7 @@
 		38551FD026A2CA9600FFC1D2 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38551FCF26A2CA9600FFC1D2 /* TransactionModel.swift */; };
 		38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */; };
 		387DE88826F9D5E90074E6E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DE88726F9D5E90074E6E4 /* BaseViewController.swift */; };
+		388206BC270891E4001315B5 /* PricePairCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */; };
 		3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */; };
 		3886C9F02702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */; };
 		3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */; };
@@ -57,6 +60,9 @@
 		38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38871A2C26F32C1F00DC3F5C /* NewsModel.swift */; };
 		38871A5826F4585D00DC3F5C /* DetailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38871A5626F4585D00DC3F5C /* DetailNewsViewController.swift */; };
 		38871A5926F4585D00DC3F5C /* DetailNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38871A5726F4585D00DC3F5C /* DetailNewsViewController.xib */; };
+		3894D6B12709F0200028F2E4 /* EditReasonTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6B02709F0200028F2E4 /* EditReasonTransactionViewModel.swift */; };
+		3894D6B62709F92E0028F2E4 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6B42709F92E0028F2E4 /* DetailTransactionViewController.swift */; };
+		3894D6B72709F92E0028F2E4 /* DetailTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3894D6B52709F92E0028F2E4 /* DetailTransactionViewController.xib */; };
 		38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */; };
 		38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */; };
 		38B0C4ED269D7F1D009D968C /* ListPairCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C4EB269D7F1D009D968C /* ListPairCurrencyViewController.swift */; };
@@ -142,6 +148,8 @@
 		383CAA0D269B387D00A29E3A /* ActiveTransactionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveTransactionCollectionViewCell.swift; sourceTree = "<group>"; };
 		383CAA0E269B387D00A29E3A /* ActiveTransactionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveTransactionCollectionViewCell.xib; sourceTree = "<group>"; };
 		383CAA12269C946700A29E3A /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		38495CC927096D2D004F0423 /* EditReasonPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReasonPopupViewController.swift; sourceTree = "<group>"; };
+		38495CCA27096D2D004F0423 /* EditReasonPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditReasonPopupViewController.xib; sourceTree = "<group>"; };
 		3851DB0F26A3CD16008769B0 /* ManageTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTransactionViewController.swift; sourceTree = "<group>"; };
 		3851DB1026A3CD16008769B0 /* ManageTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageTransactionViewController.xib; sourceTree = "<group>"; };
 		3851DB1526A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTransactionTableViewCell.swift; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 		38551FCF26A2CA9600FFC1D2 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		387DE88726F9D5E90074E6E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePairCurrencyModel.swift; sourceTree = "<group>"; };
 		3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSizeAndRiskCalculatorViewController.swift; sourceTree = "<group>"; };
 		3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositionSizeAndRiskCalculatorViewController.xib; sourceTree = "<group>"; };
 		3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCalculationViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +175,9 @@
 		38871A2C26F32C1F00DC3F5C /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		38871A5626F4585D00DC3F5C /* DetailNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNewsViewController.swift; sourceTree = "<group>"; };
 		38871A5726F4585D00DC3F5C /* DetailNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNewsViewController.xib; sourceTree = "<group>"; };
+		3894D6B02709F0200028F2E4 /* EditReasonTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReasonTransactionViewModel.swift; sourceTree = "<group>"; };
+		3894D6B42709F92E0028F2E4 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
+		3894D6B52709F92E0028F2E4 /* DetailTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionViewController.xib; sourceTree = "<group>"; };
 		38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionViewController.swift; sourceTree = "<group>"; };
 		38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateTransactionViewController.xib; sourceTree = "<group>"; };
 		38B0C4EB269D7F1D009D968C /* ListPairCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPairCurrencyViewController.swift; sourceTree = "<group>"; };
@@ -381,13 +393,23 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
-		38A3F10926A923F30032400F /* UpdateTransaction */ = {
+		3894D6B22709F8CA0028F2E4 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */,
-				38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */,
+				383CA9F5269AA2BA00A29E3A /* TabBarViewController.swift */,
+				383CA9F6269AA2BA00A29E3A /* TabBarViewController.xib */,
+				383B606926FF195A002AA0C9 /* CustomTabBar.swift */,
 			);
-			path = UpdateTransaction;
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		3894D6B32709F9000028F2E4 /* DetailTransaction */ = {
+			isa = PBXGroup;
+			children = (
+				3894D6B42709F92E0028F2E4 /* DetailTransactionViewController.swift */,
+				3894D6B52709F92E0028F2E4 /* DetailTransactionViewController.xib */,
+			);
+			path = DetailTransaction;
 			sourceTree = "<group>";
 		};
 		38C723A52696989A00E810F9 = {
@@ -438,6 +460,7 @@
 				38871A2926F3251100DC3F5C /* HomeNewsViewModel.swift */,
 				38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */,
 				383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */,
+				3894D6B02709F0200028F2E4 /* EditReasonTransactionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -454,23 +477,21 @@
 		38C723E826969D0800E810F9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3894D6B32709F9000028F2E4 /* DetailTransaction */,
+				3894D6B22709F8CA0028F2E4 /* TabBar */,
 				383B606126FF10D8002AA0C9 /* CalculationTool */,
 				383B605826FD69F7002AA0C9 /* EditProfile */,
 				38DC12E626F8CDF200256975 /* PodupView */,
 				38DC121E26F5891500256975 /* LongShortRatio */,
 				380B251626F1D0A300474396 /* EconomicNews */,
 				380B24E326F189E900474396 /* EconomicCalendar */,
-				38A3F10926A923F30032400F /* UpdateTransaction */,
 				3851DB0E26A3CCDE008769B0 /* ManageTransaction */,
 				383CA9FE269AABC100A29E3A /* Transaction */,
 				383CA9EE269AA25700A29E3A /* Profile */,
 				383CA9E3269AA18100A29E3A /* CreateTransaction */,
 				383CA9E1269AA14400A29E3A /* Dashboard */,
 				38C723EA26969D3E00E810F9 /* Authentication */,
-				383CA9F5269AA2BA00A29E3A /* TabBarViewController.swift */,
-				383CA9F6269AA2BA00A29E3A /* TabBarViewController.xib */,
 				387DE88726F9D5E90074E6E4 /* BaseViewController.swift */,
-				383B606926FF195A002AA0C9 /* CustomTabBar.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -485,6 +506,7 @@
 				3851DB1A26A86D1F008769B0 /* FilterObjectModel.swift */,
 				38871A2C26F32C1F00DC3F5C /* NewsModel.swift */,
 				38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */,
+				388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -595,6 +617,10 @@
 				38DC12E826F8CE4F00256975 /* AddPersonalInfoPoupViewController.xib */,
 				38DC12EC26F8CE7D00256975 /* EditProfilePopupViewController.swift */,
 				38DC12ED26F8CE7D00256975 /* EditProfilePopupViewController.xib */,
+				38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */,
+				38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */,
+				38495CC927096D2D004F0423 /* EditReasonPopupViewController.swift */,
+				38495CCA27096D2D004F0423 /* EditReasonPopupViewController.xib */,
 			);
 			path = PodupView;
 			sourceTree = "<group>";
@@ -686,6 +712,7 @@
 				38DC122826F59EE900256975 /* LongShortRatioTableViewCell.xib in Resources */,
 				38C7241026972DAA00E810F9 /* Roboto-ThinItalic.ttf in Resources */,
 				38C7241726972DAA00E810F9 /* Roboto-Black.ttf in Resources */,
+				38495CCC27096D2D004F0423 /* EditReasonPopupViewController.xib in Resources */,
 				38DC12EF26F8CE7D00256975 /* EditProfilePopupViewController.xib in Resources */,
 				38C7241226972DAA00E810F9 /* Roboto-LightItalic.ttf in Resources */,
 				38DC12EA26F8CE5000256975 /* AddPersonalInfoPoupViewController.xib in Resources */,
@@ -709,6 +736,7 @@
 				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
 				383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */,
 				38B0C4F3269D8181009D968C /* ListPairCurrencyTableViewCell.xib in Resources */,
+				3894D6B72709F92E0028F2E4 /* DetailTransactionViewController.xib in Resources */,
 				383B606526FF10F6002AA0C9 /* ProfitCalculatorViewController.xib in Resources */,
 				388719FE26F2E1C900DC3F5C /* NewsTableViewCell.xib in Resources */,
 				380B251426F1974E00474396 /* index.html in Resources */,
@@ -817,6 +845,8 @@
 				38C7241E26973A0700E810F9 /* CustomeBoderRadiusView.swift in Sources */,
 				3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */,
 				380B247426ECAE9D00474396 /* UpdateTransactionViewModel.swift in Sources */,
+				3894D6B62709F92E0028F2E4 /* DetailTransactionViewController.swift in Sources */,
+				388206BC270891E4001315B5 /* PricePairCurrencyModel.swift in Sources */,
 				38C7244D26975A2B00E810F9 /* HelperMethod.swift in Sources */,
 				388719FD26F2E1C900DC3F5C /* NewsTableViewCell.swift in Sources */,
 				38C724FB269842CF00E810F9 /* UserModel.swift in Sources */,
@@ -840,9 +870,11 @@
 				383B606A26FF195A002AA0C9 /* CustomTabBar.swift in Sources */,
 				38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */,
 				38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */,
+				3894D6B12709F0200028F2E4 /* EditReasonTransactionViewModel.swift in Sources */,
 				38C724DA26980B3600E810F9 /* Constant.swift in Sources */,
 				38DC129226F6DF3B00256975 /* LongShortRatioFooterView.swift in Sources */,
 				38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */,
+				38495CCB27096D2D004F0423 /* EditReasonPopupViewController.swift in Sources */,
 				3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */,
 				38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */,
 				3886C9FE270406B400C834B3 /* PipValueViewController.swift in Sources */,

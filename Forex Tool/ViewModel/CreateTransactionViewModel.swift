@@ -34,7 +34,33 @@ class CreateTransactionViewModel{
         }
     }
     //
+    func getLatestPriceOfPairCurrency(fromCurrency:String, toCurrency:String, completionHandler:@escaping(_ result:Bool, _ pricePairCurrency:PricePairCurrencyModel?) -> Void){
+        beforeApiCall?()
+        AF.request("https://fcsapi.com/api-v3/forex/latest?symbol=\(fromCurrency)/\(toCurrency)&access_key=\(Constant.API_ACCESS_KEY)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
+            switch response.result{
+            case .success(let value):
+                guard let json = JSON(rawValue: value) else {return}
+                let status = json["status"].boolValue
+                if status == true{
+                    guard let response = json["response"].array else {return}
+                    let pricePairCurrency = PricePairCurrencyModel(json: response.first!)
+                    completionHandler(true, pricePairCurrency)
+                }else{
+                    let message = json["msg"].stringValue
+                    HelperMethod.showAlertWithMessage(message: message)
+                    completionHandler(false, nil)
+                }
+                print("Success")
+            case .failure(let error):
+                HelperMethod.showAlertWithMessage(message: error.localizedDescription ?? "")
+                completionHandler(false, nil)
+            }
+            self.afterApiCall?()
+        }
+    }
+    //
     func uploadImageToFrirebasestore(dataImage:Data, completionHandeler:@escaping(_ result:Bool, _ imageUrl:String?) -> Void){
+        beforeApiCall?()
         // Get a reference to the storage service using the default Firebase App
         let storage = Storage.storage()
         // Create a storage reference from our storage service
@@ -47,6 +73,7 @@ class CreateTransactionViewModel{
                 // Uh-oh, an error occurred!
                 HelperMethod.showAlertWithMessage(message: "Fail to upload image")
                 completionHandeler(false, nil)
+                self.afterApiCall?()
                 return
             }
             // Metadata contains file metadata such as size, content-type.
@@ -57,10 +84,12 @@ class CreateTransactionViewModel{
                     // Uh-oh, an error occurred!
                     HelperMethod.showAlertWithMessage(message: "Fail to upload image")
                     completionHandeler(false, nil)
+                    self.afterApiCall?()
                     return
                 }
                 let strUrlImage = downloadURL.absoluteString
                 completionHandeler(true, strUrlImage)
+                self.afterApiCall?()
             }
         }
     }

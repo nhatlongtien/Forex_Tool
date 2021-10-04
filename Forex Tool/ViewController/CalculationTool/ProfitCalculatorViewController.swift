@@ -27,10 +27,7 @@ class ProfitCalculatorViewController: BaseViewController {
     var pairCurrency:PairCurrencyModel?
     var valueOfPip:Double = 0.0
     var mainPrice:Double = 0.0
-//    var amountBalance:Double = 0.0
-//    var riskRate:Double = 0.0
-//    var entryPrice:Double = 0.0
-//    var stopLossPrice:Double = 0.0
+    var subPrice:Double = 0.0
     var typeTrading:TypeTransaction = TypeTransaction.Buy
     //
     override func viewDidLoad() {
@@ -93,19 +90,63 @@ class ProfitCalculatorViewController: BaseViewController {
                 guard let list = listPairCurrency else {return}
                 self.pairCurrency = list.first
                 self.pairCurrencyNameLbl.text = list.first?.name
-                //Goi API lay gia hien tai
-                self.createTransactionVM.convertCurrency(fromCurrency: (self.pairCurrency?.fromCurrency)!, toCurrency: (self.pairCurrency?.toCurrency)!) { (success, price) in
+                //Goi API lay main price -> call API get sub price
+                self.getMainPrice(pairCurrency: self.pairCurrency!) { success in
                     if success{
-                        //Cap nhat lai gia
-                        print(price)
-                        guard let price = price else {return}
-                        self.mainPrice = price
+                        print("Get main price success")
+                    }
+                }
+                self.getSubPrice(pairCurrency: self.pairCurrency!) { success in
+                    if success{
+                        print("get sub price success")
                     }
                 }
             }
         }
     }
     //
+    func getMainPrice(pairCurrency:PairCurrencyModel, completionHandler:@escaping(_ result:Bool) -> Void){
+        createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: pairCurrency.toCurrency!) { success, pricePairCurrency in
+            if success{
+                guard let pricePairCurrency = pricePairCurrency else {return}
+                self.mainPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                completionHandler(true)
+            }else{
+                completionHandler(false)
+            }
+        }
+    }
+    func getSubPrice(pairCurrency:PairCurrencyModel, completionHandler:@escaping(_ result:Bool) -> Void){
+        switch pairCurrency.group {
+        case "XXX_XXX": //Chi tinh subprice cho nhung cap tien cheo khong co usd
+            //goi API lay ti gia phu
+            switch pairCurrency.name {
+            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            }
+        default:
+            completionHandler(true)
+            break
+        }
+    }
     func calculationPipValue(pairCurrency:PairCurrencyModel, volume:Double, completionHandler:@escaping(_ pipValue:Double) -> Void){
         var valuePip:Double = 0.0
         switch pairCurrency.group{
@@ -122,29 +163,15 @@ class ProfitCalculatorViewController: BaseViewController {
             switch pairCurrency.name {
             
             case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
-                var valueReturn:Double = 0
-                createTransactionVM.convertCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { [self] (success, price) in
-                    if success{
-                        guard let subPrice = price else {return}
-                        //self.subPrice = price
-                        let value = (0.0001/mainPrice)/subPrice
-                        valuePip = value * volume
-                        self.valueOfPip = valuePip
-                        completionHandler(valuePip)
-                    }
-                }
-                
+                let value = (0.0001/mainPrice)/subPrice
+                valuePip = value * volume
+                self.valueOfPip = valuePip
+                completionHandler(valuePip)
             default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
-                createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { [self] (success, price) in
-                    if success{
-                        guard let subPrice = price else {return}
-                        //self.subPrice = price
-                        let value = (0.0001/mainPrice)*subPrice
-                        valuePip = value * volume
-                        self.valueOfPip = valuePip
-                        completionHandler(valuePip)
-                    }
-                }
+                let value = (0.0001/mainPrice)*subPrice
+                valuePip = value * volume
+                self.valueOfPip = valuePip
+                completionHandler(valuePip)
             }
         case "XXX_JPY":
             if pairCurrency.name?.contains("USD") == true{ // Nếu XXX là USD thì trường hợp này quay về cách tính của trường hợp 2 (cặp tiền có USD đứng trước), lúc này, 1 pip = ( 0.01/tỷ giá) USD
@@ -152,15 +179,10 @@ class ProfitCalculatorViewController: BaseViewController {
                 self.valueOfPip = valuePip
                 completionHandler(valuePip)
             }else{ //Nếu XXX không phải là USD thì sẽ quy về cách tính của trường hợp 3 (cặp tiền chéo không có USD) 1 pip = [(0.01/tỷ giá chính)*tỷ giá phụ] USD
-                createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { [self] (success, price) in
-                    if success{
-                        guard let subPrice = price else {return}
-                        let value = (0.01/mainPrice)*subPrice
-                        valuePip = value * volume
-                        self.valueOfPip = valuePip
-                        completionHandler(valuePip)
-                    }
-                }
+                let value = (0.01/mainPrice)*subPrice
+                valuePip = value * volume
+                self.valueOfPip = valuePip
+                completionHandler(valuePip)
             }
         case "XAU_USD":
             valuePip =  10.0
@@ -177,11 +199,14 @@ class ProfitCalculatorViewController: BaseViewController {
     }
     //
     func getPriceOfPairCurrency(pairCurrency:PairCurrencyModel){
-        createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: pairCurrency.toCurrency!) { (success, price) in
+        self.getMainPrice(pairCurrency: self.pairCurrency!) { success in
             if success{
-                //Cap nhat lai gia
-                guard let price = price else {return}
-                self.mainPrice = price
+                print("Get main price success")
+            }
+        }
+        self.getSubPrice(pairCurrency: self.pairCurrency!) { success in
+            if success{
+                print("get sub price success")
             }
         }
     }

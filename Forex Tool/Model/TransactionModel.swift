@@ -36,7 +36,10 @@ struct TransactionModel{
             type: json["detail"]["type"].stringValue,
             result: json["detail"]["result"].stringValue,
             rewardMoney: json["detail"]["rewardMoney"].doubleValue,
-            lossMoney: json["detail"]["lossMoney"].doubleValue
+            lossMoney: json["detail"]["lossMoney"].doubleValue,
+            chartImage: json["detail"]["chartImage"].stringValue,
+            hasReason: json["detail"]["hasReason"].intValue,
+            reasonDescription: json["detail"]["reasonDescription"].stringValue
         )
         
     }
@@ -54,4 +57,7 @@ struct DetailTransaction{
     var result:String?
     var rewardMoney:Double?
     var lossMoney:Double?
+    var chartImage:String?
+    var hasReason:Int?
+    var reasonDescription:String?
 }

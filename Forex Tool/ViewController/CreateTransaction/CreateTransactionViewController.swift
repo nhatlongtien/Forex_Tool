@@ -45,8 +45,8 @@ class CreateTransactionViewController: BaseViewController {
     var pairCurrency:PairCurrencyModel?
     var pipValue:Double = 0.0
     var mainPrice:Double = 0.0
+    var subPrice:Double = 0.0
     var amountBalance:Double = 0.0
-    var riskRate:Double = 0.0
     var entryPrice:Double = 0.0
     var stopLossPrice:Double = 0.0
     var takeProfitPrice:Double = 0.0
@@ -67,6 +67,8 @@ class CreateTransactionViewController: BaseViewController {
     var dataImage:Data?
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        self.viewModelCallBack()
         //
         reasionView.isHidden = true
         heightReasonView.constant = 0
@@ -89,6 +91,8 @@ class CreateTransactionViewController: BaseViewController {
         descriptionTextView.textColor = .lightGray
         //
         callAPIToGetListPairCurrencyAndCalculatePipValue()
+        //
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -160,7 +164,7 @@ class CreateTransactionViewController: BaseViewController {
                         "dateCreate":HelperMethod.convertDateToString(date: Date(), dateFormater: "yyyy-MM-dd HH:mm:ss"),
                         "pairCurrency":self.pairCurrency?.name,
                         "groupCurrency":self.pairCurrency?.group,
-                        "riskRate":self.riskRate,
+                        "riskRate":Double((self.riskRateTf.text?.digits())!),
                         "detail": [
                             "entryPoint":Double((self.entryPointTf.text?.digits())!),
                             "stopLossPoint":Double((self.stopLoseTf.text?.digits())!),
@@ -173,7 +177,7 @@ class CreateTransactionViewController: BaseViewController {
                             "RRRate":self.riskRewardRatioLbl.text,
                             "type": self.typeTransactionLbl.text,
                             "result": ResultTransaction.Unknow.rawValue,
-                            "hasReason": 0,
+                            "hasReason": 1,
                             "reasonDescription": description,
                             "chartImage": imgUrl,
                         ],
@@ -198,7 +202,7 @@ class CreateTransactionViewController: BaseViewController {
                 "dateCreate":HelperMethod.convertDateToString(date: Date(), dateFormater: "yyyy-MM-dd HH:mm:ss"),
                 "pairCurrency":self.pairCurrency?.name,
                 "groupCurrency":self.pairCurrency?.group,
-                "riskRate":self.riskRate,
+                "riskRate":Double((self.riskRateTf.text?.digits())!),
                 "detail": [
                     "entryPoint":Double((self.entryPointTf.text?.digits())!),
                     "stopLossPoint":Double((self.stopLoseTf.text?.digits())!),
@@ -230,38 +234,6 @@ class CreateTransactionViewController: BaseViewController {
                 HUD.hide()
             })
         }
-//        ref = db.collection("Transactions").addDocument(data: [
-//            "dateCreate":HelperMethod.convertDateToString(date: Date(), dateFormater: "yyyy-MM-dd HH:mm:ss"),
-//            "pairCurrency":self.pairCurrency?.name,
-//            "groupCurrency":self.pairCurrency?.group,
-//            "riskRate":self.riskRate,
-//            "detail": [
-//                "entryPoint":Double((self.entryPointTf.text?.digits())!),
-//                "stopLossPoint":Double((self.stopLoseTf.text?.digits())!),
-//                "takeProfitPoint":Double((self.takeProfitTf.text?.digits())!),
-//                "lotSize":Double((self.lotSizeTf.text?.digits())!),
-//                "pipsLoss":self.pipsLoss,
-//                "pipsProfit":self.pipsGain,
-//                "rewardMoney": self.amountGain,
-//                "lossMoney":self.amountToRisk,
-//                "RRRate":self.riskRewardRatioLbl.text,
-//                "type": self.typeTransactionLbl.text,
-//                "result": ResultTransaction.Unknow.rawValue
-//            ],
-//            "userID":Constant.defaults.string(forKey: Constant.USER_ID),
-//            "status":status,
-//            "transactionID": UUID().uuidString,
-//            "timeStamp": Timestamp(date: Date())
-//
-//        ], completion: { (error) in
-//            if let err = error{
-//                HelperMethod.showAlertWithMessage(message: "Error adding document: \(err)")
-//            }else{
-//                HelperMethod.showAlertWithMessage(message: "Create transaction successfully!")
-//                print("Document added with ID: \(ref!.documentID)")
-//            }
-//            HUD.hide()
-//        })
         
     }
     //MARK: Helper Method
@@ -287,20 +259,61 @@ class CreateTransactionViewController: BaseViewController {
                 guard let list = listPairCurrency else {return}
                 self.pairCurrency = list.first
                 self.namePairCurrency.text = list.first?.name
-                //Goi API lay gia hien tai
-                self.createTransactionVM.convertCurrency(fromCurrency: (self.pairCurrency?.fromCurrency)!, toCurrency: (self.pairCurrency?.toCurrency)!) { (success, price) in
+                //Goi API lay mainprice -> goi API lay sub price -> calculationPipValue
+                self.getMainPrice(pairCurrency: self.pairCurrency!) { success in
                     if success{
-                        //Cap nhat lai gia
-                        print(price)
-                        guard let price = price else {return}
-                        self.mainPrice = price
-                        //Goi API tinh pip value
-                        self.calculationPipValue(pairCurrency: self.pairCurrency!, volume: 100000) { (pipValue) in
-                            print(pipValue)
+                        self.getSubPrice(pairCurrency: self.pairCurrency!) { success in
+                            if success{
+                                self.calculationPipValue(pairCurrency: self.pairCurrency!, volume: 100000) { (pipValue) in
+                                    print(pipValue)
+                                }
+                            }
                         }
                     }
                 }
             }
+        }
+    }
+    func getMainPrice(pairCurrency:PairCurrencyModel, completionHandler:@escaping(_ result:Bool) -> Void){
+        createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: pairCurrency.toCurrency!) { success, pricePairCurrency in
+            if success{
+                guard let pricePairCurrency = pricePairCurrency else {return}
+                self.mainPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                completionHandler(true)
+            }else{
+                completionHandler(false)
+            }
+        }
+    }
+    func getSubPrice(pairCurrency:PairCurrencyModel, completionHandler:@escaping(_ result:Bool) -> Void){
+        switch pairCurrency.group {
+        case "XXX_XXX": //Chi tinh subprice cho nhung cap tien cheo khong co usd
+            //goi API lay ti gia phu
+            switch pairCurrency.name {
+            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            }
+        default:
+            completionHandler(true)
+            break
         }
     }
 
@@ -323,35 +336,21 @@ class CreateTransactionViewController: BaseViewController {
         case "XXX_XXX": // Đối với các cặp tiền chéo (không có USD)
             //goi API lay ti gia phu
             switch pairCurrency.name {
-            
             case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
-                var valueReturn:Double = 0
-                createTransactionVM.convertCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { [self] (success, price) in
-                    if success{
-                        guard let subPrice = price else {return}
-                        //self.subPrice = price
-                        let value = (0.0001/mainPrice)/subPrice
-                        valuePip = value * volume
-                        self.valueOfPip = valuePip
-                        self.pipValueLbl.text = String(valuePip.formaterValueOfPips()) + " $"
-                        self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
-                        completionHandler(valuePip)
-                    }
-                }
+                let value = (0.0001/mainPrice)/subPrice
+                valuePip = value * volume
+                self.valueOfPip = valuePip
+                self.pipValueLbl.text = String(valuePip.formaterValueOfPips()) + " $"
+                self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
+                completionHandler(valuePip)
                 
             default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
-                createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { [self] (success, price) in
-                    if success{
-                        guard let subPrice = price else {return}
-                        //self.subPrice = price
-                        let value = (0.0001/mainPrice)*subPrice
-                        valuePip = value * volume
-                        self.valueOfPip = valuePip
-                        self.pipValueLbl.text = String(valuePip.formaterValueOfPips()) + " $"
-                        self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
-                        completionHandler(valuePip)
-                    }
-                }
+                let value = (0.0001/mainPrice)*subPrice
+                valuePip = value * volume
+                self.valueOfPip = valuePip
+                self.pipValueLbl.text = String(valuePip.formaterValueOfPips()) + " $"
+                self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
+                completionHandler(valuePip)
             }
         case "XXX_JPY":
             if pairCurrency.name?.contains("USD") == true{ // Nếu XXX là USD thì trường hợp này quay về cách tính của trường hợp 2 (cặp tiền có USD đứng trước), lúc này, 1 pip = ( 0.01/tỷ giá) USD
@@ -361,17 +360,12 @@ class CreateTransactionViewController: BaseViewController {
                 self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
                 completionHandler(valuePip)
             }else{ //Nếu XXX không phải là USD thì sẽ quy về cách tính của trường hợp 3 (cặp tiền chéo không có USD) 1 pip = [(0.01/tỷ giá chính)*tỷ giá phụ] USD
-                createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { [self] (success, price) in
-                    if success{
-                        guard let subPrice = price else {return}
-                        let value = (0.01/mainPrice)*subPrice
-                        valuePip = value * volume
-                        self.valueOfPip = valuePip
-                        self.pipValueLbl.text = String(valuePip.formaterValueOfPips()) + " $"
-                        self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
-                        completionHandler(valuePip)
-                    }
-                }
+                let value = (0.01/mainPrice)*subPrice
+                valuePip = value * volume
+                self.valueOfPip = valuePip
+                self.pipValueLbl.text = String(valuePip.formaterValueOfPips()) + " $"
+                self.valuePipsLbl.text = String(valuePip.formaterValueOfPips()) + " $"
+                completionHandler(valuePip)
             }
         case "XAU_USD":
             valuePip =  10.0
@@ -436,14 +430,15 @@ class CreateTransactionViewController: BaseViewController {
     }
     //
     func getPriceOfPairCurrencyAndPipValue(pairCurrency:PairCurrencyModel){
-        createTransactionVM.convertCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: pairCurrency.toCurrency!) { (success, price) in
+        //Goi API lay mainprice -> goi API lay sub price -> calculationPipValue
+        self.getMainPrice(pairCurrency: self.pairCurrency!) { success in
             if success{
-                //Cap nhat lai gia
-                guard let price = price else {return}
-                self.mainPrice = price
-                //Call API tinh pip value
-                self.calculationPipValue(pairCurrency: pairCurrency, volume: 100000) { (pipValue) in
-                    print(pipValue)
+                self.getSubPrice(pairCurrency: self.pairCurrency!) { success in
+                    if success{
+                        self.calculationPipValue(pairCurrency: self.pairCurrency!, volume: 100000) { (pipValue) in
+                            print(pipValue)
+                        }
+                    }
                 }
             }
         }

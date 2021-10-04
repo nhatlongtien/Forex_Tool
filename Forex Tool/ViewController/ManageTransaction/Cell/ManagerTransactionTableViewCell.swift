@@ -10,6 +10,7 @@ protocol ManagerTransactionTableViewCellDelegate:class {
     func deleteTransactionButtonDidTap(transaction:TransactionModel)
     func editTransactionButtonDitTap(transaction:TransactionModel)
     func createTransactionButtonDidTap()
+    func editReasonButtonDidTap(transaction:TransactionModel)
 }
 class ManagerTransactionTableViewCell: UITableViewCell {
     @IBOutlet weak var emptyTransactionView: CustomeBoderRadiusView!
@@ -92,11 +93,14 @@ class ManagerTransactionTableViewCell: UITableViewCell {
     @IBAction func editButtonWasPressed(_ sender: Any) {
         self.delegate?.editTransactionButtonDitTap(transaction: selectedTransaction!)
     }
-    
     @IBAction func deleteButtonWasPressed(_ sender: Any) {
         self.delegate?.deleteTransactionButtonDidTap(transaction: selectedTransaction!)
     }
     @IBAction func createTransactionWasPressed(_ sender: Any) {
         self.delegate?.createTransactionButtonDidTap()
     }
+    @IBAction func editReasonButtonWasPressed(_ sender: Any) {
+        self.delegate?.editReasonButtonDidTap(transaction: selectedTransaction!)
+    }
+    
 }

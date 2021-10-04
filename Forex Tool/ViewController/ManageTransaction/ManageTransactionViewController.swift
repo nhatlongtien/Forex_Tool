@@ -66,6 +66,7 @@ class ManageTransactionViewController: BaseViewController {
     }
 
 }
+//MARK: UITableViewDelegate, UITableViewDataSource
 extension ManageTransactionViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if listTransaction.count > 0{
@@ -88,8 +89,18 @@ extension ManageTransactionViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 185
     }
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if listTransaction.count == 0{
+            return nil
+        }else{
+            return indexPath
+        }
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let targetVC = DetailTransactionViewController()
+        targetVC.selectedTransactionItem = listTransaction[indexPath.row]
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
 }
 //MARK: ManagerTransactionTableViewCellDelegate
@@ -121,10 +132,15 @@ extension ManageTransactionViewController: ManagerTransactionTableViewCellDelega
         let targetVC = CreateTransactionViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
+    func editReasonButtonDidTap(transaction: TransactionModel) {
+        let targetVC = EditReasonPopupViewController()
+        targetVC.selectedTransactionItem = transaction
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
     
     
 }
-// MARK:
+// MARK: UpdateTransactionViewControllerDelegate
 extension ManageTransactionViewController:UpdateTransactionViewControllerDelegate{
     func dataDidChange() {
         self.callAPIToGetListTransaction(filterObject: self.filterObject)

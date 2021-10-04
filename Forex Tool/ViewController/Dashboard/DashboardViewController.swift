@@ -33,8 +33,6 @@ class DashboardViewController: UIViewController {
     var lossAmount:Double = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         let user = Auth.auth().currentUser
         print(user?.email)
         print(user?.uid)
@@ -206,7 +204,7 @@ class DashboardViewController: UIViewController {
         }
     }
 }
-
+//MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension DashboardViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listActiveTransaction.count
@@ -224,6 +222,12 @@ extension DashboardViewController:UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 265, height: 139)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let targetVC = DetailTransactionViewController()
+        targetVC.selectedTransactionItem = listActiveTransaction[indexPath.row]
+        self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
 }

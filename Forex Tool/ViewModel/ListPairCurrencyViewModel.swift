@@ -17,7 +17,7 @@ class ListPairCurrencyViewModel{
     
     func getListPairCurrency(completionHanler:@escaping(_ result:Bool, _ listCurrency:[PairCurrencyModel]?) -> Void){
         beforeApiCall?()
-        db.collection("ListCurrency").getDocuments { [self] (snapShot, error) in
+        db.collection("ListPairCurrency").getDocuments { [self] (snapShot, error) in
             if let err = error{
                 completionHanler(false, nil)
                 HelperMethod.showAlertWithMessage(message: err.localizedDescription ?? "")

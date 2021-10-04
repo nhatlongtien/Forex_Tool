@@ -157,4 +157,27 @@ class DashboardViewModel{
             afterApiCall?()
         }
     }
+    //
+    func uploadListPairCurrency(){
+        var ref: DocumentReference? = nil
+        let db = Firestore.firestore()
+        let listPairCurrency = Constant.listCurrency
+        for eachPairCurrency in listPairCurrency{
+            ref = db.collection("ListPairCurrency").addDocument(data: [
+                "currency" : eachPairCurrency.currency,
+                "fromCurrency": eachPairCurrency.fromCurrency,
+                "group": eachPairCurrency.group,
+                "id": eachPairCurrency.id,
+                "name": eachPairCurrency.name,
+                "toCurrency": eachPairCurrency.toCururrency
+            ], completion: { err in
+                if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                    }
+            })
+        }
+        
+    }
 }
