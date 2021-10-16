@@ -9,6 +9,13 @@ import UIKit
 import PKHUD
 class PipValueViewController: BaseViewController {
 
+    @IBOutlet weak var pairCurrencyTitle: UILabel!
+    @IBOutlet weak var pipAmountTitle: UILabel!
+    @IBOutlet weak var pipAmountTf: UITextField!
+    @IBOutlet weak var positionSizeTitle: UILabel!
+    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var resultTitle: UILabel!
+    @IBOutlet weak var pipValueTitle: UILabel!
     @IBOutlet weak var positionSizeTf: UITextField!
     @IBOutlet weak var pipValueLbl: UILabel!
     @IBOutlet weak var pairCurrencyNameLbl: UILabel!
@@ -24,6 +31,8 @@ class PipValueViewController: BaseViewController {
         super.viewDidLoad()
         self.viewModelCallBack()
         //
+        setupUI()
+        //
         positionSizeTf.delegate = self
         positionSizeTf.keyboardType = .decimalPad
         //
@@ -31,7 +40,7 @@ class PipValueViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Pip Value"
+        self.title = "Pip Value".localized()
         //
         //self.callAPI()
     }
@@ -48,6 +57,17 @@ class PipValueViewController: BaseViewController {
         self.calculationPipValue(pairCurrency: pairCurrency, volume: volume)
     }
     //MARK: Helper Method
+    func setupUI(){
+        pairCurrencyTitle.text = "Pair Currency".localized()
+        pipAmountTitle.text = "Pip Amount".localized()
+        positionSizeTitle.text = "Position Size (Volume)".localized()
+        calculateButton.setTitle("Calculate".localized(), for: .normal)
+        resultTitle.text = "Result".localized()
+        pipValueTitle.text = "Pip Value".localized()
+        positionSizeTf.placeholder = "Enter your position size (volume)".localized()
+        pipAmountTf.isUserInteractionEnabled = false
+        pipAmountTf.placeholder = "1.0 by default".localized()
+    }
     func callAPI(){
         //Goi API lay danh sach tien te -> goi API lay gia hien tai
         listPairCurrencyVM.getListPairCurrency { (result, listPairCurrency) in
@@ -85,7 +105,7 @@ class PipValueViewController: BaseViewController {
         case "XXX_XXX": //Chi tinh subprice cho nhung cap tien cheo khong co usd
             //goi API lay ti gia phu
             switch pairCurrency.name {
-            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
+            case "USD/CAD", "USD/CHF", "USD/CZK", "USD/DKK", "USD/HUF", "USD/JPY", "USD/MXN", "USD/NOK", "USD/PLN", "USD/SEK", "USD/SGD", "USD/TRY", "USD/ZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
                 createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { success, pricePairCurrency in
                     if success{
                         guard let pricePairCurrency = pricePairCurrency else {return}
@@ -96,6 +116,18 @@ class PipValueViewController: BaseViewController {
                     }
                 }
             default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            }
+        case "XXX_JPY":
+            if pairCurrency.name?.contains("USD") == false{
                 createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
                     if success{
                         guard let pricePairCurrency = pricePairCurrency else {return}
@@ -134,7 +166,7 @@ class PipValueViewController: BaseViewController {
         case "XXX_XXX": // Đối với các cặp tiền chéo (không có USD)
             //goi API lay ti gia phu
             switch pairCurrency.name {
-            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
+            case "USD/CAD", "USD/CHF", "USD/CZK", "USD/DKK", "USD/HUF", "USD/JPY", "USD/MXN", "USD/NOK", "USD/PLN", "USD/SEK", "USD/SGD", "USD/TRY", "USD/ZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
                 let value = (0.0001/mainPrice)/subPrice
                 valuePip = value * volume
                 self.valueOfPip = valuePip

@@ -14,6 +14,8 @@
 		380B251426F1974E00474396 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 380B251326F1974D00474396 /* index.html */; };
 		380B251926F1D0F500474396 /* HomeNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B251726F1D0F500474396 /* HomeNewsViewController.swift */; };
 		380B251A26F1D0F500474396 /* HomeNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380B251826F1D0F500474396 /* HomeNewsViewController.xib */; };
+		381B8056270D915200BE8217 /* EconomicCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B8055270D915200BE8217 /* EconomicCalendarModel.swift */; };
+		381B8058270D93A800BE8217 /* DetailMarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B8057270D93A800BE8217 /* DetailMarketViewModel.swift */; };
 		383B605B26FD6A1E002AA0C9 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B605926FD6A1E002AA0C9 /* EditProfileViewController.swift */; };
 		383B605C26FD6A1E002AA0C9 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 383B605A26FD6A1E002AA0C9 /* EditProfileViewController.xib */; };
 		383B605F26FD7CCC002AA0C9 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */; };
@@ -63,8 +65,21 @@
 		3894D6B12709F0200028F2E4 /* EditReasonTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6B02709F0200028F2E4 /* EditReasonTransactionViewModel.swift */; };
 		3894D6B62709F92E0028F2E4 /* DetailTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6B42709F92E0028F2E4 /* DetailTransactionViewController.swift */; };
 		3894D6B72709F92E0028F2E4 /* DetailTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3894D6B52709F92E0028F2E4 /* DetailTransactionViewController.xib */; };
+		3894D6BB270AB0A90028F2E4 /* HomeMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6B9270AB0A90028F2E4 /* HomeMarketViewController.swift */; };
+		3894D6BC270AB0A90028F2E4 /* HomeMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3894D6BA270AB0A90028F2E4 /* HomeMarketViewController.xib */; };
+		3894D6C0270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6BE270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift */; };
+		3894D6C1270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3894D6BF270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib */; };
 		38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */; };
 		38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */; };
+		38A54637270AF40900D2CE39 /* HomeMarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A54636270AF40900D2CE39 /* HomeMarketViewModel.swift */; };
+		38A5463A270D39E500D2CE39 /* DetailMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A54638270D39E400D2CE39 /* DetailMarketViewController.swift */; };
+		38A5463B270D39E500D2CE39 /* DetailMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A54639270D39E400D2CE39 /* DetailMarketViewController.xib */; };
+		38A5463E270D403100D2CE39 /* DetailMarketHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A5463D270D403100D2CE39 /* DetailMarketHeaderView.swift */; };
+		38A54640270D404D00D2CE39 /* DetailMarketHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A5463F270D404D00D2CE39 /* DetailMarketHeaderView.xib */; };
+		38A54643270D45A800D2CE39 /* BasicInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A54641270D45A800D2CE39 /* BasicInfoTableViewCell.swift */; };
+		38A54644270D45A800D2CE39 /* BasicInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A54642270D45A800D2CE39 /* BasicInfoTableViewCell.xib */; };
+		38A54647270D46DC00D2CE39 /* EconomicCalenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A54645270D46DC00D2CE39 /* EconomicCalenderTableViewCell.swift */; };
+		38A54648270D46DC00D2CE39 /* EconomicCalenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A54646270D46DC00D2CE39 /* EconomicCalenderTableViewCell.xib */; };
 		38B0C4ED269D7F1D009D968C /* ListPairCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C4EB269D7F1D009D968C /* ListPairCurrencyViewController.swift */; };
 		38B0C4EE269D7F1D009D968C /* ListPairCurrencyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B0C4EC269D7F1D009D968C /* ListPairCurrencyViewController.xib */; };
 		38B0C4F2269D8181009D968C /* ListPairCurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C4F0269D8181009D968C /* ListPairCurrencyTableViewCell.swift */; };
@@ -73,6 +88,8 @@
 		38B0C518269D8BFB009D968C /* PairCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C517269D8BFB009D968C /* PairCurrencyModel.swift */; };
 		38B0C51B269D99B8009D968C /* CreateTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C51A269D99B8009D968C /* CreateTransactionViewModel.swift */; };
 		38B0C51E269E808B009D968C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C51D269E808A009D968C /* Enum.swift */; };
+		38B9BBFA271027A800E153E7 /* DatePickerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9BBF8271027A800E153E7 /* DatePickerPopupViewController.swift */; };
+		38B9BBFB271027A800E153E7 /* DatePickerPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B9BBF9271027A800E153E7 /* DatePickerPopupViewController.xib */; };
 		38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C723B12696989A00E810F9 /* AppDelegate.swift */; };
 		38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C723BA2696989C00E810F9 /* Assets.xcassets */; };
 		38C723BE2696989C00E810F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C723BC2696989C00E810F9 /* LaunchScreen.storyboard */; };
@@ -103,7 +120,7 @@
 		38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724542697E9DE00E810F9 /* AuthViewModel.swift */; };
 		38C724DA26980B3600E810F9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724D926980B3600E810F9 /* Constant.swift */; };
 		38C724FB269842CF00E810F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724FA269842CF00E810F9 /* UserModel.swift */; };
-		38D7CC272706F96E004297AF /* Localizations.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38D7CC292706F96E004297AF /* Localizations.strings */; };
+		38D7CC272706F96E004297AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38D7CC292706F96E004297AF /* Localizable.strings */; };
 		38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC121F26F5893100256975 /* LongShortRatioViewController.swift */; };
 		38DC122226F5893100256975 /* LongShortRatioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC122026F5893100256975 /* LongShortRatioViewController.xib */; };
 		38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */; };
@@ -116,6 +133,10 @@
 		38DC12EA26F8CE5000256975 /* AddPersonalInfoPoupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC12E826F8CE4F00256975 /* AddPersonalInfoPoupViewController.xib */; };
 		38DC12EE26F8CE7D00256975 /* EditProfilePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC12EC26F8CE7D00256975 /* EditProfilePopupViewController.swift */; };
 		38DC12EF26F8CE7D00256975 /* EditProfilePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC12ED26F8CE7D00256975 /* EditProfilePopupViewController.xib */; };
+		38ECB4932712A40F007A776A /* AnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB4912712A40F007A776A /* AnalysisTableViewCell.swift */; };
+		38ECB4942712A40F007A776A /* AnalysisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38ECB4922712A40F007A776A /* AnalysisTableViewCell.xib */; };
+		38F5F3762712936100DCFAE9 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */; };
+		38F5F3772712936100DCFAE9 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */; };
 		3D2198D65E355CBB603442DD /* Pods_Forex_Tool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7B8772B6A4F58B747FF7C6 /* Pods_Forex_Tool.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +150,8 @@
 		380B251326F1974D00474396 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		380B251726F1D0F500474396 /* HomeNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsViewController.swift; sourceTree = "<group>"; };
 		380B251826F1D0F500474396 /* HomeNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsViewController.xib; sourceTree = "<group>"; };
+		381B8055270D915200BE8217 /* EconomicCalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicCalendarModel.swift; sourceTree = "<group>"; };
+		381B8057270D93A800BE8217 /* DetailMarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMarketViewModel.swift; sourceTree = "<group>"; };
 		383B605926FD6A1E002AA0C9 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		383B605A26FD6A1E002AA0C9 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 		383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
@@ -178,8 +201,21 @@
 		3894D6B02709F0200028F2E4 /* EditReasonTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReasonTransactionViewModel.swift; sourceTree = "<group>"; };
 		3894D6B42709F92E0028F2E4 /* DetailTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTransactionViewController.swift; sourceTree = "<group>"; };
 		3894D6B52709F92E0028F2E4 /* DetailTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTransactionViewController.xib; sourceTree = "<group>"; };
+		3894D6B9270AB0A90028F2E4 /* HomeMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMarketViewController.swift; sourceTree = "<group>"; };
+		3894D6BA270AB0A90028F2E4 /* HomeMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMarketViewController.xib; sourceTree = "<group>"; };
+		3894D6BE270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMarketCollectionViewCell.swift; sourceTree = "<group>"; };
+		3894D6BF270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMarketCollectionViewCell.xib; sourceTree = "<group>"; };
 		38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionViewController.swift; sourceTree = "<group>"; };
 		38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateTransactionViewController.xib; sourceTree = "<group>"; };
+		38A54636270AF40900D2CE39 /* HomeMarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMarketViewModel.swift; sourceTree = "<group>"; };
+		38A54638270D39E400D2CE39 /* DetailMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMarketViewController.swift; sourceTree = "<group>"; };
+		38A54639270D39E400D2CE39 /* DetailMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMarketViewController.xib; sourceTree = "<group>"; };
+		38A5463D270D403100D2CE39 /* DetailMarketHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMarketHeaderView.swift; sourceTree = "<group>"; };
+		38A5463F270D404D00D2CE39 /* DetailMarketHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMarketHeaderView.xib; sourceTree = "<group>"; };
+		38A54641270D45A800D2CE39 /* BasicInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoTableViewCell.swift; sourceTree = "<group>"; };
+		38A54642270D45A800D2CE39 /* BasicInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicInfoTableViewCell.xib; sourceTree = "<group>"; };
+		38A54645270D46DC00D2CE39 /* EconomicCalenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicCalenderTableViewCell.swift; sourceTree = "<group>"; };
+		38A54646270D46DC00D2CE39 /* EconomicCalenderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EconomicCalenderTableViewCell.xib; sourceTree = "<group>"; };
 		38B0C4EB269D7F1D009D968C /* ListPairCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPairCurrencyViewController.swift; sourceTree = "<group>"; };
 		38B0C4EC269D7F1D009D968C /* ListPairCurrencyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPairCurrencyViewController.xib; sourceTree = "<group>"; };
 		38B0C4F0269D8181009D968C /* ListPairCurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPairCurrencyTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +224,8 @@
 		38B0C517269D8BFB009D968C /* PairCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairCurrencyModel.swift; sourceTree = "<group>"; };
 		38B0C51A269D99B8009D968C /* CreateTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionViewModel.swift; sourceTree = "<group>"; };
 		38B0C51D269E808A009D968C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		38B9BBF8271027A800E153E7 /* DatePickerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupViewController.swift; sourceTree = "<group>"; };
+		38B9BBF9271027A800E153E7 /* DatePickerPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupViewController.xib; sourceTree = "<group>"; };
 		38C723AE2696989A00E810F9 /* Forex Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forex Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C723B12696989A00E810F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38C723BA2696989C00E810F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,8 +259,8 @@
 		38C724D926980B3600E810F9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		38C724FA269842CF00E810F9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		38D7CC252706F942004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		38D7CC282706F96E004297AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizations.strings; sourceTree = "<group>"; };
-		38D7CC2A2706F977004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizations.strings; sourceTree = "<group>"; };
+		38D7CC282706F96E004297AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		38D7CC2A2706F977004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38DC121F26F5893100256975 /* LongShortRatioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioViewController.swift; sourceTree = "<group>"; };
 		38DC122026F5893100256975 /* LongShortRatioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongShortRatioViewController.xib; sourceTree = "<group>"; };
 		38DC122526F59EE900256975 /* LongShortRatioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongShortRatioTableViewCell.swift; sourceTree = "<group>"; };
@@ -235,6 +273,10 @@
 		38DC12E826F8CE4F00256975 /* AddPersonalInfoPoupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPersonalInfoPoupViewController.xib; sourceTree = "<group>"; };
 		38DC12EC26F8CE7D00256975 /* EditProfilePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePopupViewController.swift; sourceTree = "<group>"; };
 		38DC12ED26F8CE7D00256975 /* EditProfilePopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfilePopupViewController.xib; sourceTree = "<group>"; };
+		38ECB4912712A40F007A776A /* AnalysisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		38ECB4922712A40F007A776A /* AnalysisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisTableViewCell.xib; sourceTree = "<group>"; };
+		38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
+		38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		598332932A1693D7BE617DAD /* Pods-Forex Tool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forex Tool.debug.xcconfig"; path = "Target Support Files/Pods-Forex Tool/Pods-Forex Tool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -412,6 +454,41 @@
 			path = DetailTransaction;
 			sourceTree = "<group>";
 		};
+		3894D6B8270AB0850028F2E4 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				38A5463C270D3FE200D2CE39 /* HeaderView */,
+				3894D6BD270AB24E0028F2E4 /* Cell */,
+				3894D6B9270AB0A90028F2E4 /* HomeMarketViewController.swift */,
+				3894D6BA270AB0A90028F2E4 /* HomeMarketViewController.xib */,
+				38A54638270D39E400D2CE39 /* DetailMarketViewController.swift */,
+				38A54639270D39E400D2CE39 /* DetailMarketViewController.xib */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		3894D6BD270AB24E0028F2E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3894D6BE270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift */,
+				3894D6BF270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib */,
+				38A54641270D45A800D2CE39 /* BasicInfoTableViewCell.swift */,
+				38A54642270D45A800D2CE39 /* BasicInfoTableViewCell.xib */,
+				38A54645270D46DC00D2CE39 /* EconomicCalenderTableViewCell.swift */,
+				38A54646270D46DC00D2CE39 /* EconomicCalenderTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		38A5463C270D3FE200D2CE39 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				38A5463D270D403100D2CE39 /* DetailMarketHeaderView.swift */,
+				38A5463F270D404D00D2CE39 /* DetailMarketHeaderView.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		38C723A52696989A00E810F9 = {
 			isa = PBXGroup;
 			children = (
@@ -444,7 +521,7 @@
 				38C723BC2696989C00E810F9 /* LaunchScreen.storyboard */,
 				38C724252697478700E810F9 /* GoogleService-Info.plist */,
 				38C723BF2696989C00E810F9 /* Info.plist */,
-				38D7CC292706F96E004297AF /* Localizations.strings */,
+				38D7CC292706F96E004297AF /* Localizable.strings */,
 			);
 			path = "Forex Tool";
 			sourceTree = "<group>";
@@ -461,6 +538,8 @@
 				38DC125C26F5C74600256975 /* LongShortRatioViewModel.swift */,
 				383B605E26FD7CCC002AA0C9 /* EditProfileViewModel.swift */,
 				3894D6B02709F0200028F2E4 /* EditReasonTransactionViewModel.swift */,
+				38A54636270AF40900D2CE39 /* HomeMarketViewModel.swift */,
+				381B8057270D93A800BE8217 /* DetailMarketViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -477,6 +556,8 @@
 		38C723E826969D0800E810F9 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				38F5F3732712933F00DCFAE9 /* Analysis */,
+				3894D6B8270AB0850028F2E4 /* Market */,
 				3894D6B32709F9000028F2E4 /* DetailTransaction */,
 				3894D6B22709F8CA0028F2E4 /* TabBar */,
 				383B606126FF10D8002AA0C9 /* CalculationTool */,
@@ -507,6 +588,7 @@
 				38871A2C26F32C1F00DC3F5C /* NewsModel.swift */,
 				38DC125926F5BC4100256975 /* ExchangeLongShortRatioModel.swift */,
 				388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */,
+				381B8055270D915200BE8217 /* EconomicCalendarModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -621,8 +703,29 @@
 				38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */,
 				38495CC927096D2D004F0423 /* EditReasonPopupViewController.swift */,
 				38495CCA27096D2D004F0423 /* EditReasonPopupViewController.xib */,
+				38B9BBF8271027A800E153E7 /* DatePickerPopupViewController.swift */,
+				38B9BBF9271027A800E153E7 /* DatePickerPopupViewController.xib */,
 			);
 			path = PodupView;
+			sourceTree = "<group>";
+		};
+		38F5F3732712933F00DCFAE9 /* Analysis */ = {
+			isa = PBXGroup;
+			children = (
+				38F5F37827129FF100DCFAE9 /* Cell */,
+				38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */,
+				38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */,
+			);
+			path = Analysis;
+			sourceTree = "<group>";
+		};
+		38F5F37827129FF100DCFAE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				38ECB4912712A40F007A776A /* AnalysisTableViewCell.swift */,
+				38ECB4922712A40F007A776A /* AnalysisTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		5DDA7B0A47E19186E35C0E3D /* Pods */ = {
@@ -703,6 +806,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A54648270D46DC00D2CE39 /* EconomicCalenderTableViewCell.xib in Resources */,
 				38DC122226F5893100256975 /* LongShortRatioViewController.xib in Resources */,
 				38C723FD26969FB100E810F9 /* WellcomeViewController.xib in Resources */,
 				38C723F326969D9700E810F9 /* RegisterViewController.xib in Resources */,
@@ -713,16 +817,22 @@
 				38C7241026972DAA00E810F9 /* Roboto-ThinItalic.ttf in Resources */,
 				38C7241726972DAA00E810F9 /* Roboto-Black.ttf in Resources */,
 				38495CCC27096D2D004F0423 /* EditReasonPopupViewController.xib in Resources */,
+				38B9BBFB271027A800E153E7 /* DatePickerPopupViewController.xib in Resources */,
+				38F5F3772712936100DCFAE9 /* AnalysisViewController.xib in Resources */,
 				38DC12EF26F8CE7D00256975 /* EditProfilePopupViewController.xib in Resources */,
 				38C7241226972DAA00E810F9 /* Roboto-LightItalic.ttf in Resources */,
+				38A54644270D45A800D2CE39 /* BasicInfoTableViewCell.xib in Resources */,
 				38DC12EA26F8CE5000256975 /* AddPersonalInfoPoupViewController.xib in Resources */,
 				3886C9F92703467900C834B3 /* HomeCalculationViewController.xib in Resources */,
 				383CA9E7269AA1BE00A29E3A /* DashboardViewController.xib in Resources */,
 				383CAA10269B387D00A29E3A /* ActiveTransactionCollectionViewCell.xib in Resources */,
 				3851DB1226A3CD16008769B0 /* ManageTransactionViewController.xib in Resources */,
+				3894D6BC270AB0A90028F2E4 /* HomeMarketViewController.xib in Resources */,
 				38C7240C26972DAA00E810F9 /* Roboto-Medium.ttf in Resources */,
 				38871A5926F4585D00DC3F5C /* DetailNewsViewController.xib in Resources */,
+				38ECB4942712A40F007A776A /* AnalysisTableViewCell.xib in Resources */,
 				380B24E726F18A4D00474396 /* EconomicCalendarViewController.xib in Resources */,
+				38A5463B270D39E500D2CE39 /* DetailMarketViewController.xib in Resources */,
 				38C723BE2696989C00E810F9 /* LaunchScreen.storyboard in Resources */,
 				38C7241426972DAA00E810F9 /* Roboto-BlackItalic.ttf in Resources */,
 				388719F026F1EECD00DC3F5C /* TypeNewCollectionViewCell.xib in Resources */,
@@ -732,19 +842,21 @@
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
 				38C724262697478700E810F9 /* GoogleService-Info.plist in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
-				38D7CC272706F96E004297AF /* Localizations.strings in Resources */,
+				38D7CC272706F96E004297AF /* Localizable.strings in Resources */,
 				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
 				383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */,
 				38B0C4F3269D8181009D968C /* ListPairCurrencyTableViewCell.xib in Resources */,
 				3894D6B72709F92E0028F2E4 /* DetailTransactionViewController.xib in Resources */,
 				383B606526FF10F6002AA0C9 /* ProfitCalculatorViewController.xib in Resources */,
 				388719FE26F2E1C900DC3F5C /* NewsTableViewCell.xib in Resources */,
+				38A54640270D404D00D2CE39 /* DetailMarketHeaderView.xib in Resources */,
 				380B251426F1974E00474396 /* index.html in Resources */,
 				3851DB1826A3CEF6008769B0 /* ManagerTransactionTableViewCell.xib in Resources */,
 				388719F926F1FDD200DC3F5C /* NewsHeaderView.xib in Resources */,
 				3886C9F02702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib in Resources */,
 				38C7240F26972DAA00E810F9 /* Roboto-MediumItalic.ttf in Resources */,
 				38C7240E26972DAA00E810F9 /* Roboto-Regular.ttf in Resources */,
+				3894D6C1270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib in Resources */,
 				38DC128B26F6DD7400256975 /* LongShortRatioFooterView.xib in Resources */,
 				38C7241326972DAA00E810F9 /* Roboto-Italic.ttf in Resources */,
 				383CA9F2269AA26C00A29E3A /* ProfileViewController.xib in Resources */,
@@ -826,6 +938,7 @@
 				388719F526F1FDBC00DC3F5C /* NewsHeaderView.swift in Sources */,
 				38DC125D26F5C74600256975 /* LongShortRatioViewModel.swift in Sources */,
 				38B0C51B269D99B8009D968C /* CreateTransactionViewModel.swift in Sources */,
+				38B9BBFA271027A800E153E7 /* DatePickerPopupViewController.swift in Sources */,
 				38DC12E926F8CE5000256975 /* AddPersonalInfoPoupViewController.swift in Sources */,
 				38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */,
 				38B0C4ED269D7F1D009D968C /* ListPairCurrencyViewController.swift in Sources */,
@@ -852,28 +965,39 @@
 				38C724FB269842CF00E810F9 /* UserModel.swift in Sources */,
 				383CA9F7269AA2BA00A29E3A /* TabBarViewController.swift in Sources */,
 				38DC12EE26F8CE7D00256975 /* EditProfilePopupViewController.swift in Sources */,
+				38A5463E270D403100D2CE39 /* DetailMarketHeaderView.swift in Sources */,
 				383CAA08269AAEAE00A29E3A /* HistoryTransactionViewController.swift in Sources */,
 				3851DB1726A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift in Sources */,
 				38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */,
+				38A5463A270D39E500D2CE39 /* DetailMarketViewController.swift in Sources */,
 				3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */,
+				3894D6C0270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift in Sources */,
 				38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */,
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
+				38A54643270D45A800D2CE39 /* BasicInfoTableViewCell.swift in Sources */,
 				383B606426FF10F6002AA0C9 /* ProfitCalculatorViewController.swift in Sources */,
 				38871A2A26F3251200DC3F5C /* HomeNewsViewModel.swift in Sources */,
 				38C723FC26969FB100E810F9 /* WellcomeViewController.swift in Sources */,
+				38F5F3762712936100DCFAE9 /* AnalysisViewController.swift in Sources */,
+				381B8058270D93A800BE8217 /* DetailMarketViewModel.swift in Sources */,
 				380B247126ECAD1900474396 /* DropDown.swift in Sources */,
 				38B0C51E269E808B009D968C /* Enum.swift in Sources */,
 				38B0C4F2269D8181009D968C /* ListPairCurrencyTableViewCell.swift in Sources */,
 				38B0C4F6269D879D009D968C /* ListPairCurrencyViewModel.swift in Sources */,
+				38ECB4932712A40F007A776A /* AnalysisTableViewCell.swift in Sources */,
 				38C7244A2697596000E810F9 /* String Extension.swift in Sources */,
 				388719EF26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift in Sources */,
+				381B8056270D915200BE8217 /* EconomicCalendarModel.swift in Sources */,
 				383B606A26FF195A002AA0C9 /* CustomTabBar.swift in Sources */,
+				3894D6BB270AB0A90028F2E4 /* HomeMarketViewController.swift in Sources */,
 				38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */,
 				38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */,
 				3894D6B12709F0200028F2E4 /* EditReasonTransactionViewModel.swift in Sources */,
 				38C724DA26980B3600E810F9 /* Constant.swift in Sources */,
 				38DC129226F6DF3B00256975 /* LongShortRatioFooterView.swift in Sources */,
 				38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */,
+				38A54647270D46DC00D2CE39 /* EconomicCalenderTableViewCell.swift in Sources */,
+				38A54637270AF40900D2CE39 /* HomeMarketViewModel.swift in Sources */,
 				38495CCB27096D2D004F0423 /* EditReasonPopupViewController.swift in Sources */,
 				3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */,
 				38DC122726F59EE900256975 /* LongShortRatioTableViewCell.swift in Sources */,
@@ -896,13 +1020,13 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		38D7CC292706F96E004297AF /* Localizations.strings */ = {
+		38D7CC292706F96E004297AF /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				38D7CC282706F96E004297AF /* en */,
 				38D7CC2A2706F977004297AF /* vi */,
 			);
-			name = Localizations.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1033,7 +1157,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RRJMKAXD2H;
+				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1054,7 +1178,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RRJMKAXD2H;
+				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

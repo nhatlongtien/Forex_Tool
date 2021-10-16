@@ -382,12 +382,14 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containView" destination="3Wu-si-x03" id="sRR-EY-95S"/>
+                <outlet property="createButton" destination="zd0-8U-UuO" id="rLL-zK-fcq"/>
                 <outlet property="dateLbl" destination="r3x-Sq-7KW" id="Qmy-4P-hm1"/>
                 <outlet property="emptyTransactionView" destination="UYJ-fL-f4L" id="5d0-Gm-HFd"/>
                 <outlet property="entryLbl" destination="dYZ-pE-yeM" id="840-ra-eY0"/>
                 <outlet property="imageTransaction" destination="aLd-6z-wi2" id="Lqo-Xh-q3r"/>
                 <outlet property="lossLbl" destination="TC9-eN-t6S" id="bKr-cS-suB"/>
                 <outlet property="lotSizeLbl" destination="v5c-Nh-Ig5" id="kMI-U7-MWK"/>
+                <outlet property="messageTitle" destination="wOL-Y4-qUX" id="KJP-es-heO"/>
                 <outlet property="pairCurrencyLbl" destination="6xw-1Y-0H4" id="QbO-Un-QEG"/>
                 <outlet property="resultLbl" destination="ypq-t5-P2F" id="GpZ-NG-LCd"/>
                 <outlet property="rewardLbl" destination="yKo-Ov-Fy0" id="FVL-sx-MKV"/>

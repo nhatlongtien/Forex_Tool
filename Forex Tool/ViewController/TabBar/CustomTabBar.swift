@@ -50,32 +50,32 @@ class CustomTabBar: UIView {
         tabBarItem.translatesAutoresizingMaskIntoConstraints = false
         tabBarItem.clipsToBounds = true
         
-        let itemTitleLabel = UILabel()
-        itemTitleLabel.text = item.displayTitle
-        itemTitleLabel.textAlignment = .center
-        itemTitleLabel.font = UIFont(name: "Roboto-Regular", size: 10)
-        itemTitleLabel.textColor = #colorLiteral(red: 0.06274509804, green: 0, blue: 0.2117647059, alpha: 1)
-        itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        itemTitleLabel.clipsToBounds = true
+//        let itemTitleLabel = UILabel()
+//        itemTitleLabel.text = item.displayTitle
+//        itemTitleLabel.textAlignment = .center
+//        itemTitleLabel.font = UIFont(name: "Roboto-Regular", size: 10)
+//        itemTitleLabel.textColor = #colorLiteral(red: 0.06274509804, green: 0, blue: 0.2117647059, alpha: 1)
+//        itemTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+//        itemTitleLabel.clipsToBounds = true
         
         let itemImageView = UIImageView()
         itemImageView.image = item.icon.withRenderingMode(.automatic)
         itemImageView.translatesAutoresizingMaskIntoConstraints = false
         itemImageView.clipsToBounds = true
         
-        tabBarItem.addSubview(itemTitleLabel)
+//        tabBarItem.addSubview(itemTitleLabel)
         tabBarItem.addSubview(itemImageView)
         
         // Auto layout cho item title và item icon
         NSLayoutConstraint.activate([
-            itemImageView.heightAnchor.constraint(equalToConstant: 25),
-            itemImageView.widthAnchor.constraint(equalToConstant: 25),
+            itemImageView.heightAnchor.constraint(equalToConstant: 30),
+            itemImageView.widthAnchor.constraint(equalToConstant: 30),
             itemImageView.centerXAnchor.constraint(equalTo: tabBarItem.centerXAnchor),
             itemImageView.topAnchor.constraint(equalTo: tabBarItem.topAnchor, constant: 8),
-            itemImageView.leadingAnchor.constraint(equalTo: tabBarItem.leadingAnchor, constant: 25),
-            itemTitleLabel.heightAnchor.constraint(equalToConstant: 13),
-            itemTitleLabel.widthAnchor.constraint(equalTo: tabBarItem.widthAnchor),
-            itemTitleLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 4),
+            itemImageView.leadingAnchor.constraint(equalTo: tabBarItem.leadingAnchor, constant: 20),
+//            itemTitleLabel.heightAnchor.constraint(equalToConstant: 13),
+//            itemTitleLabel.widthAnchor.constraint(equalTo: tabBarItem.widthAnchor),
+//            itemTitleLabel.topAnchor.constraint(equalTo: itemImageView.bottomAnchor, constant: 4),
         ])
         // Thêm tap gesture recognizer để handle tap event
         tabBarItem.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(_:))))

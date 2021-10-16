@@ -33,13 +33,13 @@ class ListPairCurrencyViewController: UIViewController {
         viewModelCallBack()
         //
         searchTextField.delegate = self
-
+        searchTextField.placeholder = "Search your pair currency".localized()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "List Pair Currency"
+        self.title = "List Pair Currency".localized()
         //
         listPairCurrencyVM.getListPairCurrency { (result, listCurrency) in
             if result == true{
@@ -78,7 +78,7 @@ extension ListPairCurrencyViewController: UITableViewDelegate, UITableViewDataSo
         if isSearch == true{
             cell.configCell(pairCurrency: listPairCurrencySearch[indexPath.row], currentPairCurrency: self.currentPairCurrency!)
         }else{
-            cell.configCell(pairCurrency: listPairCurrency[indexPath.row], currentPairCurrency: self.currentPairCurrency!)
+            cell.configCell(pairCurrency: listPairCurrency[indexPath.row], currentPairCurrency: self.currentPairCurrency)
         }
         
         return cell

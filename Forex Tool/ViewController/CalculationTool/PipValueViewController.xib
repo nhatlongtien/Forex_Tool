@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,9 +19,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PipValueViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
+                <outlet property="calculateButton" destination="XFl-4H-ByY" id="YBl-W3-HwO"/>
                 <outlet property="pairCurrencyNameLbl" destination="AEa-4y-KZl" id="X9X-Uh-hMT"/>
+                <outlet property="pairCurrencyTitle" destination="XDk-Ba-RM4" id="Wlf-BU-uCj"/>
+                <outlet property="pipAmountTf" destination="Y76-cp-SQU" id="ip8-nj-NTj"/>
+                <outlet property="pipAmountTitle" destination="qKf-uJ-YAd" id="gbS-fY-JNg"/>
                 <outlet property="pipValueLbl" destination="47r-Cj-luU" id="ACs-j9-wDI"/>
+                <outlet property="pipValueTitle" destination="jCn-Tt-KbO" id="boT-U4-Fif"/>
                 <outlet property="positionSizeTf" destination="OB5-tQ-fxi" id="oLD-NU-eND"/>
+                <outlet property="positionSizeTitle" destination="OaI-91-4ZR" id="Oz7-YS-c9u"/>
+                <outlet property="resultTitle" destination="DwN-W3-H4j" id="0LE-qh-PV7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -166,35 +173,34 @@
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jbl-HX-Zhu">
-                                                    <rect key="frame" x="272" y="6.5" width="13" height="27"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jrc-hD-mYD">
+                                                    <rect key="frame" x="260" y="0.0" width="35" height="40"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maq-MD-YKY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="12"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="12" id="QPm-EP-Oe4"/>
-                                                                <constraint firstAttribute="width" constant="13" id="fRv-os-Skt"/>
-                                                            </constraints>
-                                                            <color key="tintColor" systemColor="systemGray4Color"/>
-                                                            <state key="normal" image="arrowtriangle.up.fill" catalog="system"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1e-1e-5Eu">
-                                                            <rect key="frame" x="0.0" y="15" width="13" height="12"/>
-                                                            <color key="tintColor" systemColor="systemGray4Color"/>
-                                                            <state key="normal" image="arrowtriangle.down.fill" catalog="system"/>
-                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX4-Cq-gaW">
+                                                            <rect key="frame" x="4" y="11.5" width="27" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                            <color key="textColor" red="0.95294117647058818" green="0.96470588235294119" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
-                                                </stackView>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                    <constraints>
+                                                        <constraint firstItem="fX4-Cq-gaW" firstAttribute="centerX" secondItem="Jrc-hD-mYD" secondAttribute="centerX" id="IdV-gI-TIy"/>
+                                                        <constraint firstAttribute="width" constant="35" id="MLR-0w-6Pl"/>
+                                                        <constraint firstItem="fX4-Cq-gaW" firstAttribute="centerY" secondItem="Jrc-hD-mYD" secondAttribute="centerY" id="Tdq-l3-mFe"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="Jrc-hD-mYD" firstAttribute="top" secondItem="rDR-Zb-8My" secondAttribute="top" id="0Yi-hl-pnm"/>
                                                 <constraint firstItem="OB5-tQ-fxi" firstAttribute="top" secondItem="rDR-Zb-8My" secondAttribute="top" id="0sN-so-VRb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jrc-hD-mYD" secondAttribute="bottom" id="6dh-xd-alP"/>
                                                 <constraint firstAttribute="trailing" secondItem="OB5-tQ-fxi" secondAttribute="trailing" constant="35" id="HSf-0l-mQZ"/>
-                                                <constraint firstItem="Jbl-HX-Zhu" firstAttribute="centerY" secondItem="rDR-Zb-8My" secondAttribute="centerY" id="Laj-4C-dbO"/>
                                                 <constraint firstAttribute="bottom" secondItem="OB5-tQ-fxi" secondAttribute="bottom" id="OGQ-BD-3rh"/>
+                                                <constraint firstAttribute="trailing" secondItem="Jrc-hD-mYD" secondAttribute="trailing" id="QbU-qu-dYi"/>
                                                 <constraint firstAttribute="height" constant="40" id="glA-1y-wsO"/>
                                                 <constraint firstItem="OB5-tQ-fxi" firstAttribute="leading" secondItem="rDR-Zb-8My" secondAttribute="leading" constant="10" id="mq3-fA-rn8"/>
-                                                <constraint firstAttribute="trailing" secondItem="Jbl-HX-Zhu" secondAttribute="trailing" constant="10" id="xQj-jH-fcU"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="radious">
@@ -337,7 +343,6 @@
     </objects>
     <resources>
         <image name="arrowtriangle.down.fill" catalog="system" width="128" height="124"/>
-        <image name="arrowtriangle.up.fill" catalog="system" width="128" height="124"/>
         <image name="blueBtn" width="280" height="50"/>
         <image name="—Pngtree—color cartoon stock market rising_5456273" width="1044" height="662"/>
         <systemColor name="systemBackgroundColor">

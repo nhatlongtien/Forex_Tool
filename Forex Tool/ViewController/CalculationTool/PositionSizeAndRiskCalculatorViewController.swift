@@ -8,7 +8,16 @@
 import UIKit
 import PKHUD
 class PositionSizeAndRiskCalculatorViewController: BaseViewController {
-
+    @IBOutlet weak var pairCurrencyTitle: UILabel!
+    @IBOutlet weak var accountBalanceTitle: UILabel!
+    @IBOutlet weak var riskRateTitle: UILabel!
+    @IBOutlet weak var entryPriceTitle: UILabel!
+    @IBOutlet weak var stopLossPriceTitle: UILabel!
+    @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var resultTitle: UILabel!
+    @IBOutlet weak var amountLossTitle: UILabel!
+    @IBOutlet weak var pipValueTitle: UILabel!
+    
     @IBOutlet weak var pairCurrencyNameLbl: UILabel!
     @IBOutlet weak var amountBalanceTf: UITextField!
     @IBOutlet weak var riskRateTf: UITextField!
@@ -33,6 +42,7 @@ class PositionSizeAndRiskCalculatorViewController: BaseViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         self.viewModelCallBack()
         //
         amountBalanceTf.delegate = self
@@ -50,7 +60,7 @@ class PositionSizeAndRiskCalculatorViewController: BaseViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Position Size & Risk"
+        self.title = "Position Size & Risk".localized()
     }
     //MARK: UI Event
     @IBAction func listPairCurrencyButtonWasPressed(_ sender: Any) {
@@ -70,6 +80,21 @@ class PositionSizeAndRiskCalculatorViewController: BaseViewController {
         }
     }
     //MARK: Helper Method
+    func setupUI(){
+        pairCurrencyTitle.text = "Pair Currency".localized()
+        accountBalanceTitle.text = "Balance Account".localized()
+        amountBalanceTf.placeholder = "Enter your balance account".localized()
+        riskRateTitle.text = "Risk Rate".localized()
+        riskRateTf.placeholder = "Enter your risk rate".localized()
+        entryPriceTitle.text = "Entry Price".localized()
+        entryPriceTf.placeholder = "Enter your entry point".localized()
+        stopLossPriceTf.placeholder = "Enter your stop loss point".localized()
+        stopLossPriceTitle.text = "Stop Loss Price".localized()
+        calculateButton.setTitle("Calculate".localized(), for: .normal)
+        resultTitle.text = "Result".localized()
+        amountLossTitle.text = "Amount Loss".localized()
+        pipValueTitle.text = "Value Pips/Standard Lot".localized()
+    }
     func callAPI(){
         //Goi API lay danh sach tien te -> goi API lay gia hien tai
         listPairCurrencyVM.getListPairCurrency { (result, listPairCurrency) in
@@ -108,7 +133,7 @@ class PositionSizeAndRiskCalculatorViewController: BaseViewController {
         case "XXX_XXX": //Chi tinh subprice cho nhung cap tien cheo khong co usd
             //goi API lay ti gia phu
             switch pairCurrency.name {
-            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
+            case "USD/CAD", "USD/CHF", "USD/CZK", "USD/DKK", "USD/HUF", "USD/JPY", "USD/MXN", "USD/NOK", "USD/PLN", "USD/SEK", "USD/SGD", "USD/TRY", "USD/ZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
                 createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { success, pricePairCurrency in
                     if success{
                         guard let pricePairCurrency = pricePairCurrency else {return}
@@ -119,6 +144,18 @@ class PositionSizeAndRiskCalculatorViewController: BaseViewController {
                     }
                 }
             default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            }
+        case "XXX_JPY":
+            if pairCurrency.name?.contains("USD") == false{
                 createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
                     if success{
                         guard let pricePairCurrency = pricePairCurrency else {return}

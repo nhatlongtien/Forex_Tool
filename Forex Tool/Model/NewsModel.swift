@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct NewsItem{
+struct NewsItem:Hashable{
     public private(set) var imageUrl:String?
     public private(set) var title:String?
     public private(set) var pubdate:Date?

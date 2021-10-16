@@ -28,8 +28,8 @@ class ActiveTransactionCollectionViewCell: UICollectionViewCell {
     }
     func configCell(transaction:TransactionModel){
         self.pairCurrencyLbl.text = transaction.pairCurrency! + " " + "(\(transaction.detail?.type ?? ""))"
-        self.rewardLbl.text = "Reward: " + "+\(transaction.detail?.rewardMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
-        self.lossLbl.text = "Loss " + "-\(transaction.detail?.lossMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
+        self.rewardLbl.text = "Reward:".localized() + " \(transaction.detail?.rewardMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
+        self.lossLbl.text = "Loss:".localized() + " \(transaction.detail?.lossMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
         self.rrRateLbl.text = transaction.detail?.RRRate
         self.lotSizeLbl.text = "\(transaction.detail?.lotSize?.formaterCurrentPriceWithTwoFractionDigits() ?? "0") (\(transaction.ristRate ?? 0)%)"
         self.dateLbl.text = transaction.dateCreate?.formartDate(inputFormat: DateformatterType.YYYY_MM_DD_HHMMSS.rawValue).dateToString(format: DateformatterType.DD_MM_YYYY.rawValue)

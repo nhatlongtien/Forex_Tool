@@ -48,6 +48,7 @@ extension String {
             (RFC3339DateFormatter().date(from: self) ??
             ISO8601DateFormatter().date(from: self))
     }
+    
     func convertStringToDate() -> Date?{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

@@ -19,22 +19,36 @@
                 <outlet property="SLPriceLbl" destination="HeQ-J0-aOA" id="iqJ-BW-DyE"/>
                 <outlet property="TPPriceLbl" destination="tZb-wg-kqp" id="ic5-ft-4Fr"/>
                 <outlet property="amountGainLbl" destination="r7b-zh-EHE" id="CNR-jp-vjq"/>
+                <outlet property="amountGainTitle" destination="JWp-av-sWN" id="EdD-Ea-Mjs"/>
                 <outlet property="amountRiskLbl" destination="Tfq-hg-KsG" id="s9s-Gw-yyp"/>
+                <outlet property="amountRiskTitle" destination="gK7-ul-qqb" id="pBb-Ug-TW3"/>
                 <outlet property="chartImageView" destination="NgM-XG-FDT" id="lRh-63-uAh"/>
                 <outlet property="dateLbl" destination="Rss-pA-ov7" id="eQj-ZX-ert"/>
+                <outlet property="dateTitle" destination="hfh-uc-Jss" id="ykM-H2-TA5"/>
                 <outlet property="descriptionTextView" destination="T5X-f9-zlO" id="6tn-nR-0W5"/>
+                <outlet property="descriptionTitle" destination="2gg-Yr-ZXK" id="deu-bA-OVg"/>
                 <outlet property="entryPriceLbl" destination="ZHf-JU-gjo" id="dcp-sy-JAJ"/>
+                <outlet property="entryPriceTitle" destination="zbI-i6-ela" id="LwS-Me-mkZ"/>
                 <outlet property="heightReasonView" destination="YGk-Ey-Jwn" id="3RY-0D-PIN"/>
                 <outlet property="imageView" destination="hOk-77-TOM" id="7F9-NF-yq5"/>
                 <outlet property="lotSizeLbl" destination="ueB-EZ-9h2" id="4TK-q5-Sga"/>
+                <outlet property="lotSizeTitle" destination="3Cv-iC-RWe" id="qBl-X5-Kvd"/>
                 <outlet property="pairCurrencyLbl" destination="YzI-lA-V3q" id="FCy-Ly-HZg"/>
+                <outlet property="pairCurrencyTitle" destination="AEU-fi-yv3" id="wzv-dy-9KQ"/>
                 <outlet property="pipsGainLbl" destination="CL0-Qz-TLR" id="qbr-Vb-bVq"/>
+                <outlet property="pipsGianTitle" destination="PWf-fA-ci1" id="zi6-nc-d3l"/>
                 <outlet property="pipsLossLbl" destination="Fp9-iQ-ggp" id="mjd-Hi-qha"/>
+                <outlet property="pipsLossTitle" destination="8ca-eU-Zzb" id="vHh-4m-CSc"/>
                 <outlet property="reasonView" destination="agW-yz-RCM" id="M4R-xi-AId"/>
                 <outlet property="riskRateLbl" destination="YzT-Hi-N9b" id="jDT-Em-KwR"/>
+                <outlet property="riskRateTitle" destination="2um-9R-jtG" id="rlc-k9-rdN"/>
                 <outlet property="riskRewardRatioLbl" destination="iDH-VM-dWO" id="WOj-0q-9RL"/>
+                <outlet property="riskRewardRatioTitle" destination="SSm-jz-mO2" id="kH6-oh-kA2"/>
                 <outlet property="statusLbl" destination="N6B-MY-1RO" id="6bS-wD-0Nj"/>
+                <outlet property="stopLossPriceTitle" destination="LCJ-ez-Cou" id="Fa1-EJ-Ggq"/>
+                <outlet property="takeProfitPriceTitle" destination="KkR-j9-cUF" id="rBl-cB-4qD"/>
                 <outlet property="typeTransactionLbl" destination="P83-1a-PlX" id="jmN-SI-5HY"/>
+                <outlet property="typeTransactionTitle" destination="ffl-XS-jBJ" id="lJn-x2-BWb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -49,7 +63,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xP0-mZ-m9u">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="1071.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-fN-k6J" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-fN-k6J" customClass="CustomeView" customModule="Forex_Tool" customModuleProvider="target">
                                     <rect key="frame" x="15" y="58" width="345" height="963.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6B-MY-1RO">

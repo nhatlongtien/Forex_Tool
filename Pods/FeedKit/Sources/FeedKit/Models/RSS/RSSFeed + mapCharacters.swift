@@ -76,8 +76,8 @@ extension RSSFeed {
         case .rssChannelItemPubDate:
             let string = string.trimmingCharacters(in: .whitespacesAndNewlines)
             if !string.isEmpty {
-                //self.items?.last?.pubDate = string.toPermissiveDate()
-                self.items?.last?.pubDate = string.convertStringToDate()
+                self.items?.last?.pubDate = string.toPermissiveDate()
+//                self.items?.last?.pubDate = string.convertStringToDate()
                 print(self.items?.last?.pubDate)
             }
         case .rssChannelItemSource:                                 self.items?.last?.source?.value                                 = self.items?.last?.source?.value?.appending(string) ?? string

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,9 +18,14 @@
             <connections>
                 <outlet property="DOBTf" destination="2ub-8O-iL1" id="7k4-3y-od1"/>
                 <outlet property="addressTf" destination="1vW-F9-EDr" id="2Nc-3q-jXq"/>
+                <outlet property="addressTitle" destination="ltK-VB-Bdn" id="WeC-ke-uZo"/>
                 <outlet property="avatarImageView" destination="Kag-bD-xTV" id="Kek-NM-5y4"/>
+                <outlet property="dateOfBirthTitle" destination="8vy-9f-g7D" id="5e3-1r-RZh"/>
                 <outlet property="fullNameTf" destination="Yxr-bu-PWQ" id="tQl-4h-GAW"/>
+                <outlet property="fullNametTitle" destination="TPC-k7-FiG" id="lq1-ir-T4d"/>
                 <outlet property="phoneNumberTf" destination="4Nh-S6-zov" id="AZe-U3-Uba"/>
+                <outlet property="phoneNumberTitle" destination="LaE-xb-RUY" id="Ge6-T4-atQ"/>
+                <outlet property="updateButton" destination="UmA-Xw-sb7" id="GTh-Kc-Ona"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

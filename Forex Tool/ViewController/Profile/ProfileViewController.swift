@@ -9,7 +9,28 @@ import UIKit
 import FirebaseAuth
 import PKHUD
 class ProfileViewController: UIViewController {
-
+    //
+    @IBOutlet weak var personalTitle: UILabel!
+    @IBOutlet weak var editProfileTitle: UILabel!
+    @IBOutlet weak var editProfileDetailTitle: UILabel!
+    @IBOutlet weak var setingTitle: UILabel!
+    @IBOutlet weak var setingDetailTitle: UILabel!
+    @IBOutlet weak var featureTitle: UILabel!
+    @IBOutlet weak var manageTransactionTitle: UILabel!
+    @IBOutlet weak var manageTransactionDetailTitle: UILabel!
+    @IBOutlet weak var economicNewsTitle: UILabel!
+    @IBOutlet weak var economicNewsDetailTitle: UILabel!
+    @IBOutlet weak var economicCalendarTitle: UILabel!
+    @IBOutlet weak var economicCalendarDetailTitle: UILabel!
+    @IBOutlet weak var calculationToolTitle: UILabel!
+    @IBOutlet weak var calculationToolDetailTitle: UILabel!
+    @IBOutlet weak var signOutTitle: UILabel!
+    @IBOutlet weak var analysisTitle: UILabel!
+    @IBOutlet weak var analysisDetailTitle: UILabel!
+    @IBOutlet weak var marketTitle: UILabel!
+    @IBOutlet weak var marketDetailTitle: UILabel!
+    
+    //
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
     //
@@ -17,7 +38,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        setupUI()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +55,7 @@ class ProfileViewController: UIViewController {
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func settingButtonWasPressed(_ sender: Any) {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
     }
     @IBAction func manageTransactionWasPressed(_ sender: Any) {
         let targetVC = ManageTransactionViewController()
@@ -49,8 +71,13 @@ class ProfileViewController: UIViewController {
         let targetVC = EconomicCalendarViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
-    @IBAction func ratioCryptoButtonWasPressed(_ sender: Any) {
-        let targetVC = LongShortRatioViewController()
+    @IBAction func AnalysisButtonWasPressed(_ sender: Any) {
+        let targetVC = AnalysisViewController()
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
+    @IBAction func marketButtonWasPressed(_ sender: Any) {
+        let targetVC = HomeMarketViewController()
+        targetVC.isFromTabbar = false
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
@@ -65,6 +92,7 @@ class ProfileViewController: UIViewController {
         do{
             try firebaseAuth.signOut()
             print("Dang xuat thanh cong")
+            Constant.defaults.setValue(nil, forKey: Constant.USER_ID)
             HUD.hide()
             HelperMethod.setRootToViewControler(targetVC: WellcomeViewController())
         }catch let error as NSError{
@@ -74,6 +102,27 @@ class ProfileViewController: UIViewController {
         }
     }
     //MARK: Helper Method
+    func setupUI(){
+        personalTitle.text = "Personal".localized()
+        editProfileTitle.text = "Edit Profile".localized()
+        editProfileDetailTitle.text = "Make Change Your Profile".localized()
+        setingTitle.text = "Setting".localized()
+        setingDetailTitle.text = "Change your application setting".localized()
+        featureTitle.text = "Frature".localized()
+        manageTransactionTitle.text = "Manage Transaction".localized()
+        manageTransactionDetailTitle.text = "View all your transactions".localized()
+        economicNewsTitle.text = "Economic News".localized()
+        economicNewsDetailTitle.text = "Read economic news".localized()
+        economicCalendarTitle.text = "Economic Calendar".localized()
+        economicCalendarDetailTitle.text = "Update economic calendar".localized()
+        calculationToolTitle.text = "Calculation Forex Tool".localized()
+        calculationToolDetailTitle.text = "Calculation your transaction".localized()
+        signOutTitle.text = "Sign Out".localized()
+        marketTitle.text = "Market".localized()
+        analysisTitle.text = "Analysis & Opinion".localized()
+        analysisDetailTitle.text = "View all anlysis and opinion".localized()
+        marketDetailTitle.text = "View info global market".localized()
+    }
     func getUserInfoAndUpdateUI(){
         guard let uid = Constant.defaults.string(forKey: Constant.USER_ID) else {return}
         dashboardVM.getUserInfoByUserID(userID: uid) { (success, userInfo) in

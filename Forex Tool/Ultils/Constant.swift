@@ -25,12 +25,12 @@ class Constant{
         CurrencyModel(name: "AUD/SEK", currency: "USD", group: "XXX_XXX", id: "055", fromCurrency: "AUD", toCururrency: "SEK"),
         CurrencyModel(name: "AUD/SGD", currency: "USD", group: "XXX_XXX", id: "056", fromCurrency: "AUD", toCururrency: "SGD"),
         CurrencyModel(name: "CAD/CHF", currency: "USD", group: "XXX_XXX", id: "006", fromCurrency: "CAD", toCururrency: "CHF"),
-        CurrencyModel(name: "CAD/JPY", currency: "USD", group: "XXX_XXX", id: "007", fromCurrency: "CAD", toCururrency: "JPY"),
+        CurrencyModel(name: "CAD/JPY", currency: "USD", group: "XXX_JPY", id: "007", fromCurrency: "CAD", toCururrency: "JPY"),
         CurrencyModel(name: "CAD/SGD", currency: "USD", group: "XXX_XXX", id: "057", fromCurrency: "CAD", toCururrency: "SGD"),
-        CurrencyModel(name: "CHF/JPY", currency: "USD", group: "XXX_XXX", id: "008", fromCurrency: "CHF", toCururrency: "JPY"),
+        CurrencyModel(name: "CHF/JPY", currency: "USD", group: "XXX_JPY", id: "008", fromCurrency: "CHF", toCururrency: "JPY"),
         CurrencyModel(name: "CHF/SGD", currency: "USD", group: "XXX_XXX", id: "058", fromCurrency: "CHF", toCururrency: "SGD"),
         CurrencyModel(name: "EUR/AUD", currency: "USD", group: "XXX_XXX", id: "009", fromCurrency: "EUR", toCururrency: "AUD"),
-        CurrencyModel(name: "EURCAD", currency: "USD", group: "XXX_XXX", id: "010", fromCurrency: "EUR", toCururrency: "CAD"),
+        CurrencyModel(name: "EUR/CAD", currency: "USD", group: "XXX_XXX", id: "010", fromCurrency: "EUR", toCururrency: "CAD"),
         CurrencyModel(name: "EUR/CHF", currency: "USD", group: "XXX_XXX", id: "011", fromCurrency: "EUR", toCururrency: "CHF"),
         CurrencyModel(name: "EUR/DKK", currency: "USD", group: "XXX_XXX", id: "012", fromCurrency: "EUR", toCururrency: "DKK"),
         CurrencyModel(name: "EUR/GBP", currency: "USD", group: "XXX_XXX", id: "013", fromCurrency: "EUR", toCururrency: "GBP"),
@@ -78,11 +78,14 @@ class Constant{
         CurrencyModel(name: "XAU/USD", currency: "USD", group: "XAU_USD", id: "051", fromCurrency: "XAU", toCururrency: "USD"),
         CurrencyModel(name: "BTC/USD", currency: "BTC", group: "BTC_USD", id: "052", fromCurrency: "BTC", toCururrency: "USD")
     ]
+    static let SymbolMarket = "AUD/CAD,AUD/CHF,AUD/JPY,AUD/NZD,AUD/USD,AUD/SGD,CAD/CHF,CAD/JPY,CAD/SGD,CHF/JPY,CHF/SGD,EUR/AUD,EUR/CAD,EUR/CHF,EUR/GBP,EUR/JPY,EUR/NZD,EUR/USD,GBP/CHF,GBP/JPY,GBP/NZD,GBP/USD,GBP/CAD,NZD/CAD,NZD/CHF,NZD/JPY,NZD/USD,USD/CAD,USD/CHF,USD/JPY,USD/SGD,XAG/USD,XAU/USD,BTC/USD"
     static let listRiskRateValue = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
     static let listTypeTransaction = ["Buy", "Sell", "Buy Limit", "Sell Limit"]
     static let economicNewsUrl = "https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&features=datepicker,timezone,timeselector,filters&countries=33,14,4,34,38,32,6,11,51,5,39,72,60,110,43,35,71,22,36,26,12,9,37,25,178,10,17&calType=week&timeZone=27&lang=52"
-    static let listTabNews = ["Phổ Biến Nhất", "Tiền Điện Tử", "Forex", "Hàng Hoá", "Thị Trường Chúng Khoán", "Chỉ Số Kinh Tế", "Kinh Tế", "Thế Giới"]
+    static let listTabNews = ["Most Popular".localized(), "Cryptocurrency".localized(), "Forex".localized(), "Commodities".localized(), "Stock Market".localized(), "Economic Indicators".localized(), "Economy".localized().localized(), "World".localized()]
+    static let listTabAnalysisItems = ["Forex".localized(), "Stock Market".localized(), "Commodities".localized()]
     static var isInTabBarControll:Bool = false
+    static var listFilterTransaction = ["All".localized(),"Win".localized(), "Loss".localized(), "Unknow".localized(), "Active".localized(), "Completed".localized(), "Pending".localized(), "Pair Currency".localized()]
     
 }
 internal struct DPDConstant {

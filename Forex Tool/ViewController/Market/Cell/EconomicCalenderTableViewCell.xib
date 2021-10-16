@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="KGk-i7-Jjw" customClass="EconomicCalenderTableViewCell" customModule="Forex_Tool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06-10 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTu-gs-orK">
+                        <rect key="frame" x="15" y="12" width="74" height="16.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <color key="textColor" red="0.062745098040000002" green="0.0" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="three_star" translatesAutoresizingMaskIntoConstraints="NO" id="eLS-TU-Pbx">
+                        <rect key="frame" x="15" y="32.5" width="50" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Wec-AH-0Ij"/>
+                            <constraint firstAttribute="height" constant="18" id="fha-RY-Sxo"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhN-mt-Pr9">
+                        <rect key="frame" x="102" y="10" width="1" height="66"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="psD-1H-aCF"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="CPI Han Quoc (Nam tren nam) (thang 9)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNx-9I-4oC">
+                        <rect key="frame" x="107" y="12" width="198" height="33"/>
+                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                        <color key="textColor" red="0.062745098040000002" green="0.0" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thực tế: | Dự báo: | Trước đó: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe2-m8-eNu">
+                        <rect key="frame" x="107" y="53" width="198" height="16.5"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rge-cb-RQ1">
+                        <rect key="frame" x="15" y="85" width="290" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="a2u-0L-Tuq"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xED-gM-BnI">
+                        <rect key="frame" x="71" y="33" width="27" height="17"/>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                        <color key="textColor" red="0.062745098040000002" green="0.0" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.95294117649999999" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstItem="Rge-cb-RQ1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="6o2-Js-Q71"/>
+                    <constraint firstItem="dTu-gs-orK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="7cz-WP-Q41"/>
+                    <constraint firstAttribute="bottom" secondItem="hhN-mt-Pr9" secondAttribute="bottom" constant="10" id="8xF-gi-Icw"/>
+                    <constraint firstItem="hhN-mt-Pr9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="102" id="9FZ-9g-H5O"/>
+                    <constraint firstItem="hhN-mt-Pr9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BFx-yX-7HG"/>
+                    <constraint firstItem="kNx-9I-4oC" firstAttribute="leading" secondItem="hhN-mt-Pr9" secondAttribute="trailing" constant="4" id="CYW-6X-awY"/>
+                    <constraint firstItem="dTu-gs-orK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Iez-WH-tuO"/>
+                    <constraint firstAttribute="trailing" secondItem="Rge-cb-RQ1" secondAttribute="trailing" constant="15" id="N5W-1J-YKE"/>
+                    <constraint firstItem="oe2-m8-eNu" firstAttribute="top" secondItem="kNx-9I-4oC" secondAttribute="bottom" constant="8" id="Obk-Qn-eov"/>
+                    <constraint firstItem="kNx-9I-4oC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="SiX-AN-yQa"/>
+                    <constraint firstAttribute="trailing" secondItem="oe2-m8-eNu" secondAttribute="trailing" constant="15" id="WxP-RQ-UBp"/>
+                    <constraint firstItem="hhN-mt-Pr9" firstAttribute="leading" secondItem="xED-gM-BnI" secondAttribute="trailing" constant="4" id="YE1-9V-NwO"/>
+                    <constraint firstAttribute="bottom" secondItem="Rge-cb-RQ1" secondAttribute="bottom" id="bg0-A4-GDF"/>
+                    <constraint firstItem="oe2-m8-eNu" firstAttribute="leading" secondItem="hhN-mt-Pr9" secondAttribute="trailing" constant="4" id="cwk-7R-BAh"/>
+                    <constraint firstAttribute="trailing" secondItem="kNx-9I-4oC" secondAttribute="trailing" constant="15" id="dNq-38-dDH"/>
+                    <constraint firstItem="eLS-TU-Pbx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="jNK-Al-kix"/>
+                    <constraint firstItem="eLS-TU-Pbx" firstAttribute="top" secondItem="dTu-gs-orK" secondAttribute="bottom" constant="4" id="p0v-wP-RcR"/>
+                    <constraint firstItem="xED-gM-BnI" firstAttribute="centerY" secondItem="eLS-TU-Pbx" secondAttribute="centerY" id="pYj-If-btF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="currencyLbl" destination="xED-gM-BnI" id="RjX-4l-pWc"/>
+                <outlet property="importantImgView" destination="eLS-TU-Pbx" id="OIg-mL-eIu"/>
+                <outlet property="newsTitleLbl" destination="kNx-9I-4oC" id="kwY-Rd-yue"/>
+                <outlet property="preditLbl" destination="oe2-m8-eNu" id="PA1-H8-1vO"/>
+                <outlet property="timeLbl" destination="dTu-gs-orK" id="O2c-of-Kqi"/>
+            </connections>
+            <point key="canvasLocation" x="131.19999999999999" y="65.667166416791616"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="three_star" width="1537" height="488"/>
+    </resources>
+</document>

@@ -8,6 +8,20 @@
 import UIKit
 
 class DetailTransactionViewController: BaseViewController {
+    @IBOutlet weak var pairCurrencyTitle: UILabel!
+    @IBOutlet weak var typeTransactionTitle: UILabel!
+    @IBOutlet weak var entryPriceTitle: UILabel!
+    @IBOutlet weak var stopLossPriceTitle: UILabel!
+    @IBOutlet weak var takeProfitPriceTitle: UILabel!
+    @IBOutlet weak var lotSizeTitle: UILabel!
+    @IBOutlet weak var pipsLossTitle: UILabel!
+    @IBOutlet weak var pipsGianTitle: UILabel!
+    @IBOutlet weak var amountRiskTitle: UILabel!
+    @IBOutlet weak var amountGainTitle: UILabel!
+    @IBOutlet weak var riskRewardRatioTitle: UILabel!
+    @IBOutlet weak var riskRateTitle: UILabel!
+    @IBOutlet weak var descriptionTitle: UILabel!
+    @IBOutlet weak var dateTitle: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var statusLbl: UILabel!
@@ -33,6 +47,9 @@ class DetailTransactionViewController: BaseViewController {
     //
     var selectedTransactionItem:TransactionModel?
     override func viewDidLoad() {
+        //
+        setupUI()
+        //
         super.viewDidLoad()
         reasonView.isHidden = true
         heightReasonView.constant = 0
@@ -43,9 +60,23 @@ class DetailTransactionViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Detail Transaction"
+        self.title = "Detail Transaction".localized()
     }
     //MARK: Helper Method
+    func setupUI(){
+        pairCurrencyTitle.text = "Pair Currency:".localized()
+        typeTransactionTitle.text = "Type Transaction:".localized()
+        entryPriceTitle.text = "Entry Price:".localized()
+        stopLossPriceTitle.text = "Stop Loss Price:".localized()
+        takeProfitPriceTitle.text = "Take Profit Price:".localized()
+        lotSizeTitle.text = "Lot Size (Volume):".localized()
+        pipsLossTitle.text = "Pips Loss:".localized()
+        pipsGianTitle.text = "Pips Gain:".localized()
+        riskRewardRatioTitle.text = "Risk Reward Ratio:".localized()
+        riskRateTitle.text = "Risk Rate:".localized()
+        descriptionTitle.text = "Description:".localized()
+        dateTitle.text = "Date:".localized()
+    }
     func showDataForUI(transactionItem:TransactionModel){
         
         
@@ -55,7 +86,7 @@ class DetailTransactionViewController: BaseViewController {
             imageView.image = UIImage(named: "decreaseMarketIcon")
         }
         //
-        statusLbl.text = "Status: \(transactionItem.status!)"
+        statusLbl.text = "Status:".localized() + " \(transactionItem.status!)"
         pairCurrencyLbl.text = transactionItem.pairCurrency
         typeTransactionLbl.text = transactionItem.detail?.type
         if let lotSize = transactionItem.detail?.lotSize{

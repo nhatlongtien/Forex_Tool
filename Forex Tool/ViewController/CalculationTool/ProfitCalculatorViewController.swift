@@ -8,7 +8,22 @@
 import UIKit
 import PKHUD
 class ProfitCalculatorViewController: BaseViewController {
-
+    @IBOutlet weak var pairCurrencyTitle: UILabel!
+    @IBOutlet weak var directionTitle: UILabel!
+    @IBOutlet weak var buyTitle: UILabel!
+    @IBOutlet weak var sellTitle: UILabel!
+    @IBOutlet weak var tradingVolume: UILabel!
+    @IBOutlet weak var entryPrice: UILabel!
+    @IBOutlet weak var stopLossPriceTitle: UILabel!
+    @IBOutlet weak var takeProfitPriceTitle: UILabel!
+    @IBOutlet weak var caculateButton: UIButton!
+    @IBOutlet weak var resultTitle: UILabel!
+    @IBOutlet weak var stopLossAtTitle: UILabel!
+    @IBOutlet weak var takeProfitAtTitle: UILabel!
+    @IBOutlet weak var riskRateRatioTitle: UILabel!
+    @IBOutlet weak var amountToRiskTitle: UILabel!
+    @IBOutlet weak var amountToGainTitle: UILabel!
+    
     @IBOutlet weak var buyView: UIView!
     @IBOutlet weak var sellView: UIView!
     @IBOutlet weak var pairCurrencyNameLbl: UILabel!
@@ -32,6 +47,8 @@ class ProfitCalculatorViewController: BaseViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        setupUI()
         self.viewModelCallBack()
         //
         volumeSizeTf.delegate = self
@@ -48,7 +65,7 @@ class ProfitCalculatorViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Stop Loss & Take Profit"
+        self.title = "Stop Loss & Rake Profit".localized()
     }
     //MARK: UI Event
     @IBAction func listPairCurrencyButtonWasPressed(_ sender: Any) {
@@ -83,6 +100,27 @@ class ProfitCalculatorViewController: BaseViewController {
         
     }
     //MARK: Helper Method
+    func setupUI(){
+        pairCurrencyTitle.text = "Pair Currency".localized()
+        directionTitle.text = "Direction".localized()
+        tradingVolume.text = "Trading volume (standard lot)".localized()
+        volumeSizeTf.placeholder = "Enter your position size (volume)".localized()
+        entryPrice.text = "Entry Price".localized()
+        buyTitle.text = "Buy".localized()
+        sellTitle.text = "Sell".localized()
+        entryPriceTf.placeholder = "Enter your entry point".localized()
+        stopLossPriceTitle.text = "Stop Loss Price".localized()
+        stopLossTf.placeholder = "Enter your stop loss point".localized()
+        takeProfitPriceTitle.text = "Take Profit Price".localized()
+        takeProfitTf.placeholder = "Enter your take profit point".localized()
+        caculateButton.setTitle("Calculate".localized(), for: .normal)
+        resultTitle.text = "Result".localized()
+        stopLossAtTitle.text = "Stop Loss at".localized()
+        takeProfitAtTitle.text = "Take Profit at".localized()
+        amountToRiskTitle.text = "Amount Loss".localized()
+        amountToGainTitle.text = "Amount Gain".localized()
+        riskRateRatioTitle.text = "Risk Reward Ratio".localized()
+    }
     func callAPI(){
         //Goi API lay danh sach tien te -> goi API lay gia hien tai
         listPairCurrencyVM.getListPairCurrency { (result, listPairCurrency) in
@@ -142,6 +180,18 @@ class ProfitCalculatorViewController: BaseViewController {
                     }
                 }
             }
+        case "XXX_JPY":
+            if pairCurrency.name?.contains("USD") == false{
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            }
         default:
             completionHandler(true)
             break
@@ -162,7 +212,7 @@ class ProfitCalculatorViewController: BaseViewController {
             //goi API lay ti gia phu
             switch pairCurrency.name {
             
-            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
+            case "USD/CAD", "USD/CHF", "USD/CZK", "USD/DKK", "USD/HUF", "USD/JPY", "USD/MXN", "USD/NOK", "USD/PLN", "USD/SEK", "USD/SGD", "USD/TRY", "USD/ZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
                 let value = (0.0001/mainPrice)/subPrice
                 valuePip = value * volume
                 self.valueOfPip = valuePip

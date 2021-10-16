@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageTransactionViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
+                <outlet property="filterCollectionView" destination="wol-b2-kUV" id="jRX-QL-SqJ"/>
                 <outlet property="tableView" destination="KXm-0n-syf" id="0OT-Ra-mG6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,41 +20,36 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbt-VV-pPE">
-                    <rect key="frame" x="15" y="30" width="98" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KXm-0n-syf">
-                    <rect key="frame" x="15" y="70.5" width="345" height="546.5"/>
+                    <rect key="frame" x="15" y="60" width="345" height="607"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVv-fb-XTb">
-                    <rect key="frame" x="330" y="25" width="30" height="30"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wol-b2-kUV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="4cu-zH-7xF"/>
-                        <constraint firstAttribute="width" constant="30" id="ePm-4D-HU2"/>
+                        <constraint firstAttribute="height" constant="50" id="Mfe-EG-iBP"/>
                     </constraints>
-                    <state key="normal" image="filterIcon"/>
-                </button>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rly-A8-8hQ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.95294117649999999" green="0.94901960780000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="KXm-0n-syf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="4cd-Di-Rfj"/>
-                <constraint firstItem="Wbt-VV-pPE" firstAttribute="centerY" secondItem="MVv-fb-XTb" secondAttribute="centerY" id="Fe8-dS-tCL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KXm-0n-syf" secondAttribute="bottom" constant="50" id="Z7N-SM-Dda"/>
-                <constraint firstItem="KXm-0n-syf" firstAttribute="top" secondItem="Wbt-VV-pPE" secondAttribute="bottom" constant="20" id="cm5-LR-xwj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KXm-0n-syf" secondAttribute="trailing" constant="15" id="kL0-vY-wZ5"/>
-                <constraint firstItem="Wbt-VV-pPE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ogA-PS-lJV"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MVv-fb-XTb" secondAttribute="trailing" constant="15" id="ssV-vG-GDO"/>
-                <constraint firstItem="MVv-fb-XTb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="vtb-L5-YE4"/>
+                <constraint firstItem="KXm-0n-syf" firstAttribute="top" secondItem="wol-b2-kUV" secondAttribute="bottom" constant="10" id="20h-5p-A8h"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KXm-0n-syf" secondAttribute="trailing" constant="15" id="53O-Ti-FfY"/>
+                <constraint firstItem="wol-b2-kUV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LXi-0q-fDa"/>
+                <constraint firstItem="KXm-0n-syf" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="N0w-1Y-u23"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wol-b2-kUV" secondAttribute="trailing" id="Tff-zN-c9y"/>
+                <constraint firstItem="KXm-0n-syf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="fAI-m2-U4j"/>
+                <constraint firstItem="wol-b2-kUV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i43-jl-A3D"/>
             </constraints>
             <point key="canvasLocation" x="109.59999999999999" y="57.121439280359823"/>
         </view>
     </objects>
-    <resources>
-        <image name="filterIcon" width="80" height="80"/>
-    </resources>
 </document>

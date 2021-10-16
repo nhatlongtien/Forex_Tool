@@ -14,6 +14,7 @@ protocol RegisterVCDelegate:class{
 }
 class RegisterViewController: UIViewController {
     
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var fullNameTf: UITextField!
     @IBOutlet weak var emailTf: UITextField!
     @IBOutlet weak var passwordTf: UITextField!
@@ -30,7 +31,7 @@ class RegisterViewController: UIViewController {
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         viewModelCallBack()
         //
         passwordTf.isSecureTextEntry = true
@@ -95,21 +96,30 @@ class RegisterViewController: UIViewController {
         }
     }
     //MARK: Helper Method
+    func setupUI(){
+        registerButton.setTitle("Register".localized(), for: .normal)
+        fullNameTf.placeholder = "Full Name".localized()
+        emailTf.placeholder = "Email".localized()
+        passwordTf.placeholder = "Password".localized()
+        repeatpasswordTf.placeholder = "Repeat Password".localized()
+        phoneTf.placeholder = "Phone Number".localized()
+        addressTf.placeholder = "Address".localized()
+    }
     func validate() -> Bool{
         if emailTf.text == nil || emailTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your email")
+            HelperMethod.showAlertWithMessage(message: "Please enter your email".localized())
             return false
         }
         if emailTf.text?.isValadateEmail() == false{
-            HelperMethod.showAlertWithMessage(message: "Your email is wrong formatter")
+            HelperMethod.showAlertWithMessage(message: "Your email is wrong format".localized())
             return false
         }
         if passwordTf.text == nil || passwordTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your password")
+            HelperMethod.showAlertWithMessage(message: "Please enter your password".localized())
             return false
         }
         if passwordTf.text?.isValadatePasswprd() == false{
-            HelperMethod.showAlertWithMessage(message: "The password must contain at least one upper case, lower case, digits, special character and length from 8 – 20 characters")
+            HelperMethod.showAlertWithMessage(message: "The password must contain at least one upper case, lower case, digits, special character and length from 8 – 20 characters".localized())
             return false
         }
         if repeatpasswordTf.text == nil || repeatpasswordTf.text == ""{

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +19,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
+                <outlet property="analysisDetailTitle" destination="TmC-4H-JNM" id="DMP-lh-Ov0"/>
+                <outlet property="analysisTitle" destination="gcW-hM-GZP" id="Ke4-Yt-gcd"/>
                 <outlet property="avatarImg" destination="Cb7-Yx-ym8" id="KhK-wW-IA8"/>
+                <outlet property="calculationToolDetailTitle" destination="Dkt-Ld-Cay" id="xQ8-ue-YrB"/>
+                <outlet property="calculationToolTitle" destination="6mn-ZG-Zbw" id="ODp-kU-ics"/>
+                <outlet property="economicCalendarDetailTitle" destination="keQ-cl-6A7" id="e0c-Dg-uhX"/>
+                <outlet property="economicCalendarTitle" destination="agF-1p-Mfv" id="xm0-4n-bXC"/>
+                <outlet property="economicNewsDetailTitle" destination="IIb-H2-3vN" id="z6C-7O-pgJ"/>
+                <outlet property="economicNewsTitle" destination="cRu-Tk-h1T" id="y1c-SI-m18"/>
+                <outlet property="editProfileDetailTitle" destination="kL2-k3-sBA" id="vMb-ub-JkZ"/>
+                <outlet property="editProfileTitle" destination="qTD-9N-aFa" id="uSP-fy-6vy"/>
+                <outlet property="featureTitle" destination="cpm-Rk-KrB" id="EbU-b0-Zjd"/>
+                <outlet property="manageTransactionDetailTitle" destination="0Y3-pG-ly2" id="PjU-Sc-gNl"/>
+                <outlet property="manageTransactionTitle" destination="iax-jS-phU" id="Iv2-fW-4Zy"/>
+                <outlet property="marketDetailTitle" destination="jjH-qm-YxH" id="IwT-bR-pD6"/>
+                <outlet property="marketTitle" destination="i1T-t4-snk" id="Sob-xL-F2K"/>
+                <outlet property="personalTitle" destination="76R-05-5kv" id="HAB-tn-wII"/>
+                <outlet property="setingDetailTitle" destination="WSf-Nu-Vqf" id="5PV-mg-oqI"/>
+                <outlet property="setingTitle" destination="rTC-A9-inY" id="5Bv-ep-aXm"/>
+                <outlet property="signOutTitle" destination="8hf-Ly-lVf" id="Tn7-39-gCq"/>
                 <outlet property="userNameLbl" destination="5hw-ij-fs7" id="3ty-kn-6fp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,16 +52,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efh-hX-npd" userLabel="containView">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="722"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="777"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWp-DF-M8i">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wave_bg" translatesAutoresizingMaskIntoConstraints="NO" id="eE4-wJ-ZeW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-Xr-weY">
-                                            <rect key="frame" x="58" y="10" width="71" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-Xr-weY">
+                                            <rect key="frame" x="58" y="10" width="75" height="20"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -98,17 +114,13 @@
                                     <constraints>
                                         <constraint firstItem="5hw-ij-fs7" firstAttribute="top" secondItem="4Sg-Xr-weY" secondAttribute="bottom" constant="2" id="Eit-dC-KTh"/>
                                         <constraint firstItem="4Sg-Xr-weY" firstAttribute="leading" secondItem="czD-Tw-PmJ" secondAttribute="trailing" constant="8" id="GBa-WL-Opd"/>
-                                        <constraint firstItem="eE4-wJ-ZeW" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="top" id="Khz-UB-jTB"/>
-                                        <constraint firstItem="eE4-wJ-ZeW" firstAttribute="leading" secondItem="TWp-DF-M8i" secondAttribute="leading" id="LhL-pN-TYn"/>
                                         <constraint firstAttribute="trailing" secondItem="HI2-FF-RH4" secondAttribute="trailing" constant="10" id="NhG-Y4-zdZ"/>
                                         <constraint firstAttribute="bottom" secondItem="czD-Tw-PmJ" secondAttribute="bottom" constant="10" id="QtL-Aq-jKy"/>
                                         <constraint firstAttribute="height" constant="60" id="c1X-4y-T9Y"/>
-                                        <constraint firstAttribute="bottom" secondItem="eE4-wJ-ZeW" secondAttribute="bottom" id="hjM-41-wQN"/>
                                         <constraint firstItem="czD-Tw-PmJ" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="top" constant="10" id="iDu-QL-M1z"/>
                                         <constraint firstItem="4Sg-Xr-weY" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="top" constant="10" id="j9T-lT-Li7"/>
                                         <constraint firstItem="5hw-ij-fs7" firstAttribute="leading" secondItem="czD-Tw-PmJ" secondAttribute="trailing" constant="8" id="od0-Up-UDV"/>
                                         <constraint firstItem="HI2-FF-RH4" firstAttribute="centerY" secondItem="TWp-DF-M8i" secondAttribute="centerY" id="pu6-D1-RLS"/>
-                                        <constraint firstAttribute="trailing" secondItem="eE4-wJ-ZeW" secondAttribute="trailing" id="t2u-yr-cmp"/>
                                         <constraint firstItem="czD-Tw-PmJ" firstAttribute="leading" secondItem="TWp-DF-M8i" secondAttribute="leading" constant="10" id="wZT-WG-naq"/>
                                     </constraints>
                                 </view>
@@ -344,7 +356,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLq-fB-g2f" userLabel="CalculationToolView">
-                                    <rect key="frame" x="20" y="496" width="335" height="55"/>
+                                    <rect key="frame" x="20" y="551" width="335" height="55"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calculationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="TOX-hE-uhp">
                                             <rect key="frame" x="0.0" y="9" width="22" height="22"/>
@@ -397,14 +409,14 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-Va-6ll">
-                                    <rect key="frame" x="20" y="566" width="335" height="1"/>
+                                    <rect key="frame" x="20" y="621" width="335" height="1"/>
                                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="kea-I0-6G6"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzV-Vd-sWw" userLabel="SignOutView">
-                                    <rect key="frame" x="20" y="582" width="120" height="40"/>
+                                    <rect key="frame" x="20" y="637" width="120" height="40"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logOutBlack" translatesAutoresizingMaskIntoConstraints="NO" id="mvv-NT-pBq">
                                             <rect key="frame" x="0.0" y="9" width="22" height="22"/>
@@ -493,24 +505,24 @@
                                         <constraint firstAttribute="bottom" secondItem="SP2-MG-bYi" secondAttribute="bottom" id="yZo-1T-xAN"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-39-AHI" userLabel="ratioView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY3-39-AHI" userLabel="Analysis">
                                     <rect key="frame" x="20" y="441" width="335" height="55"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ratio_black" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-PO-6xU">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="analysis" translatesAutoresizingMaskIntoConstraints="NO" id="t2h-PO-6xU">
                                             <rect key="frame" x="0.0" y="9" width="22" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="22" id="2en-zX-Eog"/>
                                                 <constraint firstAttribute="height" constant="22" id="lHl-gt-BwI"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratio Crypto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcW-hM-GZP">
-                                            <rect key="frame" x="37" y="12" width="77.5" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Analysis &amp; Option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcW-hM-GZP">
+                                            <rect key="frame" x="37" y="12" width="110.5" height="17"/>
                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                             <color key="textColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View buy sell ratio of crypto currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmC-4H-JNM">
-                                            <rect key="frame" x="37" y="31" width="196" height="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View analysis and option" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmC-4H-JNM">
+                                            <rect key="frame" x="37" y="31" width="132.5" height="14"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -525,7 +537,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHc-pk-moh">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
                                             <connections>
-                                                <action selector="ratioCryptoButtonWasPressed:" destination="-1" eventType="touchUpInside" id="pD3-mh-wuW"/>
+                                                <action selector="AnalysisButtonWasPressed:" destination="-1" eventType="touchUpInside" id="rfd-nJ-eg7"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -546,6 +558,59 @@
                                         <constraint firstAttribute="trailing" secondItem="dKz-2H-uMp" secondAttribute="trailing" id="wYD-sN-I8W"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFt-rG-Elw" userLabel="Market">
+                                    <rect key="frame" x="20" y="496" width="335" height="55"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globalMarket" translatesAutoresizingMaskIntoConstraints="NO" id="mlj-dY-l3d">
+                                            <rect key="frame" x="0.0" y="9" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="4Be-nc-QbE"/>
+                                                <constraint firstAttribute="width" constant="22" id="8R4-tE-HiQ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1T-t4-snk">
+                                            <rect key="frame" x="37" y="12" width="44.5" height="17"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                            <color key="textColor" red="0.043137254899999998" green="0.12941176469999999" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View all your market" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-qm-YxH">
+                                            <rect key="frame" x="37" y="31" width="108" height="14"/>
+                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrowPurple" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-Qo-RHX">
+                                            <rect key="frame" x="319" y="20.5" width="16" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="14" id="lmN-Eo-X3H"/>
+                                                <constraint firstAttribute="width" constant="16" id="pNh-q6-gAc"/>
+                                            </constraints>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7w-Hj-1dR">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
+                                            <connections>
+                                                <action selector="marketButtonWasPressed:" destination="-1" eventType="touchUpInside" id="m3m-uT-D4t"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.95294117649999999" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="i1T-t4-snk" firstAttribute="top" secondItem="cFt-rG-Elw" secondAttribute="top" constant="12" id="52c-wd-k7q"/>
+                                        <constraint firstItem="mlj-dY-l3d" firstAttribute="top" secondItem="cFt-rG-Elw" secondAttribute="top" constant="9" id="5Cl-Y0-JX3"/>
+                                        <constraint firstItem="mlj-dY-l3d" firstAttribute="leading" secondItem="cFt-rG-Elw" secondAttribute="leading" id="8WJ-9T-hwF"/>
+                                        <constraint firstAttribute="height" constant="55" id="UnI-6C-xcW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y7w-Hj-1dR" secondAttribute="trailing" id="V3b-qp-m7R"/>
+                                        <constraint firstItem="jjH-qm-YxH" firstAttribute="leading" secondItem="i1T-t4-snk" secondAttribute="leading" id="WTy-4V-Nyk"/>
+                                        <constraint firstItem="Qlk-Qo-RHX" firstAttribute="centerY" secondItem="cFt-rG-Elw" secondAttribute="centerY" id="X2g-18-p6A"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y7w-Hj-1dR" secondAttribute="bottom" id="dlF-Bt-Hqd"/>
+                                        <constraint firstItem="i1T-t4-snk" firstAttribute="leading" secondItem="mlj-dY-l3d" secondAttribute="trailing" constant="15" id="gBW-ei-BfG"/>
+                                        <constraint firstItem="jjH-qm-YxH" firstAttribute="top" secondItem="i1T-t4-snk" secondAttribute="bottom" constant="2" id="jq8-8d-BRe"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qlk-Qo-RHX" secondAttribute="trailing" id="lBd-Tg-ylk"/>
+                                        <constraint firstItem="Y7w-Hj-1dR" firstAttribute="top" secondItem="cFt-rG-Elw" secondAttribute="top" id="nM4-95-WZ2"/>
+                                        <constraint firstItem="Y7w-Hj-1dR" firstAttribute="leading" secondItem="cFt-rG-Elw" secondAttribute="leading" id="q7B-Ms-bKL"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.95294117649999999" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
@@ -559,17 +624,19 @@
                                 <constraint firstItem="uOl-qM-VDG" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="93t-zO-laU"/>
                                 <constraint firstItem="GY3-39-AHI" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="9uL-Oh-RB0"/>
                                 <constraint firstItem="oQn-Va-6ll" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="C7c-Y0-dqz"/>
-                                <constraint firstItem="BLq-fB-g2f" firstAttribute="top" secondItem="GY3-39-AHI" secondAttribute="bottom" id="Ci7-Md-wle"/>
                                 <constraint firstItem="ybE-eG-lrN" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="Cs6-P6-pbg"/>
                                 <constraint firstItem="cpm-Rk-KrB" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="15" id="EF9-d5-2Jy"/>
                                 <constraint firstAttribute="trailing" secondItem="m1n-ka-amt" secondAttribute="trailing" constant="20" id="FHL-Iq-Qg8"/>
+                                <constraint firstItem="BLq-fB-g2f" firstAttribute="top" secondItem="cFt-rG-Elw" secondAttribute="bottom" id="G3R-cA-1mY"/>
                                 <constraint firstItem="oQn-Va-6ll" firstAttribute="top" secondItem="BLq-fB-g2f" secondAttribute="bottom" constant="15" id="HTf-SA-tbV"/>
                                 <constraint firstItem="76R-05-5kv" firstAttribute="top" secondItem="TWp-DF-M8i" secondAttribute="bottom" constant="20" id="QTW-e7-YrV"/>
                                 <constraint firstItem="kEZ-qy-PUo" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="RGR-R0-npu"/>
                                 <constraint firstAttribute="trailing" secondItem="ybE-eG-lrN" secondAttribute="trailing" constant="20" id="SBg-6p-fzL"/>
                                 <constraint firstItem="GY3-39-AHI" firstAttribute="top" secondItem="uOl-qM-VDG" secondAttribute="bottom" id="TSp-1z-adI"/>
                                 <constraint firstAttribute="trailing" secondItem="uOl-qM-VDG" secondAttribute="trailing" constant="20" id="Tf3-UW-f0A"/>
+                                <constraint firstItem="cFt-rG-Elw" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="VDS-Kp-Hx6"/>
                                 <constraint firstItem="ybE-eG-lrN" firstAttribute="top" secondItem="IkW-GU-NwG" secondAttribute="bottom" id="WMm-wu-TN2"/>
+                                <constraint firstItem="cFt-rG-Elw" firstAttribute="top" secondItem="GY3-39-AHI" secondAttribute="bottom" id="Waw-TT-2XZ"/>
                                 <constraint firstItem="TWp-DF-M8i" firstAttribute="top" secondItem="Efh-hX-npd" secondAttribute="top" id="aII-Uh-hce"/>
                                 <constraint firstItem="IkW-GU-NwG" firstAttribute="top" secondItem="m1n-ka-amt" secondAttribute="bottom" id="deo-5C-Xpc"/>
                                 <constraint firstItem="uOl-qM-VDG" firstAttribute="top" secondItem="7q0-cf-iiQ" secondAttribute="bottom" id="hVV-3D-tUx"/>
@@ -584,6 +651,7 @@
                                 <constraint firstItem="TWp-DF-M8i" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" id="us4-Ef-FSP"/>
                                 <constraint firstItem="JzV-Vd-sWw" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="wJL-kJ-i9i"/>
                                 <constraint firstAttribute="trailing" secondItem="IkW-GU-NwG" secondAttribute="trailing" constant="20" id="wbE-Mo-nbg"/>
+                                <constraint firstAttribute="trailing" secondItem="cFt-rG-Elw" secondAttribute="trailing" constant="20" id="ygp-Bi-IBG"/>
                                 <constraint firstItem="m1n-ka-amt" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="z6N-hB-hWQ"/>
                                 <constraint firstItem="7q0-cf-iiQ" firstAttribute="leading" secondItem="Efh-hX-npd" secondAttribute="leading" constant="20" id="zaV-xs-xvt"/>
                                 <constraint firstItem="7q0-cf-iiQ" firstAttribute="top" secondItem="kEZ-qy-PUo" secondAttribute="bottom" id="zmJ-EQ-Fag"/>
@@ -612,17 +680,17 @@
         </view>
     </objects>
     <resources>
+        <image name="analysis" width="100" height="100"/>
         <image name="calculationIcon" width="100" height="100"/>
         <image name="calender_black" width="96" height="96"/>
         <image name="economic_new_black" width="100" height="100"/>
         <image name="editProfileIcon" width="24.5" height="24.5"/>
+        <image name="globalMarket" width="100" height="100"/>
         <image name="historyIcon" width="25" height="25"/>
         <image name="logOutBlack" width="100" height="100"/>
         <image name="logOutIcon" width="100" height="100"/>
-        <image name="ratio_black" width="96" height="96"/>
         <image name="rightArrowPurple" width="7.5" height="13"/>
         <image name="settingBlack" width="120" height="120"/>
-        <image name="wave_bg" width="1920" height="900"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

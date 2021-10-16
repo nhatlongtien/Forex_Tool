@@ -12,6 +12,30 @@ import FirebaseFirestore
 import Localize_Swift
 class CreateTransactionViewController: BaseViewController {
     
+    @IBOutlet weak var infomationTitle: UILabel!
+    @IBOutlet weak var chooseCurrencyTitle: UILabel!
+    @IBOutlet weak var valuePipTitle: UILabel!
+    @IBOutlet weak var balanceAccountTitle: UILabel!
+    @IBOutlet weak var riskRateTitle: UILabel!
+    @IBOutlet weak var setupTransactionTitle: UILabel!
+    @IBOutlet weak var chooseTypeTransactionTitle: UILabel!
+    @IBOutlet weak var entryPriceTitle: UILabel!
+    @IBOutlet weak var stopLossPriceTitle: UILabel!
+    @IBOutlet weak var takeProfitPriceTitle: UILabel!
+    @IBOutlet weak var lotSizeTitle: UILabel!
+    @IBOutlet weak var reasonTitle: UILabel!
+    @IBOutlet weak var summaryTitle: UILabel!
+    @IBOutlet weak var stopLossAtTitle: UILabel!
+    @IBOutlet weak var takeProfitAtTitle: UILabel!
+    @IBOutlet weak var amountLossTitle: UILabel!
+    @IBOutlet weak var amountGainTitle: UILabel!
+    @IBOutlet weak var riskRewardRatioTitle: UILabel!
+    @IBOutlet weak var maxLotTitle: UILabel!
+    @IBOutlet weak var pipValueTitle: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var createButton: UIButton!
+    
+    
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var chartImageView: UIImageView!
     @IBOutlet weak var reasionView: UIView!
@@ -67,6 +91,7 @@ class CreateTransactionViewController: BaseViewController {
     var dataImage:Data?
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         //
         self.viewModelCallBack()
         //
@@ -87,7 +112,7 @@ class CreateTransactionViewController: BaseViewController {
         lotSizeTf.keyboardType = .decimalPad
         riskRateTf.keyboardType = .decimalPad
         //
-        descriptionTextView.text = "Enter your reason in here!"
+        descriptionTextView.text = "Enter your reason in here!".localized()
         descriptionTextView.textColor = .lightGray
         //
         callAPIToGetListPairCurrencyAndCalculatePipValue()
@@ -97,7 +122,7 @@ class CreateTransactionViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Create Transaction"
+        self.title = "Create Transaction".localized()
     }
     //MARK: Ui Event
     
@@ -123,7 +148,7 @@ class CreateTransactionViewController: BaseViewController {
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     @IBAction func chooseTypeTransactionWasPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Select Your Type Transaction", message: "\n\n\n\n\n", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Select Your Type Transaction".localized(), message: "\n\n\n\n\n", preferredStyle: .actionSheet)
         typeTransactionPickerView = UIPickerView(frame: CGRect(x: 10, y: 30, width: UIScreen.main.bounds.width - 35, height: 120))
         typeTransactionPickerView.dataSource = self
         typeTransactionPickerView.delegate = self
@@ -237,6 +262,37 @@ class CreateTransactionViewController: BaseViewController {
         
     }
     //MARK: Helper Method
+    func setupUI(){
+        infomationTitle.text = "Infomation".localized()
+        chooseCurrencyTitle.text = "Choose Your Pair Currency".localized()
+        valuePipTitle.text = "Value Pips/Standard Lot".localized()
+        balanceAccountTitle.text = "Balance Account".localized()
+        capitalTf.placeholder = "Enter your balance account".localized()
+        riskRateTitle.text = "Risk Rate".localized()
+        riskRateTf.placeholder = "Enter your risk rate".localized()
+        setupTransactionTitle.text = "Setup Transaction".localized()
+        chooseTypeTransactionTitle.text = "Choose Type Transaction".localized()
+        entryPriceTitle.text = "Entry Price".localized()
+        entryPointTf.placeholder = "Enter your entry point".localized()
+        stopLossPriceTitle.text = "Stop Loss Price".localized()
+        stopLoseTf.placeholder = "Enter your stop loss point".localized()
+        takeProfitPriceTitle.text = "Take Profit Price".localized()
+        takeProfitTf.placeholder = "Enter your take profit point".localized()
+        lotSizeTitle.text = "Lot Size".localized()
+        lotSizeTf.placeholder = "Enter your volume".localized()
+        reasonTitle.text = "Reason".localized()
+        summaryTitle.text = "Summary".localized()
+        stopLossAtTitle.text = "Stop Loss at".localized()
+        takeProfitAtTitle.text = "Take Profit at".localized()
+        amountLossTitle.text = "Amount Loss".localized()
+        amountGainTitle.text = "Amount Gain".localized()
+        riskRewardRatioTitle.text = "Risk Reward Ratio".localized()
+        maxLotTitle.text = "Max Lots".localized()
+        pipValueTitle.text = "Pip Value".localized()
+        cancelButton.setTitle("Cancel".localized(), for: .normal)
+        createButton.setTitle("Create".localized(), for: .normal)
+        maxAlowedLotLbl.text = "Maximum Alowed Lot".localized() + "-"
+    }
     private func viewModelCallBack() {
         listPairCurrencyVM.beforeApiCall = {
             HUD.show(.systemActivity)
@@ -290,7 +346,7 @@ class CreateTransactionViewController: BaseViewController {
         case "XXX_XXX": //Chi tinh subprice cho nhung cap tien cheo khong co usd
             //goi API lay ti gia phu
             switch pairCurrency.name {
-            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
+            case "USD/CAD", "USD/CHF", "USD/CZK", "USD/DKK", "USD/HUF", "USD/JPY", "USD/MXN", "USD/NOK", "USDP/LN", "USD/SEK", "USD/SGD", "USD/TRY", "USD/ZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD:
                 createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: "USD", toCurrency: pairCurrency.fromCurrency!) { success, pricePairCurrency in
                     if success{
                         guard let pricePairCurrency = pricePairCurrency else {return}
@@ -301,6 +357,18 @@ class CreateTransactionViewController: BaseViewController {
                     }
                 }
             default: //1 pip = [(0.0001/tỷ giá chính)*tỷ giá phụ] USD
+                createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
+                    if success{
+                        guard let pricePairCurrency = pricePairCurrency else {return}
+                        self.subPrice = Double(pricePairCurrency.currentPrice!) ?? 0.0
+                        completionHandler(true)
+                    }else{
+                        completionHandler(false)
+                    }
+                }
+            }
+        case "XXX_JPY":
+            if pairCurrency.name?.contains("USD") == false{
                 createTransactionVM.getLatestPriceOfPairCurrency(fromCurrency: pairCurrency.fromCurrency!, toCurrency: "USD") { success, pricePairCurrency in
                     if success{
                         guard let pricePairCurrency = pricePairCurrency else {return}
@@ -336,7 +404,7 @@ class CreateTransactionViewController: BaseViewController {
         case "XXX_XXX": // Đối với các cặp tiền chéo (không có USD)
             //goi API lay ti gia phu
             switch pairCurrency.name {
-            case "USDCAD", "USDCHF", "USDCZK", "USDDKK", "USDHUF", "USDJPY", "USDMXN", "USDNOK", "USDPLN", "USDSEK", "USDSGD", "USDTRY", "USDZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
+            case "USD/CAD", "USD/CHF", "USD/CZK", "USD/DKK", "USD/HUF", "USD/JPY", "USD/MXN", "USD/NOK", "USD/PLN", "USD/SEK", "USD/SGD", "USD/TRY", "USD/ZAR": //Nhưng nếu cặp tỷ giá phụ có USD đứng trước thì: 1 pip = [(0.0001/tỷ giá chính)/tỷ giá phụ] USD
                 let value = (0.0001/mainPrice)/subPrice
                 valuePip = value * volume
                 self.valueOfPip = valuePip
@@ -408,7 +476,7 @@ class CreateTransactionViewController: BaseViewController {
         self.amountGain = pipsGain * pipValue * lotSize
         let riskRewardRatio = amountGain/amountToRisk
         //Update UI
-        self.maxAlowedLotLbl.text = "*Maximum Alowed Lot: " + String(self.maxStandardLot.formaterValueOfPips()) + " Lots"
+        self.maxAlowedLotLbl.text = "Maximum Alowed Lot".localized() + String(self.maxStandardLot.formaterValueOfPips()) + " Lots"
         self.maxLotsLbl.text = String(self.maxStandardLot.formaterValueOfPips()) + " Lots"
         self.stopLossLbl.text = String(Int(pipsLoss)) + " Pips"
         self.takeProfitLbl.text = String(Int(pipsGain)) + " Pips"
@@ -447,23 +515,23 @@ class CreateTransactionViewController: BaseViewController {
     //
     func validate() -> Bool{
         if capitalTf.text == "" || capitalTf.text == nil{
-            HelperMethod.showAlertWithMessage(message: "Plase enter your current balance.")
+            HelperMethod.showAlertWithMessage(message: "Plase enter your current balance.".localized())
             return false
         }
         if riskRateTf.text == "" || riskRateTf.text == nil{
-            HelperMethod.showAlertWithMessage(message: "Please enter your risk rate.")
+            HelperMethod.showAlertWithMessage(message: "Please enter your risk rate.".localized())
             return false
         }
         if entryPointTf.text == "" || entryPointTf.text == nil{
-            HelperMethod.showAlertWithMessage(message: "Please enter your entry price.")
+            HelperMethod.showAlertWithMessage(message: "Please enter your entry price.".localized())
             return false
         }
         if stopLoseTf.text == "" || stopLoseTf.text == nil{
-            HelperMethod.showAlertWithMessage(message: "Please enter your stoploss price.")
+            HelperMethod.showAlertWithMessage(message: "Please enter your stoploss price.".localized())
             return false
         }
         if takeProfitTf.text == "" || takeProfitTf.text == nil{
-            HelperMethod.showAlertWithMessage(message: "Please enter your take profit price.")
+            HelperMethod.showAlertWithMessage(message: "Please enter your take profit price.".localized())
         }
         return true
     }
@@ -576,23 +644,6 @@ extension CreateTransactionViewController:UITextFieldDelegate{
             self.calculation()
         }
     }
-    ///
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == capitalTf{
-            if textField.text == nil || textField.text == ""{
-                textField.text = nil
-            }else{
-                textField.text = textField.text! + " $"
-            }
-        }
-        if textField == riskRateTf{
-            if textField.text == nil || textField.text == ""{
-                textField.text = nil
-            }else{
-                textField.text = textField.text! + " %"
-            }
-        }
-    }
     //
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField == riskRateTf{
@@ -637,7 +688,7 @@ extension CreateTransactionViewController:UITextViewDelegate{
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == ""{
-            textView.text = "Enter your reason in here!"
+            textView.text = "Enter your reason in here!".localized()
             textView.textColor = .lightGray
         }
     }

@@ -9,12 +9,16 @@ import UIKit
 import PKHUD
 class ManageTransactionViewController: BaseViewController {
 
+    @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     //
     let dashboardVM = DashboardViewModel()
     var listTransaction:[TransactionModel] = []
     var filterObject:FilterObjectModel = FilterObjectModel(isFilter: false, fromDate: nil, toDate: nil, statusTransaction: nil, resultTransaction: nil)
     var isFromTabbar:Bool?
+    //
+    var isSearch = false
+    var searchListTransactionResult:[TransactionModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -24,13 +28,23 @@ class ManageTransactionViewController: BaseViewController {
         tableView.register(nibCell, forCellReuseIdentifier: "ManagerTransactionTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        //
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        filterCollectionView.collectionViewLayout = layout
+        let nibTabCell = UINib(nibName: "TypeNewCollectionViewCell", bundle: nil)
+        filterCollectionView.register(nibTabCell, forCellWithReuseIdentifier: "TypeNewCollectionViewCell")
+        filterCollectionView.delegate = self
+        filterCollectionView.dataSource = self
+        let indexPath:IndexPath = IndexPath(row: 0, section: 0)
+        filterCollectionView?.selectItem(at: indexPath, animated: false, scrollPosition: .top)
     }
     override func viewWillAppear(_ animated: Bool) {
         //
         self.navigationController?.navigationBar.isHidden = true
         if isFromTabbar == false{
             self.navigationController?.navigationBar.isHidden = false
-            self.title = "Manager Transaction"
+            self.title = "Manage Transaction".localized()
         }
         //
         self.callAPIToGetListTransaction(filterObject: self.filterObject)
@@ -69,20 +83,30 @@ class ManageTransactionViewController: BaseViewController {
 //MARK: UITableViewDelegate, UITableViewDataSource
 extension ManageTransactionViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if listTransaction.count > 0{
-            return listTransaction.count
+        if isSearch == true{
+            return searchListTransactionResult.count
         }else{
-            return 1
+            if listTransaction.count > 0{
+                return listTransaction.count
+            }else{
+                return 1
+            }
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ManagerTransactionTableViewCell", for: indexPath) as! ManagerTransactionTableViewCell
-        if listTransaction.count > 0{
-            cell.configureCell(transaction: listTransaction[indexPath.row])
+        if isSearch == true{
+            cell.configureCell(transaction: searchListTransactionResult[indexPath.row])
             cell.emptyTransactionView.isHidden = true
         }else{
-            cell.emptyTransactionView.isHidden = false
+            if listTransaction.count > 0{
+                cell.configureCell(transaction: listTransaction[indexPath.row])
+                cell.emptyTransactionView.isHidden = true
+            }else{
+                cell.emptyTransactionView.isHidden = false
+            }
         }
+        
         cell.delegate = self
         return cell
     }
@@ -99,7 +123,11 @@ extension ManageTransactionViewController: UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let targetVC = DetailTransactionViewController()
-        targetVC.selectedTransactionItem = listTransaction[indexPath.row]
+        if isSearch == true{
+            targetVC.selectedTransactionItem = searchListTransactionResult[indexPath.row]
+        }else{
+            targetVC.selectedTransactionItem = listTransaction[indexPath.row]
+        }
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
 }
@@ -145,6 +173,81 @@ extension ManageTransactionViewController:UpdateTransactionViewControllerDelegat
     func dataDidChange() {
         self.callAPIToGetListTransaction(filterObject: self.filterObject)
     }
-    
-    
+}
+extension ManageTransactionViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Constant.listFilterTransaction.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: "TypeNewCollectionViewCell", for: indexPath) as! TypeNewCollectionViewCell
+        cell.configCell(item: Constant.listFilterTransaction[indexPath.row])
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //Update width for cell
+        let size = CGSize(width: 1000, height: 50)
+        let estimateFrame = NSString(string: Constant.listFilterTransaction[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIFont(name: "Roboto-Regular", size: 16)], context: nil)
+        let width = estimateFrame.width + 40
+        return CGSize(width: width, height: 50)
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: //All
+            isSearch = false
+            tableView.reloadData()
+        case 1: //Win
+            isSearch = true
+            searchListTransactionResult = listTransaction.filter({ transaction in
+                return transaction.detail?.result?.uppercased() == "WIN"
+            })
+            tableView.reloadData()
+        case 2: //Loss
+            isSearch = true
+            searchListTransactionResult = listTransaction.filter({ transaction in
+                return transaction.detail?.result?.uppercased() == "LOSS"
+            })
+            tableView.reloadData()
+        case 3: //Unknow
+            isSearch = true
+            searchListTransactionResult = listTransaction.filter({ transaction in
+                return transaction.detail?.result?.uppercased() == "UNKNOW"
+            })
+            tableView.reloadData()
+        case 4: //Active
+            isSearch = true
+            searchListTransactionResult = listTransaction.filter({ transaction in
+                return transaction.status?.uppercased() == "ACTIVE"
+            })
+            tableView.reloadData()
+        case 5: //complete
+            isSearch = true
+            searchListTransactionResult = listTransaction.filter({ transaction in
+                return transaction.status?.uppercased() == "COMPLETE"
+            })
+            tableView.reloadData()
+        case 6: //Pending
+            isSearch = true
+            searchListTransactionResult = listTransaction.filter({ transaction in
+                return transaction.status?.uppercased() == "PENDING"
+            })
+            tableView.reloadData()
+        case 7: //Pair currency
+            isSearch = true
+            let targetVC = ListPairCurrencyViewController()
+            targetVC.delegate = self
+            self.navigationController?.pushViewController(targetVC, animated: true)
+        default:
+            break
+        }
+    }
+}
+//
+extension ManageTransactionViewController:ListPairCurrencyDelegate{
+    func passPairCurrencyData(pairCurrency: PairCurrencyModel) {
+        searchListTransactionResult = listTransaction.filter({ transaction in
+            return transaction.pairCurrency?.uppercased() == pairCurrency.name?.uppercased()
+        })
+        tableView.reloadData()
+    }
 }

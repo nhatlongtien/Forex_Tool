@@ -28,6 +28,7 @@ enum DateformatterType:String{
     case YYYY_MM_DD = "yyyy-MM-dd"
     case MMMM_D_YYYY_HH_mm_ss = "MMMM d, yyyy HH:mm:ss"
     case DD_MMMM = "dd MMMM"
+    case MM_DD_HH_mm = "MM/dd HH:mm"
 }
 enum StatusTransaction:String{
     case Active = "Active"
@@ -56,7 +57,7 @@ enum MethodLoginType:String{
 }
 enum TabItem:String, CaseIterable{
     case home = "Home"
-    case manageTransaction = "Transactions"
+    case market = "Market"
     case ecomomicNew = "Ecomomic News"
     case caculationTool = "Calculation"
     case profile = "Profile"
@@ -67,8 +68,8 @@ enum TabItem:String, CaseIterable{
             return DashboardViewController()
         case .ecomomicNew:
             return HomeNewsViewController()
-        case .manageTransaction:
-            return ManageTransactionViewController()
+        case .market:
+            return HomeMarketViewController()
         case .profile:
             return ProfileViewController()
         case .caculationTool:
@@ -86,8 +87,8 @@ enum TabItem:String, CaseIterable{
             return UIImage(named: "calculationIcon")!
         case .ecomomicNew:
             return UIImage(named: "newsIcon")!
-        case .manageTransaction:
-            return UIImage(named: "listIcon")!
+        case .market:
+            return UIImage(named: "globalMarket")!
         case .profile:
             return UIImage(named: "profileIcon")!
         default:
@@ -97,5 +98,10 @@ enum TabItem:String, CaseIterable{
     var displayTitle:String{
         return self.rawValue.capitalized(with: nil)
     }
+}
+enum DurationTime:String{
+    case today = "Today"
+    case tomorrow = "Tomorrow"
+    case thisWeek = "This Week"
 }
 

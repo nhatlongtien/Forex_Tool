@@ -9,9 +9,13 @@ import UIKit
 
 class WellcomeViewController: UIViewController {
 
+    @IBOutlet weak var welcomeTitle: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         self.navigationController?.navigationBar.isHidden = true
     }
 
@@ -28,6 +32,13 @@ class WellcomeViewController: UIViewController {
         targetVC.delegate = self
         self.present(targetVC, animated: true, completion: nil)
         
+    }
+    //MARK: Helper Method
+    func setupUI(){
+        welcomeTitle.text = "Let's get started!".localized()
+        subTitle.text = "Please login or register to use the services of Forex Tool!".localized()
+        loginButton.setTitle("Login".localized(), for: .normal)
+        registerButton.setTitle("Register".localized(), for: .normal)
     }
     
 }

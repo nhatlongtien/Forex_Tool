@@ -9,7 +9,12 @@ import UIKit
 import FirebaseStorage
 import PKHUD
 class EditProfileViewController: BaseViewController {
-
+    @IBOutlet weak var fullNametTitle: UILabel!
+    @IBOutlet weak var phoneNumberTitle: UILabel!
+    @IBOutlet weak var addressTitle: UILabel!
+    @IBOutlet weak var dateOfBirthTitle: UILabel!
+    @IBOutlet weak var updateButton: UIButton!
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var fullNameTf: UITextField!
     @IBOutlet weak var phoneNumberTf: UITextField!
@@ -25,18 +30,19 @@ class EditProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         self.navigationController?.navigationBar.isHidden = false
-        self.title = "Edit Profile"
+        self.title = "Edit Profile".localized()
         //
         self.viewModelCallBack()
         //
         self.avatarImageView.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAvatarImage))
         self.avatarImageView.addGestureRecognizer(tap)
+        self.getUserInfoAndUpdateUI()
     }
     override func viewWillAppear(_ animated: Bool) {
-        self.getUserInfoAndUpdateUI()
+        
     }
     //MARK: UI Event
     @IBAction func updateButtonWasPressed(_ sender: Any) {
@@ -71,19 +77,29 @@ class EditProfileViewController: BaseViewController {
         if #available(iOS 13.4, *){
             datePicker.preferredDatePickerStyle = .wheels
         }
-        let alert = UIAlertController(title: "Choose your DOB", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose your DOB".localized(), message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         alert.view.addSubview(datePicker)
         datePicker.frame = CGRect(x: 0, y: 40, width: self.view.frame.size.width - 105, height: 180)
-        let selectButton = UIAlertAction(title: "Choose", style: .default) { (action) in
+        let selectButton = UIAlertAction(title: "Choose".localized(), style: .default) { (action) in
             print(datePicker.date)
             self.DOBTf.text = datePicker.date.dateToString(format: DateformatterType.DD_MM_YYYY_Slash.rawValue)
         }
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil)
         alert.addAction(selectButton)
         alert.addAction(cancelButton)
         self.present(alert, animated: true, completion: nil)
     }
     //MARK: Helper Method
+    func setupUI(){
+        fullNameTf.placeholder = "Enter your full name".localized()
+        phoneNumberTf.placeholder = "Enter your phone number".localized()
+        addressTf.placeholder = "Enter your address".localized()
+        fullNametTitle.text = "Full Name".localized()
+        phoneNumberTitle.text = "Phone Number".localized()
+        addressTitle.text = "Address".localized()
+        dateOfBirthTitle.text = "Date of Birth".localized()
+        updateButton.setTitle("Update".localized(), for: .normal)
+    }
     @objc func didTapAvatarImage(){
         self.setupPhotoPicker()
     }
@@ -111,27 +127,27 @@ class EditProfileViewController: BaseViewController {
     }
     func validate() -> Bool{
         if fullNameTf.text == nil || fullNameTf.text == nil{
-            HelperMethod.showAlertWithMessage(message: "Please enter your full name")
+            HelperMethod.showAlertWithMessage(message: "Please enter your full name".localized())
             return false
         }
         if fullNameTf.text?.isValidateFullName() == false{
-            HelperMethod.showAlertWithMessage(message: "Your full name is wrong format")
+            HelperMethod.showAlertWithMessage(message: "Your full name is wrong format".localized())
             return false
         }
         if phoneNumberTf.text == nil || phoneNumberTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your phone number.")
+            HelperMethod.showAlertWithMessage(message: "Please enter your phone number.".localized())
             return false
         }
         if phoneNumberTf.text?.isValidatePhoneNumber() == false{
-            HelperMethod.showAlertWithMessage(message: "Your phone number is wrong format")
+            HelperMethod.showAlertWithMessage(message: "Your phone number is wrong format".localized())
             return false
         }
         if addressTf.text == nil || addressTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your address")
+            HelperMethod.showAlertWithMessage(message: "Please enter your address".localized())
             return false
         }
         if DOBTf.text == nil || DOBTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your DOB")
+            HelperMethod.showAlertWithMessage(message: "Please enter your DOB".localized())
             return false
         }
         return true

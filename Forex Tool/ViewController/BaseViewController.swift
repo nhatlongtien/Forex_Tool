@@ -51,14 +51,18 @@ class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     @objc func accessCamera(){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            if isPermissionAllowed(){
-                let camera = UIImagePickerController()
-                camera.delegate = self
-                camera.sourceType = .camera
-                self.present(camera, animated: true, completion: nil)
-            }else{
-                showAlertToAllowCameraPermissionInSetting()
-            }
+//            if isPermissionAllowed(){
+//                let camera = UIImagePickerController()
+//                camera.delegate = self
+//                camera.sourceType = .camera
+//                self.present(camera, animated: true, completion: nil)
+//            }else{
+//                showAlertToAllowCameraPermissionInSetting()
+//            }
+            let camera = UIImagePickerController()
+            camera.delegate = self
+            camera.sourceType = .camera
+            self.present(camera, animated: true, completion: nil)
         }
     }
     @objc func accessPhotoLibrary() {

@@ -21,15 +21,30 @@
             <connections>
                 <outlet property="amountGainLbl" destination="MEC-4O-g08" id="ROA-HK-Xat"/>
                 <outlet property="amountRiskLbl" destination="Gvf-ly-6qx" id="zG3-ky-W9A"/>
+                <outlet property="amountToGainTitle" destination="3zc-to-ZGM" id="S80-6j-E8K"/>
+                <outlet property="amountToRiskTitle" destination="CqU-a1-ZQc" id="5zk-2X-2vu"/>
+                <outlet property="buyTitle" destination="hrE-Zk-aav" id="ajW-DV-Xdp"/>
                 <outlet property="buyView" destination="Wbw-9S-W09" id="b24-IH-bfX"/>
+                <outlet property="caculateButton" destination="JMo-Ty-kbN" id="RjV-uv-EGd"/>
+                <outlet property="directionTitle" destination="dLD-zN-ZFl" id="1NM-19-sFi"/>
+                <outlet property="entryPrice" destination="jit-ua-Afn" id="9db-44-KSm"/>
                 <outlet property="entryPriceTf" destination="KD8-BX-Tri" id="nN0-hI-bKx"/>
                 <outlet property="pairCurrencyNameLbl" destination="TbU-Wo-8Lg" id="k6h-kR-LIM"/>
+                <outlet property="pairCurrencyTitle" destination="hSj-Uo-eLg" id="W0p-WB-Ymi"/>
+                <outlet property="resultTitle" destination="Zih-63-8Uy" id="8cQ-8d-Hfb"/>
                 <outlet property="riskRateRatioLbl" destination="YLh-Hx-JTa" id="gRi-de-h1w"/>
+                <outlet property="riskRateRatioTitle" destination="4Jr-se-LUi" id="ME0-9Z-xfj"/>
+                <outlet property="sellTitle" destination="ZCD-o0-IxV" id="yCO-Nf-VLT"/>
                 <outlet property="sellView" destination="KMD-4S-Ti5" id="ezj-hS-f1J"/>
+                <outlet property="stopLossAtTitle" destination="fCd-C4-vAn" id="0Jq-wJ-P56"/>
                 <outlet property="stopLossLbl" destination="mkJ-QU-ZQc" id="lqP-YH-7E3"/>
+                <outlet property="stopLossPriceTitle" destination="8Ry-so-IFp" id="bng-1T-6b2"/>
                 <outlet property="stopLossTf" destination="CRT-yY-idB" id="pZD-sC-gmA"/>
+                <outlet property="takeProfitAtTitle" destination="qNu-jW-yLh" id="tBG-Me-Ypx"/>
                 <outlet property="takeProfitLbl" destination="BmS-WH-TSz" id="toe-3r-Xdv"/>
+                <outlet property="takeProfitPriceTitle" destination="dkv-xl-lLQ" id="Bf8-Pg-OoG"/>
                 <outlet property="takeProfitTf" destination="Mfa-3Q-Dis" id="2df-uW-ggJ"/>
+                <outlet property="tradingVolume" destination="eKt-KT-uxs" id="yYN-Ra-b49"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="volumeSizeTf" destination="QPy-zj-GRm" id="Baq-eX-COS"/>
             </connections>
@@ -228,34 +243,33 @@
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="W9k-T0-AWn">
-                                                    <rect key="frame" x="272" y="6.5" width="13" height="27"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="frJ-9t-sz9">
+                                                    <rect key="frame" x="260" y="0.0" width="35" height="40"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRd-tl-4bj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="13" height="12"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="13" id="Ui8-4L-rhE"/>
-                                                                <constraint firstAttribute="height" constant="12" id="UiC-NJ-lot"/>
-                                                            </constraints>
-                                                            <color key="tintColor" systemColor="systemGray4Color"/>
-                                                            <state key="normal" image="arrowtriangle.up.fill" catalog="system"/>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13E-YG-FXK">
-                                                            <rect key="frame" x="0.0" y="15" width="13" height="12"/>
-                                                            <color key="tintColor" systemColor="systemGray4Color"/>
-                                                            <state key="normal" image="arrowtriangle.down.fill" catalog="system"/>
-                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-Zo-mnw">
+                                                            <rect key="frame" x="4" y="12" width="27.5" height="16.5"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
+                                                            <color key="textColor" red="0.95294117649999999" green="0.96470588239999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
-                                                </stackView>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="u57-vu-jvk"/>
+                                                        <constraint firstItem="ojo-Zo-mnw" firstAttribute="centerY" secondItem="frJ-9t-sz9" secondAttribute="centerY" id="uXc-6h-IRu"/>
+                                                        <constraint firstItem="ojo-Zo-mnw" firstAttribute="centerX" secondItem="frJ-9t-sz9" secondAttribute="centerX" id="yi4-jo-Fga"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="W9k-T0-AWn" firstAttribute="centerY" secondItem="4Nq-k4-0n8" secondAttribute="centerY" id="FkF-bH-maT"/>
                                                 <constraint firstItem="QPy-zj-GRm" firstAttribute="leading" secondItem="4Nq-k4-0n8" secondAttribute="leading" constant="10" id="Hyl-Al-ZEA"/>
                                                 <constraint firstAttribute="bottom" secondItem="QPy-zj-GRm" secondAttribute="bottom" id="ICl-Ha-9pV"/>
                                                 <constraint firstItem="QPy-zj-GRm" firstAttribute="top" secondItem="4Nq-k4-0n8" secondAttribute="top" id="IuG-L6-DbI"/>
+                                                <constraint firstAttribute="trailing" secondItem="frJ-9t-sz9" secondAttribute="trailing" id="VSc-c0-LdK"/>
                                                 <constraint firstAttribute="height" constant="40" id="bLO-mK-Gl9"/>
-                                                <constraint firstAttribute="trailing" secondItem="W9k-T0-AWn" secondAttribute="trailing" constant="10" id="clL-0U-2U5"/>
+                                                <constraint firstItem="frJ-9t-sz9" firstAttribute="top" secondItem="4Nq-k4-0n8" secondAttribute="top" id="be8-nz-Oju"/>
+                                                <constraint firstAttribute="bottom" secondItem="frJ-9t-sz9" secondAttribute="bottom" id="qc6-05-AhQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="QPy-zj-GRm" secondAttribute="trailing" constant="35" id="s0x-x7-V9J"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>

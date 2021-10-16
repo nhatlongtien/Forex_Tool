@@ -16,6 +16,11 @@ protocol LoginVCDelegate:class {
     func pushVC(vc:UIViewController)
 }
 class LoginViewController: UIViewController {
+    @IBOutlet weak var signInTitle: UILabel!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var orSignInTitle: UILabel!
+    @IBOutlet weak var dontAccountTitle: UILabel!
+    @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var emailTf: UITextField!
     @IBOutlet weak var passwordTf: UITextField!
     //
@@ -25,6 +30,7 @@ class LoginViewController: UIViewController {
     var isHiddenPassword = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         //
         passwordTf.isSecureTextEntry = true
         //
@@ -44,8 +50,6 @@ class LoginViewController: UIViewController {
         authVM.signIn(email: emailTf.text!, password: passwordTf.text!) { (result) in
             if result == true{
                 self.dismiss(animated: false) {
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let targetVC = storyboard.instantiateViewController(withIdentifier: "DashboardViewController") as! UIViewController
                     let targetVC = TabBarViewController()
                     self.delegate?.pushVC(vc: targetVC)
                 }
@@ -115,21 +119,30 @@ class LoginViewController: UIViewController {
         self.present(targetVC, animated: true, completion: nil)
     }
     //MARK: Helper Method
+    func setupUI(){
+        signInTitle.text = "Sign In".localized()
+        signInButton.setTitle("Sign In".localized(), for: .normal)
+        orSignInTitle.text = "or Sign In with".localized()
+        dontAccountTitle.text = "Don't have an account?".localized()
+        createAccountButton.setTitle("Create an account".localized(), for: .normal)
+        emailTf.placeholder = "Email".localized()
+        passwordTf.placeholder = "Password".localized()
+    }
     func validate() -> Bool{
         if emailTf.text == nil || emailTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your email")
+            HelperMethod.showAlertWithMessage(message: "Please enter your email".localized())
             return false
         }
         if emailTf.text?.isValadateEmail() == false{
-            HelperMethod.showAlertWithMessage(message: "Your email is wrong formatter")
+            HelperMethod.showAlertWithMessage(message: "Your email is wrong format".localized())
             return false
         }
         if passwordTf.text == nil || passwordTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your password")
+            HelperMethod.showAlertWithMessage(message: "Please enter your password".localized())
             return false
         }
         if passwordTf.text?.isValadatePasswprd() == false{
-            HelperMethod.showAlertWithMessage(message: "The password must contain at least one upper case, lower case, digits, special character and length from 8 – 20 characters")
+            HelperMethod.showAlertWithMessage(message: "The password must contain at least one upper case, lower case, digits, special character and length from 8 – 20 characters".localized())
             return false
         }
         return true

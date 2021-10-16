@@ -39,7 +39,7 @@ extension String{
     //Divide string into equal parts (reading: from right to left)
     func split(by length:Int) -> [Substring] {
         guard length > 0 && length < count else { return [suffix(from:startIndex)] }
-
+        
         return (0 ... (count - 1) / length).map { dropLast($0 * length).suffix(length) }.reversed()
     }
     //Convert string to date
@@ -47,6 +47,7 @@ extension String{
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = inputFormat
+        //dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.date(from: self) ?? Date()
     }
     //filter String to get digit
@@ -95,10 +96,20 @@ extension Double{
         let stringNumber = numberFormater.string(from: NSNumber(value: self))
         return stringNumber!
     }
+    func numberFractionDigits( number: Int) -> String{
+        let numberFormater = NumberFormatter()
+        numberFormater.locale = Locale(identifier: "EN")
+        numberFormater.groupingSeparator = ","
+        numberFormater.numberStyle = .decimal
+        numberFormater.maximumFractionDigits = number
+        numberFormater.minimumFractionDigits = number
+        let stringNumber = numberFormater.string(from: NSNumber(value: self))
+        return stringNumber!
+    }
     func round(to places: Int) -> Double {
-            let divisor = pow(10.0, Double(places))
-            return Darwin.round(self * divisor) / divisor
-        }
+        let divisor = pow(10.0, Double(places))
+        return Darwin.round(self * divisor) / divisor
+    }
     
     
 }
@@ -110,4 +121,28 @@ extension Date{
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
     }
+    var startOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+    }
+    
+    var endOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 7, to: sunday)
+    }
+    var startOfMonth:Date{
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    var endOfMonth:Date{
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth)!
+    }
+    var startOfYear:Date{
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year], from: Calendar.current.startOfDay(for: self)))!
+    }
+    var endOfYear:Date{
+        return Calendar.current.date(byAdding: DateComponents(year: 1), to: self.startOfYear)!
+    }
+    
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +21,7 @@
                 <outlet property="fullNameTf" destination="6Z3-pd-o8E" id="GF6-Gb-3TM"/>
                 <outlet property="passwordTf" destination="l6q-9F-bH7" id="a94-CL-INt"/>
                 <outlet property="phoneTf" destination="8iZ-Ms-Ae1" id="BrG-3M-TGc"/>
+                <outlet property="registerButton" destination="q4Q-fm-G2E" id="rH6-Yk-KVK"/>
                 <outlet property="repeatpasswordTf" destination="xYh-lq-uUT" id="ISY-xK-Nx0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,8 +37,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-oH-9l3" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
                             <rect key="frame" x="20" y="66" width="335" height="535"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-ti-uJJ">
-                                    <rect key="frame" x="45" y="0.0" width="245" height="142"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-ti-uJJ">
+                                    <rect key="frame" x="45" y="5" width="245" height="142"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ICd-ti-uJJ" secondAttribute="height" multiplier="245:142" id="mWi-zC-jeE"/>
                                     </constraints>
@@ -206,7 +207,6 @@
                                 <constraint firstItem="JtF-Ah-2WE" firstAttribute="top" secondItem="IAf-fs-B7n" secondAttribute="bottom" constant="10" id="16O-SM-9eK"/>
                                 <constraint firstAttribute="trailing" secondItem="IAf-fs-B7n" secondAttribute="trailing" constant="20" id="1ll-s3-7a9"/>
                                 <constraint firstItem="ZEZ-KA-8aC" firstAttribute="top" secondItem="yKS-JD-PaG" secondAttribute="bottom" constant="10" id="CPd-UF-YkH"/>
-                                <constraint firstItem="yKS-JD-PaG" firstAttribute="top" secondItem="hkJ-oH-9l3" secondAttribute="top" constant="150" id="D6g-c0-SBi"/>
                                 <constraint firstItem="q4Q-fm-G2E" firstAttribute="top" secondItem="JtF-Ah-2WE" secondAttribute="bottom" constant="20" id="DVF-Ha-hA3"/>
                                 <constraint firstItem="yKS-JD-PaG" firstAttribute="leading" secondItem="hkJ-oH-9l3" secondAttribute="leading" constant="20" id="DbL-rT-zIM"/>
                                 <constraint firstItem="q4Q-fm-G2E" firstAttribute="leading" secondItem="hkJ-oH-9l3" secondAttribute="leading" constant="20" id="GuU-qu-DxN"/>
@@ -221,9 +221,10 @@
                                 <constraint firstItem="547-SF-htv" firstAttribute="top" secondItem="hkJ-oH-9l3" secondAttribute="top" constant="10" id="bX6-DW-dr7"/>
                                 <constraint firstItem="Wsa-Vo-gwZ" firstAttribute="top" secondItem="ZEZ-KA-8aC" secondAttribute="bottom" constant="10" id="bZ8-Dw-j4B"/>
                                 <constraint firstItem="JtF-Ah-2WE" firstAttribute="leading" secondItem="hkJ-oH-9l3" secondAttribute="leading" constant="20" id="e4h-ad-Rsq"/>
-                                <constraint firstItem="ICd-ti-uJJ" firstAttribute="top" secondItem="hkJ-oH-9l3" secondAttribute="top" id="etV-UV-adS"/>
+                                <constraint firstItem="ICd-ti-uJJ" firstAttribute="top" secondItem="hkJ-oH-9l3" secondAttribute="top" constant="5" id="etV-UV-adS"/>
                                 <constraint firstAttribute="trailing" secondItem="q4Q-fm-G2E" secondAttribute="trailing" constant="20" id="fmf-pc-cHw"/>
                                 <constraint firstAttribute="trailing" secondItem="yKS-JD-PaG" secondAttribute="trailing" constant="20" id="hHh-Xq-bMn"/>
+                                <constraint firstItem="yKS-JD-PaG" firstAttribute="top" secondItem="ICd-ti-uJJ" secondAttribute="bottom" constant="3" id="nMM-9q-KmP"/>
                                 <constraint firstItem="30q-Ta-do0" firstAttribute="leading" secondItem="hkJ-oH-9l3" secondAttribute="leading" constant="20" id="puB-le-dEL"/>
                                 <constraint firstItem="IAf-fs-B7n" firstAttribute="top" secondItem="30q-Ta-do0" secondAttribute="bottom" constant="10" id="uBW-Io-qbf"/>
                                 <constraint firstAttribute="trailing" secondItem="JtF-Ah-2WE" secondAttribute="trailing" constant="20" id="ubp-CR-sHv"/>

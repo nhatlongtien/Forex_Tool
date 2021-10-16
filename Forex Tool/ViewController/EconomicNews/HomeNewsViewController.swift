@@ -49,7 +49,7 @@ class HomeNewsViewController: BaseViewController {
         self.navigationController?.navigationBar.isHidden = true
         if isFromTabbar == false{
             self.navigationController?.navigationBar.isHidden = false
-            self.title = "News"
+            self.title = "Economic News".localized()
         }
     }
     //MARK: Helper Method
@@ -99,7 +99,7 @@ extension HomeNewsViewController:UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //Update width for cell
         let size = CGSize(width: 1000, height: 50)
-        let estimateFrame = NSString(string: Constant.listTabNews[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIFont(name: "Roboto-Regular", size: 14)], context: nil)
+        let estimateFrame = NSString(string: Constant.listTabNews[indexPath.row]).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIFont(name: "Roboto-Regular", size: 16)], context: nil)
         let width = estimateFrame.width + 40
         return CGSize(width: width, height: 50)
         

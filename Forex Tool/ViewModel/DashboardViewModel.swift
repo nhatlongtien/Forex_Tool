@@ -75,7 +75,6 @@ class DashboardViewModel{
         print(toDateTimestamp)
         print(Timestamp(date: Calendar.current.date(byAdding: .day, value: -1, to: Date())!))
         beforeApiCall?()
-        
         db.collection("Transactions").whereField("userID", isEqualTo: Constant.defaults.value(forKey: Constant.USER_ID)).whereField("timeStamp", isGreaterThanOrEqualTo: startTimestamp).whereField("timeStamp", isLessThanOrEqualTo: toDateTimestamp).order(by: "timeStamp", descending: true).getDocuments { [self] (querySnapshot, error) in
             if let err = error {
                 print("Error getting documents: \(err)")

@@ -21,10 +21,10 @@ class TypeNewCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool{
         didSet{
             if isSelected == true{
-                titleLbl.font = UIFont(name: "Roboto-Bold", size: 14)
+                titleLbl.font = UIFont(name: "Roboto-Bold", size: 16)
                 greenView.isHidden = false
             }else{
-                titleLbl.font = UIFont(name: "Roboto-Regular", size: 14)
+                titleLbl.font = UIFont(name: "Roboto-Regular", size: 16)
                 greenView.isHidden = true
             }
         }

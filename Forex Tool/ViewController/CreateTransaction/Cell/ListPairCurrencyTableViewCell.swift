@@ -21,13 +21,16 @@ class ListPairCurrencyTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configCell(pairCurrency:PairCurrencyModel, currentPairCurrency:String){
+    func configCell(pairCurrency:PairCurrencyModel, currentPairCurrency:String?){
         namePairCurrencyLbl.text = pairCurrency.name
-        if pairCurrency.name == currentPairCurrency{
-            checkMarkImg.isHidden = false
+        if currentPairCurrency != nil{
+            if pairCurrency.name == currentPairCurrency{
+                checkMarkImg.isHidden = false
+            }else{
+                checkMarkImg.isHidden = true
+            }
         }else{
             checkMarkImg.isHidden = true
         }
     }
-    
 }

@@ -13,6 +13,10 @@ protocol ManagerTransactionTableViewCellDelegate:class {
     func editReasonButtonDidTap(transaction:TransactionModel)
 }
 class ManagerTransactionTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var messageTitle: UILabel!
+    @IBOutlet weak var createButton: UIButton!
+    
     @IBOutlet weak var emptyTransactionView: CustomeBoderRadiusView!
     @IBOutlet weak var containView: CustomeBoderRadiusView!
     @IBOutlet weak var imageTransaction: UIImageView!
@@ -34,6 +38,8 @@ class ManagerTransactionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        messageTitle.text = "No available transaction in here, please create your first transaction!".localized()
+        createButton.setTitle("Create".localized(), for: .normal)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,8 +51,8 @@ class ManagerTransactionTableViewCell: UITableViewCell {
         self.selectedTransaction = transaction
         //
         self.pairCurrencyLbl.text = transaction.pairCurrency! + " " + "(\(transaction.detail?.type ?? ""))"
-        self.rewardLbl.text = "Reward: " + "+\(transaction.detail?.rewardMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
-        self.lossLbl.text = "Loss " + "-\(transaction.detail?.lossMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
+        self.rewardLbl.text = "Reward:".localized() + " \(transaction.detail?.rewardMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
+        self.lossLbl.text = "Loss:".localized() + " \(transaction.detail?.lossMoney?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")$"
         self.rrRateLbl.text = transaction.detail?.RRRate
         self.lotSizeLbl.text = "\(transaction.detail?.lotSize?.formaterCurrentPriceWithTwoFractionDigits() ?? "0") (\(transaction.ristRate ?? 0)%)"
         
@@ -66,17 +72,17 @@ class ManagerTransactionTableViewCell: UITableViewCell {
         self.dateLbl.text = transaction.dateCreate?.formartDate(inputFormat: DateformatterType.YYYY_MM_DD_HHMMSS.rawValue).dateToString(format: DateformatterType.DD_MM_YYYY.rawValue)
         switch transaction.groupCurrency {
         case CurrencyGroup.XAU_USD.rawValue, CurrencyGroup.XXX_JPY.rawValue:
-            self.entryLbl.text = "Entry: \(transaction.detail?.entryPoint?.formaterCurrentPriceWith3FractionDigits() ?? "0")"
-            self.stopLossLbl.text = "Stop Loss: \(transaction.detail?.stopLossPoint?.formaterCurrentPriceWith3FractionDigits() ?? "0")"
-            self.takeProfitLbl.text = "Take Profit: \(transaction.detail?.takeProfitPoint?.formaterCurrentPriceWith3FractionDigits() ?? "0")"
+            self.entryLbl.text = "Entry:".localized() + " \(transaction.detail?.entryPoint?.formaterCurrentPriceWith3FractionDigits() ?? "0")"
+            self.stopLossLbl.text = "Stop Loss:".localized() + " \(transaction.detail?.stopLossPoint?.formaterCurrentPriceWith3FractionDigits() ?? "0")"
+            self.takeProfitLbl.text = "Take Profit:".localized() + " \(transaction.detail?.takeProfitPoint?.formaterCurrentPriceWith3FractionDigits() ?? "0")"
         case CurrencyGroup.BTC_USD.rawValue:
-            self.entryLbl.text = "Entry: \(transaction.detail?.entryPoint?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")"
-            self.stopLossLbl.text = "Stop Loss: \(transaction.detail?.stopLossPoint?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")"
-            self.takeProfitLbl.text = "Take Profit: \(transaction.detail?.takeProfitPoint?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")"
+            self.entryLbl.text = "Entry:".localized() + " \(transaction.detail?.entryPoint?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")"
+            self.stopLossLbl.text = "Stop Loss:".localized() + " \(transaction.detail?.stopLossPoint?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")"
+            self.takeProfitLbl.text = "Take Profit:".localized() + " \(transaction.detail?.takeProfitPoint?.formaterCurrentPriceWithTwoFractionDigits() ?? "0")"
         default:
-            self.entryLbl.text = "Entry: \(transaction.detail?.entryPoint?.formaterCurrentPriceWithFiveFractionDigits() ?? "0")"
-            self.stopLossLbl.text = "Stop Loss: \(transaction.detail?.stopLossPoint?.formaterCurrentPriceWithFiveFractionDigits() ?? "0")"
-            self.takeProfitLbl.text = "Take Profit: \(transaction.detail?.takeProfitPoint?.formaterCurrentPriceWithFiveFractionDigits() ?? "0")"
+            self.entryLbl.text = "Entry:".localized() + " \(transaction.detail?.entryPoint?.formaterCurrentPriceWithFiveFractionDigits() ?? "0")"
+            self.stopLossLbl.text = "Stop Loss:".localized() + " \(transaction.detail?.stopLossPoint?.formaterCurrentPriceWithFiveFractionDigits() ?? "0")"
+            self.takeProfitLbl.text = "Take Profit:".localized() + " \(transaction.detail?.takeProfitPoint?.formaterCurrentPriceWithFiveFractionDigits() ?? "0")"
         }
         //
         statusLbl.text = transaction.status

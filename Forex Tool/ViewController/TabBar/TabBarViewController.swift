@@ -14,39 +14,18 @@ class TabBarViewController: UITabBarController {
     var subviewController:[UIViewController] = []
     //
     var customTabBar:CustomTabBar!
-    var tabBarHeight:CGFloat = 67.0
+    var tabBarHeight:CGFloat = 55
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadTabBar()
         //
-//        self.tabBarController?.navigationController?.navigationBar.isHidden = true
-//        //
-//        self.view.backgroundColor = .white
-//        dashboardVC = DashboardViewController()
-//        transactionVC = HistoryTransactionViewController()
-//        settingVC = SettingViewViewController()
-//
-//        subviewController.append(transactionVC!)
-//        subviewController.append(dashboardVC!)
-//        subviewController.append(settingVC!)
-//
-//        transactionVC?.tabBarItem = UITabBarItem(title: "Transaction", image: UIImage(named: "historyIcon"), selectedImage: UIImage(named: "historySelectedIcon"))
-//        transactionVC?.tabBarItem.tag = 0
-//        dashboardVC?.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "homeIcon"), selectedImage: UIImage(named: "homeSelectedIcon"))
-//        dashboardVC?.tabBarItem.tag = 1
-//        settingVC?.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(named: "settingIcon"), selectedImage: UIImage(named: "settingSelectedIcon"))
-//        settingVC?.tabBarItem.tag = 2
-//
-//        self.setViewControllers(subviewController, animated: true)
-//        self.selectedIndex = 1
-//        self.selectedViewController = dashboardVC
     }
     
     //MARK: Helper Method
     func loadTabBar(){
         // Tạo và load custom tab bar
-        let tabbarItems:[TabItem] = [.caculationTool, .ecomomicNew, .home, .manageTransaction, .profile]
+        let tabbarItems:[TabItem] = [.caculationTool, .ecomomicNew, .home, .market, .profile]
         setupCustomTabMenu(tabbarItems) { (viewControllers) in
             self.viewControllers = viewControllers
         }
