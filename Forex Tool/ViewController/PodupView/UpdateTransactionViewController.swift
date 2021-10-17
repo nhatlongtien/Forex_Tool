@@ -13,6 +13,11 @@ protocol UpdateTransactionViewControllerDelegate:class {
 }
 class UpdateTransactionViewController: UIViewController {
     //MARK: Properties
+    @IBOutlet weak var updateTransactionTitle: UILabel!
+    @IBOutlet weak var statusTitle: UILabel!
+    @IBOutlet weak var resultTitle: UILabel!
+    @IBOutlet weak var updateButton: UIButton!
+    
     @IBOutlet weak var listStatusButton: UIButton!
     @IBOutlet weak var listResultButton: UIButton!
     @IBOutlet weak var statusTransactionLbl: UILabel!
@@ -28,6 +33,11 @@ class UpdateTransactionViewController: UIViewController {
     weak var delegate:UpdateTransactionViewControllerDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
+        updateTransactionTitle.text = "Update Transaction".localized()
+        statusTitle.text = "Status".localized()
+        resultTitle.text = "Result".localized()
+        updateButton.setTitle("Update".localized(), for: .normal)
         //
         self.setupDataForUI()
         //

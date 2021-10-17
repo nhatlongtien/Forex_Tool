@@ -260,6 +260,9 @@ PODS:
   - Firebase/Firestore (7.8.1):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 7.8.0)
+  - Firebase/Messaging (7.8.1):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 7.8.0)
   - Firebase/Storage (7.8.1):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 7.8.0)
@@ -303,6 +306,18 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (7.11.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+  - FirebaseMessaging (7.8.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstanceID (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Reachability (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
   - FirebaseStorage (7.8.0):
     - FirebaseCore (~> 7.0)
     - GTMSessionFetcher/Core (~> 1.4)
@@ -369,7 +384,7 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - IQKeyboardManagerSwift (6.5.6)
   - JGProgressHUD (2.2)
-  - Kingfisher (6.2.1)
+  - Kingfisher (7.1.1)
   - leveldb-library (1.22.1)
   - Localize-Swift (3.2.0):
     - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
@@ -397,13 +412,13 @@ DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Firestore
+  - Firebase/Messaging
   - Firebase/Storage
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - JGProgressHUD
-  - Kingfisher
+  - Kingfisher (~> 7.0)
   - Localize-Swift
-  - Localize-Swift (~> 3.2)
   - MultiProgressView
   - PKHUD
   - SwiftyJSON
@@ -429,6 +444,8 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
@@ -469,6 +486,8 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 066f996579cf097bdad3d7dc9a918d6b9e129c50
   FirebaseFirestore: f1ededef972dea136e88a7bae9732f52afe64221
   FirebaseInstallations: 7f7ed0e7e27fb51f57291e1876e2ddb1524126c1
+  FirebaseInstanceID: ad5135045a498d7775903efd39762d2cdfa1be27
+  FirebaseMessaging: 1d5cac3728c042d3d4700ecb56bbac893660a963
   FirebaseStorage: 84d1eb7bfe8c3cbfe6beeeb02ce712f65dcb8b83
   GoogleAppMeasurement: 50a254ee92c1b94fbe2abea7e3da35e4c6dedce0
   GoogleDataTransport: b006084b73915a42c28a3466961a4edda3065da6
@@ -480,7 +499,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
-  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
+  Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
   MultiProgressView: 65e5bb8181687099ade56d16d85d245a92fafa96
@@ -489,6 +508,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: c8ffd5e90ca9284f239db531459e813fe44e9cbb
+PODFILE CHECKSUM: d76a86950626601266e810ff5cc4d37eb2fb0309
 
 COCOAPODS: 1.10.1

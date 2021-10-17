@@ -21,8 +21,12 @@
             <connections>
                 <outlet property="listResultButton" destination="nUd-fm-mjt" id="qR0-h9-VJo"/>
                 <outlet property="listStatusButton" destination="ckY-Kh-KW9" id="kFe-P6-r8R"/>
+                <outlet property="resultTitle" destination="FhA-hQ-AZj" id="MtM-lL-ZI9"/>
                 <outlet property="resultTransactionLbl" destination="g8Q-0q-cQa" id="6bs-mY-G5Z"/>
+                <outlet property="statusTitle" destination="Cha-uX-dep" id="eoD-0g-g3G"/>
                 <outlet property="statusTransactionLbl" destination="hDy-Sk-pVJ" id="FNO-Bv-qDb"/>
+                <outlet property="updateButton" destination="1L6-Jf-yIM" id="ZYz-t2-Xbt"/>
+                <outlet property="updateTransactionTitle" destination="vcv-Fe-BvG" id="a0M-qa-S1D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

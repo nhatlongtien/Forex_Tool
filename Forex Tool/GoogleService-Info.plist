@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>149682494657-oddvirrg7arq3crfal3mlrtp1ntnv4dk.apps.googleusercontent.com</string>
+	<string>149682494657-stt67rrdq28ra32paaohqcqn6g93ois5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.149682494657-oddvirrg7arq3crfal3mlrtp1ntnv4dk</string>
+	<string>com.googleusercontent.apps.149682494657-stt67rrdq28ra32paaohqcqn6g93ois5</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBybFYp6fuRiY_6Xu9Itw88AjzDUepmAp4</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.tiennguyen.Forex-Tool</string>
+	<string>com.tiennguyen.Forex-Tools</string>
 	<key>PROJECT_ID</key>
 	<string>forex-tool-68eb3</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:149682494657:ios:29f57ee9f988512298c840</string>
+	<string>1:149682494657:ios:b61dba0e7d92963798c840</string>
+	<key>DATABASE_URL</key>
+	<string>https://forex-tool-68eb3-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>

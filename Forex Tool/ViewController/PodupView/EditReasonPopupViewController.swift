@@ -10,6 +10,8 @@ import FirebaseFirestore
 import PKHUD
 class EditReasonPopupViewController: BaseViewController {
     
+    @IBOutlet weak var detailReasonTitle: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var chartImageView: UIImageView!
     @IBOutlet weak var reasonTextView: UITextView!
     //
@@ -58,15 +60,17 @@ class EditReasonPopupViewController: BaseViewController {
     }
     //MARK: Helper Method
     func showDataForUI(){
+        detailReasonTitle.text = "Detail Reason".localized()
+        doneButton.setTitle("Done".localized(), for: .normal)
         if selectedTransactionItem?.detail?.hasReason == 1{
-            self.title = "Edit Reason"
+            self.title = "Edit Reason".localized()
             reasonTextView.text = selectedTransactionItem?.detail?.reasonDescription
             if selectedTransactionItem?.detail?.chartImage != nil && selectedTransactionItem?.detail?.chartImage != ""{
                 chartImageView.kf.setImage(with: URL(string: (selectedTransactionItem?.detail?.chartImage)!))
             }
         }else{
-            self.title = "Add Reason"
-            reasonTextView.text = "Enter your reason in here"
+            self.title = "Add Reason".localized()
+            reasonTextView.text = "Enter your reason in here".localized()
             reasonTextView.textColor = .lightGray
         }
     }
@@ -86,7 +90,7 @@ class EditReasonPopupViewController: BaseViewController {
     }
     func validate() -> Bool{
         if reasonTextView.textColor == UIColor.lightGray{
-            HelperMethod.showAlertWithMessage(message: "Please enter your reason")
+            HelperMethod.showAlertWithMessage(message: "Please enter your reason".localized())
             return false
         }
         return true
@@ -103,7 +107,7 @@ extension EditReasonPopupViewController:UITextViewDelegate{
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == ""{
-            textView.text = "Enter your reason in here!"
+            textView.text = "Enter your reason in here".localized()
             textView.textColor = .lightGray
         }
     }

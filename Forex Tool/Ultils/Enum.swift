@@ -54,6 +54,7 @@ enum MethodLoginType:String{
     case gmail = "Gmail"
     case facebook = "Facebook"
     case email_password = "Email_Password"
+    case apple = "Apple"
 }
 enum TabItem:String, CaseIterable{
     case home = "Home"

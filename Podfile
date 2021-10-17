@@ -19,10 +19,11 @@ pod 'Alamofire'
 pod 'DropDown'
 pod 'FBSDKLoginKit'
 pod 'FeedKit'
-pod 'Kingfisher'
 pod 'BetterSegmentedControl'
 pod 'MultiProgressView'
 pod 'Charts'
 pod 'Firebase/Storage'
-pod 'Localize-Swift', '~> 3.2'
+pod 'Kingfisher', '~> 7.0'
+pod 'Firebase/Messaging'
+
 end

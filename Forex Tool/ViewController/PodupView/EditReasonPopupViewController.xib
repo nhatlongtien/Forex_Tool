@@ -21,6 +21,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditReasonPopupViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
                 <outlet property="chartImageView" destination="ZCB-KB-GCO" id="Sw0-eS-xqD"/>
+                <outlet property="detailReasonTitle" destination="zUv-0L-gbl" id="Y4v-G4-0CD"/>
+                <outlet property="doneButton" destination="4Hu-8v-TXx" id="jQY-hN-EwR"/>
                 <outlet property="reasonTextView" destination="Uf1-5g-GTY" id="0p9-Nr-Veo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

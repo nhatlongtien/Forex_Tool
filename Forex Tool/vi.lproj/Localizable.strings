@@ -163,3 +163,12 @@
 "No available transaction in here, please create your first transaction!" = "Hiện tại không có giao dịch nào, vui lòng tạo giao dịch!";
 "View all anlysis and opinion" = "Xem những phân tích và ý kiến";
 "View info global market" = "Xem thông tin thị trường";
+"Detail Reason" = "Lý do vào lệnh";
+"Done" = "Xong";
+"Edit Reason" = "Chỉnh sửa lý do";
+"Add Reason" = "Thêm lý do";
+"Enter your reason in here" = "Nhập lý do vào lệnh tại đây";
+"Alert" = "Thông báo";
+"Please enter your reason" = "Vui lòng nhập lý do vào lệnh";
+"Update Transaction" = "Cập nhật giao dịch";
+"Status" = "Trạng thái";

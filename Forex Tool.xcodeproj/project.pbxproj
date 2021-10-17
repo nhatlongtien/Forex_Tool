@@ -46,6 +46,7 @@
 		38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */; };
 		387DE88826F9D5E90074E6E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DE88726F9D5E90074E6E4 /* BaseViewController.swift */; };
 		388206BC270891E4001315B5 /* PricePairCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */; };
+		388264D4271BCADC00FCC927 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 388264D3271BCADC00FCC927 /* GoogleService-Info.plist */; };
 		3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */; };
 		3886C9F02702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */; };
 		3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */; };
@@ -113,7 +114,6 @@
 		38C7241726972DAA00E810F9 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38C7240B26972DA900E810F9 /* Roboto-Black.ttf */; };
 		38C7241B2697364C00E810F9 /* CustomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7241A2697364C00E810F9 /* CustomeView.swift */; };
 		38C7241E26973A0700E810F9 /* CustomeBoderRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7241D26973A0700E810F9 /* CustomeBoderRadiusView.swift */; };
-		38C724262697478700E810F9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38C724252697478700E810F9 /* GoogleService-Info.plist */; };
 		38C7244A2697596000E810F9 /* String Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724492697596000E810F9 /* String Extension.swift */; };
 		38C7244D26975A2B00E810F9 /* HelperMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7244C26975A2B00E810F9 /* HelperMethod.swift */; };
 		38C7245026975AE200E810F9 /* UIWindow_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C7244F26975AE200E810F9 /* UIWindow_Extension.swift */; };
@@ -182,6 +182,8 @@
 		38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		387DE88726F9D5E90074E6E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePairCurrencyModel.swift; sourceTree = "<group>"; };
+		388264D2271BBCC400FCC927 /* Forex Tool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Forex Tool.entitlements"; sourceTree = "<group>"; };
+		388264D3271BCADC00FCC927 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3886C9ED2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionSizeAndRiskCalculatorViewController.swift; sourceTree = "<group>"; };
 		3886C9EE2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PositionSizeAndRiskCalculatorViewController.xib; sourceTree = "<group>"; };
 		3886C9F62703467900C834B3 /* HomeCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCalculationViewController.swift; sourceTree = "<group>"; };
@@ -251,7 +253,6 @@
 		38C7240B26972DA900E810F9 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		38C7241A2697364C00E810F9 /* CustomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeView.swift; sourceTree = "<group>"; };
 		38C7241D26973A0700E810F9 /* CustomeBoderRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeBoderRadiusView.swift; sourceTree = "<group>"; };
-		38C724252697478700E810F9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38C724492697596000E810F9 /* String Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String Extension.swift"; sourceTree = "<group>"; };
 		38C7244C26975A2B00E810F9 /* HelperMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperMethod.swift; sourceTree = "<group>"; };
 		38C7244F26975AE200E810F9 /* UIWindow_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow_Extension.swift; sourceTree = "<group>"; };
@@ -510,6 +511,7 @@
 		38C723B02696989A00E810F9 /* Forex Tool */ = {
 			isa = PBXGroup;
 			children = (
+				388264D2271BBCC400FCC927 /* Forex Tool.entitlements */,
 				38C724532697E98100E810F9 /* Service */,
 				38C723F526969DFD00E810F9 /* Ultils */,
 				38C723E926969D3100E810F9 /* Model */,
@@ -519,8 +521,8 @@
 				38C723B12696989A00E810F9 /* AppDelegate.swift */,
 				38C723BA2696989C00E810F9 /* Assets.xcassets */,
 				38C723BC2696989C00E810F9 /* LaunchScreen.storyboard */,
-				38C724252697478700E810F9 /* GoogleService-Info.plist */,
 				38C723BF2696989C00E810F9 /* Info.plist */,
+				388264D3271BCADC00FCC927 /* GoogleService-Info.plist */,
 				38D7CC292706F96E004297AF /* Localizable.strings */,
 			);
 			path = "Forex Tool";
@@ -839,8 +841,8 @@
 				38C7241126972DAA00E810F9 /* Roboto-BoldItalic.ttf in Resources */,
 				380B251A26F1D0F500474396 /* HomeNewsViewController.xib in Resources */,
 				38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */,
+				388264D4271BCADC00FCC927 /* GoogleService-Info.plist in Resources */,
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
-				38C724262697478700E810F9 /* GoogleService-Info.plist in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
 				38D7CC272706F96E004297AF /* Localizable.strings in Resources */,
 				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
@@ -1156,7 +1158,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Forex Tool/Forex Tool.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1164,10 +1168,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tool";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1177,7 +1181,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Forex Tool/Forex Tool.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1185,10 +1191,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tool";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

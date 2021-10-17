@@ -29,12 +29,20 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.149682494657-oddvirrg7arq3crfal3mlrtp1ntnv4dk</string>
+				<string>com.googleusercontent.apps.149682494657-stt67rrdq28ra32paaohqcqn6g93ois5</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.149682494657-stt67rrdq28ra32paaohqcqn6g93ois5</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
 	<string>998204720961187</string>
 	<key>FacebookClientToken</key>
@@ -61,6 +69,10 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We need to use your camera to take picture for upload avatar and trading reason function</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need to use your Photo Library to get picture for upload avatar and trading reason function</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -72,8 +84,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -82,9 +92,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to use your Photo Library to get picture </string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need to use your camera to take picture</string>
 </dict>
 </plist>
