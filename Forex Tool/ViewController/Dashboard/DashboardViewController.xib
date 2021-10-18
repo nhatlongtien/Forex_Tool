@@ -26,7 +26,6 @@
                 <outlet property="amountGainLbl" destination="B8X-7Q-ggq" id="Qzj-4i-k9q"/>
                 <outlet property="amountLossLbl" destination="4KB-Hv-TWM" id="jfG-AS-ZcO"/>
                 <outlet property="analysisTitle" destination="LMZ-GW-Ppz" id="dLN-Bf-WPx"/>
-                <outlet property="avatarImg" destination="4Cd-nT-5l2" id="fEz-A6-qGb"/>
                 <outlet property="calculationToolTitle" destination="VWX-Cn-cR3" id="a53-SQ-9wF"/>
                 <outlet property="createButtonTitle" destination="BRO-N9-dNm" id="PpB-h7-46B"/>
                 <outlet property="createTransactionTitle" destination="p6x-IU-i1m" id="4SS-dT-RER"/>
@@ -40,6 +39,7 @@
                 <outlet property="manageTransactionTitle" destination="BEL-ah-8U3" id="FeE-6h-zKu"/>
                 <outlet property="marketTitle" destination="Vp7-X4-Ty5" id="bnO-GR-GR5"/>
                 <outlet property="noActiveTransactionTitle" destination="LRq-mB-YJU" id="BvF-6m-zbs"/>
+                <outlet property="notifiImage" destination="a5O-RO-GxC" id="kCw-aF-y7R"/>
                 <outlet property="numberLossLbl" destination="SUg-ol-CeD" id="tAe-H6-Pwr"/>
                 <outlet property="numberTradingTitle" destination="00Q-eh-tuY" id="cl6-vh-s5B"/>
                 <outlet property="numberWinLbl" destination="rj6-3m-nhk" id="Cau-A8-Qfd"/>
@@ -51,7 +51,6 @@
                 <outlet property="scrollView" destination="9wj-0M-M03" id="cCQ-Z0-U8Q"/>
                 <outlet property="statisticTitle" destination="aLs-eh-Axi" id="rUz-OY-tCs"/>
                 <outlet property="totalNumberTradingLbl" destination="IwA-Lo-Wd6" id="NS3-cP-VFy"/>
-                <outlet property="userNameLbl" destination="qJQ-Zt-tQO" id="iaF-cH-hjJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="winLossPercentLbl" destination="YFR-Zh-7jO" id="YcV-Wx-4kj"/>
                 <outlet property="winLossRatioTitle" destination="B6B-xY-p6a" id="Mcp-v2-yhr"/>
@@ -124,30 +123,6 @@
                                     <color key="textColor" red="0.062745098040000002" green="0.0" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4Cd-nT-5l2">
-                                    <rect key="frame" x="229" y="16" width="30" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="30" id="4pf-0g-s8G"/>
-                                        <constraint firstAttribute="height" constant="30" id="wEF-cD-5TN"/>
-                                    </constraints>
-                                </imageView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Vfv-8r-qJF">
-                                    <rect key="frame" x="264" y="15" width="96" height="32"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtT-7W-6Xn">
-                                            <rect key="frame" x="0.0" y="0.0" width="96" height="14.5"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="12"/>
-                                            <color key="textColor" red="0.047058823530000002" green="0.1333333333" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyen Long Tien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJQ-Zt-tQO">
-                                            <rect key="frame" x="0.0" y="17.5" width="96" height="14.5"/>
-                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
-                                            <color key="textColor" red="0.047058823530000002" green="0.1333333333" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogv-hd-NSU" userLabel="EmptyTransactionView" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
                                     <rect key="frame" x="20" y="80" width="335" height="139"/>
                                     <subviews>
@@ -763,27 +738,45 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hasNotifi" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-RO-GxC">
+                                    <rect key="frame" x="335" y="20" width="25" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="fG6-Pz-5nD"/>
+                                        <constraint firstAttribute="height" constant="30" id="t5X-DD-lNW"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02b-zY-BkR">
+                                    <rect key="frame" x="308" y="19.5" width="67" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="67" id="I7v-vL-ME4"/>
+                                        <constraint firstAttribute="height" constant="31" id="efN-lU-jTP"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <connections>
+                                        <action selector="notificationButtonWasPressed:" destination="-1" eventType="touchUpInside" id="5r0-JX-7nb"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.95294117647058818" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="M8D-Mp-gWD" firstAttribute="top" secondItem="obt-SG-TqN" secondAttribute="bottom" constant="25" id="0G5-Ju-L0V"/>
-                                <constraint firstItem="4Cd-nT-5l2" firstAttribute="centerY" secondItem="Vfv-8r-qJF" secondAttribute="centerY" id="3Zg-Tk-X36"/>
                                 <constraint firstItem="NXG-If-0gc" firstAttribute="centerX" secondItem="Suc-Ef-d1E" secondAttribute="centerX" id="3lj-XH-4Z7"/>
                                 <constraint firstItem="BoA-L1-4X5" firstAttribute="top" secondItem="atx-a0-AOX" secondAttribute="bottom" constant="15" id="46q-sX-xoR"/>
+                                <constraint firstAttribute="trailing" secondItem="02b-zY-BkR" secondAttribute="trailing" id="4MI-6y-Sui"/>
                                 <constraint firstItem="ogv-hd-NSU" firstAttribute="top" secondItem="obt-SG-TqN" secondAttribute="bottom" constant="25" id="6Ku-9R-Xej"/>
-                                <constraint firstAttribute="trailing" secondItem="Vfv-8r-qJF" secondAttribute="trailing" constant="15" id="6bc-Jr-Txy"/>
                                 <constraint firstAttribute="trailing" secondItem="9wj-0M-M03" secondAttribute="trailing" id="9KS-h7-v1r"/>
                                 <constraint firstItem="aLs-eh-Axi" firstAttribute="leading" secondItem="Suc-Ef-d1E" secondAttribute="leading" constant="15" id="9bq-j9-Lde"/>
+                                <constraint firstItem="a5O-RO-GxC" firstAttribute="centerY" secondItem="obt-SG-TqN" secondAttribute="centerY" id="IM4-Gu-6uI"/>
                                 <constraint firstAttribute="trailing" secondItem="ogv-hd-NSU" secondAttribute="trailing" constant="20" id="Iqs-73-xyG"/>
+                                <constraint firstItem="02b-zY-BkR" firstAttribute="centerY" secondItem="obt-SG-TqN" secondAttribute="centerY" id="JYX-UU-593"/>
                                 <constraint firstItem="aLs-eh-Axi" firstAttribute="top" secondItem="9wj-0M-M03" secondAttribute="bottom" constant="25" id="JkT-7z-P3L"/>
-                                <constraint firstItem="Vfv-8r-qJF" firstAttribute="leading" secondItem="4Cd-nT-5l2" secondAttribute="trailing" constant="5" id="LWP-rA-4DJ"/>
                                 <constraint firstItem="yv0-Aw-J67" firstAttribute="leading" secondItem="Suc-Ef-d1E" secondAttribute="leading" constant="15" id="NMh-SN-jRP"/>
                                 <constraint firstAttribute="bottom" secondItem="NXG-If-0gc" secondAttribute="bottom" constant="100" id="PGS-kL-zW6"/>
+                                <constraint firstAttribute="trailing" secondItem="a5O-RO-GxC" secondAttribute="trailing" constant="15" id="Pfz-MR-fqf"/>
                                 <constraint firstItem="NXG-If-0gc" firstAttribute="top" secondItem="8p6-7r-3bc" secondAttribute="bottom" constant="20" id="Tfo-jf-H6Y"/>
                                 <constraint firstItem="atx-a0-AOX" firstAttribute="leading" secondItem="Suc-Ef-d1E" secondAttribute="leading" constant="35" id="WfL-1q-9kH"/>
                                 <constraint firstAttribute="trailing" secondItem="M8D-Mp-gWD" secondAttribute="trailing" id="XBN-R9-4er"/>
                                 <constraint firstItem="obt-SG-TqN" firstAttribute="top" secondItem="Suc-Ef-d1E" secondAttribute="top" constant="15" id="ZXa-PW-b0d"/>
-                                <constraint firstItem="Vfv-8r-qJF" firstAttribute="top" secondItem="Suc-Ef-d1E" secondAttribute="top" constant="15" id="aix-Dj-bMT"/>
                                 <constraint firstItem="Rbq-bm-xKb" firstAttribute="centerY" secondItem="obt-SG-TqN" secondAttribute="centerY" id="c2c-ak-aeG"/>
                                 <constraint firstItem="atx-a0-AOX" firstAttribute="top" secondItem="aLs-eh-Axi" secondAttribute="bottom" constant="15" id="dhd-F8-Yua"/>
                                 <constraint firstItem="9wj-0M-M03" firstAttribute="leading" secondItem="Suc-Ef-d1E" secondAttribute="leading" id="eBj-3x-leO"/>
@@ -840,9 +833,9 @@
         <image name="create_transaction_icon" width="1668" height="1674"/>
         <image name="economic_new_icon" width="1008" height="735"/>
         <image name="economic_news_icon" width="1947" height="1892"/>
+        <image name="hasNotifi" width="26" height="29.5"/>
         <image name="manage_transaction_icon" width="3666" height="3860"/>
         <image name="market_icon_color" width="1109" height="961"/>
-        <image name="userIcon" width="100" height="100"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

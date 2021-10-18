@@ -31,9 +31,10 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var analysisTitle: UILabel!
     
     //
+    @IBOutlet weak var notifiImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var userNameLbl: UILabel!
-    @IBOutlet weak var avatarImg: UIImageView!
+//    @IBOutlet weak var userNameLbl: UILabel!
+//    @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var activeTransactionCollectionView: UICollectionView!
     @IBOutlet weak var emptyTransactionView: CustomeBoderRadiusView!
     @IBOutlet weak var durationTimeSegment: UISegmentedControl!
@@ -69,9 +70,9 @@ class DashboardViewController: UIViewController {
         activeTransactionCollectionView.dataSource = self
         //
         //self.userNameLbl.text = user?.displayName
-        avatarImg.layer.cornerRadius = 15
-        avatarImg.clipsToBounds = true
-        self.getUserInfoAndUpdateUI()
+//        avatarImg.layer.cornerRadius = 15
+//        avatarImg.clipsToBounds = true
+//        self.getUserInfoAndUpdateUI()
         //
         self.setupDurationTimeDefault()
         //
@@ -102,6 +103,10 @@ class DashboardViewController: UIViewController {
 
     //MARK: Ui Event
     
+    @IBAction func notificationButtonWasPressed(_ sender: Any) {
+        let targetVC = HomeNotificationViewController()
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
     @IBAction func calculaorButtonWasPressed(_ sender: Any) {
         let targetVC = HomeCalculationViewController()
         targetVC.isFromTabbar = false
@@ -267,19 +272,19 @@ class DashboardViewController: UIViewController {
         }
     }
     //
-    func getUserInfoAndUpdateUI(){
-        guard let uid = Constant.defaults.string(forKey: Constant.USER_ID) else {return}
-        print(uid)
-        dashboardVM.getUserInfoByUserID(userID: uid) { (success, userInfo) in
-            self.userNameLbl.text = userInfo?.fullName?.capitalized
-            let url = userInfo?.avatarImg
-            if url != nil && url != ""{
-                self.avatarImg.kf.setImage(with: URL(string: url!))
-            }else{
-                self.avatarImg.image = UIImage(named: "userIcon")
-            }
-        }
-    }
+//    func getUserInfoAndUpdateUI(){
+//        guard let uid = Constant.defaults.string(forKey: Constant.USER_ID) else {return}
+//        print(uid)
+//        dashboardVM.getUserInfoByUserID(userID: uid) { (success, userInfo) in
+//            self.userNameLbl.text = userInfo?.fullName?.capitalized
+//            let url = userInfo?.avatarImg
+//            if url != nil && url != ""{
+//                self.avatarImg.kf.setImage(with: URL(string: url!))
+//            }else{
+//                self.avatarImg.image = UIImage(named: "userIcon")
+//            }
+//        }
+//    }
     //
     func customSegmentControl(){
         if #available(iOS 13.0, *){

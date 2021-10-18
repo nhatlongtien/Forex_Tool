@@ -29,6 +29,8 @@ enum DateformatterType:String{
     case MMMM_D_YYYY_HH_mm_ss = "MMMM d, yyyy HH:mm:ss"
     case DD_MMMM = "dd MMMM"
     case MM_DD_HH_mm = "MM/dd HH:mm"
+    case YYYY_MM_DD_T_HH_mm_ssZ = "yyyy-MM-dd'T'HH:mm:ssZ"
+    case HH_mm = "HH:mm"
 }
 enum StatusTransaction:String{
     case Active = "Active"

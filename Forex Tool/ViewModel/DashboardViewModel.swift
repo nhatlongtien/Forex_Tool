@@ -63,7 +63,6 @@ class DashboardViewModel{
                 afterApiCall?()
             }
         }
-        
     }
     //
     func getListTransactionByDate(startDate:Date, toDate:Date, completionHander:@escaping(_ result:Bool, _ listTransaction:[TransactionModel]?) -> Void){

@@ -54,6 +54,24 @@ extension String{
     func digits() -> String{
         return self.filter("0123456789.".contains)
     }
+    func dateFormatter() -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = DateformatterType.DD_MM_YYYY_Slash.rawValue
+        let date = dateFormatterGet.date(from: self)
+        let stringDate = dateFormatterPrint.string(from: date!)
+        return stringDate
+    }
+    func hourFormatterForNotifi() -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = DateformatterType.HH_mm.rawValue
+        let date = dateFormatterGet.date(from: self)
+        let stringDate = dateFormatterPrint.string(from: date!)
+        return stringDate
+    }
 }
 extension Double{
     func formaterValueOfPips() -> String{
