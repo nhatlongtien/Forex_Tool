@@ -38,10 +38,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhP-eI-UoQ" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
-                            <rect key="frame" x="20" y="97" width="335" height="473"/>
+                            <rect key="frame" x="20" y="122" width="335" height="423"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AX-iT-1WX">
-                                    <rect key="frame" x="55.5" y="441" width="224" height="27"/>
+                                    <rect key="frame" x="55.5" y="391" width="224" height="27"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-5c-jQ0">
                                             <rect key="frame" x="0.0" y="0.0" width="126" height="27"/>
@@ -134,47 +134,6 @@
                                     <color key="textColor" systemColor="systemGrayColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4wi-UW-9ZT" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
-                                    <rect key="frame" x="50" y="341" width="235" height="40"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookIcon" translatesAutoresizingMaskIntoConstraints="NO" id="wna-Kg-Zjf">
-                                            <rect key="frame" x="15" y="10" width="20" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="20" id="0DO-WE-G5G"/>
-                                                <constraint firstAttribute="height" constant="20" id="hOK-sK-D1e"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k91-8k-rCQ">
-                                            <rect key="frame" x="80.5" y="10" width="74.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2In-sF-1K0">
-                                            <rect key="frame" x="0.0" y="0.0" width="235" height="40"/>
-                                            <connections>
-                                                <action selector="facebookButtonWasPressed:" destination="-1" eventType="touchUpInside" id="Mfd-8d-G2M"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.94901960784313721" green="0.97254901960784312" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="K8e-kg-dTM"/>
-                                        <constraint firstItem="2In-sF-1K0" firstAttribute="leading" secondItem="4wi-UW-9ZT" secondAttribute="leading" id="Om0-9p-nSR"/>
-                                        <constraint firstItem="k91-8k-rCQ" firstAttribute="centerX" secondItem="4wi-UW-9ZT" secondAttribute="centerX" id="X8R-3i-fTN"/>
-                                        <constraint firstItem="wna-Kg-Zjf" firstAttribute="centerY" secondItem="4wi-UW-9ZT" secondAttribute="centerY" id="XCt-ix-D1n"/>
-                                        <constraint firstAttribute="trailing" secondItem="2In-sF-1K0" secondAttribute="trailing" id="bqG-uU-cfa"/>
-                                        <constraint firstItem="2In-sF-1K0" firstAttribute="top" secondItem="4wi-UW-9ZT" secondAttribute="top" id="cX5-ID-9kU"/>
-                                        <constraint firstItem="k91-8k-rCQ" firstAttribute="centerY" secondItem="4wi-UW-9ZT" secondAttribute="centerY" id="e31-Ru-38E"/>
-                                        <constraint firstItem="wna-Kg-Zjf" firstAttribute="leading" secondItem="4wi-UW-9ZT" secondAttribute="leading" constant="15" id="lpc-nc-TJk"/>
-                                        <constraint firstAttribute="bottom" secondItem="2In-sF-1K0" secondAttribute="bottom" id="v8K-D5-4rv"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9o-dM-1AQ">
                                     <rect key="frame" x="307.5" y="10" width="17.5" height="22"/>
                                     <state key="normal" image="closeButton"/>
@@ -183,7 +142,7 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfR-Fm-wek" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
-                                    <rect key="frame" x="50" y="391" width="235" height="40"/>
+                                    <rect key="frame" x="50" y="341" width="235" height="40"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mua-GP-ysu">
                                             <rect key="frame" x="13" y="8.5" width="23" height="23"/>
@@ -269,6 +228,7 @@
                             <constraints>
                                 <constraint firstItem="9GX-ad-Tx9" firstAttribute="centerX" secondItem="fhP-eI-UoQ" secondAttribute="centerX" id="0l4-MX-OBU"/>
                                 <constraint firstAttribute="trailing" secondItem="i9o-dM-1AQ" secondAttribute="trailing" constant="10" id="1qP-YP-trx"/>
+                                <constraint firstItem="UfR-Fm-wek" firstAttribute="top" secondItem="LSG-Hf-kCM" secondAttribute="bottom" constant="10" id="1zN-rW-EJn"/>
                                 <constraint firstItem="eys-4X-shS" firstAttribute="top" secondItem="p99-pQ-2T1" secondAttribute="bottom" constant="25" id="2rL-GW-dOh"/>
                                 <constraint firstItem="5AX-iT-1WX" firstAttribute="centerX" secondItem="fhP-eI-UoQ" secondAttribute="centerX" id="3MT-1i-7SD"/>
                                 <constraint firstAttribute="trailing" secondItem="dQ7-MT-vIm" secondAttribute="trailing" constant="20" id="3yD-ej-fL1"/>
@@ -276,18 +236,14 @@
                                 <constraint firstItem="i9o-dM-1AQ" firstAttribute="top" secondItem="fhP-eI-UoQ" secondAttribute="top" constant="10" id="ADP-Co-i0L"/>
                                 <constraint firstAttribute="trailing" secondItem="LSG-Hf-kCM" secondAttribute="trailing" constant="50" id="BNZ-Fz-LlD"/>
                                 <constraint firstItem="ssv-X0-lpz" firstAttribute="leading" secondItem="fhP-eI-UoQ" secondAttribute="leading" constant="20" id="Bwf-TA-RBn"/>
-                                <constraint firstItem="4wi-UW-9ZT" firstAttribute="leading" secondItem="fhP-eI-UoQ" secondAttribute="leading" constant="50" id="GDq-CA-aqO"/>
-                                <constraint firstItem="UfR-Fm-wek" firstAttribute="top" secondItem="4wi-UW-9ZT" secondAttribute="bottom" constant="10" id="GW3-ha-u4u"/>
                                 <constraint firstItem="LSG-Hf-kCM" firstAttribute="leading" secondItem="fhP-eI-UoQ" secondAttribute="leading" constant="50" id="KHl-57-Y7e"/>
                                 <constraint firstItem="5AX-iT-1WX" firstAttribute="top" secondItem="UfR-Fm-wek" secondAttribute="bottom" constant="10" id="N9k-cb-Cgp"/>
                                 <constraint firstItem="9GX-ad-Tx9" firstAttribute="top" secondItem="dQ7-MT-vIm" secondAttribute="bottom" constant="16" id="QfE-nG-iNB"/>
                                 <constraint firstItem="p99-pQ-2T1" firstAttribute="top" secondItem="fhP-eI-UoQ" secondAttribute="top" constant="25" id="RsR-9l-BKO"/>
                                 <constraint firstAttribute="trailing" secondItem="ssv-X0-lpz" secondAttribute="trailing" constant="20" id="ThA-SM-Dct"/>
-                                <constraint firstAttribute="trailing" secondItem="4wi-UW-9ZT" secondAttribute="trailing" constant="50" id="Uub-R1-R5s"/>
                                 <constraint firstItem="p99-pQ-2T1" firstAttribute="centerX" secondItem="fhP-eI-UoQ" secondAttribute="centerX" id="YKv-6f-bSo"/>
                                 <constraint firstItem="dQ7-MT-vIm" firstAttribute="leading" secondItem="fhP-eI-UoQ" secondAttribute="leading" constant="20" id="Z8d-D7-8B7"/>
                                 <constraint firstAttribute="trailing" secondItem="UfR-Fm-wek" secondAttribute="trailing" constant="50" id="ZcO-Ad-ZSn"/>
-                                <constraint firstItem="4wi-UW-9ZT" firstAttribute="top" secondItem="LSG-Hf-kCM" secondAttribute="bottom" constant="10" id="bpJ-uZ-pc3"/>
                                 <constraint firstAttribute="bottom" secondItem="5AX-iT-1WX" secondAttribute="bottom" constant="5" id="cdO-gB-keu"/>
                                 <constraint firstItem="ssv-X0-lpz" firstAttribute="top" secondItem="eys-4X-shS" secondAttribute="bottom" constant="10" id="cql-y4-UPh"/>
                                 <constraint firstItem="eys-4X-shS" firstAttribute="leading" secondItem="fhP-eI-UoQ" secondAttribute="leading" constant="20" id="fSa-Yy-OrJ"/>
@@ -330,7 +286,6 @@
         <image name="blueBtn" width="280" height="50"/>
         <image name="closeButton" width="17.5" height="18.5"/>
         <image name="eyeIcon" width="19" height="11.5"/>
-        <image name="facebookIcon" width="385" height="385"/>
         <image name="googleIcon" width="600" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
