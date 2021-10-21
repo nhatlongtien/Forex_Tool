@@ -7,9 +7,16 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeNotificationViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
+                <outlet property="emptyNotifiTitle" destination="hOE-xg-jPS" id="hq8-ay-WuR"/>
+                <outlet property="emptyView" destination="Sbt-pz-AXR" id="XeC-fV-h8o"/>
                 <outlet property="tableView" destination="ItR-HW-97l" id="rM6-sg-cwh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,10 +30,41 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbt-pz-AXR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyNotification" translatesAutoresizingMaskIntoConstraints="NO" id="TnU-lP-jaM">
+                            <rect key="frame" x="62.5" y="35" width="250" height="190"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="190" id="YF5-xz-h5r"/>
+                                <constraint firstAttribute="width" constant="250" id="nKA-nG-h26"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No available notification in here!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOE-xg-jPS">
+                            <rect key="frame" x="60" y="225" width="255" height="16.5"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="0.062745098039215685" green="0.0" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="hOE-xg-jPS" firstAttribute="leading" secondItem="Sbt-pz-AXR" secondAttribute="leading" constant="60" id="CpM-YH-C6U"/>
+                        <constraint firstItem="TnU-lP-jaM" firstAttribute="top" secondItem="Sbt-pz-AXR" secondAttribute="top" constant="35" id="KvH-ge-TvY"/>
+                        <constraint firstAttribute="height" constant="280" id="acu-82-ZU8"/>
+                        <constraint firstItem="TnU-lP-jaM" firstAttribute="centerX" secondItem="Sbt-pz-AXR" secondAttribute="centerX" id="mrD-Bv-WzM"/>
+                        <constraint firstItem="hOE-xg-jPS" firstAttribute="top" secondItem="TnU-lP-jaM" secondAttribute="bottom" id="nR0-kx-RI1"/>
+                        <constraint firstAttribute="trailing" secondItem="hOE-xg-jPS" secondAttribute="trailing" constant="60" id="oZp-d6-Ldr"/>
+                        <constraint firstItem="hOE-xg-jPS" firstAttribute="centerX" secondItem="Sbt-pz-AXR" secondAttribute="centerX" id="xva-D8-6I5"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.95294117647058818" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sbt-pz-AXR" secondAttribute="trailing" id="0NF-d7-gnN"/>
+                <constraint firstItem="Sbt-pz-AXR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="F27-4x-6oI"/>
+                <constraint firstItem="Sbt-pz-AXR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gad-Tf-epv"/>
                 <constraint firstItem="ItR-HW-97l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="L1t-Sk-Ea7"/>
                 <constraint firstItem="ItR-HW-97l" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Lks-1M-Zy3"/>
                 <constraint firstItem="ItR-HW-97l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Op2-mQ-64a"/>
@@ -35,4 +73,7 @@
             <point key="canvasLocation" x="132" y="67.916041979010501"/>
         </view>
     </objects>
+    <resources>
+        <image name="emptyNotification" width="1200" height="1200"/>
+    </resources>
 </document>

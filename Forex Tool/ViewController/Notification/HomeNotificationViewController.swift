@@ -6,51 +6,69 @@
 //
 
 import UIKit
-
+import PKHUD
 class HomeNotificationViewController: BaseViewController {
 
+    @IBOutlet weak var emptyNotifiTitle: UILabel!
+    @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var tableView: UITableView!
     //
     let notificationVM = NotificationViewModel()
     var notification_2D:[[NotificationModel]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.viewModelCallBack()
+        //
         let nibCell = UINib(nibName: "NotificationTableViewCell", bundle: nil)
         tableView.register(nibCell, forCellReuseIdentifier: "NotificationTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        //
+        emptyView.isHidden = true
+        emptyNotifiTitle.text = "No available notification in here!".localized()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Notification".localized()
         
-        notificationVM.getListNotification { success, listNotification in
+        notificationVM.getListNotification { [self] success, listNotification in
             if success{
                 guard let notifications = listNotification else {return}
-                self.notification_2D = []
-                var groupNotifi = [NotificationModel]()
-                var firstDate = notifications.first?.date?.dateFormatter()
-                
-                for eachNotifi in notifications{
-                    if eachNotifi.date?.dateFormatter() == firstDate{
-                        groupNotifi.append(eachNotifi)
-                    }else{
-                        self.notification_2D.append(groupNotifi)
-                        groupNotifi = []
-                        groupNotifi.append(eachNotifi)
-                        firstDate = eachNotifi.date?.dateFormatter()
+                if notifications.count == 0{
+                    emptyView.isHidden = false
+                }else{
+                    emptyView.isHidden = true
+                    self.notification_2D = []
+                    var groupNotifi = [NotificationModel]()
+                    var firstDate = notifications.first?.date?.dateFormatter()
+                    
+                    for eachNotifi in notifications{
+                        if eachNotifi.date?.dateFormatter() == firstDate{
+                            groupNotifi.append(eachNotifi)
+                        }else{
+                            self.notification_2D.append(groupNotifi)
+                            groupNotifi = []
+                            groupNotifi.append(eachNotifi)
+                            firstDate = eachNotifi.date?.dateFormatter()
+                        }
                     }
+                    if groupNotifi.count > 0{
+                        self.notification_2D.append(groupNotifi)
+                    }
+                    self.tableView.reloadData()
                 }
-                if groupNotifi.count > 0{
-                    self.notification_2D.append(groupNotifi)
-                }
-                self.tableView.reloadData()
             }
         }
     }
     //MARK: Helper Method
-    
+    func viewModelCallBack(){
+        notificationVM.beforeApiCall = {
+            HUD.show(.systemActivity)
+        }
+        notificationVM.afterApiCall = {
+            HUD.hide()
+        }
+    }
 
 }
 extension HomeNotificationViewController:UITableViewDelegate, UITableViewDataSource{

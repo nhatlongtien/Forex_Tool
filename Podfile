@@ -26,5 +26,6 @@ pod 'Firebase/Storage'
 pod 'Kingfisher', '~> 7.0'
 pod 'Firebase/Messaging'
 pod 'Lightbox'
+pod 'Google-Mobile-Ads-SDK'
 
 end

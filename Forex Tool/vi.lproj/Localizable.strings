@@ -5,7 +5,7 @@
   Created by Tien Nguyen on 01/10/2021.
   
 */
-"No available active transaction in here, please create your first active transaction!" = "Hiện tại bạn không có giao dịch nào đang hoạt đọng, vui lòng tạo giao dịch!";
+"No available active transaction in here, please create your first active transaction!" = "Hiện tại bạn không có giao dịch nào đang hoạt động, vui lòng tạo giao dịch!";
 "Create" = "Tạo";
 "Features" = "Tính năng";
 "Statistics" = "Thống kê";
@@ -174,3 +174,8 @@
 "Status" = "Trạng thái";
 "Notification" = "Thông báo";
 "Detail Notification" = "Chi tiết";
+"Create transaction successfully!" = "Tạo giao dịch thành công!";
+"No available notification in here!" = "Bạn chưa có thông báo nào!";
+"Add Infomation" = "Bổ sung thông tin";
+"Choose Avatar!" = "Chọn Avatar!";
+"* Please add some your personal infomation to complete the process" = "* Vui lòng bổ sung thêm thông tin để hoàn tất quá trình";

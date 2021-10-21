@@ -10,6 +10,13 @@ import Firebase
 import FirebaseStorage
 import PKHUD
 class AddPersonalInfoPoupViewController: BaseViewController {
+    @IBOutlet weak var addInfomationTitle: UILabel!
+    @IBOutlet weak var chooseAvatarTittle: UILabel!
+    @IBOutlet weak var phoneTitle: UILabel!
+    @IBOutlet weak var addressTitle: UILabel!
+    @IBOutlet weak var dateOfBirthTitle: UILabel!
+    @IBOutlet weak var detailMessTitle: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     @IBOutlet weak var phoneTf: UITextField!
     @IBOutlet weak var addressTf: UITextField!
@@ -23,7 +30,7 @@ class AddPersonalInfoPoupViewController: BaseViewController {
     var imageData:Data?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
         // Do any additional setup after loading the view.
         phoneTf.keyboardType = .numberPad
         dateOfBirthTf.isUserInteractionEnabled = false
@@ -55,20 +62,31 @@ class AddPersonalInfoPoupViewController: BaseViewController {
         if #available(iOS 13.4, *){
             datePicker.preferredDatePickerStyle = .wheels
         }
-        let alert = UIAlertController(title: "Choose your DOB", message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Choose your DOB".localized(), message: "\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
         alert.view.addSubview(datePicker)
         datePicker.frame = CGRect(x: 0, y: 40, width: self.view.frame.size.width - 105, height: 180)
-        let selectButton = UIAlertAction(title: "Choose", style: .default) { (action) in
+        let selectButton = UIAlertAction(title: "Choose".localized(), style: .default) { (action) in
             print(datePicker.date)
             self.dateOfBirthTf.text = datePicker.date.dateToString(format: DateformatterType.DD_MM_YYYY_Slash.rawValue)
         }
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil)
         alert.addAction(selectButton)
         alert.addAction(cancelButton)
         self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: Helper Method
+    func setupUI(){
+        addInfomationTitle.text = "Add Infomation".localized()
+        chooseAvatarTittle.text = "Choose Avatar!".localized()
+        phoneTitle.text = "Phone Number".localized()
+        addressTitle.text = "Address".localized()
+        dateOfBirthTitle.text = "Date of Birth".localized()
+        detailMessTitle.text = "* Please add some your personal infomation to complete the process".localized()
+        phoneTf.placeholder = "Enter your phone number".localized()
+        addressTf.placeholder = "Enter your address".localized()
+        doneButton.setTitle("Done".localized(), for: .normal)
+    }
     func checkAndUpdateInfoForUser(fullname:String, email:String?, phoneNumber:String, address:String, avatarImg:String?){
         var ref: DocumentReference? = nil
         let db = Firestore.firestore()
@@ -90,6 +108,7 @@ class AddPersonalInfoPoupViewController: BaseViewController {
             }else{
                 //luu thanh cong -> Di den dashboard
                 HUD.hide()
+                Constant.defaults.setValue(userUid, forKey: Constant.USER_ID)
                 HelperMethod.setRootToDashboardVC()
             }
         })
@@ -127,19 +146,19 @@ class AddPersonalInfoPoupViewController: BaseViewController {
     //
     func validate() -> Bool{
         if phoneTf.text == nil || phoneTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your phone number.")
+            HelperMethod.showAlertWithMessage(message: "Please enter your phone number.".localized())
             return false
         }
         if phoneTf.text?.isValidatePhoneNumber() == false{
-            HelperMethod.showAlertWithMessage(message: "Your phone number is wrong format")
+            HelperMethod.showAlertWithMessage(message: "Your phone number is wrong format".localized())
             return false
         }
         if addressTf.text == nil || addressTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your address")
+            HelperMethod.showAlertWithMessage(message: "Please enter your address".localized())
             return false
         }
         if dateOfBirthTf.text == nil || dateOfBirthTf.text == ""{
-            HelperMethod.showAlertWithMessage(message: "Please enter your DOB")
+            HelperMethod.showAlertWithMessage(message: "Please enter your DOB".localized())
             return false
         }
         return true

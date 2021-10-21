@@ -11,7 +11,7 @@ import JGProgressHUD
 class HelperMethod{
     static var appDelegate:AppDelegate? = UIApplication.shared.delegate as? AppDelegate
     static func showAlertWithMessage(message:String){
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Alert".localized(), message: message, preferredStyle: UIAlertController.Style.alert)
         let btn_OK = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
         alert.addAction(btn_OK)
         if (appDelegate?.window?.visibleViewController?.isKind(of: UIAlertController.self))!{
@@ -74,7 +74,7 @@ class HelperMethod{
         let navController = UINavigationController(rootViewController: targetVC)
         appDelegate?.window?.rootViewController = navController
     }
-    
+        
 }
 
 

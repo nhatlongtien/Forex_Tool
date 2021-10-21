@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import PKHUD
+import Lightbox
 class ProfileViewController: UIViewController {
     //
     @IBOutlet weak var personalTitle: UILabel!
@@ -47,6 +48,9 @@ class ProfileViewController: UIViewController {
         //
         
         self.getUserInfoAndUpdateUI()
+        //
+        avatarImg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapAvatarImg)))
+        avatarImg.isUserInteractionEnabled = true
     }
     //MARK: UI Event
     
@@ -102,6 +106,15 @@ class ProfileViewController: UIViewController {
         }
     }
     //MARK: Helper Method
+    @objc func handleTapAvatarImg(){
+        let images = [LightboxImage(image: avatarImg.image!)]
+        // Create an instance of LightboxController.
+        let controller = LightboxController(images: images)
+        // Use dynamic background.
+        controller.dynamicBackground = true
+        // Present your controller.
+        present(controller, animated: true, completion: nil)
+    }
     func setupUI(){
         personalTitle.text = "Personal".localized()
         editProfileTitle.text = "Edit Profile".localized()

@@ -6,20 +6,34 @@
 //
 
 import UIKit
-
+import GoogleMobileAds
+import SwiftUI
 class TabBarViewController: UITabBarController {
     var dashboardVC:DashboardViewController?
     var transactionVC:HistoryTransactionViewController?
     var settingVC:ProfileViewController?
     var subviewController:[UIViewController] = []
-    //
     var customTabBar:CustomTabBar!
     var tabBarHeight:CGFloat = 55
-    
+    //
+    private let banner:GADBannerView = {
+        let banner = GADBannerView()
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        banner.adUnitID = "ca-app-pub-8162737912880549/6261272627"
+        banner.load(GADRequest())
+        banner.backgroundColor = .clear
+        return banner
+    }()
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadTabBar()
         //
+        banner.rootViewController = self
+        self.view.addSubview(banner)
+        banner.widthAnchor.constraint(equalToConstant: view.frame.size.width).isActive = true
+        banner.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        banner.bottomAnchor.constraint(equalTo: customTabBar.topAnchor).isActive = true
     }
     
     //MARK: Helper Method

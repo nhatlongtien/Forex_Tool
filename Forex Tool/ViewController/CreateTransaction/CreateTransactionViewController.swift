@@ -215,7 +215,7 @@ class CreateTransactionViewController: BaseViewController {
                         if let err = error{
                             HelperMethod.showAlertWithMessage(message: "Error adding document: \(err)")
                         }else{
-                            HelperMethod.showAlertWithMessage(message: "Create transaction successfully!")
+                            HelperMethod.showAlertWithMessage(message: "Create transaction successfully!".localized())
                             print("Document added with ID: \(ref!.documentID)")
                         }
                         HUD.hide()
@@ -253,7 +253,7 @@ class CreateTransactionViewController: BaseViewController {
                 if let err = error{
                     HelperMethod.showAlertWithMessage(message: "Error adding document: \(err)")
                 }else{
-                    HelperMethod.showAlertWithMessage(message: "Create transaction successfully!")
+                    HelperMethod.showAlertWithMessage(message: "Create transaction successfully!".localized())
                     print("Document added with ID: \(ref!.documentID)")
                 }
                 HUD.hide()
@@ -698,7 +698,17 @@ extension CreateTransactionViewController{
         let imagePicker = info[.originalImage] as! UIImage
         self.chartImageView.image = imagePicker
         //
-        self.dataImage = imagePicker.jpegData(compressionQuality: 0.4)
+        //self.dataImage = imagePicker.jpegData(compressionQuality: 0.3)
+        var imgvalue = max(imagePicker.size.width, imagePicker.size.height)
+        if imgvalue >= 3000{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.1)
+        }else if imgvalue >= 2000{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.2)
+        }else if imgvalue >= 1000{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.3)
+        }else{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.4)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }

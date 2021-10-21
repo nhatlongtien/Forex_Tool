@@ -168,7 +168,17 @@ extension EditProfileViewController{
         let imagePicker = info[.originalImage] as! UIImage
         self.avatarImageView.image = imagePicker
         //
-        self.dataImage = imagePicker.jpegData(compressionQuality: 0.4)
+        //self.dataImage = imagePicker.jpegData(compressionQuality: 0.3)
+        let imgvalue = max(imagePicker.size.width, imagePicker.size.height)
+        if imgvalue >= 3000{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.1)
+        }else if imgvalue >= 2000{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.2)
+        }else if imgvalue >= 1000{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.3)
+        }else{
+            dataImage = imagePicker.jpegData(compressionQuality: 0.4)
+        }
         self.dismiss(animated: true, completion: nil)
     }
 }

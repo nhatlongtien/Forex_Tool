@@ -14,6 +14,7 @@ import FBSDKCoreKit
 import PKHUD
 import Localize_Swift
 import UserNotifications
+import GoogleMobileAds
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -75,6 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         
         // [END register_for_notifications]
+        // [START config google Admob]
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        // [END config google Admob]
         return true
     }
     @available(iOS 9.0, *)
@@ -198,11 +202,28 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
-        // [END_EXCLUDE]
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        // Print full message.
         print(userInfo)
+        let state = UIApplication.shared.applicationState
+        if state == .background || state == .inactive {
+            // background
+            notificationVM.saveNotificationToFirebase(userInfo: userInfo)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+//                let targetVC = HomeNotificationViewController()
+//                var rootViewController = self.window!.rootViewController as! UINavigationController
+//                rootViewController.pushViewController(targetVC, animated: true)
+//            })
+            let targetVC = HomeNotificationViewController()
+            var rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(targetVC, animated: true)
+            
+        } else if state == .active {
+            // foreground
+            let targetVC = HomeNotificationViewController()
+            var rootViewController = self.window!.rootViewController as! UINavigationController
+            rootViewController.pushViewController(targetVC, animated: true)
+        }
+
+        
         
         completionHandler()
     }

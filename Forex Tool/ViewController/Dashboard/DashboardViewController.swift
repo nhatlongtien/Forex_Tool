@@ -12,6 +12,7 @@ import PKHUD
 import BetterSegmentedControl
 import SwiftUI
 import Localize_Swift
+import GoogleMobileAds
 class DashboardViewController: UIViewController {
     @IBOutlet weak var noActiveTransactionTitle: UILabel!
     @IBOutlet weak var createButtonTitle: UIButton!
@@ -49,6 +50,15 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var totalNumberTradingLbl: UILabel!
     @IBOutlet weak var winLossPercentLbl: UILabel!
     //
+    private let banner:GADBannerView = {
+        let banner = GADBannerView()
+        banner.translatesAutoresizingMaskIntoConstraints = false
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.load(GADRequest())
+        banner.backgroundColor = .red
+        return banner
+    }()
+    //
     let dashboardVM = DashboardViewModel()
     var listActiveTransaction:[TransactionModel] = []
     var fromDate:Date?
@@ -77,9 +87,14 @@ class DashboardViewController: UIViewController {
         self.setupDurationTimeDefault()
         //
         dashboardVM.getConfig()
-        
-        
+        //
+//        self.view.addSubview(banner)
+//        banner.rootViewController = self
     }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        banner.frame = CGRect(x: 0, y: view.frame.size.height - 80, width: view.frame.size.width, height: 50)
+//    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         Constant.isInTabBarControll = false
@@ -178,6 +193,12 @@ class DashboardViewController: UIViewController {
         self.calculationWinLoss(fromDate: fromDate!, toDate: toDate!)
     }
     //MARK: Helper Method
+    func setupBannerView(){
+        banner.leadingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        banner.trailingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        banner.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        banner.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
     func setupUI(){
         noActiveTransactionTitle.text = "No available active transaction in here, please create your first active transaction!".localized()
         createButtonTitle.setTitle("Create".localized(), for: .normal)

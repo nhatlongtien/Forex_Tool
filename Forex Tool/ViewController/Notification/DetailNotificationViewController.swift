@@ -8,15 +8,19 @@
 import UIKit
 import Kingfisher
 import Lightbox
+import GoogleMobileAds
 class DetailNotificationViewController: BaseViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var publicDateLbl: UILabel!
     @IBOutlet weak var titleTlb: UILabel!
     @IBOutlet weak var contentLbl: UILabel!
     var notificationItem:NotificationModel?
+    var timer:Timer?
+    //
+    private var interstitial: GADInterstitialAd?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         titleTlb.text = notificationItem?.title?.uppercased()
         contentLbl.text = notificationItem?.body
         publicDateLbl.text = notificationItem?.date?.formatDateWithInputTypeAndOutputType(inputFormat: DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue, outputFormat: DateformatterType.h_mm_a_DD_MMM_YYYY.rawValue)
@@ -27,6 +31,10 @@ class DetailNotificationViewController: BaseViewController {
         }
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDidTapImage)))
         imageView.isUserInteractionEnabled = true
+        //
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(handleTime), userInfo: nil, repeats: false)
+        //
+        downloadAds()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
@@ -42,5 +50,23 @@ class DetailNotificationViewController: BaseViewController {
         // Present your controller.
         present(controller, animated: true, completion: nil)
     }
-
+    func downloadAds(){
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-8162737912880549/2979491402",
+                               request: request,
+                               completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad
+        })
+    }
+    @objc func handleTime(){
+        if interstitial != nil {
+            interstitial!.present(fromRootViewController: self)
+          } else {
+            print("Ad wasn't ready")
+          }
+    }
 }

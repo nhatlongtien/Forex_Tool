@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Lightbox
 class DetailTransactionViewController: BaseViewController {
     @IBOutlet weak var pairCurrencyTitle: UILabel!
     @IBOutlet weak var typeTransactionTitle: UILabel!
@@ -57,12 +57,24 @@ class DetailTransactionViewController: BaseViewController {
         //
         guard let transactionItem = selectedTransactionItem else {return}
         showDataForUI(transactionItem: transactionItem)
+        //
+        chartImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapImageView)))
+        chartImageView.isUserInteractionEnabled = true
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
         self.title = "Detail Transaction".localized()
     }
     //MARK: Helper Method
+    @objc func handleTapImageView(){
+        let images = [LightboxImage(image: chartImageView.image!)]
+        // Create an instance of LightboxController.
+        let controller = LightboxController(images: images)
+        // Use dynamic background.
+        controller.dynamicBackground = true
+        // Present your controller.
+        present(controller, animated: true, completion: nil)
+    }
     func setupUI(){
         pairCurrencyTitle.text = "Pair Currency:".localized()
         typeTransactionTitle.text = "Type Transaction:".localized()

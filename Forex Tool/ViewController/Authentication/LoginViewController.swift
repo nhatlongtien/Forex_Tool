@@ -263,15 +263,17 @@ extension LoginViewController:GIDSignInDelegate{
                 HelperMethod.showAlertWithMessage(message: err.localizedDescription ?? "")
             }else{
                 //Dang nhap thanh cong
-                Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
+                //Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
                 //Check user is exsit
                 
                 self.checkUserExit(userUid: (authResult?.user.uid)!) { (isExit) in
                     if isExit == true{
                         //User exit -> go to dashboard
+                        Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
                         HelperMethod.setRootToDashboardVC()
                     }else{
                         //User is not exit -> go to add info popup
+                        
                         let targetVC = AddPersonalInfoPoupViewController()
                         targetVC.modalPresentationStyle = .custom
                         targetVC.email = user.profile.email

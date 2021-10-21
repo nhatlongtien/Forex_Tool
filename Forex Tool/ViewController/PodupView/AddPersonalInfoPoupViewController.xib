@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,10 +22,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPersonalInfoPoupViewController" customModule="Forex_Tool" customModuleProvider="target">
             <connections>
+                <outlet property="addInfomationTitle" destination="9rJ-j9-wai" id="6Yf-f9-Piu"/>
                 <outlet property="addressTf" destination="wr3-VU-gPA" id="OK2-Dx-EmG"/>
+                <outlet property="addressTitle" destination="pbw-kL-Mnl" id="VHo-CL-taN"/>
                 <outlet property="avatarImageView" destination="ydq-dB-Aht" id="tOS-9w-KJh"/>
+                <outlet property="chooseAvatarTittle" destination="Nqq-tf-VsT" id="tw0-xL-cGr"/>
                 <outlet property="dateOfBirthTf" destination="H8r-aT-PfF" id="9cO-Qr-e8M"/>
+                <outlet property="dateOfBirthTitle" destination="3sR-hX-QiJ" id="ccZ-sZ-pAJ"/>
+                <outlet property="detailMessTitle" destination="tgy-3P-xHh" id="9An-ex-KJW"/>
+                <outlet property="doneButton" destination="Wel-85-LLn" id="Z0w-L1-571"/>
                 <outlet property="phoneTf" destination="NN9-DM-PP4" id="dZp-AH-AoA"/>
+                <outlet property="phoneTitle" destination="G2d-yC-qeh" id="lor-QA-axv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -49,6 +49,8 @@
 	<string>4faa65b57d090ea79165a5c9a7b460b0</string>
 	<key>FacebookDisplayName</key>
 	<string>Forex Tool</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-8162737912880549~2789286691</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
