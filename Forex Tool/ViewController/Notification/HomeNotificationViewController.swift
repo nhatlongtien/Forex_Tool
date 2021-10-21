@@ -89,5 +89,9 @@ extension HomeNotificationViewController:UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 1
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let targetVC = DetailNotificationViewController()
+        targetVC.notificationItem = notification_2D[indexPath.section][indexPath.row]
+        self.navigationController?.pushViewController(targetVC, animated: true)
+    }
 }

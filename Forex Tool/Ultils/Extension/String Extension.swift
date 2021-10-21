@@ -67,7 +67,16 @@ extension String{
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = DateformatterType.HH_mm.rawValue
+        dateFormatterPrint.dateFormat = DateformatterType.H_mm_a.rawValue
+        let date = dateFormatterGet.date(from: self)
+        let stringDate = dateFormatterPrint.string(from: date!)
+        return stringDate
+    }
+    func formatDateWithInputTypeAndOutputType(inputFormat:String, outputFormat:String) -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = inputFormat
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = outputFormat
         let date = dateFormatterGet.date(from: self)
         let stringDate = dateFormatterPrint.string(from: date!)
         return stringDate

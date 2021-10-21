@@ -141,6 +141,8 @@
 		38DC12EF26F8CE7D00256975 /* EditProfilePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC12ED26F8CE7D00256975 /* EditProfilePopupViewController.xib */; };
 		38ECB4932712A40F007A776A /* AnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB4912712A40F007A776A /* AnalysisTableViewCell.swift */; };
 		38ECB4942712A40F007A776A /* AnalysisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38ECB4922712A40F007A776A /* AnalysisTableViewCell.xib */; };
+		38F45EF9271FBDF40054F853 /* DetailNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F45EF7271FBDF40054F853 /* DetailNotificationViewController.swift */; };
+		38F45EFA271FBDF40054F853 /* DetailNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F45EF8271FBDF40054F853 /* DetailNotificationViewController.xib */; };
 		38F5F3762712936100DCFAE9 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */; };
 		38F5F3772712936100DCFAE9 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */; };
 		3D2198D65E355CBB603442DD /* Pods_Forex_Tool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7B8772B6A4F58B747FF7C6 /* Pods_Forex_Tool.framework */; };
@@ -288,6 +290,8 @@
 		38DC12ED26F8CE7D00256975 /* EditProfilePopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfilePopupViewController.xib; sourceTree = "<group>"; };
 		38ECB4912712A40F007A776A /* AnalysisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisTableViewCell.swift; sourceTree = "<group>"; };
 		38ECB4922712A40F007A776A /* AnalysisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisTableViewCell.xib; sourceTree = "<group>"; };
+		38F45EF7271FBDF40054F853 /* DetailNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNotificationViewController.swift; sourceTree = "<group>"; };
+		38F45EF8271FBDF40054F853 /* DetailNotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNotificationViewController.xib; sourceTree = "<group>"; };
 		38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
 		598332932A1693D7BE617DAD /* Pods-Forex Tool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forex Tool.debug.xcconfig"; path = "Target Support Files/Pods-Forex Tool/Pods-Forex Tool.debug.xcconfig"; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 				388264DE271DAA3B00FCC927 /* Cell */,
 				388264DA271DA95800FCC927 /* HomeNotificationViewController.swift */,
 				388264DB271DA95800FCC927 /* HomeNotificationViewController.xib */,
+				38F45EF7271FBDF40054F853 /* DetailNotificationViewController.swift */,
+				38F45EF8271FBDF40054F853 /* DetailNotificationViewController.xib */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -881,6 +887,7 @@
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
 				38D7CC272706F96E004297AF /* Localizable.strings in Resources */,
+				38F45EFA271FBDF40054F853 /* DetailNotificationViewController.xib in Resources */,
 				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
 				383CA9EC269AA1DF00A29E3A /* CreateTransactionViewController.xib in Resources */,
 				38B0C4F3269D8181009D968C /* ListPairCurrencyTableViewCell.xib in Resources */,
@@ -1012,6 +1019,7 @@
 				38A5463A270D39E500D2CE39 /* DetailMarketViewController.swift in Sources */,
 				3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */,
 				3894D6C0270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift in Sources */,
+				38F45EF9271FBDF40054F853 /* DetailNotificationViewController.swift in Sources */,
 				38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */,
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
 				38A54643270D45A800D2CE39 /* BasicInfoTableViewCell.swift in Sources */,
