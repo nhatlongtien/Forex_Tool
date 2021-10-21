@@ -317,7 +317,9 @@ extension LoginViewController:ASAuthorizationControllerDelegate, ASAuthorization
                 guard let user = authResult?.user else { return }
                 let email = user.email ?? ""
                 let displayName = user.displayName ?? "Anonymous"
+                let phoneNumber = user.phoneNumber
                 guard let uid = Auth.auth().currentUser?.uid else { return }
+                print(uid)
                 //Sign in successfully
                 Constant.defaults.setValue(uid, forKey: Constant.USER_ID)
                 //check user is existing or not, if existing let save the info to user table
@@ -327,13 +329,37 @@ extension LoginViewController:ASAuthorizationControllerDelegate, ASAuthorization
                         HelperMethod.setRootToDashboardVC()
                     }else{
                         //User is not exit -> go to add info popup
-                        let targetVC = AddPersonalInfoPoupViewController()
-                        targetVC.modalPresentationStyle = .custom
-                        targetVC.email = email
-                        targetVC.fullName = displayName
-                        targetVC.userUid = uid
-                        targetVC.methodLogin = MethodLoginType.apple.rawValue
-                        self.present(targetVC, animated: true, completion: nil)
+//                        let targetVC = AddPersonalInfoPoupViewController()
+//                        targetVC.modalPresentationStyle = .custom
+//                        targetVC.email = email
+//                        targetVC.fullName = displayName
+//                        targetVC.userUid = uid
+//                        targetVC.methodLogin = MethodLoginType.apple.rawValue
+//                        self.present(targetVC, animated: true, completion: nil)
+                        
+                        var ref: DocumentReference? = nil
+                        let db = Firestore.firestore()
+                        HUD.show(.systemActivity)
+                        ref = db.collection("users").addDocument(data: [
+                            "fullName" : displayName,
+                            "email": email,
+                            "phoneNumber":phoneNumber,
+                            "address":nil,
+                            "uid": uid,
+                            "methodLogin": MethodLoginType.apple.rawValue,
+                            "password": nil,
+                            "avatarImg": nil
+                        ], completion: { [self] (error) in
+                            if let err = error{
+                                HUD.hide()
+                                HelperMethod.showAlertWithMessage(message: err.localizedDescription
+                                                                    ?? "")
+                            }else{
+                                //luu thanh cong -> Di den dashboard
+                                HUD.hide()
+                                HelperMethod.setRootToDashboardVC()
+                            }
+                        })
                     }
                 }
             }
