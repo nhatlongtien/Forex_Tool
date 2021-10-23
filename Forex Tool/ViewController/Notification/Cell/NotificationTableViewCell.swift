@@ -16,6 +16,7 @@ class NotificationTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        checkImgView.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,11 +28,7 @@ class NotificationTableViewCell: UITableViewCell {
         self.titleLbl.text = item.title
         self.bodyLbl.text = item.body
         self.hourLbl.text = item.date?.hourFormatterForNotifi()
-        if item.isRead == true{
-            checkImgView.isHidden = true
-        }else{
-            checkImgView.isHidden = false
-        }
+        
     }
     
 }

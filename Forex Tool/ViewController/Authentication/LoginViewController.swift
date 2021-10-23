@@ -18,6 +18,8 @@ protocol LoginVCDelegate:class {
     func pushVC(vc:UIViewController)
 }
 class LoginViewController: UIViewController {
+    @IBOutlet weak var signInWithAppleTitle: UILabel!
+    @IBOutlet weak var signInWithGoogleTitle: UILabel!
     @IBOutlet weak var signInTitle: UILabel!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var orSignInTitle: UILabel!
@@ -133,6 +135,8 @@ class LoginViewController: UIViewController {
         createAccountButton.setTitle("Create an account".localized(), for: .normal)
         emailTf.placeholder = "Email".localized()
         passwordTf.placeholder = "Password".localized()
+        signInWithAppleTitle.text = "Sign in with Apple".localized()
+        signInWithGoogleTitle.text = "Sign in with Google".localized()
     }
     func validate() -> Bool{
         if emailTf.text == nil || emailTf.text == ""{

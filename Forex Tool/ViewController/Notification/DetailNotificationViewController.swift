@@ -13,16 +13,21 @@ class DetailNotificationViewController: BaseViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var publicDateLbl: UILabel!
     @IBOutlet weak var titleTlb: UILabel!
-    @IBOutlet weak var contentLbl: UILabel!
+//    @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var contentTextView: UITextView!
     var notificationItem:NotificationModel?
     var timer:Timer?
     //
     private var interstitial: GADInterstitialAd?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //
+        contentTextView.isSelectable = true
+        contentTextView.isEditable = false
+        //
         titleTlb.text = notificationItem?.title?.uppercased()
-        contentLbl.text = notificationItem?.body
+//        contentLbl.text = notificationItem?.body
+        contentTextView.text = notificationItem?.body
         publicDateLbl.text = notificationItem?.date?.formatDateWithInputTypeAndOutputType(inputFormat: DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue, outputFormat: DateformatterType.h_mm_a_DD_MMM_YYYY.rawValue)
         if notificationItem?.urlMedia != nil && notificationItem?.urlMedia != ""{
             imageView.kf.setImage(with: URL(string: (notificationItem?.urlMedia)!))

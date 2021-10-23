@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
     let notificationVM = NotificationViewModel()
+    //
+    //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -146,6 +148,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // With swizzling disabled you must set the APNs token here.
         // Messaging.messaging().apnsToken = deviceToken
     }
+    //MARK: App Cycle
+   
     
     //MARK: Helper Method
     func setRootToDashboardVC(){
@@ -187,7 +191,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 //        print(body ?? "nil")
 //        print(url ?? "nil")
 //        print(notification.date)
-        notificationVM.saveNotificationToFirebase(userInfo: userInfo)
+//        notificationVM.saveNotificationToFirebase(userInfo: userInfo)
         // Change this to your preferred presentation option
         completionHandler([[.alert, .sound]])
     }
@@ -203,29 +207,35 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("Message ID: \(messageID)")
         }
         print(userInfo)
-        let state = UIApplication.shared.applicationState
-        if state == .background || state == .inactive {
-            // background
-            notificationVM.saveNotificationToFirebase(userInfo: userInfo)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
-//                let targetVC = HomeNotificationViewController()
-//                var rootViewController = self.window!.rootViewController as! UINavigationController
-//                rootViewController.pushViewController(targetVC, animated: true)
-//            })
-            let targetVC = HomeNotificationViewController()
-            var rootViewController = self.window!.rootViewController as! UINavigationController
-            rootViewController.pushViewController(targetVC, animated: true)
-            
-        } else if state == .active {
-            // foreground
-            let targetVC = HomeNotificationViewController()
-            var rootViewController = self.window!.rootViewController as! UINavigationController
-            rootViewController.pushViewController(targetVC, animated: true)
-        }
-
-        
-        
+//        let state = UIApplication.shared.applicationState
+//        if state == .background || state == .inactive {
+//            // background
+//            notificationVM.saveNotificationToFirebase(userInfo: userInfo)
+////            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+////                let targetVC = HomeNotificationViewController()
+////                var rootViewController = self.window!.rootViewController as! UINavigationController
+////                rootViewController.pushViewController(targetVC, animated: true)
+////            })
+//            let targetVC = HomeNotificationViewController()
+//            var rootViewController = self.window!.rootViewController as! UINavigationController
+//            rootViewController.pushViewController(targetVC, animated: true)
+//
+//        } else if state == .active {
+//            // foreground
+//            let targetVC = HomeNotificationViewController()
+//            var rootViewController = self.window!.rootViewController as! UINavigationController
+//            rootViewController.pushViewController(targetVC, animated: true)
+//        }
+        let targetVC = HomeNotificationViewController()
+        var rootViewController = self.window!.rootViewController as! UINavigationController
+        rootViewController.pushViewController(targetVC, animated: true)
         completionHandler()
+    }
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+
+        self.application(application, didReceiveRemoteNotification: userInfo) { [self] (UIBackgroundFetchResult) in
+            notificationVM.saveNotificationToFirebase(userInfo: userInfo)
+        }
     }
 }
 
