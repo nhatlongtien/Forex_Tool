@@ -41,7 +41,13 @@ class HomeNewsViewController: BaseViewController {
         //
         headerView.delegate = self
         //
-        self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
+        }else{
+            self.getListNews(url: NewsLinkRSSFeed.popularEN.rawValue)
+        }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -105,25 +111,49 @@ extension HomeNewsViewController:UICollectionViewDelegate, UICollectionViewDataS
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
-        case 1:
-            self.getListNews(url: NewsLinkRSSFeed.crypto.rawValue)
-        case 2:
-            self.getListNews(url: NewsLinkRSSFeed.forex.rawValue)
-        case 3:
-            self.getListNews(url: NewsLinkRSSFeed.goods.rawValue)
-        case 4:
-            self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
-        case 5:
-            self.getListNews(url: NewsLinkRSSFeed.indexEconomic.rawValue)
-        case 6:
-            self.getListNews(url: NewsLinkRSSFeed.economic.rawValue)
-        case 7:
-            self.getListNews(url: NewsLinkRSSFeed.world.rawValue)
-        default:
-            break
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            switch indexPath.row {
+            case 0:
+                self.getListNews(url: NewsLinkRSSFeed.popular.rawValue)
+            case 1:
+                self.getListNews(url: NewsLinkRSSFeed.crypto.rawValue)
+            case 2:
+                self.getListNews(url: NewsLinkRSSFeed.forex.rawValue)
+            case 3:
+                self.getListNews(url: NewsLinkRSSFeed.goods.rawValue)
+            case 4:
+                self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
+            case 5:
+                self.getListNews(url: NewsLinkRSSFeed.indexEconomic.rawValue)
+            case 6:
+                self.getListNews(url: NewsLinkRSSFeed.economic.rawValue)
+            case 7:
+                self.getListNews(url: NewsLinkRSSFeed.world.rawValue)
+            default:
+                break
+            }
+        }else{ //Tieng Anh
+            switch indexPath.row {
+            case 0:
+                self.getListNews(url: NewsLinkRSSFeed.popularEN.rawValue)
+            case 1:
+                self.getListNews(url: NewsLinkRSSFeed.cryptoEN.rawValue)
+            case 2:
+                self.getListNews(url: NewsLinkRSSFeed.forexEN.rawValue)
+            case 3:
+                self.getListNews(url: NewsLinkRSSFeed.goodsEN.rawValue)
+            case 4:
+                self.getListNews(url: NewsLinkRSSFeed.stockEN.rawValue)
+            case 5:
+                self.getListNews(url: NewsLinkRSSFeed.indexEconomicEN.rawValue)
+            case 6:
+                self.getListNews(url: NewsLinkRSSFeed.economicEN.rawValue)
+            case 7:
+                self.getListNews(url: NewsLinkRSSFeed.worldEN.rawValue)
+            default:
+                break
+            }
         }
         self.titleString = Constant.listTabNews[indexPath.row]
     }

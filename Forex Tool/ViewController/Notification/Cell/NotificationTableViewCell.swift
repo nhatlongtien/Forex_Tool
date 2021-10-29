@@ -26,7 +26,7 @@ class NotificationTableViewCell: UITableViewCell {
     }
     func configCell(item:NotificationModel){
         self.titleLbl.text = item.title
-        self.bodyLbl.text = item.body
+        self.bodyLbl.text = item.body?.replacingOccurrences(of: "\\n", with: "\n")
         self.hourLbl.text = item.date?.hourFormatterForNotifi()
         
     }

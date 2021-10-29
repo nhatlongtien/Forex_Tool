@@ -35,12 +35,23 @@ class AnalysisViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         //
-        let links = [
-            "https://vn.investing.com/rss/forex_Technical.rss",
-            "https://vn.investing.com/rss/forex_Fundamental.rss",
-            "https://vn.investing.com/rss/forex_Opinion.rss",
-            "https://vn.investing.com/rss/forex_Signals.rss"]
-        getListItemForex(links: links)
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            let links = [
+                "https://vn.investing.com/rss/forex_Technical.rss",
+                "https://vn.investing.com/rss/forex_Fundamental.rss",
+                "https://vn.investing.com/rss/forex_Opinion.rss",
+                "https://vn.investing.com/rss/forex_Signals.rss"]
+            getListItemForex(links: links)
+        }else{
+            let links = [
+                "https://www.investing.com/rss/forex_Technical.rss",
+                "https://www.investing.com/rss/forex_Fundamental.rss",
+                "https://www.investing.com/rss/forex_Opinion.rss",
+                "https://www.investing.com/rss/forex_Signals.rss"]
+            getListItemForex(links: links)
+        }
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
@@ -93,38 +104,76 @@ extension AnalysisViewController:UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            let links = [
-                "https://vn.investing.com/rss/forex_Technical.rss",
-                "https://vn.investing.com/rss/forex_Fundamental.rss",
-                "https://vn.investing.com/rss/forex_Opinion.rss",
-                "https://vn.investing.com/rss/forex_Signals.rss"]
-            getListItemForex(links: links)
-        case 1:
-            let links = [
-                "https://vn.investing.com/rss/stock_Technical.rss",
-                "https://vn.investing.com/rss/stock_Fundamental.rss",
-                "https://vn.investing.com/rss/stock_Opinion.rss",
-                "https://vn.investing.com/rss/stock_stock_picks.rss",
-                "https://vn.investing.com/rss/stock_Stocks.rss",
-                "https://vn.investing.com/rss/stock_Indices.rss",
-                "https://vn.investing.com/rss/stock_Futures.rss",
-                "https://vn.investing.com/rss/stock_Options.rss"]
-            getListItemForex(links: links)
-        case 2:
-            let links = [
-                "https://vn.investing.com/rss/commodities_Technical.rss",
-                "https://vn.investing.com/rss/commodities_Fundamental.rss",
-                "https://vn.investing.com/rss/commodities_Opinion.rss",
-                "https://vn.investing.com/rss/commodities_Strategy.rss",
-                "https://vn.investing.com/rss/commodities_Metals.rss",
-                "https://vn.investing.com/rss/commodities_Energy.rss",
-                "https://vn.investing.com/rss/commodities_Agriculture.rss"]
-            getListItemForex(links: links)
-        default:
-            break
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            switch indexPath.row {
+            case 0:
+                let links = [
+                    "https://vn.investing.com/rss/forex_Technical.rss",
+                    "https://vn.investing.com/rss/forex_Fundamental.rss",
+                    "https://vn.investing.com/rss/forex_Opinion.rss",
+                    "https://vn.investing.com/rss/forex_Signals.rss"]
+                getListItemForex(links: links)
+            case 1:
+                let links = [
+                    "https://vn.investing.com/rss/stock_Technical.rss",
+                    "https://vn.investing.com/rss/stock_Fundamental.rss",
+                    "https://vn.investing.com/rss/stock_Opinion.rss",
+                    "https://vn.investing.com/rss/stock_stock_picks.rss",
+                    "https://vn.investing.com/rss/stock_Stocks.rss",
+                    "https://vn.investing.com/rss/stock_Indices.rss",
+                    "https://vn.investing.com/rss/stock_Futures.rss",
+                    "https://vn.investing.com/rss/stock_Options.rss"]
+                getListItemForex(links: links)
+            case 2:
+                let links = [
+                    "https://vn.investing.com/rss/commodities_Technical.rss",
+                    "https://vn.investing.com/rss/commodities_Fundamental.rss",
+                    "https://vn.investing.com/rss/commodities_Opinion.rss",
+                    "https://vn.investing.com/rss/commodities_Strategy.rss",
+                    "https://vn.investing.com/rss/commodities_Metals.rss",
+                    "https://vn.investing.com/rss/commodities_Energy.rss",
+                    "https://vn.investing.com/rss/commodities_Agriculture.rss"]
+                getListItemForex(links: links)
+            default:
+                break
+            }
+        }else{
+            switch indexPath.row {
+            case 0:
+                let links = [
+                    "https://www.investing.com/rss/forex_Technical.rss",
+                    "https://www.investing.com/rss/forex_Fundamental.rss",
+                    "https://www.investing.com/rss/forex_Opinion.rss",
+                    "https://www.investing.com/rss/forex_Signals.rss"]
+                getListItemForex(links: links)
+            case 1:
+                let links = [
+                    "https://www.investing.com/rss/stock_Technical.rss",
+                    "https://www.investing.com/rss/stock_Fundamental.rss",
+                    "https://www.investing.com/rss/stock_Opinion.rss",
+                    "https://www.investing.com/rss/stock_stock_picks.rss",
+                    "https://www.investing.com/rss/stock_Stocks.rss",
+                    "https://www.investing.com/rss/stock_Indices.rss",
+                    "https://www.investing.com/rss/stock_Futures.rss",
+                    "https://www.investing.com/rss/stock_ETFs.rss",
+                    "https://www.investing.com/rss/stock_Options.rss"]
+                getListItemForex(links: links)
+            case 2:
+                let links = [
+                    "https://www.investing.com/rss/commodities_Technical.rss",
+                    "https://www.investing.com/rss/commodities_Fundamental.rss",
+                    "https://www.investing.com/rss/commodities_Opinion.rss",
+                    "https://www.investing.com/rss/commodities_Strategy.rss",
+                    "https://www.investing.com/rss/commodities_Metals.rss",
+                    "https://www.investing.com/rss/commodities_Energy.rss",
+                    "https://www.investing.com/rss/commodities_Agriculture.rss"]
+                getListItemForex(links: links)
+            default:
+                break
+            }
         }
+        
         self.selectedTabTitle = Constant.listTabAnalysisItems[indexPath.row]
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

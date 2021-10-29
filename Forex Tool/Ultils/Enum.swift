@@ -52,6 +52,14 @@ enum NewsLinkRSSFeed:String{
     case indexEconomic = "https://vn.investing.com/rss/news_95.rss"
     case economic = "https://vn.investing.com/rss/news_14.rss"
     case world = "https://vn.investing.com/rss/news_287.rss"
+    case cryptoEN = "https://www.investing.com/rss/news_301.rss"
+    case forexEN = "https://www.investing.com/rss/news_1.rss"
+    case popularEN = "https://www.investing.com/rss/news_285.rss"
+    case goodsEN = "https://www.investing.com/rss/news_11.rss"
+    case stockEN = "https://www.investing.com/rss/news_25.rss"
+    case indexEconomicEN = "https://www.investing.com/rss/news_95.rss"
+    case economicEN = "https://www.investing.com/rss/news_14.rss"
+    case worldEN = "https://www.investing.com/rss/news_287.rss"
 }
 enum MethodLoginType:String{
     case gmail = "Gmail"

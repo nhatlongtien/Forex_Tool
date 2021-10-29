@@ -81,6 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [START config google Admob]
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         // [END config google Admob]
+        // [START] check update version
+        AppUpdater.shared.showUpdate(withConfirmation: false)
+        // [END] check update version
         return true
     }
     @available(iOS 9.0, *)

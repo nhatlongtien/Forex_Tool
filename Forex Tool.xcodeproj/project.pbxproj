@@ -76,6 +76,7 @@
 		3894D6BC270AB0A90028F2E4 /* HomeMarketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3894D6BA270AB0A90028F2E4 /* HomeMarketViewController.xib */; };
 		3894D6C0270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3894D6BE270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift */; };
 		3894D6C1270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3894D6BF270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib */; };
+		389FD7FA2724EA4600C11848 /* CheckUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389FD7F92724EA4600C11848 /* CheckUpdate.swift */; };
 		38A3F10C26A9241C0032400F /* UpdateTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */; };
 		38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */; };
 		38A54637270AF40900D2CE39 /* HomeMarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A54636270AF40900D2CE39 /* HomeMarketViewModel.swift */; };
@@ -221,6 +222,7 @@
 		3894D6BA270AB0A90028F2E4 /* HomeMarketViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMarketViewController.xib; sourceTree = "<group>"; };
 		3894D6BE270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMarketCollectionViewCell.swift; sourceTree = "<group>"; };
 		3894D6BF270AB26E0028F2E4 /* HomeMarketCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeMarketCollectionViewCell.xib; sourceTree = "<group>"; };
+		389FD7F92724EA4600C11848 /* CheckUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUpdate.swift; sourceTree = "<group>"; };
 		38A3F10A26A9241C0032400F /* UpdateTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTransactionViewController.swift; sourceTree = "<group>"; };
 		38A3F10B26A9241C0032400F /* UpdateTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateTransactionViewController.xib; sourceTree = "<group>"; };
 		38A54636270AF40900D2CE39 /* HomeMarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMarketViewModel.swift; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 				38C724D926980B3600E810F9 /* Constant.swift */,
 				380B251326F1974D00474396 /* index.html */,
 				38B0C51D269E808A009D968C /* Enum.swift */,
+				389FD7F92724EA4600C11848 /* CheckUpdate.swift */,
 			);
 			path = Ultils;
 			sourceTree = "<group>";
@@ -1013,6 +1016,7 @@
 				38DC12EE26F8CE7D00256975 /* EditProfilePopupViewController.swift in Sources */,
 				38A5463E270D403100D2CE39 /* DetailMarketHeaderView.swift in Sources */,
 				383CAA08269AAEAE00A29E3A /* HistoryTransactionViewController.swift in Sources */,
+				389FD7FA2724EA4600C11848 /* CheckUpdate.swift in Sources */,
 				388264D6271D5B2000FCC927 /* NotificationModel.swift in Sources */,
 				3851DB1726A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift in Sources */,
 				38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */,
@@ -1208,7 +1212,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Forex Tool/Forex Tool.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1216,7 +1220,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1232,7 +1236,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Forex Tool/Forex Tool.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1240,7 +1244,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
