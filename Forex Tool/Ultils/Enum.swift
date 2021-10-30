@@ -116,4 +116,7 @@ enum DurationTime:String{
     case tomorrow = "Tomorrow"
     case thisWeek = "This Week"
 }
-
+enum NetworkErrorType {
+    case API_ERROR
+    case HTTP_ERROR
+}

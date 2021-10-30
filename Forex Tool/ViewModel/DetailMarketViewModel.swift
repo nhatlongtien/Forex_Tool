@@ -14,30 +14,22 @@ class DetailMarketViewModel{
     
     func getEconomicCalendar(symbol:String, fromDate:String, toDate:String, completionHandler:@escaping(_ result:Bool, _ infoEconomicCalendar:[EconomicCalendarModel]?) -> Void){
         beforeApiCall?()
-        AF.request("https://fcsapi.com/api-v3/forex/economy_cal?symbol=\(symbol)&from=\(fromDate)&to=\(toDate)&access_key=\(Constant.API_ACCESS_KEY)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
-            switch response.result{
-            case .success(let value):
-                guard let json = JSON(rawValue: value) else {return}
-                let status = json["status"].boolValue
-                if status == true{
-                    var listEconomicCalendar:[EconomicCalendarModel] = []
-                    guard let response = json["response"].array else {return}
-                    for eachData in response{
-                        let economicCalendar = EconomicCalendarModel(json: eachData)
-                        listEconomicCalendar.append(economicCalendar)
-                    }
-                    completionHandler(true, listEconomicCalendar)
-                }else{
-                    let message = json["msg"].stringValue
-                    HelperMethod.showAlertWithMessage(message: message)
-                    completionHandler(false, nil)
-                }
-                print("Success")
-            case .failure(let error):
-                HelperMethod.showAlertWithMessage(message: error.localizedDescription ?? "")
+        MGConnection.request(APIRouter.economicCalendar(symbol: symbol, fromDate: fromDate, toDate: toDate)) { result, err in
+            if let err = err{
+                print("False with code: \(err.mErrorCode) and message: \(err.mErrorMessage)")
+                self.afterApiCall?()
                 completionHandler(false, nil)
+            }else{
+                var listEconomicCalendar:[EconomicCalendarModel] = []
+                guard let response = result?.array else {return}
+                for eachData in response{
+                    let economicCalendar = EconomicCalendarModel(json: eachData)
+                    listEconomicCalendar.append(economicCalendar)
+                }
+                print(result)
+                self.afterApiCall?()
+                completionHandler(true, listEconomicCalendar)
             }
-            self.afterApiCall?()
         }
     }
 }

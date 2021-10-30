@@ -37,6 +37,9 @@
 		383CAA13269C946700A29E3A /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAA12269C946700A29E3A /* CurrencyModel.swift */; };
 		38495CCB27096D2D004F0423 /* EditReasonPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38495CC927096D2D004F0423 /* EditReasonPopupViewController.swift */; };
 		38495CCC27096D2D004F0423 /* EditReasonPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38495CCA27096D2D004F0423 /* EditReasonPopupViewController.xib */; };
+		385066F6272C450100B0CC86 /* MGConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385066F3272C44FE00B0CC86 /* MGConnection.swift */; };
+		385066F7272C450100B0CC86 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385066F4272C450000B0CC86 /* APIRouter.swift */; };
+		385066F8272C450100B0CC86 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385066F5272C450100B0CC86 /* BaseResponse.swift */; };
 		3851DB1126A3CD16008769B0 /* ManageTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3851DB0F26A3CD16008769B0 /* ManageTransactionViewController.swift */; };
 		3851DB1226A3CD16008769B0 /* ManageTransactionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3851DB1026A3CD16008769B0 /* ManageTransactionViewController.xib */; };
 		3851DB1726A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3851DB1526A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift */; };
@@ -182,6 +185,9 @@
 		383CAA12269C946700A29E3A /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
 		38495CC927096D2D004F0423 /* EditReasonPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReasonPopupViewController.swift; sourceTree = "<group>"; };
 		38495CCA27096D2D004F0423 /* EditReasonPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditReasonPopupViewController.xib; sourceTree = "<group>"; };
+		385066F3272C44FE00B0CC86 /* MGConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGConnection.swift; sourceTree = "<group>"; };
+		385066F4272C450000B0CC86 /* APIRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		385066F5272C450100B0CC86 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		3851DB0F26A3CD16008769B0 /* ManageTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTransactionViewController.swift; sourceTree = "<group>"; };
 		3851DB1026A3CD16008769B0 /* ManageTransactionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageTransactionViewController.xib; sourceTree = "<group>"; };
 		3851DB1526A3CEF6008769B0 /* ManagerTransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTransactionTableViewCell.swift; sourceTree = "<group>"; };
@@ -704,6 +710,9 @@
 		38C724532697E98100E810F9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				385066F4272C450000B0CC86 /* APIRouter.swift */,
+				385066F5272C450100B0CC86 /* BaseResponse.swift */,
+				385066F3272C44FE00B0CC86 /* MGConnection.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1002,8 +1011,10 @@
 				38DC125A26F5BC4100256975 /* ExchangeLongShortRatioModel.swift in Sources */,
 				38551FD026A2CA9600FFC1D2 /* TransactionModel.swift in Sources */,
 				38C7245026975AE200E810F9 /* UIWindow_Extension.swift in Sources */,
+				385066F7272C450100B0CC86 /* APIRouter.swift in Sources */,
 				38C7241B2697364C00E810F9 /* CustomeView.swift in Sources */,
 				387DE88826F9D5E90074E6E4 /* BaseViewController.swift in Sources */,
+				385066F6272C450100B0CC86 /* MGConnection.swift in Sources */,
 				38C7241E26973A0700E810F9 /* CustomeBoderRadiusView.swift in Sources */,
 				3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */,
 				380B247426ECAE9D00474396 /* UpdateTransactionViewModel.swift in Sources */,
@@ -1024,6 +1035,7 @@
 				3886C9F82703467900C834B3 /* HomeCalculationViewController.swift in Sources */,
 				3894D6C0270AB26E0028F2E4 /* HomeMarketCollectionViewCell.swift in Sources */,
 				38F45EF9271FBDF40054F853 /* DetailNotificationViewController.swift in Sources */,
+				385066F8272C450100B0CC86 /* BaseResponse.swift in Sources */,
 				38871A2D26F32C1F00DC3F5C /* NewsModel.swift in Sources */,
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
 				38A54643270D45A800D2CE39 /* BasicInfoTableViewCell.swift in Sources */,

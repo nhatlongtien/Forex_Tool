@@ -43,6 +43,7 @@ class DetailMarketViewController: UIViewController {
         let toDate = Calendar.current.date(byAdding: .day, value: 1, to: fromDate)
         self.fromDate = fromDate.dateToString(format: DateformatterType.YYYY_MM_DD.rawValue)
         self.toDate = toDate!.dateToString(format: DateformatterType.YYYY_MM_DD.rawValue)
+        //
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
@@ -59,6 +60,7 @@ class DetailMarketViewController: UIViewController {
                 }
                 self.tableView.reloadData()
             }
+
         }
     }
     //MARK: Helper Method

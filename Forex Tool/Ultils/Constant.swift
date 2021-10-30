@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 class Constant{
+    static let BASE_URL = "https://fcsapi.com/api-v3/"
     static let API_ACCESS_KEY = "Muc5Gx8l1BhOGAqyNFJQPCxUF"
     static var USER_ID:String = "USER_ID"
     static var CRYPTO_KEY = "CRYPTO_KEY"

@@ -12,32 +12,24 @@ class HomeMarketViewModel{
     var beforeApiCall:(() -> Void)?
     var afterApiCall : (() -> Void)?
     
-    func getInfoPairCurrency(symbol:String, completionHandler:@escaping(_ result:Bool, _ listInfoPairCurrency:[PricePairCurrencyModel]?) -> Void){
+    func infoPairCurrency(symbol:String, completionHandler:@escaping(_ result:Bool, _ listInfoPairCurrency:[PricePairCurrencyModel]?) -> Void){
         beforeApiCall?()
-        AF.request("https://fcsapi.com/api-v3/forex/latest?symbol=\(symbol)&access_key=\(Constant.API_ACCESS_KEY)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { response in
-            switch response.result{
-            case .success(let value):
-                guard let json = JSON(rawValue: value) else {return}
-                let status = json["status"].boolValue
-                if status == true{
-                    var listInfoCurrency:[PricePairCurrencyModel] = []
-                    guard let response = json["response"].array else {return}
-                    for eachData in response{
-                        let infoPairCurrency = PricePairCurrencyModel(json: eachData)
-                        listInfoCurrency.append(infoPairCurrency)
-                    }
-                    completionHandler(true, listInfoCurrency)
-                }else{
-                    let message = json["msg"].stringValue
-                    HelperMethod.showAlertWithMessage(message: message)
-                    completionHandler(false, nil)
-                }
-                print("Success")
-            case .failure(let error):
-                HelperMethod.showAlertWithMessage(message: error.localizedDescription ?? "")
+        MGConnection.request(APIRouter.infoPairCurrency(symbol: symbol)) { result, err in
+            if let err = err{
+                print("False with code: \(err.mErrorCode) and message: \(err.mErrorMessage)")
+                self.afterApiCall?()
+                self.afterApiCall?()
                 completionHandler(false, nil)
+            }else{
+                var listInfoCurrency:[PricePairCurrencyModel] = []
+                guard let response = result?.array else {return}
+                for eachData in response{
+                    let infoPairCurrency = PricePairCurrencyModel(json: eachData)
+                    listInfoCurrency.append(infoPairCurrency)
+                }
+                self.afterApiCall?()
+                completionHandler(true, listInfoCurrency)
             }
-            self.afterApiCall?()
         }
     }
 }

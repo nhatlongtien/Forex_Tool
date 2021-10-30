@@ -38,9 +38,8 @@ class HomeMarketViewController: BaseViewController {
             self.navigationController?.navigationBar.isHidden = false
             self.title = "Market".localized()
         }
-        
         //
-        homeMarketVM.getInfoPairCurrency(symbol: Constant.SymbolMarket) { success, listInfoPairCurrency in
+        homeMarketVM.infoPairCurrency(symbol: Constant.SymbolMarket) { success, listInfoPairCurrency in
             if success{
                 guard let list = listInfoPairCurrency else {return}
                 self.listInfoPairCurrecy = []
