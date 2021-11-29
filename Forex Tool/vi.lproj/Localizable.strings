@@ -23,7 +23,6 @@
 "Win/Loss:" = "Win/Loss:";
 "Week" = "Tuần";
 "Month" = "Tháng";
-"Week" = "Năm";
 "Other" = "Khác";
 "Analysis & Opinion" = "Phân tích & Ý tưởng";
 "Calculator" = "Máy tính";
@@ -181,3 +180,4 @@
 "* Please add some your personal infomation to complete the process" = "* Vui lòng bổ sung thêm thông tin để hoàn tất quá trình";
 "Sign in with Apple" = "Đăng nhập Apple";
 "Sign in with Google" = "Đăng nhập Google";
+"Year" = "Năm";

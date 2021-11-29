@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,6 +18,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="dxp-bV-iq1"/>
                 <outlet property="imageView" destination="rrL-fk-ONx" id="nJ6-m3-uCP"/>
                 <outlet property="publicDateLbl" destination="ZJ5-Lq-tUw" id="EEw-ah-kwU"/>
+                <outlet property="sourceFromLogo" destination="JCT-2H-0ee" id="Un9-XK-K8s"/>
                 <outlet property="titleLbl" destination="8qo-kU-1Pj" id="Lt4-GY-bMb"/>
             </connections>
         </placeholder>
@@ -39,7 +40,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="investingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JCT-2H-0ee">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="investingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JCT-2H-0ee">
                     <rect key="frame" x="15" y="238.5" width="65" height="15"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="65" id="mJP-tA-1Eq"/>

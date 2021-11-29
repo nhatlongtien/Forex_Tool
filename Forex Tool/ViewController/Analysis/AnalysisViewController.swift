@@ -61,18 +61,16 @@ class AnalysisViewController: BaseViewController {
     func getListItemForex(links:[String]){
         self.listAnalysis = []
         for link in links {
-            self.homeNewsVM.getRSSFeed(urlString: link) { [self] success, listNews in
-                if success{
-                    if let listNews = listNews {
-                        listAnalysis += listNews
-                        let set = Set(listAnalysis)
-                        listAnalysis = Array(set)
-                        listAnalysis = listAnalysis.sorted(by: { $0.pubdate! > $1.pubdate!})
-                        DispatchQueue.main.async {
-                            tableView.reloadData()
-                        }
-                        print(listAnalysis.count)
+            self.homeNewsVM.getRSSFeed(urlString: link) { [self] listNews in
+                if let listNews = listNews {
+                    listAnalysis += listNews
+                    let set = Set(listAnalysis)
+                    listAnalysis = Array(set)
+                    listAnalysis = listAnalysis.sorted(by: { $0.pubdate! > $1.pubdate!})
+                    DispatchQueue.main.async {
+                        tableView.reloadData()
                     }
+                    print(listAnalysis.count)
                 }
             }
         }

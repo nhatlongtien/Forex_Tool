@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="KGk-i7-Jjw" customClass="FeedNewsTableViewCell" customModule="Forex_Tool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueCircle" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-gO-Dgi">
+                        <rect key="frame" x="23" y="10" width="10" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="8YW-zN-QQw"/>
+                            <constraint firstAttribute="height" constant="10" id="fGR-Gb-Vvc"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EN5-zK-7KS">
+                        <rect key="frame" x="27.5" y="20" width="1" height="60"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="c6W-kv-R8C"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dZg-Wz-j1H">
+                        <rect key="frame" x="27.5" y="0.0" width="1" height="10"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="SEl-Kg-sRJ"/>
+                            <constraint firstAttribute="width" constant="1" id="kyS-zx-mNz"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkG-6U-MAg" customClass="CustomeBoderRadiusView" customModule="Forex_Tool" customModuleProvider="target">
+                        <rect key="frame" x="45" y="7.5" width="55" height="15"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:20:25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dq-hX-5or">
+                                <rect key="frame" x="8" y="1.5" width="39" height="12"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="10"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="0dq-hX-5or" firstAttribute="leading" secondItem="QkG-6U-MAg" secondAttribute="leading" constant="8" id="5yd-TG-rr2"/>
+                            <constraint firstAttribute="trailing" secondItem="0dq-hX-5or" secondAttribute="trailing" constant="8" id="Lgb-t2-KUK"/>
+                            <constraint firstAttribute="height" constant="15" id="TTG-7m-kG6"/>
+                            <constraint firstItem="0dq-hX-5or" firstAttribute="centerY" secondItem="QkG-6U-MAg" secondAttribute="centerY" id="Wmc-mB-BCq"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="radious">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR2-RG-gWE">
+                        <rect key="frame" x="45" y="32.5" width="265" height="42.5"/>
+                        <string key="text">Tỷ lệ chỉ số của các trường hợp nhiễm coronavirus mới ở Đức vào ngày thứ 7 cho thấy 438,2 người được chẩn đoán trên 100.000 người</string>
+                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VR2-RG-gWE" secondAttribute="trailing" constant="10" id="Bu6-ne-KTb"/>
+                    <constraint firstItem="VR2-RG-gWE" firstAttribute="leading" secondItem="QkG-6U-MAg" secondAttribute="leading" id="NJM-ee-Hqk"/>
+                    <constraint firstItem="dZg-Wz-j1H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RhI-nd-FaD"/>
+                    <constraint firstItem="EN5-zK-7KS" firstAttribute="top" secondItem="NM2-gO-Dgi" secondAttribute="bottom" id="TfS-CS-EOQ"/>
+                    <constraint firstItem="dZg-Wz-j1H" firstAttribute="centerX" secondItem="NM2-gO-Dgi" secondAttribute="centerX" id="Zlg-VI-fPx"/>
+                    <constraint firstAttribute="bottom" secondItem="VR2-RG-gWE" secondAttribute="bottom" constant="5" id="ehV-ia-cpB"/>
+                    <constraint firstAttribute="bottom" secondItem="EN5-zK-7KS" secondAttribute="bottom" id="gqw-q5-PwL"/>
+                    <constraint firstItem="QkG-6U-MAg" firstAttribute="centerY" secondItem="NM2-gO-Dgi" secondAttribute="centerY" id="uB1-kE-tNg"/>
+                    <constraint firstItem="EN5-zK-7KS" firstAttribute="centerX" secondItem="NM2-gO-Dgi" secondAttribute="centerX" id="uyk-6U-yHT"/>
+                    <constraint firstItem="QkG-6U-MAg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="45" id="vkq-4Y-pRE"/>
+                    <constraint firstItem="VR2-RG-gWE" firstAttribute="top" secondItem="QkG-6U-MAg" secondAttribute="bottom" constant="10" id="w2Y-z1-h9j"/>
+                    <constraint firstItem="NM2-gO-Dgi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="wKE-DG-HhJ"/>
+                    <constraint firstItem="NM2-gO-Dgi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="23" id="wbh-nx-d1t"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.95294117647058818" green="0.96470588235294119" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="contentLbl" destination="VR2-RG-gWE" id="zA4-Tw-MMG"/>
+                <outlet property="postDateLbl" destination="0dq-hX-5or" id="szf-pA-ZB9"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="72.991071428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="blueCircle" width="20" height="20"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

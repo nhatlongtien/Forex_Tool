@@ -32,6 +32,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var analysisTitle: UILabel!
     
     //
+    @IBOutlet weak var featureCollectionView: UICollectionView!
     @IBOutlet weak var notifiImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
 //    @IBOutlet weak var userNameLbl: UILabel!
@@ -63,6 +64,13 @@ class DashboardViewController: UIViewController {
     var listActiveTransaction:[TransactionModel] = []
     var fromDate:Date?
     var toDate:Date?
+    let listFeatures = FeatureModel.share()
+    //
+    let inset: CGFloat = 10
+    let minimumLineSpacing: CGFloat = 5
+    let minimumInteritemSpacing: CGFloat = 5
+    let cellsPerRow = 4
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,22 +87,23 @@ class DashboardViewController: UIViewController {
         activeTransactionCollectionView.delegate = self
         activeTransactionCollectionView.dataSource = self
         //
-        //self.userNameLbl.text = user?.displayName
-//        avatarImg.layer.cornerRadius = 15
-//        avatarImg.clipsToBounds = true
-//        self.getUserInfoAndUpdateUI()
         //
         self.setupDurationTimeDefault()
         //
         dashboardVM.getConfig()
         //
-//        self.view.addSubview(banner)
-//        banner.rootViewController = self
+        
+        let layout2 = UICollectionViewFlowLayout()
+        layout2.minimumLineSpacing = minimumLineSpacing
+        layout2.minimumInteritemSpacing = minimumInteritemSpacing
+        layout2.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+        featureCollectionView.collectionViewLayout = layout2
+        let nibCellFeature = UINib(nibName: "FeatureCollectionViewCell", bundle: nil)
+        featureCollectionView.register(nibCellFeature, forCellWithReuseIdentifier: "FeatureCollectionViewCell")
+        featureCollectionView.contentInsetAdjustmentBehavior = .always
+        featureCollectionView.delegate = self
+        featureCollectionView.dataSource = self
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        banner.frame = CGRect(x: 0, y: view.frame.size.height - 80, width: view.frame.size.width, height: 50)
-//    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         Constant.isInTabBarControll = false
@@ -135,6 +144,8 @@ class DashboardViewController: UIViewController {
         let targetVC = ManageTransactionViewController()
         targetVC.isFromTabbar = false
         self.navigationController?.pushViewController(targetVC, animated: true)
+//        let targetVC = FeedNews247ViewController()
+//        self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
     @IBAction func economicNewsButtonWasPressed(_ sender: Any) {
@@ -218,7 +229,7 @@ class DashboardViewController: UIViewController {
         winLossRatioTitle.text = "Win/Loss:".localized()
         durationTimeSegment.setTitle("Week".localized(), forSegmentAt: 0)
         durationTimeSegment.setTitle("Month".localized(), forSegmentAt: 1)
-        durationTimeSegment.setTitle("Week".localized(), forSegmentAt:  2)
+        durationTimeSegment.setTitle("Year".localized(), forSegmentAt:  2)
         durationTimeSegment.setTitle("Other".localized(), forSegmentAt: 3)
         //
         customSegmentControl()
@@ -328,27 +339,83 @@ class DashboardViewController: UIViewController {
 //MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension DashboardViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listActiveTransaction.count
+        if collectionView == activeTransactionCollectionView{
+            return listActiveTransaction.count
+        }else{
+            return listFeatures.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = activeTransactionCollectionView.dequeueReusableCell(withReuseIdentifier: "ActiveTransactionCollectionViewCell", for: indexPath) as! ActiveTransactionCollectionViewCell
-        if indexPath.row % 2 != 0{
-            cell.backGroundView.backgroundColor = #colorLiteral(red: 1, green: 0.5294117647, blue: 0.06274509804, alpha: 1)
+        if collectionView == activeTransactionCollectionView{
+            let cell = activeTransactionCollectionView.dequeueReusableCell(withReuseIdentifier: "ActiveTransactionCollectionViewCell", for: indexPath) as! ActiveTransactionCollectionViewCell
+            if indexPath.row % 2 != 0{
+                cell.backGroundView.backgroundColor = #colorLiteral(red: 1, green: 0.5294117647, blue: 0.06274509804, alpha: 1)
+            }else{
+                cell.backGroundView.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.368627451, blue: 0.9490196078, alpha: 1)
+            }
+            cell.configCell(transaction: listActiveTransaction[indexPath.row])
+            return cell
         }else{
-            cell.backGroundView.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.368627451, blue: 0.9490196078, alpha: 1)
+            let cell = featureCollectionView.dequeueReusableCell(withReuseIdentifier: "FeatureCollectionViewCell", for: indexPath) as! FeatureCollectionViewCell
+            cell.configCell(item: listFeatures[indexPath.row])
+            return cell
         }
-        cell.configCell(transaction: listActiveTransaction[indexPath.row])
-        return cell
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 265, height: 139)
+        if collectionView == activeTransactionCollectionView{
+            return CGSize(width: 265, height: 139)
+        }else{
+            let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
+                    let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
+                    return CGSize(width: itemWidth, height: 100)
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let targetVC = DetailTransactionViewController()
-        targetVC.selectedTransactionItem = listActiveTransaction[indexPath.row]
-        self.navigationController?.pushViewController(targetVC, animated: true)
+        if collectionView == activeTransactionCollectionView{
+            let targetVC = DetailTransactionViewController()
+            targetVC.selectedTransactionItem = listActiveTransaction[indexPath.row]
+            self.navigationController?.pushViewController(targetVC, animated: true)
+        }else{
+            switch indexPath.row {
+            case 0:
+                let targetVC = HomeCalculationViewController()
+                targetVC.isFromTabbar = false
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 1:
+                let targetVC = HomeNewsViewController()
+                targetVC.isFromTabbar = false
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 2:
+                let targetVC = FeedNews247ViewController()
+                targetVC.isFromTabbar = false
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 3:
+                let targetVC = AnalysisViewController()
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 4:
+                let targetVC = CreateTransactionViewController()
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 5:
+                let targetVC = ManageTransactionViewController()
+                targetVC.isFromTabbar = false
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 6:
+                let targetVC = EconomicCalendarViewController()
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            case 7:
+                let targetVC = HomeMarketViewController()
+                targetVC.isFromTabbar = false
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            default:
+                break
+            }
+        }
+        
     }
     
 }

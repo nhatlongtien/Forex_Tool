@@ -23,7 +23,6 @@
 "Win/Loss:" = "Win/Loss:";
 "Week" = "Week";
 "Month" = "Month";
-"Week" = "Week";
 "Other" = "Other";
 "Analysis & Opinion" = "Analysis & Opinion";
 "Calculator" = "Calculator";
@@ -181,3 +180,4 @@
 "* Please add some your personal infomation to complete the process" = "* Please add some your personal infomation to complete the process";
 "Sign in with Apple" = "Sign in with Apple";
 "Sign in with Google" = "Sign in with Google";
+"Year" = "Year";

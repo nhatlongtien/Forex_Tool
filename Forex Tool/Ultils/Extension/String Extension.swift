@@ -47,7 +47,6 @@ extension String{
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.dateFormat = inputFormat
-        //dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.date(from: self) ?? Date()
     }
     //filter String to get digit

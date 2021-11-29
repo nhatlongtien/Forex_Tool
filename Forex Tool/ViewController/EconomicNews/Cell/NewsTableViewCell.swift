@@ -14,6 +14,8 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var puplicDateLbl: UILabel!
     
+    @IBOutlet weak var sourceFromLogo: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,25 +31,30 @@ class NewsTableViewCell: UITableViewCell {
         if item.imageUrl == nil{
             imageNewView?.image = UIImage(named: "defaultImage")
         }else{
-            imageNewView?.kf.setImage(with: URL(string: item.imageUrl!))
-        }
-        let nowTimestamp = Timestamp(date: Date())
-        let publicTimestamp = Timestamp(date: item.pubdate!)
-        let delta = nowTimestamp.seconds - publicTimestamp.seconds
-        if delta <= 86400 {
-            let hours = Int(delta/3600)
-            let minutes = (Int(delta) - hours*60*60)/60
-            if hours == 0 {
-                self.puplicDateLbl.text = "\(minutes) Phút trước"
-            }else{
-                self.puplicDateLbl.text = "\(hours) Giờ trước"
-            }
-        }else{
-            let publicDateStr = item.pubdate?.dateToString(format: DateformatterType.DD_MMMM.rawValue)
-            self.puplicDateLbl.text = publicDateStr
+            let escapedString = item.imageUrl?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            imageNewView?.kf.setImage(with: URL(string: escapedString!))
         }
         
-        
+        let publicDateStr = item.pubdate?.dateToString(format: DateformatterType.DD_MM_YYYY.rawValue)
+        self.puplicDateLbl.text = publicDateStr
+        switch item.author {
+        case SourceFrom.tapchibitcoin.rawValue:
+            sourceFromLogo.image = UIImage(named: "TapChiBitcoin")
+        case SourceFrom.investing.rawValue:
+            sourceFromLogo.image = UIImage(named: "investingLogo")
+        case SourceFrom.invest138.rawValue:
+            sourceFromLogo.image = UIImage(named: "invest318_icon")
+        case SourceFrom.blogtienao.rawValue:
+            sourceFromLogo.image = UIImage(named: "blogtienao_icon")
+        case SourceFrom.vic.rawValue:
+            sourceFromLogo.image = UIImage(named: "vic_icon")
+        case SourceFrom.forex.rawValue:
+            sourceFromLogo.image = UIImage(named: "forex_icon")
+        case SourceFrom.finnews24.rawValue:
+            sourceFromLogo.image = UIImage(named: "finnews_icon")
+        default:
+            break
+        }
     }
     
 }

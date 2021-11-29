@@ -27,5 +27,6 @@ pod 'Kingfisher', '~> 7.0'
 pod 'Firebase/Messaging'
 pod 'Lightbox'
 pod 'Google-Mobile-Ads-SDK'
-
+pod 'SwiftSoup'
+pod 'SkeletonView'
 end

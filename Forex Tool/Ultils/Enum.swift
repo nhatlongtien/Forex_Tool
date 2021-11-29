@@ -32,6 +32,8 @@ enum DateformatterType:String{
     case YYYY_MM_DD_T_HH_mm_ssZ = "yyyy-MM-dd'T'HH:mm:ssZ"
     case H_mm_a = "H:mm a"
     case h_mm_a_DD_MMM_YYYY = "h:mm a, dd MMM yyyy"
+    case HH_mm_ss = "HH:mm:ss"
+    case dd_MM_yyyy_HH_mm = "dd/MM/yyyy HH:mm"
 }
 enum StatusTransaction:String{
     case Active = "Active"
@@ -69,7 +71,7 @@ enum MethodLoginType:String{
 }
 enum TabItem:String, CaseIterable{
     case home = "Home"
-    case market = "Market"
+    case feed247 = "24/7 Feeds"
     case ecomomicNew = "Ecomomic News"
     case caculationTool = "Calculation"
     case profile = "Profile"
@@ -80,8 +82,8 @@ enum TabItem:String, CaseIterable{
             return DashboardViewController()
         case .ecomomicNew:
             return HomeNewsViewController()
-        case .market:
-            return HomeMarketViewController()
+        case .feed247:
+            return FeedNews247ViewController()
         case .profile:
             return ProfileViewController()
         case .caculationTool:
@@ -99,8 +101,8 @@ enum TabItem:String, CaseIterable{
             return UIImage(named: "calculationIcon")!
         case .ecomomicNew:
             return UIImage(named: "newsIcon")!
-        case .market:
-            return UIImage(named: "globalMarket")!
+        case .feed247:
+            return UIImage(named: "247Feed")!
         case .profile:
             return UIImage(named: "profileIcon")!
         default:
@@ -119,4 +121,17 @@ enum DurationTime:String{
 enum NetworkErrorType {
     case API_ERROR
     case HTTP_ERROR
+}
+enum NavigationBarStyle{
+    case nomal
+    case comment
+}
+enum SourceFrom:String{
+    case investing = "investing.vn"
+    case invest138 = "invest138.com"
+    case forex = "forex.com"
+    case tapchibitcoin = "tapchibitcoin.io"
+    case vic = "vic.news"
+    case blogtienao = "blogtienao.com"
+    case finnews24 = "finnews24.com"
 }

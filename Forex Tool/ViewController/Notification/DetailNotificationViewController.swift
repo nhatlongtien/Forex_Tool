@@ -21,6 +21,7 @@ class DetailNotificationViewController: BaseViewController {
     private var interstitial: GADInterstitialAd?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNaivationBar(style: NavigationBarStyle.comment)
         //
         contentTextView.isSelectable = true
         contentTextView.isEditable = false

@@ -13,3 +13,6 @@ struct NewsItem:Hashable{
     public private(set) var linkDetail:String?
     public private(set) var author:String?
 }
+
+
+

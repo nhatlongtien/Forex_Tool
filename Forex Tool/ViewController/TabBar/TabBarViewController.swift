@@ -39,7 +39,7 @@ class TabBarViewController: UITabBarController {
     //MARK: Helper Method
     func loadTabBar(){
         // Tạo và load custom tab bar
-        let tabbarItems:[TabItem] = [.caculationTool, .ecomomicNew, .home, .market, .profile]
+        let tabbarItems:[TabItem] = [.caculationTool, .ecomomicNew, .home, .feed247, .profile]
         setupCustomTabMenu(tabbarItems) { (viewControllers) in
             self.viewControllers = viewControllers
         }
