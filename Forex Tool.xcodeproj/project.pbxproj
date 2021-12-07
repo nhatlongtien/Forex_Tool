@@ -61,6 +61,11 @@
 		38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */; };
 		3866311B274214EC0028ACF0 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38663119274214EB0028ACF0 /* CommentViewController.swift */; };
 		3866311C274214EC0028ACF0 /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3866311A274214EC0028ACF0 /* CommentViewController.xib */; };
+		386BF7482758F0A1003AC63F /* Feed247NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BF7472758F0A1003AC63F /* Feed247NewsModel.swift */; };
+		386BF74B275C4E15003AC63F /* EconomicCalendarNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BF749275C4E15003AC63F /* EconomicCalendarNewsViewController.swift */; };
+		386BF74C275C4E15003AC63F /* EconomicCalendarNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386BF74A275C4E15003AC63F /* EconomicCalendarNewsViewController.xib */; };
+		386BF750275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386BF74E275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.swift */; };
+		386BF751275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386BF74F275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.xib */; };
 		387DE88826F9D5E90074E6E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387DE88726F9D5E90074E6E4 /* BaseViewController.swift */; };
 		388206BC270891E4001315B5 /* PricePairCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */; };
 		388264D4271BCADC00FCC927 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 388264D3271BCADC00FCC927 /* GoogleService-Info.plist */; };
@@ -144,6 +149,10 @@
 		38C724552697E9DE00E810F9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724542697E9DE00E810F9 /* AuthViewModel.swift */; };
 		38C724DA26980B3600E810F9 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724D926980B3600E810F9 /* Constant.swift */; };
 		38C724FB269842CF00E810F9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C724FA269842CF00E810F9 /* UserModel.swift */; };
+		38D5BAD8275CA8170022C11F /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5BAD6275CA8170022C11F /* CalendarTableViewCell.swift */; };
+		38D5BAD9275CA8170022C11F /* CalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D5BAD7275CA8170022C11F /* CalendarTableViewCell.xib */; };
+		38D5BADB275DAC060022C11F /* CalendarEconomicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5BADA275DAC060022C11F /* CalendarEconomicModel.swift */; };
+		38D5BADD275DB4B10022C11F /* CalendarEconomicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5BADC275DB4B10022C11F /* CalendarEconomicViewModel.swift */; };
 		38D7CC272706F96E004297AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38D7CC292706F96E004297AF /* Localizable.strings */; };
 		38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DC121F26F5893100256975 /* LongShortRatioViewController.swift */; };
 		38DC122226F5893100256975 /* LongShortRatioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38DC122026F5893100256975 /* LongShortRatioViewController.xib */; };
@@ -223,6 +232,11 @@
 		38551FD226A2D25200FFC1D2 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		38663119274214EB0028ACF0 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		3866311A274214EC0028ACF0 /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		386BF7472758F0A1003AC63F /* Feed247NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed247NewsModel.swift; sourceTree = "<group>"; };
+		386BF749275C4E15003AC63F /* EconomicCalendarNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicCalendarNewsViewController.swift; sourceTree = "<group>"; };
+		386BF74A275C4E15003AC63F /* EconomicCalendarNewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EconomicCalendarNewsViewController.xib; sourceTree = "<group>"; };
+		386BF74E275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EconomicCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		386BF74F275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EconomicCalendarCollectionViewCell.xib; sourceTree = "<group>"; };
 		387DE88726F9D5E90074E6E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		388206BB270891E4001315B5 /* PricePairCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricePairCurrencyModel.swift; sourceTree = "<group>"; };
 		388264D2271BBCC400FCC927 /* Forex Tool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Forex Tool.entitlements"; sourceTree = "<group>"; };
@@ -309,6 +323,10 @@
 		38C724542697E9DE00E810F9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		38C724D926980B3600E810F9 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		38C724FA269842CF00E810F9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		38D5BAD6275CA8170022C11F /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
+		38D5BAD7275CA8170022C11F /* CalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarTableViewCell.xib; sourceTree = "<group>"; };
+		38D5BADA275DAC060022C11F /* CalendarEconomicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEconomicModel.swift; sourceTree = "<group>"; };
+		38D5BADC275DB4B10022C11F /* CalendarEconomicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEconomicViewModel.swift; sourceTree = "<group>"; };
 		38D7CC252706F942004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		38D7CC282706F96E004297AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		38D7CC2A2706F977004297AF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -357,8 +375,11 @@
 		380B24E326F189E900474396 /* EconomicCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				386BF74D275C4E89003AC63F /* Cell */,
 				380B24E426F18A4C00474396 /* EconomicCalendarViewController.swift */,
 				380B24E526F18A4D00474396 /* EconomicCalendarViewController.xib */,
+				386BF749275C4E15003AC63F /* EconomicCalendarNewsViewController.swift */,
+				386BF74A275C4E15003AC63F /* EconomicCalendarNewsViewController.xib */,
 			);
 			path = EconomicCalendar;
 			sourceTree = "<group>";
@@ -366,6 +387,7 @@
 		380B251626F1D0A300474396 /* EconomicNews */ = {
 			isa = PBXGroup;
 			children = (
+				38B8F9122754D6BF005DB378 /* FooterView */,
 				388719F326F1FD8D00DC3F5C /* HeaderView */,
 				388719EC26F1EE8400DC3F5C /* Cell */,
 				380B251726F1D0F500474396 /* HomeNewsViewController.swift */,
@@ -491,6 +513,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		386BF74D275C4E89003AC63F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				386BF74E275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.swift */,
+				386BF74F275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.xib */,
+				38D5BAD6275CA8170022C11F /* CalendarTableViewCell.swift */,
+				38D5BAD7275CA8170022C11F /* CalendarTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		388264D9271DA93500FCC927 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +621,13 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
+		38B8F9122754D6BF005DB378 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		38C723A52696989A00E810F9 = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +682,7 @@
 				381B8057270D93A800BE8217 /* DetailMarketViewModel.swift */,
 				388264D7271D65D600FCC927 /* NotificationViewModel.swift */,
 				3844BB2A2750B4C800317113 /* FeedNewsViewModel.swift */,
+				38D5BADC275DB4B10022C11F /* CalendarEconomicViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -697,6 +738,8 @@
 				388264D5271D5B2000FCC927 /* NotificationModel.swift */,
 				3844BB282750B48300317113 /* HotNews247Model.swift */,
 				38191DD52751E4BE0090BAE4 /* FeatureModel.swift */,
+				386BF7472758F0A1003AC63F /* Feed247NewsModel.swift */,
+				38D5BADA275DAC060022C11F /* CalendarEconomicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -925,6 +968,7 @@
 				38C7241626972DAA00E810F9 /* Roboto-Thin.ttf in Resources */,
 				383CA9F8269AA2BA00A29E3A /* TabBarViewController.xib in Resources */,
 				388264DD271DA95800FCC927 /* HomeNotificationViewController.xib in Resources */,
+				38D5BAD9275CA8170022C11F /* CalendarTableViewCell.xib in Resources */,
 				38C723EE26969D6C00E810F9 /* LoginViewController.xib in Resources */,
 				38DC122826F59EE900256975 /* LongShortRatioTableViewCell.xib in Resources */,
 				38C7241026972DAA00E810F9 /* Roboto-ThinItalic.ttf in Resources */,
@@ -955,6 +999,7 @@
 				38C7241126972DAA00E810F9 /* Roboto-BoldItalic.ttf in Resources */,
 				380B251A26F1D0F500474396 /* HomeNewsViewController.xib in Resources */,
 				38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */,
+				386BF751275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.xib in Resources */,
 				388264D4271BCADC00FCC927 /* GoogleService-Info.plist in Resources */,
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
@@ -982,6 +1027,7 @@
 				383CA9F2269AA26C00A29E3A /* ProfileViewController.xib in Resources */,
 				383B605C26FD6A1E002AA0C9 /* EditProfileViewController.xib in Resources */,
 				38C7240D26972DAA00E810F9 /* Roboto-Light.ttf in Resources */,
+				386BF74C275C4E15003AC63F /* EconomicCalendarNewsViewController.xib in Resources */,
 				38C7241526972DAA00E810F9 /* Roboto-Bold.ttf in Resources */,
 				38B0C4EE269D7F1D009D968C /* ListPairCurrencyViewController.xib in Resources */,
 			);
@@ -1074,6 +1120,7 @@
 				383CA9EB269AA1DF00A29E3A /* CreateTransactionViewController.swift in Sources */,
 				3851DB1B26A86D1F008769B0 /* FilterObjectModel.swift in Sources */,
 				38DC125A26F5BC4100256975 /* ExchangeLongShortRatioModel.swift in Sources */,
+				38D5BAD8275CA8170022C11F /* CalendarTableViewCell.swift in Sources */,
 				38551FD026A2CA9600FFC1D2 /* TransactionModel.swift in Sources */,
 				38C7245026975AE200E810F9 /* UIWindow_Extension.swift in Sources */,
 				385066F7272C450100B0CC86 /* APIRouter.swift in Sources */,
@@ -1083,6 +1130,7 @@
 				38C7241E26973A0700E810F9 /* CustomeBoderRadiusView.swift in Sources */,
 				3886C9EF2702063B00C834B3 /* PositionSizeAndRiskCalculatorViewController.swift in Sources */,
 				38191DD02751CE530090BAE4 /* ColumnFlowLayout.swift in Sources */,
+				386BF750275C4EB7003AC63F /* EconomicCalendarCollectionViewCell.swift in Sources */,
 				380B247426ECAE9D00474396 /* UpdateTransactionViewModel.swift in Sources */,
 				3894D6B62709F92E0028F2E4 /* DetailTransactionViewController.swift in Sources */,
 				388206BC270891E4001315B5 /* PricePairCurrencyModel.swift in Sources */,
@@ -1109,6 +1157,7 @@
 				38C723ED26969D6C00E810F9 /* LoginViewController.swift in Sources */,
 				38A54643270D45A800D2CE39 /* BasicInfoTableViewCell.swift in Sources */,
 				388264E1271DAA5B00FCC927 /* NotificationTableViewCell.swift in Sources */,
+				386BF7482758F0A1003AC63F /* Feed247NewsModel.swift in Sources */,
 				383B606426FF10F6002AA0C9 /* ProfitCalculatorViewController.swift in Sources */,
 				38871A2A26F3251200DC3F5C /* HomeNewsViewModel.swift in Sources */,
 				38191DD62751E4BE0090BAE4 /* FeatureModel.swift in Sources */,
@@ -1125,7 +1174,10 @@
 				38191DD32751D0180090BAE4 /* FeatureCollectionViewCell.swift in Sources */,
 				388719EF26F1EECD00DC3F5C /* TypeNewCollectionViewCell.swift in Sources */,
 				381B8056270D915200BE8217 /* EconomicCalendarModel.swift in Sources */,
+				38D5BADB275DAC060022C11F /* CalendarEconomicModel.swift in Sources */,
 				383B606A26FF195A002AA0C9 /* CustomTabBar.swift in Sources */,
+				38D5BADD275DB4B10022C11F /* CalendarEconomicViewModel.swift in Sources */,
+				386BF74B275C4E15003AC63F /* EconomicCalendarNewsViewController.swift in Sources */,
 				3894D6BB270AB0A90028F2E4 /* HomeMarketViewController.swift in Sources */,
 				38DC122126F5893100256975 /* LongShortRatioViewController.swift in Sources */,
 				38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */,
@@ -1296,7 +1348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Forex Tool/Forex Tool.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1304,7 +1356,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1320,7 +1372,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Forex Tool/Forex Tool.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = X9XAKZ8N26;
 				INFOPLIST_FILE = "Forex Tool/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1328,7 +1380,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

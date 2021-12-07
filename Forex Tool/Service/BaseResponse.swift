@@ -23,6 +23,20 @@ class BaseResponse{
     }
     
 }
+class BaseResponseFor247Feed{
+    var code:Int?
+    var msg:String?
+    var data:JSON?
+    init(json:JSON) {
+        self.code = json["code"].intValue
+        self.msg = json["msg"].stringValue
+        self.data = json["data"]
+    }
+    func isSuccessCode() -> Bool?{
+        return code == 200
+    }
+    
+}
 class BaseResponseError{
     var mErrorType: NetworkErrorType!
     var mErrorCode: Int!

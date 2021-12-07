@@ -172,26 +172,12 @@ class HomeNewsViewModel{
             for eachArticle in articles{
                 let imageElement = try eachArticle.select("img[src]").first()
                 let imageUrl = try imageElement?.attr("src")
-                let itemDetailElement = try eachArticle.getElementsByClass("post-title mb-15 text-limit-2-row").first()
-                let titleElement = try itemDetailElement?.select("a").first()
+                let itemDetailElement = try eachArticle.getElementsByClass("entry-title").first()
+                let titleElement = try itemDetailElement?.select("a")
                 let titleStr = try titleElement?.text()
                 let newsLink = try titleElement?.attr("href")
-                let postDate = try eachArticle.getElementsByClass("post-on color-grey").text()
-                var newPostDate = Date()
-                let amount = postDate.trimmingCharacters(in: CharacterSet(charactersIn: "0123456789").inverted)
-                if postDate.contains("phút trước"){
-                    let minutes = Int(amount) ?? 0
-                    newPostDate = newPostDate.addingTimeInterval(TimeInterval(-minutes*60))
-                }else if postDate.contains("giây trước"){
-                    let sec = Int(amount) ?? 0
-                    newPostDate = newPostDate.addingTimeInterval(TimeInterval(-sec))
-                }else if postDate.contains("giờ trước"){
-                    let hours = Int(amount) ?? 0
-                    newPostDate = newPostDate.addingTimeInterval(TimeInterval((-hours*60*60)))
-                }else if postDate.contains("ngày trước"){
-                    let days = Int(amount) ?? 0
-                    newPostDate = newPostDate.addingTimeInterval(TimeInterval(-days*24*60*60))
-                }
+                let postDate = try eachArticle.getElementsByClass("time").text()
+                var newPostDate = postDate.formartDate(inputFormat: DateformatterType.DD_MM_YYYY_Slash.rawValue)
                 let news = NewsItem(imageUrl: imageUrl, title: titleStr, pubdate: newPostDate, linkDetail: newsLink, author: SourceFrom.invest138.rawValue)
                 listNewsReturn.append(news)
             }

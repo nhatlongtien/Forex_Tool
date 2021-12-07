@@ -83,4 +83,24 @@ class FeedNewsViewModel{
             self.afterApiCall?()
         }
     }
+    func getFeed247News(limit:Int, page:Int, completionHandler:@escaping(_ result:Bool, _ feedNews:[Feed247NewsModel]?) -> Void){
+        beforeApiCall?()
+        MGConnection.requestFor247Feed(APIRouter.feed247News(limit: limit, page: page)) { result, err in
+            if let err = err{
+                print("False with code: \(err.mErrorCode) and message: \(err.mErrorMessage)")
+                self.afterApiCall?()
+                completionHandler(false, nil)
+            }else{
+                var feedNewsReturn:[Feed247NewsModel] = []
+                guard let listData = result!["list"].array else {return}
+//                guard let response = result?.array else {return}
+                for eachData in listData{
+                    let feedNews = Feed247NewsModel(json: eachData)
+                    feedNewsReturn.append(feedNews)
+                }
+                self.afterApiCall?()
+                completionHandler(true, feedNewsReturn)
+            }
+        }
+    }
 }

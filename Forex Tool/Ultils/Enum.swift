@@ -34,6 +34,9 @@ enum DateformatterType:String{
     case h_mm_a_DD_MMM_YYYY = "h:mm a, dd MMM yyyy"
     case HH_mm_ss = "HH:mm:ss"
     case dd_MM_yyyy_HH_mm = "dd/MM/yyyy HH:mm"
+    case E = "E"
+    case dd_MM = "dd/MM"
+    case HH_mm = "HH:mm"
 }
 enum StatusTransaction:String{
     case Active = "Active"
@@ -134,4 +137,9 @@ enum SourceFrom:String{
     case vic = "vic.news"
     case blogtienao = "blogtienao.com"
     case finnews24 = "finnews24.com"
+}
+enum TypeNews{
+    case forex
+    case crypto
+    case stock
 }

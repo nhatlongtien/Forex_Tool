@@ -155,7 +155,8 @@ class DashboardViewController: UIViewController {
     }
     
     @IBAction func economicCalenderButtonWasPressed(_ sender: Any) {
-        let targetVC = EconomicCalendarViewController()
+        //let targetVC = EconomicCalendarViewController()
+        let targetVC = EconomicCalendarNewsViewController()
         self.navigationController?.pushViewController(targetVC, animated: true)
     }
     
@@ -405,7 +406,8 @@ extension DashboardViewController:UICollectionViewDelegate, UICollectionViewData
                 targetVC.isFromTabbar = false
                 self.navigationController?.pushViewController(targetVC, animated: true)
             case 6:
-                let targetVC = EconomicCalendarViewController()
+                //let targetVC = EconomicCalendarViewController()
+                let targetVC = EconomicCalendarNewsViewController()
                 self.navigationController?.pushViewController(targetVC, animated: true)
             case 7:
                 let targetVC = HomeMarketViewController()

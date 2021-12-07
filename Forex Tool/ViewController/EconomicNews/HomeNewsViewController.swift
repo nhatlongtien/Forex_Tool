@@ -19,6 +19,9 @@ class HomeNewsViewController: BaseViewController {
     var titleString:String? = Constant.listTabNews.first
     var newsLinkRSSFeed:String?
     var isFromTabbar:Bool?
+    //
+    let refreshControl = UIRefreshControl()
+    var typeNews:TypeNews = .forex
     override func viewDidLoad() {
         super.viewDidLoad()
         //
@@ -39,6 +42,13 @@ class HomeNewsViewController: BaseViewController {
         tableView.register(nibTableViewCell, forCellReuseIdentifier: "NewsTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
+        //
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(updateData), for: .valueChanged)
         //
         headerView.delegate = self
         //
@@ -96,6 +106,7 @@ class HomeNewsViewController: BaseViewController {
                     self.headerView.configView(item: item)
                 }
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }
@@ -111,6 +122,92 @@ class HomeNewsViewController: BaseViewController {
                 HUD.hide()
             }
             
+        }
+    }
+    func getNewsForForex(){
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            HUD.show(.systemActivity)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.homeNewsVM.scrapingNewsFoexVI { listNews in
+                    guard let news = listNews else {return}
+                    self.listNews = []
+                    self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
+                    if let item = self.listNews.first{
+                        self.headerView.configView(item: item)
+                    }
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                    HUD.hide()
+                }
+            }
+        }else{
+            HUD.show(.systemActivity)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.homeNewsVM.scrapingNewsFoexVI { listNews in
+                    guard let news = listNews else {return}
+                    self.listNews = []
+                    self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
+                    if let item = self.listNews.first{
+                        self.headerView.configView(item: item)
+                    }
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                    HUD.hide()
+                }
+            }
+        }
+    }
+    func getNewsForCrypto(){
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            HUD.show(.systemActivity)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.homeNewsVM.scrapingNewsCryptoVI { listNews in
+                    guard let news = listNews else {return}
+                    self.listNews = []
+                    self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
+                    if let item = self.listNews.first{
+                        self.headerView.configView(item: item)
+                    }
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                    HUD.hide()
+                }
+            }
+        }else{
+            HUD.show(.systemActivity)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.homeNewsVM.scrapingNewsCryptoVI { listNews in
+                    guard let news = listNews else {return}
+                    self.listNews = []
+                    self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
+                    if let item = self.listNews.first{
+                        self.headerView.configView(item: item)
+                    }
+                    self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
+                    HUD.hide()
+                }
+            }
+        }
+    }
+    func getNewsForStock(){
+        let currentLanguage = Locale.preferredLanguages[0] as String
+        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
+            self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
+        }else{
+            self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
+        }
+    }
+    @objc func updateData(){
+        switch typeNews {
+        case .forex:
+            getNewsForForex()
+        case .crypto:
+            getNewsForCrypto()
+        case .stock:
+            getNewsForStock()
         }
     }
 
@@ -136,81 +233,18 @@ extension HomeNewsViewController:UICollectionViewDelegate, UICollectionViewDataS
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let currentLanguage = Locale.preferredLanguages[0] as String
-        if currentLanguage == "vi" || currentLanguage == "vi-VN"{
-            switch indexPath.row {
-            case 0:
-                HUD.show(.systemActivity)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.homeNewsVM.scrapingNewsFoexVI { listNews in
-                        guard let news = listNews else {return}
-                        self.listNews = []
-                        self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
-                        if let item = self.listNews.first{
-                            self.headerView.configView(item: item)
-                        }
-                        self.tableView.reloadData()
-                        HUD.hide()
-                    }
-                }
-            case 1:
-                //self.getListNews(url: NewsLinkRSSFeed.crypto.rawValue)
-                HUD.show(.systemActivity)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.homeNewsVM.scrapingNewsCryptoVI { listNews in
-                        guard let news = listNews else {return}
-                        self.listNews = []
-                        self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
-                        if let item = self.listNews.first{
-                            self.headerView.configView(item: item)
-                        }
-                        self.tableView.reloadData()
-                        HUD.hide()
-                    }
-                }
-            case 2:
-                //self.getListNews(url: NewsLinkRSSFeed.forex.rawValue)
-                self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
-            default:
-                break
-            }
-        }else{ //Tieng Anh
-            switch indexPath.row {
-            case 0:
-                HUD.show(.systemActivity)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.homeNewsVM.scrapingNewsFoexVI { listNews in
-                        guard let news = listNews else {return}
-                        self.listNews = []
-                        self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
-                        if let item = self.listNews.first{
-                            self.headerView.configView(item: item)
-                        }
-                        self.tableView.reloadData()
-                        HUD.hide()
-                    }
-                }
-            case 1:
-                //self.getListNews(url: NewsLinkRSSFeed.crypto.rawValue)
-                HUD.show(.systemActivity)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.homeNewsVM.scrapingNewsCryptoVI { listNews in
-                        guard let news = listNews else {return}
-                        self.listNews = []
-                        self.listNews = news.sorted(by: {$0.pubdate! > $1.pubdate!})
-                        if let item = self.listNews.first{
-                            self.headerView.configView(item: item)
-                        }
-                        self.tableView.reloadData()
-                        HUD.hide()
-                    }
-                }
-            case 2:
-                //self.getListNews(url: NewsLinkRSSFeed.forex.rawValue)
-                self.getListNews(url: NewsLinkRSSFeed.stock.rawValue)
-            default:
-                break
-            }
+        switch indexPath.row {
+        case 0:
+            typeNews = .forex
+            getNewsForForex()
+        case 1:
+            typeNews = .crypto
+            getNewsForCrypto()
+        case 2:
+            typeNews = .stock
+            getNewsForStock()
+        default:
+            break
         }
         self.titleString = Constant.listTabNews[indexPath.row]
     }
@@ -239,7 +273,7 @@ extension HomeNewsViewController: UITableViewDelegate, UITableViewDataSource{
         print(listNews.count)
         //
         let size = CGSize(width: self.view.frame.width - 30, height: 1000)
-        let estimateFrame = NSString(string: headerView.titleLbl.text!).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIFont(name: "Roboto-Regular", size: 15)], context: nil)
+        let estimateFrame = NSString(string: headerView.titleLbl.text ?? "").boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font:UIFont(name: "Roboto-Regular", size: 15)], context: nil)
         let height = 234.5 + estimateFrame.height
         print(estimateFrame.height)
         print(estimateFrame.width)

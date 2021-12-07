@@ -24,16 +24,16 @@ class FeedNewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configCell(item:HotNews247Model){
+    func configCell(item:Feed247NewsModel){
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 6
-        let attributedContent = NSAttributedString(string: item.content ?? "", attributes: [
+        let attributedContent = NSAttributedString(string: item.translate ?? "", attributes: [
             NSAttributedString.Key.paragraphStyle: paragraphStyle
         ])
         
         self.contentLbl.attributedText = attributedContent
-        self.postDateLbl.text = item.postTime?.dateToString(format: DateformatterType.HH_mm_ss.rawValue)
+        self.postDateLbl.text = item.time
         self.hideSkeleton()
     }
     

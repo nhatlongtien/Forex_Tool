@@ -170,5 +170,11 @@ extension Date{
     var endOfYear:Date{
         return Calendar.current.date(byAdding: DateComponents(year: 1), to: self.startOfYear)!
     }
+    var daysOfMonth: [Date] {
+        let startOfMonth = self.startOfMonth
+        let calendar = Calendar.current
+        let range = calendar.range(of: .day, in: .month, for: self)!
+        return range.compactMap{ calendar.date(byAdding: .day, value: $0, to: startOfMonth)}
+    }
     
 }
