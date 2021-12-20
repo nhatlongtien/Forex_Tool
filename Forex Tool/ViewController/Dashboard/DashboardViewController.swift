@@ -35,8 +35,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var featureCollectionView: UICollectionView!
     @IBOutlet weak var notifiImage: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-//    @IBOutlet weak var userNameLbl: UILabel!
-//    @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var activeTransactionCollectionView: UICollectionView!
     @IBOutlet weak var emptyTransactionView: CustomeBoderRadiusView!
     @IBOutlet weak var durationTimeSegment: UISegmentedControl!
@@ -61,7 +59,9 @@ class DashboardViewController: UIViewController {
     }()
     //
     let dashboardVM = DashboardViewModel()
+    let notificationVM = NotificationViewModel()
     var listActiveTransaction:[TransactionModel] = []
+    var listSignalNotification = [NotificationModel]()
     var fromDate:Date?
     var toDate:Date?
     let listFeatures = FeatureModel.share()
@@ -70,7 +70,7 @@ class DashboardViewController: UIViewController {
     let minimumLineSpacing: CGFloat = 5
     let minimumInteritemSpacing: CGFloat = 5
     let cellsPerRow = 4
-    
+    let layout = CustomLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,11 +79,18 @@ class DashboardViewController: UIViewController {
         //
         setupUI()
         //
-        let layout = UICollectionViewFlowLayout()
+        
         layout.scrollDirection = .horizontal
+        layout.itemSize.width = 280
+        layout.minimumLineSpacing = 30
+        layout.minimumInteritemSpacing = 30
         activeTransactionCollectionView.collectionViewLayout = layout
-        let nibCell = UINib(nibName: "ActiveTransactionCollectionViewCell", bundle: nil)
-        activeTransactionCollectionView.register(nibCell, forCellWithReuseIdentifier: "ActiveTransactionCollectionViewCell")
+        activeTransactionCollectionView.contentInsetAdjustmentBehavior = .never
+        activeTransactionCollectionView.decelerationRate = .fast
+        activeTransactionCollectionView.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        
+        let nibCell = UINib(nibName: "SignalCollectionViewCell", bundle: nil)
+        activeTransactionCollectionView.register(nibCell, forCellWithReuseIdentifier: "SignalCollectionViewCell")
         activeTransactionCollectionView.delegate = self
         activeTransactionCollectionView.dataSource = self
         //
@@ -107,20 +114,22 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         Constant.isInTabBarControll = false
-        //Get listActiveTransaction
-        self.listActiveTransaction = []
-        dashboardVM.getListTransaction(isFillter: true, fromDate: nil, toDate: nil, statusTransaction: "Active", resultTransaction: nil) { [self] (success, response) in
-            if success{
-                guard let listTransaction = response else {return}
-                self.listActiveTransaction = listTransaction
-                if listActiveTransaction.count == 0{
-                    self.emptyTransactionView.isHidden = false
-                }else{
-                    self.emptyTransactionView.isHidden = true
-                }
-                activeTransactionCollectionView.reloadData()
-            }
-        }
+//        //Get listActiveTransaction
+//        self.listActiveTransaction = []
+//        dashboardVM.getListTransaction(isFillter: true, fromDate: nil, toDate: nil, statusTransaction: "Active", resultTransaction: nil) { [self] (success, response) in
+//            if success{
+//                guard let listTransaction = response else {return}
+//                self.listActiveTransaction = listTransaction
+//                if listActiveTransaction.count == 0{
+//                    self.emptyTransactionView.isHidden = false
+//                }else{
+//                    self.emptyTransactionView.isHidden = true
+//                }
+//                activeTransactionCollectionView.reloadData()
+//            }
+//        }
+        //Get list signal
+        getSignalNotification()
         //
         self.calculationWinLoss(fromDate: fromDate!, toDate: toDate!)
     }
@@ -236,6 +245,16 @@ class DashboardViewController: UIViewController {
         customSegmentControl()
         
     }
+    func getSignalNotification(){
+        notificationVM.getListSignalNotification(limit: 10) {success, listSignnalNotifi in
+            if success{
+                self.listSignalNotification = []
+                guard let listSignal = listSignnalNotifi  else {return}
+                self.listSignalNotification = listSignal
+                self.activeTransactionCollectionView.reloadData()
+            }
+        }
+    }
     
     //
     private func viewModelCallBack(){
@@ -243,6 +262,12 @@ class DashboardViewController: UIViewController {
             HUD.show(.systemActivity)
         }
         dashboardVM.afterApiCall = {
+            HUD.hide()
+        }
+        notificationVM.beforeApiCall = {
+            HUD.show(.systemActivity)
+        }
+        notificationVM.afterApiCall = {
             HUD.hide()
         }
     }
@@ -305,20 +330,6 @@ class DashboardViewController: UIViewController {
         }
     }
     //
-//    func getUserInfoAndUpdateUI(){
-//        guard let uid = Constant.defaults.string(forKey: Constant.USER_ID) else {return}
-//        print(uid)
-//        dashboardVM.getUserInfoByUserID(userID: uid) { (success, userInfo) in
-//            self.userNameLbl.text = userInfo?.fullName?.capitalized
-//            let url = userInfo?.avatarImg
-//            if url != nil && url != ""{
-//                self.avatarImg.kf.setImage(with: URL(string: url!))
-//            }else{
-//                self.avatarImg.image = UIImage(named: "userIcon")
-//            }
-//        }
-//    }
-    //
     func customSegmentControl(){
         if #available(iOS 13.0, *){
             durationTimeSegment.backgroundColor = UIColor(red: 16/255, green: 0/255, blue: 54/255, alpha: 1)
@@ -341,7 +352,7 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == activeTransactionCollectionView{
-            return listActiveTransaction.count
+            return listSignalNotification.count
         }else{
             return listFeatures.count
         }
@@ -350,13 +361,8 @@ extension DashboardViewController:UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == activeTransactionCollectionView{
-            let cell = activeTransactionCollectionView.dequeueReusableCell(withReuseIdentifier: "ActiveTransactionCollectionViewCell", for: indexPath) as! ActiveTransactionCollectionViewCell
-            if indexPath.row % 2 != 0{
-                cell.backGroundView.backgroundColor = #colorLiteral(red: 1, green: 0.5294117647, blue: 0.06274509804, alpha: 1)
-            }else{
-                cell.backGroundView.backgroundColor = #colorLiteral(red: 0.09803921569, green: 0.368627451, blue: 0.9490196078, alpha: 1)
-            }
-            cell.configCell(transaction: listActiveTransaction[indexPath.row])
+            let cell = activeTransactionCollectionView.dequeueReusableCell(withReuseIdentifier: "SignalCollectionViewCell", for: indexPath) as! SignalCollectionViewCell
+            cell.configCell(item: listSignalNotification[indexPath.row])
             return cell
         }else{
             let cell = featureCollectionView.dequeueReusableCell(withReuseIdentifier: "FeatureCollectionViewCell", for: indexPath) as! FeatureCollectionViewCell
@@ -367,7 +373,7 @@ extension DashboardViewController:UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == activeTransactionCollectionView{
-            return CGSize(width: 265, height: 139)
+            return CGSize(width: 280, height: 150)
         }else{
             let marginsAndInsets = inset * 2 + collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right + minimumInteritemSpacing * CGFloat(cellsPerRow - 1)
                     let itemWidth = ((collectionView.bounds.size.width - marginsAndInsets) / CGFloat(cellsPerRow)).rounded(.down)
@@ -378,9 +384,17 @@ extension DashboardViewController:UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == activeTransactionCollectionView{
-            let targetVC = DetailTransactionViewController()
-            targetVC.selectedTransactionItem = listActiveTransaction[indexPath.row]
-            self.navigationController?.pushViewController(targetVC, animated: true)
+            if indexPath.item == layout.currentPage{
+                print("Did select item")
+                let targetVC = DetailNotificationViewController()
+                targetVC.notificationItem = listSignalNotification[indexPath.row]
+                self.navigationController?.pushViewController(targetVC, animated: true)
+            }else{
+                collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                layout.currentPage = indexPath.item
+                layout.previousOffSet = layout.updateOfSet(collectionView)
+                setupCell()
+            }
         }else{
             switch indexPath.row {
             case 0:
@@ -418,6 +432,45 @@ extension DashboardViewController:UICollectionViewDelegate, UICollectionViewData
             }
         }
         
+    }
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        if scrollView == activeTransactionCollectionView{
+            
+            let targetVC = DetailNotificationViewController()
+            targetVC.notificationItem = listSignalNotification[layout.currentPage]
+            self.navigationController?.pushViewController(targetVC, animated: true)
+        }
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == activeTransactionCollectionView{
+            if decelerate{
+                setupCell()
+            }
+        }
+    }
+    private func setupCell(){
+        let indexPath = IndexPath(row:layout.currentPage , section: 0)
+        let cell = activeTransactionCollectionView.cellForItem(at: indexPath)
+        transformCell(cell!)
+    }
+    
+    private func transformCell(_ cell:UICollectionViewCell, isEffect:Bool = true){
+        if !isEffect{
+            cell.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
+        }
+        UIView.animate(withDuration: 0.2) {
+            cell.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
+        }
+        
+        for otherCell in activeTransactionCollectionView.visibleCells{
+            if let indexPath = activeTransactionCollectionView.indexPath(for: otherCell){
+                if indexPath.item != layout.currentPage{
+                    UIView.animate(withDuration: 0.2) {
+                        otherCell.transform = .identity
+                    }
+                }
+            }
+        }
     }
     
 }

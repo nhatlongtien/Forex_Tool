@@ -7,8 +7,11 @@
 
 import UIKit
 import AVFoundation
+protocol BaseViewControllerProtocol:class{
+    func didTapCommentButton()
+}
 class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    weak var delegate:BaseViewControllerProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +53,7 @@ class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @objc func handleTapCommentBtn(){
 //        let targetVC = CommentViewController()
 //        self.navigationController?.pushViewController(targetVC, animated: true)
+        delegate?.didTapCommentButton()
         
     }
     //MARK: - PHOTO AND CAMERA PERMISSION REQEUST AND SETUP PICKER

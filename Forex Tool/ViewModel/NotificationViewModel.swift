@@ -55,7 +55,28 @@ class NotificationViewModel{
                 for document in querySnapshot!.documents{
                     print("\(document.documentID) => \(document.data())")
                     guard let json = JSON(rawValue: document.data()) else {return}
-                    let notifi = NotificationModel(json: json)
+                    let notifi = NotificationModel(json: json, id: document.documentID)
+                    listReturn.append(notifi)
+                }
+                completionHander(true, listReturn)
+            }
+            self.afterApiCall?()
+        }
+    }
+    func getListSignalNotification(limit:Int, completionHander:@escaping(_ result:Bool,_ listNotification:[NotificationModel]?) -> Void){
+        beforeApiCall?()
+        let db = Firestore.firestore()
+        db.collection("Notifications").order(by: "timeStamp", descending: true).limit(to: limit).getDocuments { querySnapshot, error in
+            if let err = error{
+                print("Error getting documents: \(err)")
+                HelperMethod.showAlertWithMessage(message: "Error getting documents: \(err)")
+                completionHander(false, nil)
+            }else{
+                var listReturn = [NotificationModel]()
+                for document in querySnapshot!.documents{
+                    print("\(document.documentID) => \(document.data())")
+                    guard let json = JSON(rawValue: document.data()) else {return}
+                    let notifi = NotificationModel(json: json, id: document.documentID)
                     listReturn.append(notifi)
                 }
                 completionHander(true, listReturn)

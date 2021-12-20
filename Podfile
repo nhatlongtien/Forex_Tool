@@ -29,4 +29,5 @@ pod 'Lightbox'
 pod 'Google-Mobile-Ads-SDK'
 pod 'SwiftSoup'
 pod 'SkeletonView'
+pod 'Firebase/Database'
 end

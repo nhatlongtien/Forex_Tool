@@ -137,19 +137,22 @@ class HomeNewsViewModel{
             let content = try String(contentsOf: URL(string: url)!)
             
             let doc:Document = try SwiftSoup.parse(content)
-            let newsContent = try doc.getElementsByClass("penci-wrapper-data masonry penci-masonry").first()!
-            let articles:Elements = try newsContent.select("article")
-            for eachArticle in articles{
+            let newsContent = try doc.getElementsByClass("news-item")
+            //let articles:Elements = try newsContent.select("article")
+            for eachArticle in newsContent{
                 let imageElement = try eachArticle.select("img[src]").first()
                 let imageUrl = try imageElement?.attr("src")
-                let itemDetailElement = try eachArticle.getElementsByClass("entry-title grid-title").first()
+                let itemDetailElement = try eachArticle.getElementsByClass("title").first()
                 let titleElement = try itemDetailElement?.select("a").first()
                 let titleStr = try titleElement?.text()
-                let newsLink = try titleElement?.attr("href")
-                let postDateEmelement = try eachArticle.getElementsByClass("entry-date published").first()
-                let postDate = try postDateEmelement?.attr("datetime").formartDate(inputFormat: DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue)
-                let modifiedDate = Calendar.current.date(byAdding: .hour, value: -7, to: postDate ?? Date())
-                let news = NewsItem(imageUrl: imageUrl, title: titleStr, pubdate: modifiedDate, linkDetail: newsLink, author: SourceFrom.vic.rawValue)
+                var newsLink = try titleElement?.attr("href")
+                if newsLink != nil && newsLink?.contains("https://vic.news/") == false{
+                    newsLink = "https://vic.news/" + newsLink!
+                }
+//                let postDateEmelement = try eachArticle.getElementsByClass("entry-date published").first()
+//                let postDate = try postDateEmelement?.attr("datetime").formartDate(inputFormat: DateformatterType.YYYY_MM_DD_T_HH_mm_ssZ.rawValue)
+//                let modifiedDate = Calendar.current.date(byAdding: .hour, value: -7, to: postDate ?? Date())
+                let news = NewsItem(imageUrl: imageUrl, title: titleStr, pubdate: Date(), linkDetail: newsLink, author: SourceFrom.vic.rawValue)
                 listNewsReturn.append(news)
             }
             completionHanler(listNewsReturn)
