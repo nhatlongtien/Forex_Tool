@@ -127,6 +127,9 @@
 		38B0C51E269E808B009D968C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B0C51D269E808A009D968C /* Enum.swift */; };
 		38B9BBFA271027A800E153E7 /* DatePickerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B9BBF8271027A800E153E7 /* DatePickerPopupViewController.swift */; };
 		38B9BBFB271027A800E153E7 /* DatePickerPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38B9BBF9271027A800E153E7 /* DatePickerPopupViewController.xib */; };
+		38BF2C9C2771B67E00916CEB /* PhoToLibraryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF2C9A2771B67E00916CEB /* PhoToLibraryCollectionViewCell.swift */; };
+		38BF2C9D2771B67E00916CEB /* PhoToLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38BF2C9B2771B67E00916CEB /* PhoToLibraryCollectionViewCell.xib */; };
+		38BF2C9F2772FDA100916CEB /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BF2C9E2772FDA100916CEB /* PhotoService.swift */; };
 		38C723B22696989A00E810F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C723B12696989A00E810F9 /* AppDelegate.swift */; };
 		38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38C723BA2696989C00E810F9 /* Assets.xcassets */; };
 		38C723BE2696989C00E810F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38C723BC2696989C00E810F9 /* LaunchScreen.storyboard */; };
@@ -179,6 +182,8 @@
 		38F45EFA271FBDF40054F853 /* DetailNotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F45EF8271FBDF40054F853 /* DetailNotificationViewController.xib */; };
 		38F5F3762712936100DCFAE9 /* AnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */; };
 		38F5F3772712936100DCFAE9 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */; };
+		38FA3EAD2775AB7200B0D15E /* WellcomeNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA3EAB2775AB7200B0D15E /* WellcomeNewViewController.swift */; };
+		38FA3EAE2775AB7200B0D15E /* WellcomeNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FA3EAC2775AB7200B0D15E /* WellcomeNewViewController.xib */; };
 		3D2198D65E355CBB603442DD /* Pods_Forex_Tool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B7B8772B6A4F58B747FF7C6 /* Pods_Forex_Tool.framework */; };
 /* End PBXBuildFile section */
 
@@ -306,6 +311,9 @@
 		38B0C51D269E808A009D968C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		38B9BBF8271027A800E153E7 /* DatePickerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopupViewController.swift; sourceTree = "<group>"; };
 		38B9BBF9271027A800E153E7 /* DatePickerPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerPopupViewController.xib; sourceTree = "<group>"; };
+		38BF2C9A2771B67E00916CEB /* PhoToLibraryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoToLibraryCollectionViewCell.swift; sourceTree = "<group>"; };
+		38BF2C9B2771B67E00916CEB /* PhoToLibraryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoToLibraryCollectionViewCell.xib; sourceTree = "<group>"; };
+		38BF2C9E2772FDA100916CEB /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		38C723AE2696989A00E810F9 /* Forex Tool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forex Tool.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C723B12696989A00E810F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38C723BA2696989C00E810F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -362,6 +370,8 @@
 		38F45EF8271FBDF40054F853 /* DetailNotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailNotificationViewController.xib; sourceTree = "<group>"; };
 		38F5F3742712936100DCFAE9 /* AnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisViewController.swift; sourceTree = "<group>"; };
 		38F5F3752712936100DCFAE9 /* AnalysisViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalysisViewController.xib; sourceTree = "<group>"; };
+		38FA3EAB2775AB7200B0D15E /* WellcomeNewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeNewViewController.swift; sourceTree = "<group>"; };
+		38FA3EAC2775AB7200B0D15E /* WellcomeNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WellcomeNewViewController.xib; sourceTree = "<group>"; };
 		598332932A1693D7BE617DAD /* Pods-Forex Tool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forex Tool.debug.xcconfig"; path = "Target Support Files/Pods-Forex Tool/Pods-Forex Tool.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -561,6 +571,8 @@
 				388264E0271DAA5B00FCC927 /* NotificationTableViewCell.xib */,
 				385FC47E27673B94000DED05 /* CommentTableViewCell.swift */,
 				385FC47F27673B94000DED05 /* CommentTableViewCell.xib */,
+				38BF2C9A2771B67E00916CEB /* PhoToLibraryCollectionViewCell.swift */,
+				38BF2C9B2771B67E00916CEB /* PhoToLibraryCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -774,6 +786,8 @@
 				38C723F126969D9700E810F9 /* RegisterViewController.xib */,
 				38C723FA26969FB100E810F9 /* WellcomeViewController.swift */,
 				38C723FB26969FB100E810F9 /* WellcomeViewController.xib */,
+				38FA3EAB2775AB7200B0D15E /* WellcomeNewViewController.swift */,
+				38FA3EAC2775AB7200B0D15E /* WellcomeNewViewController.xib */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -835,6 +849,7 @@
 				385066F4272C450000B0CC86 /* APIRouter.swift */,
 				385066F5272C450100B0CC86 /* BaseResponse.swift */,
 				385066F3272C44FE00B0CC86 /* MGConnection.swift */,
+				38BF2C9E2772FDA100916CEB /* PhotoService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1018,6 +1033,7 @@
 				38C7241426972DAA00E810F9 /* Roboto-BlackItalic.ttf in Resources */,
 				3844BB2F2750C24400317113 /* FeedNewsCalendarTableViewCell.xib in Resources */,
 				388719F026F1EECD00DC3F5C /* TypeNewCollectionViewCell.xib in Resources */,
+				38FA3EAE2775AB7200B0D15E /* WellcomeNewViewController.xib in Resources */,
 				38C7241126972DAA00E810F9 /* Roboto-BoldItalic.ttf in Resources */,
 				380B251A26F1D0F500474396 /* HomeNewsViewController.xib in Resources */,
 				38A3F10D26A9241C0032400F /* UpdateTransactionViewController.xib in Resources */,
@@ -1027,6 +1043,7 @@
 				383CAA09269AAEAE00A29E3A /* HistoryTransactionViewController.xib in Resources */,
 				38C723BB2696989C00E810F9 /* Assets.xcassets in Resources */,
 				38D7CC272706F96E004297AF /* Localizable.strings in Resources */,
+				38BF2C9D2771B67E00916CEB /* PhoToLibraryCollectionViewCell.xib in Resources */,
 				38F45EFA271FBDF40054F853 /* DetailNotificationViewController.xib in Resources */,
 				3866311C274214EC0028ACF0 /* CommentViewController.xib in Resources */,
 				3886C9FF270406B400C834B3 /* PipValueViewController.xib in Resources */,
@@ -1132,6 +1149,7 @@
 				38551FD326A2D25200FFC1D2 /* DashboardViewModel.swift in Sources */,
 				38B0C4ED269D7F1D009D968C /* ListPairCurrencyViewController.swift in Sources */,
 				388264D8271D65D600FCC927 /* NotificationViewModel.swift in Sources */,
+				38BF2C9F2772FDA100916CEB /* PhotoService.swift in Sources */,
 				383CA9E6269AA1BE00A29E3A /* DashboardViewController.swift in Sources */,
 				383B605F26FD7CCC002AA0C9 /* EditProfileViewModel.swift in Sources */,
 				3844BB292750B48300317113 /* HotNews247Model.swift in Sources */,
@@ -1164,6 +1182,7 @@
 				38C7244D26975A2B00E810F9 /* HelperMethod.swift in Sources */,
 				388719FD26F2E1C900DC3F5C /* NewsTableViewCell.swift in Sources */,
 				385FC47B2765EBFC000DED05 /* CommentViewModel.swift in Sources */,
+				38FA3EAD2775AB7200B0D15E /* WellcomeNewViewController.swift in Sources */,
 				38C724FB269842CF00E810F9 /* UserModel.swift in Sources */,
 				383CA9F7269AA2BA00A29E3A /* TabBarViewController.swift in Sources */,
 				38DC12EE26F8CE7D00256975 /* EditProfilePopupViewController.swift in Sources */,
@@ -1221,6 +1240,7 @@
 				3886C9FE270406B400C834B3 /* PipValueViewController.swift in Sources */,
 				380B24E626F18A4D00474396 /* EconomicCalendarViewController.swift in Sources */,
 				388264DC271DA95800FCC927 /* HomeNotificationViewController.swift in Sources */,
+				38BF2C9C2771B67E00916CEB /* PhoToLibraryCollectionViewCell.swift in Sources */,
 				383B605B26FD6A1E002AA0C9 /* EditProfileViewController.swift in Sources */,
 				383CAA13269C946700A29E3A /* CurrencyModel.swift in Sources */,
 			);
@@ -1384,7 +1404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1408,7 +1428,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tiennguyen.Forex-Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

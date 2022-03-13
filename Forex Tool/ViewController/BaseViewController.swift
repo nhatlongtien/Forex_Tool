@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Photos
 protocol BaseViewControllerProtocol:class{
     func didTapCommentButton()
 }
@@ -76,29 +77,35 @@ class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         self.present(photoAlert, animated: true, completion: nil)
     }
     @objc func isPermissionAllowed() -> Bool{
-        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized{
+        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized || AVCaptureDevice.authorizationStatus(for: .video) == .notDetermined{
             print("Allow")
             return true
         }else if AVCaptureDevice.authorizationStatus(for: .video) == .denied{
             print("Denied")
+            showAlertToAllowCameraPermissionInSetting()
+            return false
+        }
+        return false
+    }
+    @objc func isPhotoPermissionAllowed() -> Bool{
+        if PHPhotoLibrary.authorizationStatus() == .authorized || PHPhotoLibrary.authorizationStatus() == .notDetermined{
+            print("Allow")
+            return true
+        }else if PHPhotoLibrary.authorizationStatus() == .denied{
+            print("Denied")
+            showAlertToAllowPhotoPermissionInSetting()
             return false
         }
         return false
     }
     @objc func accessCamera(){
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            //            if isPermissionAllowed(){
-            //                let camera = UIImagePickerController()
-            //                camera.delegate = self
-            //                camera.sourceType = .camera
-            //                self.present(camera, animated: true, completion: nil)
-            //            }else{
-            //                showAlertToAllowCameraPermissionInSetting()
-            //            }
             let camera = UIImagePickerController()
             camera.delegate = self
             camera.sourceType = .camera
             self.present(camera, animated: true, completion: nil)
+        }else{
+            print("Camera is not available")
         }
     }
     @objc func accessPhotoLibrary() {
@@ -112,6 +119,16 @@ class BaseViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @objc func showAlertToAllowCameraPermissionInSetting() {
         let alert = UIAlertController(title: "Allow Camera Acess", message: "Camera Access is required to take photo", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Settings", style: .default) { (alert) -> Void in
+            UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+        })
+        
+        present(alert, animated: true)
+    }
+    @objc func showAlertToAllowPhotoPermissionInSetting() {
+        let alert = UIAlertController(title: "Allow Photo Acess", message: "Photo library Access is required to get photo", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alert.addAction(UIAlertAction(title: "Settings", style: .default) { (alert) -> Void in

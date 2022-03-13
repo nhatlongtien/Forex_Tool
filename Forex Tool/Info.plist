@@ -76,9 +76,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>We need to use your camera to take picture for upload avatar and trading reason function</string>
+	<string>We need to use your camera to take picture for upload avatar, trading reason and comment function</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need to use your Photo Library to get picture for upload avatar and trading reason function</string>
+	<string>We need to use your Photo Library to get picture for upload avatar, trading reason and comment function</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>

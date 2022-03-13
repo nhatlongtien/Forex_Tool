@@ -98,7 +98,7 @@ class ProfileViewController: UIViewController {
             print("Dang xuat thanh cong")
             Constant.defaults.setValue(nil, forKey: Constant.USER_ID)
             HUD.hide()
-            HelperMethod.setRootToViewControler(targetVC: WellcomeViewController())
+            HelperMethod.setRootToViewControler(targetVC: WellcomeNewViewController())
         }catch let error as NSError{
             print("Error signing out: %@", error)
             HUD.hide()

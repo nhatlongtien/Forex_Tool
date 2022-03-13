@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhoToLibraryCollectionViewCell" customModule="Forex_Tool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxs-Co-vIU">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-ei-FX4">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unselect_icon" translatesAutoresizingMaskIntoConstraints="NO" id="rRr-qC-2fE">
+                                <rect key="frame" x="57" y="8" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="knq-fg-7uL"/>
+                                    <constraint firstAttribute="height" constant="15" id="o1r-7f-G9R"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7c-Qq-KE1">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iha-Iy-400">
+                                        <rect key="frame" x="5" y="16" width="70" height="48"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="XJ4-qG-1E2">
+                                                <rect key="frame" x="17.5" y="0.5" width="35" height="23.5"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="bED-Yk-52b"/>
+                                                    <constraint firstAttribute="height" constant="25" id="z57-NB-b39"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-P3-uel">
+                                                <rect key="frame" x="5.5" y="33" width="59.5" height="15"/>
+                                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="86X-Td-cVU"/>
+                                            <constraint firstItem="MKF-P3-uel" firstAttribute="centerX" secondItem="Iha-Iy-400" secondAttribute="centerX" id="B3B-3T-fnh"/>
+                                            <constraint firstItem="XJ4-qG-1E2" firstAttribute="centerX" secondItem="Iha-Iy-400" secondAttribute="centerX" id="Gcx-Sf-AGw"/>
+                                            <constraint firstItem="MKF-P3-uel" firstAttribute="top" secondItem="XJ4-qG-1E2" secondAttribute="bottom" constant="8" id="MlI-gW-GmE"/>
+                                            <constraint firstAttribute="bottom" secondItem="MKF-P3-uel" secondAttribute="bottom" id="Pp6-S3-jax"/>
+                                            <constraint firstItem="XJ4-qG-1E2" firstAttribute="top" secondItem="Iha-Iy-400" secondAttribute="top" id="oFW-4S-X2n"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Iha-Iy-400" firstAttribute="centerY" secondItem="n7c-Qq-KE1" secondAttribute="centerY" id="FlM-eR-PKw"/>
+                                    <constraint firstItem="Iha-Iy-400" firstAttribute="centerX" secondItem="n7c-Qq-KE1" secondAttribute="centerX" id="Rjh-eP-gcA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fNn-ei-FX4" secondAttribute="bottom" id="21s-Uv-sPo"/>
+                            <constraint firstItem="rRr-qC-2fE" firstAttribute="top" secondItem="uxs-Co-vIU" secondAttribute="top" constant="8" id="4YG-Dm-o6L"/>
+                            <constraint firstItem="fNn-ei-FX4" firstAttribute="top" secondItem="uxs-Co-vIU" secondAttribute="top" id="Bq0-NX-Pr6"/>
+                            <constraint firstAttribute="trailing" secondItem="n7c-Qq-KE1" secondAttribute="trailing" id="K5Q-W5-i36"/>
+                            <constraint firstItem="n7c-Qq-KE1" firstAttribute="leading" secondItem="uxs-Co-vIU" secondAttribute="leading" id="QiT-cH-d5G"/>
+                            <constraint firstAttribute="trailing" secondItem="rRr-qC-2fE" secondAttribute="trailing" constant="8" id="YCX-ie-AGC"/>
+                            <constraint firstAttribute="bottom" secondItem="n7c-Qq-KE1" secondAttribute="bottom" id="hrs-2T-ptS"/>
+                            <constraint firstItem="n7c-Qq-KE1" firstAttribute="top" secondItem="uxs-Co-vIU" secondAttribute="top" id="ogV-Mp-AiL"/>
+                            <constraint firstAttribute="trailing" secondItem="fNn-ei-FX4" secondAttribute="trailing" id="qqT-Yx-dWa"/>
+                            <constraint firstItem="fNn-ei-FX4" firstAttribute="leading" secondItem="uxs-Co-vIU" secondAttribute="leading" id="vH8-WK-uew"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="uxs-Co-vIU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2SJ-Qb-nqe"/>
+                <constraint firstItem="uxs-Co-vIU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3U2-Eb-mHb"/>
+                <constraint firstAttribute="bottom" secondItem="uxs-Co-vIU" secondAttribute="bottom" id="HP9-eT-DhI"/>
+                <constraint firstAttribute="trailing" secondItem="uxs-Co-vIU" secondAttribute="trailing" id="kkF-iR-4qX"/>
+            </constraints>
+            <connections>
+                <outlet property="photoImgView" destination="fNn-ei-FX4" id="Tkh-Ze-EUh"/>
+                <outlet property="selectImgView" destination="rRr-qC-2fE" id="qcE-bY-BAG"/>
+                <outlet property="takePhotoView" destination="n7c-Qq-KE1" id="eGg-f6-tX0"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="70.3125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="unselect_icon" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

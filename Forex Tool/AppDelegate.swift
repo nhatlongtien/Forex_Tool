@@ -24,9 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //
     //
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let wellcomeVC = WellcomeViewController()
+        let wellcomeVC = WellcomeNewViewController()
         let rootVC = wellcomeVC
         let navController = UINavigationController(rootViewController: rootVC)
         window?.rootViewController = navController
@@ -34,8 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
         //
-        FirebaseApp.configure()
+        
         //Google sign in
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         //        GIDSignIn.sharedInstance().delegate = self

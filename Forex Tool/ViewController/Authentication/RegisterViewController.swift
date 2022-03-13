@@ -67,8 +67,7 @@ class RegisterViewController: UIViewController {
                         }
                     })
                     
-                    let targetVC = TabBarViewController()
-                    self.delegate?.pushViewController(vc: targetVC)
+                    HelperMethod.setRootToDashboardVC()
                 }
             }
         }

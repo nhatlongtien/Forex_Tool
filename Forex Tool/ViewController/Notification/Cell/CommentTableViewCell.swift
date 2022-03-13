@@ -7,19 +7,24 @@
 
 import UIKit
 import Kingfisher
+protocol CommentTableViewCellDelegate:class{
+    func didTapCommentImage(image:UIImage?)
+}
 class CommentTableViewCell: UITableViewCell {
-
-    
     @IBOutlet weak var nameLbl: UILabel! 
     @IBOutlet weak var pubDateLbl: UILabel!
     @IBOutlet weak var contentLbl: UILabel!
     @IBOutlet weak var commentImgView: UIImageView!
     @IBOutlet weak var heightCommentImg: NSLayoutConstraint!
     @IBOutlet weak var avatarImg: UIImageView!
+    //
     let dashboardVM = DashboardViewModel()
+    weak var delegate:CommentTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        commentImgView.isUserInteractionEnabled = true
+        commentImgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDidTapImage)))
         self.contentView.showAnimatedGradientSkeleton()
     }
 
@@ -35,7 +40,7 @@ class CommentTableViewCell: UITableViewCell {
         pubDateLbl.hideSkeleton()
         if item.mediaUrl != nil && item.mediaUrl != ""{
             commentImgView.isHidden = false
-            heightCommentImg.constant = 125
+            heightCommentImg.constant = 0.5 * self.contentView.frame.width
             commentImgView.kf.setImage(with: URL(string: item.mediaUrl!))
             self.commentImgView.hideSkeleton()
         }else{
@@ -60,6 +65,9 @@ class CommentTableViewCell: UITableViewCell {
                 }
             }
         }
+    }
+    @objc func handleDidTapImage(){
+        self.delegate?.didTapCommentImage(image: commentImgView.image)
     }
     
 }

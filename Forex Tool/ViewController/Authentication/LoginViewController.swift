@@ -20,11 +20,8 @@ protocol LoginVCDelegate:class {
 class LoginViewController: UIViewController {
     @IBOutlet weak var signInWithAppleTitle: UILabel!
     @IBOutlet weak var signInWithGoogleTitle: UILabel!
-    @IBOutlet weak var signInTitle: UILabel!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var orSignInTitle: UILabel!
-    @IBOutlet weak var dontAccountTitle: UILabel!
-    @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var emailTf: UITextField!
     @IBOutlet weak var passwordTf: UITextField!
     //
@@ -53,10 +50,7 @@ class LoginViewController: UIViewController {
         }
         authVM.signIn(email: emailTf.text!, password: passwordTf.text!) { (result) in
             if result == true{
-                self.dismiss(animated: false) {
-                    let targetVC = TabBarViewController()
-                    self.delegate?.pushVC(vc: targetVC)
-                }
+                HelperMethod.setRootToDashboardVC()
             }
         }
         
@@ -122,17 +116,10 @@ class LoginViewController: UIViewController {
             isHiddenPassword = true
         }
     }
-    @IBAction func createAccountButtonWasPressed(_ sender: Any) {
-        let targetVC = RegisterViewController()
-        self.present(targetVC, animated: true, completion: nil)
-    }
     //MARK: Helper Method
     func setupUI(){
-        signInTitle.text = "Sign In".localized()
         signInButton.setTitle("Sign In".localized(), for: .normal)
         orSignInTitle.text = "or Sign In with".localized()
-        dontAccountTitle.text = "Don't have an account?".localized()
-        createAccountButton.setTitle("Create an account".localized(), for: .normal)
         emailTf.placeholder = "Email".localized()
         passwordTf.placeholder = "Password".localized()
         signInWithAppleTitle.text = "Sign in with Apple".localized()
@@ -267,24 +254,52 @@ extension LoginViewController:GIDSignInDelegate{
                 HelperMethod.showAlertWithMessage(message: err.localizedDescription ?? "")
             }else{
                 //Dang nhap thanh cong
+                Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
                 //Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
                 //Check user is exsit
                 
                 self.checkUserExit(userUid: (authResult?.user.uid)!) { (isExit) in
                     if isExit == true{
                         //User exit -> go to dashboard
-                        Constant.defaults.setValue(authResult?.user.uid, forKey: Constant.USER_ID)
+                        
                         HelperMethod.setRootToDashboardVC()
                     }else{
                         //User is not exit -> go to add info popup
                         
-                        let targetVC = AddPersonalInfoPoupViewController()
-                        targetVC.modalPresentationStyle = .custom
-                        targetVC.email = user.profile.email
-                        targetVC.fullName = user.profile.name
-                        targetVC.userUid = authResult?.user.uid
-                        targetVC.methodLogin = MethodLoginType.gmail.rawValue
-                        self.present(targetVC, animated: true, completion: nil)
+//                        let targetVC = AddPersonalInfoPoupViewController()
+//                        targetVC.modalPresentationStyle = .custom
+//                        targetVC.email = user.profile.email
+//                        targetVC.fullName = user.profile.name
+//                        targetVC.userUid = authResult?.user.uid
+//                        targetVC.methodLogin = MethodLoginType.gmail.rawValue
+//                        self.present(targetVC, animated: true, completion: nil)
+                        
+                        
+                        
+                        var ref: DocumentReference? = nil
+                        let db = Firestore.firestore()
+                        HUD.show(.systemActivity)
+                        ref = db.collection("users").addDocument(data: [
+                            "fullName" : user.profile.name,
+                            "email": user.profile.email,
+                            "phoneNumber":nil,
+                            "address":nil,
+                            "uid": authResult?.user.uid,
+                            "methodLogin": MethodLoginType.gmail.rawValue,
+                            "password": nil,
+                            "avatarImg": nil
+                        ], completion: { [self] (error) in
+                            if let err = error{
+                                HUD.hide()
+                                HelperMethod.showAlertWithMessage(message: err.localizedDescription
+                                                                    ?? "")
+                            }else{
+                                //luu thanh cong -> Di den dashboard
+                                
+                                HUD.hide()
+                                HelperMethod.setRootToDashboardVC()
+                            }
+                        })
                     }
                 }
             }
